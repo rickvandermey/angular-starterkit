@@ -1,0 +1,15 @@
+<section class="page">
+	<h1>{{ 'hello' | translate: { value: 'world' } }}</h1>
+	<p>{{ 'hello-description' | translate }}</p>
+	<hr />
+	<h2>{{ 'NGRX-store-title' | translate }}</h2>
+	<p>{{ name$ | async }}</p>
+	<address>
+		<p>{{ email$ | async }}</p>
+		<p *ngIf="address$ | async as address">
+			{{ address.street }}, <br />
+			{{ address.zipcode }} {{ address.city }}
+		</p>
+	</address>
+	<img src="{{ image$ | async }}" alt="{{ name$ | async }}" />
+</section>

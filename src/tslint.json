@@ -1,0 +1,9 @@
+{
+	"extends": ["../tslint.json", "tslint-immutable"],
+	"rules": {
+		"component-selector": [true, "element", "app", "kebab-case"],
+		"directive-selector": [true, "attribute", "app", "camelCase"],
+		"no-delete": true,
+		"no-method-signature": true
+	}
+}

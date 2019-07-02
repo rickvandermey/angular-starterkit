@@ -1,0 +1,6 @@
+disableRoutesGraph: true
+hideGenerator: true
+name: RVDM Angular Starterkit
+output: ./documentation
+tsconfig: ./src/tsconfig.app.json
+unitTestCoverage: ./coverage/coverage-summary.json

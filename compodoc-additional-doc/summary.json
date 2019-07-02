@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Bundle ES5 Analytics",
+		"file": "./bundlestats-es5-frame.html"
+	},
+	{
+		"title": "Bundle ES2015 Analytics",
+		"file": "./bundlestats-es2015-frame.html"
+	},
+	{
+		"title": "E2E Testing Report (Cucumber)",
+		"file": "./cucumber-frame.html"
+	},
+	{
+		"title": "Lighthouse Mobile Report",
+		"file": "./lighthouse-mobile-frame.html"
+	},
+	{
+		"title": "Lighthouse Desktop Report",
+		"file": "./lighthouse-desktop-frame.html"
+	}
+]

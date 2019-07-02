@@ -1,0 +1,8 @@
+build
+coverage
+dist
+documentation
+reports
+test-reports
+package-lock.json
+package.json

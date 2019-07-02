@@ -1,0 +1,10 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"outDir": "../out-tsc/e2e",
+		"target": "es5",
+		"types": ["cucumber", "node", "selenium-webdriver"]
+	},
+	"include": ["../features/**/*.ts"]
+}
