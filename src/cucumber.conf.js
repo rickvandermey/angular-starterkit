@@ -98,6 +98,13 @@ exports.config = {
 				},
 			},
 		},
+		{
+			package: '@ng-apimock/protractor-plugin',
+			options: {
+				baseUrl: 'http://localhost:4000',
+				globalName: 'ngApimock',
+			},
+		},
 	],
 	specs: ['../features/*.feature'],
 	useAllAngular2AppRoots: true,

@@ -11,7 +11,7 @@
 			"schematics": {},
 			"architect": {
 				"build": {
-					"builder": "@angular-devkit/build-angular:browser",
+					"builder": "ngx-build-plus:build",
 					"options": {
 						"assets": [
 							"src/.htaccess",
@@ -29,6 +29,14 @@
 						"tsConfig": "src/tsconfig.app.json"
 					},
 					"configurations": {
+						"mock": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.mock.ts"
+								}
+							]
+						},
 						"production": {
 							"fileReplacements": [
 								{
@@ -50,7 +58,7 @@
 					}
 				},
 				"serve": {
-					"builder": "@angular-devkit/build-angular:dev-server",
+					"builder": "ngx-build-plus:dev-server",
 					"options": {
 						"aot": true,
 						"browserTarget": "RVDM-Angular-Starterkit:build",
@@ -60,6 +68,9 @@
 						"sslCert": "build/server.crt"
 					},
 					"configurations": {
+						"mock": {
+							"browserTarget": "RVDM-Angular-Starterkit:build:mock"
+						},
 						"production": {
 							"browserTarget": "RVDM-Angular-Starterkit:build:production"
 						}
@@ -72,7 +83,7 @@
 					}
 				},
 				"test": {
-					"builder": "@angular-devkit/build-angular:karma",
+					"builder": "ngx-build-plus:karma",
 					"options": {
 						"assets": [
 							"src/.htaccess",
@@ -96,7 +107,7 @@
 				"e2e": {
 					"builder": "@angular-devkit/build-angular:protractor",
 					"options": {
-						"devServerTarget": "RVDM-Angular-Starterkit:serve",
+						"devServerTarget": "RVDM-Angular-Starterkit:serve:mock",
 						"protractorConfig": "src/cucumber.conf.js",
 						"webdriverUpdate": false
 					}
