@@ -1,0 +1,78 @@
+[
+  {
+    "description": "\tA user should see the Hello World message",
+    "keyword": "Feature",
+    "name": "Hello world Feature",
+    "line": 1,
+    "id": "hello-world-feature",
+    "tags": [],
+    "uri": "features/home.feature",
+    "elements": [
+      {
+        "id": "hello-world-feature;hello-world-scenario",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Hello world scenario",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "Angular/node_modules/cucumber/lib/support_code_library_builder/build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "User enters the flow",
+            "match": {
+              "location": "Angular/node_modules/cucumber/lib/support_code_library_builder/build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 679000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "Angular/node_modules/cucumber/lib/support_code_library_builder/build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "Angular/node_modules/cucumber/lib/support_code_library_builder/build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "72.0.3626.121"
+      },
+      "device": "Ricks-MacBook-Pro-2.local",
+      "platform": {
+        "name": "osx",
+        "version": "18.2.0"
+      }
+    }
+  }
+]

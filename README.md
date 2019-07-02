@@ -9,7 +9,7 @@ Quickstart: `npm run certificate:generate && npm run start:clean`
 
 -   Modern / Legacy build (ES5 vs ES2015)
 -   IVY optin
--   NGRX store (implmented according ngrx.io)
+-   NGRX store (implemented according ngrx.io)
 -   Lazy Loading routes
 -   NGX-Translate (assets/i18n/{locale}.json)
 -   SSR (Server Side Rendering)
@@ -99,6 +99,8 @@ This test will provide an report which will be shown at the end of all tests. It
     -   Unit test coverage
     -   E2E reports
     -   WPO reports
+
+sample can be fount at _'./documentation/index.html'_
 
 ### Website Performance Optimization
 

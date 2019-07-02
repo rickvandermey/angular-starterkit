@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>RVDM Angular Starterkit</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">RVDM Angular Starterkit</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="angular-boilerplate-with-redux-ngrx-lazy-loading-ssr-server-side-rendering-pwaprogressive-web-app-unit-test-karma-e2e-test-protractor--cucumber">Angular Boilerplate with Redux (ngrx), Lazy Loading, SSR (Server Side Rendering), PWA(Progressive Web App), Unit Test (Karma), E2E Test (Protractor / Cucumber)</h1>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 8.x.x.
+On default this build is compiled with AOT (Ahead of Time compiler)</p>
+<p>Quickstart: <code>npm run start:clean</code></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Angular Boilerplate with Redux (ngrx)</li>
+<li>Lazy Loading</li>
+<li>NGX-Translate (translations from assets/i18n/{locale}.json)</li>
+<li>Prerendering</li>
+<li>PWA (Progressive Web App)</li>
+<li>SSR (Server Side Rendering)</li>
+<li>Unit Test (Karma)</li>
+<li>E2E Test / Reports (Protractor / Cucumber)</li>
+<li>Documentation Generation (Compodoc)</li>
+<li>Google Lighthouse reporter (save to Compodoc additional docs)</li>
+</ul>
+<p>example sites:</p>
+<ul>
+<li>Progressive Web App (PWA), NGRX and lazy loading: https://angular.rickvandermeij.nl</li>
+<li>Progressive Web App (PWA), NGRX, lazy loading, and Server Side Rendering: https://angular-ssr.rickvandermeij.nl</li>
+</ul>
+<h2 id="perfect-score-application">Perfect score application</h2>
+<p><img src="https://angular.rickvandermeij.nl/assets/google-audit.png" alt="Google Lighthouse result" class="img-responsive"></p>
+<h2 id="development-server">Development server</h2>
+<p>Run <code>npm start</code> for a dev server. Navigate to <code>https://localhost:4202/</code>. The app will automatically reload if you change any of the source files.</p>
+<p>Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called <code>build</code>. Run <code>npm run certificate:generate</code> to create the required certificates and place them in the required folder. Another way to create those can be found <a href="https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec">here</a>. The build map should already be in your <code>.gitignore</code>.</p>
+<p>When developing, Husky is implemented, which means you only can commit when there are no linting errors, and all unit-tests succeeds. Other commmands can be implemented in the <code>package.json</code>.</p>
+<h2 id="build">Build</h2>
+<p>Run <code>npm run build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build. When building all ununsed CSS will be removed by the <code>purgeCSS</code> plugin.</p>
+<p>Run <code>npm run build:gzip</code> to build the project and then gzip the files if neccesary.</p>
+<h3 id="ivy-build">Ivy Build</h3>
+<p>To create an Ivy build, you&#39;ll need to update <code>src/tsconfig.app.json</code> and set <code>enableIvy: true</code>. Be aware when doing this, functionality for SSR and Prerendering won&#39;t work at this moment. Maybe when updating in the future, it will.</p>
+<h3 id="extend-the-angular-cli-settings-webpack">Extend the Angular CLI settings (Webpack)</h3>
+<p>It is possible to extend the Angular CLI settings via a Webpack partial. Angular CLI will still optimize all functionality without being ejected. The Webpack Partial still gives you the opportunity the specify certain extra configurations in Webpack.</p>
+<h3 id="server-side-rendering-ssr">Server Side Rendering (SSR)</h3>
+<p>This project comes with built-in SSR functionality. The effect of SSR will be valuable on larger projects or slower internet connections, run Google Audit with slow network to see the difference.</p>
+<ul>
+<li>For Serving, run <code>npm run start:ssr</code></li>
+<li>For Building, run <code>npm run ssr:build</code></li>
+</ul>
+<h3 id="prerendering-angular">Prerendering Angular</h3>
+<ul>
+<li>For Serving, run <code>npm run start:prerender</code></li>
+<li>For Building, run <code>npm run prerender:build</code></li>
+</ul>
+<h2 id="testing">Testing</h2>
+<p>Run <code>npm run lint</code> for linting your application.</p>
+<h3 id="running-unit-tests-with-karma">Running unit tests with Karma</h3>
+<p>Run <code>npm run test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>. This script will be run as a watcher. Most effective to run this alongside <code>npm run start</code> while developing.</p>
+<p>Run <code>test:unit-headless</code> to execute a single run for the Unit test. Best usecases are for pre-commit checks and in pipeline scripts.</p>
+<p>Both scripts will provide a Code Coverage file, which can be found in <em>&#39;./reports/coverage&#39;</em></p>
+<h3 id="running-e2e-tests-with-protractor-and-cucumber">Running E2E tests with Protractor and Cucumber</h3>
+<p>Run <code>npm run test:e2e</code> to execute the E2E protractor tests. Tests can be found within <em>./features</em> all written in Cucumber style.</p>
+<p>This test will provide an report which will be shown at the end of all tests. It can also be found in <em>./reports/e2e/report</em>. When tests fails, there will be a screenshot attached to the scenario where the test has failed.</p>
+<h3 id="analyzing">Analyzing</h3>
+<p>Run <code>npm run wpo:stats</code> to get a clear view of all dependencies and their dependencies for your project.</p>
+<h3 id="documentation">Documentation</h3>
+<p>Run <code>npm run doc</code> to generate a compodoc containing documentation for all the modules, routes and other components of the application.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

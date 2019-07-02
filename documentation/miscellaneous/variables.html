@@ -1,0 +1,1327 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>RVDM Angular Starterkit</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">RVDM Angular Starterkit</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Miscellaneous</li>
+  <li>Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#back" title="src/app/store/router/router.actions.ts"><b>back</b>&nbsp;&nbsp;&nbsp;(src/.../router.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ClearError" title="src/app/store/dummy/dummy.actions.ts"><b>ClearError</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createDummyReducer" title="src/app/store/dummy/dummy.reducer.ts"><b>createDummyReducer</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DUMMY_KEY" title="src/app/services/dummy.service.ts"><b>DUMMY_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.prod.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#fallbackLanguage" title="src/app/globals.ts"><b>fallbackLanguage</b>&nbsp;&nbsp;&nbsp;(src/.../globals.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#forward" title="src/app/store/router/router.actions.ts"><b>forward</b>&nbsp;&nbsp;&nbsp;(src/.../router.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#fs" title="src/app/ssr/translate.loader.ts"><b>fs</b>&nbsp;&nbsp;&nbsp;(src/.../translate.loader.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getRouterInfo" title="src/app/store/router/router.selectors.ts"><b>getRouterInfo</b>&nbsp;&nbsp;&nbsp;(src/.../router.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getRouterLanguage" title="src/app/store/router/router.selectors.ts"><b>getRouterLanguage</b>&nbsp;&nbsp;&nbsp;(src/.../router.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#go" title="src/app/store/router/router.actions.ts"><b>go</b>&nbsp;&nbsp;&nbsp;(src/.../router.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/testing/mock-store.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../mock-store.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/store/dummy/dummy.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#languages" title="src/app/globals.ts"><b>languages</b>&nbsp;&nbsp;&nbsp;(src/.../globals.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#languagesLabels" title="src/app/globals.ts"><b>languagesLabels</b>&nbsp;&nbsp;&nbsp;(src/.../globals.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#languagesRegex" title="src/app/globals.ts"><b>languagesRegex</b>&nbsp;&nbsp;&nbsp;(src/.../globals.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Load" title="src/app/store/dummy/dummy.actions.ts"><b>Load</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoadFail" title="src/app/store/dummy/dummy.actions.ts"><b>LoadFail</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoadSuccess" title="src/app/store/dummy/dummy.actions.ts"><b>LoadSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LOCAL_STORAGE_KEY" title="src/app/store/meta/app.tokens.ts"><b>LOCAL_STORAGE_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../app.tokens.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#merge" title="src/app/store/meta/storage.metareducer.ts"><b>merge</b>&nbsp;&nbsp;&nbsp;(src/.../storage.metareducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#pick" title="src/app/store/meta/storage.metareducer.ts"><b>pick</b>&nbsp;&nbsp;&nbsp;(src/.../storage.metareducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ROUTES" title="src/app/routes/static.paths.ts"><b>ROUTES</b>&nbsp;&nbsp;&nbsp;(src/.../static.paths.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#routesWithLanguages" title="src/app/routes/static.paths.ts"><b>routesWithLanguages</b>&nbsp;&nbsp;&nbsp;(src/.../static.paths.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectAddress" title="src/app/store/dummy/dummy.selectors.ts"><b>selectAddress</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectEmail" title="src/app/store/dummy/dummy.selectors.ts"><b>selectEmail</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectEntity" title="src/app/store/dummy/dummy.selectors.ts"><b>selectEntity</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectEntityCurrency" title="src/app/store/dummy/dummy.selectors.ts"><b>selectEntityCurrency</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectError" title="src/app/store/dummy/dummy.selectors.ts"><b>selectError</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectFeature" title="src/app/store/dummy/dummy.selectors.ts"><b>selectFeature</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectImage" title="src/app/store/dummy/dummy.selectors.ts"><b>selectImage</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectIsLoading" title="src/app/store/dummy/dummy.selectors.ts"><b>selectIsLoading</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectIsLoadingSuccessfully" title="src/app/store/dummy/dummy.selectors.ts"><b>selectIsLoadingSuccessfully</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectName" title="src/app/store/dummy/dummy.selectors.ts"><b>selectName</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectReducerState" title="src/app/store/router/router.selectors.ts"><b>selectReducerState</b>&nbsp;&nbsp;&nbsp;(src/.../router.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#STORAGE_KEYS" title="src/app/store/meta/app.tokens.ts"><b>STORAGE_KEYS</b>&nbsp;&nbsp;&nbsp;(src/.../app.tokens.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/store/router/router.actions.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="back"></a>
+                        <span class="name">
+                            <b>
+                            back</b>
+                            <a href="#back"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(&#x27;[Router] Back&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="forward"></a>
+                        <span class="name">
+                            <b>
+                            forward</b>
+                            <a href="#forward"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(&#x27;[Router] Forward&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="go"></a>
+                        <span class="name">
+                            <b>
+                            go</b>
+                            <a href="#go"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+	&#x27;[Router] Go&#x27;,
+	props&lt;{
+		/**
+		 * payload given for the action
+		 */
+		payload: {
+			/**
+			 * path of the URL where to navigate
+			 */
+			path: any[];
+			/**
+			 * optional queries of the URL where to navigate
+			 */
+			query?: Params;
+			/**
+			 * extras of the URL where to navigate, based on NavigationExtras
+			 */
+			extras?: NavigationExtras;
+		};
+	}&gt;(),
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/dummy/dummy.actions.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ClearError"></a>
+                        <span class="name">
+                            <b>
+                            ClearError</b>
+                            <a href="#ClearError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(&#x27;[DUMMY] CLEAR ERROR&#x27;)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>ClearError Action will be used for NGRX Action emitter, when the error needs to be cleared</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="Load"></a>
+                        <span class="name">
+                            <b>
+                            Load</b>
+                            <a href="#Load"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(&#x27;[DUMMY] LOAD&#x27;)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Load Action will be used for NGRX Action emitter, when the Dummy info Load Action is being called</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="LoadFail"></a>
+                        <span class="name">
+                            <b>
+                            LoadFail</b>
+                            <a href="#LoadFail"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+	&#x27;[DUMMY] LOAD FAIL&#x27;,
+	props&lt;{
+		/**
+		 * errorMessage represents the errorMessage when type LOAD_FAIL is called
+		 */
+		errorMessage: string;
+	}&gt;(),
+)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>LoadFail Action will be used for NGRX Action emitter, when the Dummy info is failed</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="LoadSuccess"></a>
+                        <span class="name">
+                            <b>
+                            LoadSuccess</b>
+                            <a href="#LoadSuccess"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+	&#x27;[DUMMY] LOAD SUCCESS&#x27;,
+	props&lt;{
+		/**
+		 * entity represents the DummyInterface used for the reducer
+		 */
+		entity: DummyInterface;
+	}&gt;(),
+)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>LoadSuccess Action will be used for NGRX Action emitter, when the Dummy info is succesfull</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/dummy/dummy.reducer.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createDummyReducer"></a>
+                        <span class="name">
+                            <b>
+                            createDummyReducer</b>
+                            <a href="#createDummyReducer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createReducer(
+	initialState,
+	on(dummyActions.Load, state &#x3D;&gt; ({
+		...state,
+		errorMessage: null,
+		isLoading: true,
+	})),
+	on(dummyActions.LoadFail, (state, action) &#x3D;&gt; ({
+		...state,
+		errorMessage: action.errorMessage,
+		isLoaded: false,
+		isLoading: false,
+	})),
+	on(dummyActions.LoadSuccess, (state, action) &#x3D;&gt; ({
+		...state,
+		entity: action.entity,
+		isLoaded: true,
+		isLoading: false,
+	})),
+	on(dummyActions.ClearError, state &#x3D;&gt; ({
+		...state,
+		errorMessage: null,
+	})),
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialState"></a>
+                        <span class="name">
+                            <b>
+                            initialState</b>
+                            <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/DummyState.html" target="_self" >DummyState</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+	entity: {
+		address: {
+			city: &#x27;Rijnsburg&#x27;,
+			street: &#x27;Rembrandtsingel&#x27;,
+			streetNumber: &#x27;5&#x27;,
+			streetNumberAddition: &#x27;&#x27;,
+			zipcode: &#x27;2231 BK&#x27;,
+		},
+		currency: &#x27;EUR&#x27;,
+		email: &#x27;dummy@domain.com&#x27;,
+		image:
+			&#x27;https://images.unsplash.com/photo-1548092372-0d1bd40894a3?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;1080&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjEyMDk3fQ&#x27;,
+		language: &#x27;en&#x27;,
+		name: &#x27;Dummys &amp; Downies&#x27;,
+		phone: null,
+		website: &#x27;/&#x27;,
+	},
+	errorMessage: null,
+	isLoaded: false,
+	isLoading: false,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/services/dummy.service.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="DUMMY_KEY"></a>
+                        <span class="name">
+                            <b>
+                            DUMMY_KEY</b>
+                            <a href="#DUMMY_KEY"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>makeStateKey(&#x27;dummyState&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/environments/environment.prod.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="environment"></a>
+                        <span class="name">
+                            <b>
+                            environment</b>
+                            <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+	/**
+	 * assetsRoot provides the start of the URI for assets
+	 */
+	assetsRoot: &#x27;/assets&#x27;,
+	/**
+	 * Boolean to declare if the environment is in production mode
+	 */
+	production: true,
+
+	/**
+	 * Integer of the version which is defined in the Package.json
+	 */
+	version: require(&#x27;../../package.json&#x27;).version,
+}</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The enviroment Object</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="environment"></a>
+                        <span class="name">
+                            <b>
+                            environment</b>
+                            <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+	/**
+	 * assetsRoot provides the start of the URI for assets
+	 */
+	assetsRoot: &#x27;/assets&#x27;,
+	/**
+	 * Boolean to declare if the environment is in production mode
+	 */
+	production: false,
+
+	/**
+	 * Integer of the version which is defined in the Package.json
+	 */
+	version: require(&#x27;../../package.json&#x27;).version,
+}</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The enviroment Object</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/globals.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fallbackLanguage"></a>
+                        <span class="name">
+                            <b>
+                            fallbackLanguage</b>
+                            <a href="#fallbackLanguage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;en&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="languages"></a>
+                        <span class="name">
+                            <b>
+                            languages</b>
+                            <a href="#languages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;nl&#x27;, &#x27;en&#x27;]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="languagesLabels"></a>
+                        <span class="name">
+                            <b>
+                            languagesLabels</b>
+                            <a href="#languagesLabels"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+	en: &#x27;English&#x27;,
+	nl: &#x27;Nederlands&#x27;,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="languagesRegex"></a>
+                        <span class="name">
+                            <b>
+                            languagesRegex</b>
+                            <a href="#languagesRegex"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>/\/nl\/|\/en\//</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/ssr/translate.loader.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fs"></a>
+                        <span class="name">
+                            <b>
+                            fs</b>
+                            <a href="#fs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>require(&#x27;fs&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/router/router.selectors.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getRouterInfo"></a>
+                        <span class="name">
+                            <b>
+                            getRouterInfo</b>
+                            <a href="#getRouterInfo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectReducerState,
+	state &#x3D;&gt; state &amp;&amp; state.state,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getRouterLanguage"></a>
+                        <span class="name">
+                            <b>
+                            getRouterLanguage</b>
+                            <a href="#getRouterLanguage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	getRouterInfo,
+	state &#x3D;&gt; state &amp;&amp; state.params &amp;&amp; state.params.language,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectReducerState"></a>
+                        <span class="name">
+                            <b>
+                            selectReducerState</b>
+                            <a href="#selectReducerState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createFeatureSelector&lt;
+	RouterReducerState&lt;RouterStateUrl&gt;
+&gt;(&#x27;routerState&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/testing/mock-store.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialState"></a>
+                        <span class="name">
+                            <b>
+                            initialState</b>
+                            <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+	dummyState: {
+		entity: {
+			address: {
+				city: &#x27;Noordwijk&#x27;,
+				street: &#x27;Erasmusweg&#x27;,
+				streetNumber: &#x27;19&#x27;,
+				streetNumberAddition: &#x27;&#x27;,
+				zipcode: &#x27;2202 CA&#x27;,
+			},
+			currency: &#x27;EUR&#x27;,
+			email: &#x27;noreply@domain.com&#x27;,
+			image:
+				&#x27;https://images.unsplash.com/16/unsplash_5263605581e32_1.JPG?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;1080&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjEyMDk3fQ&#x27;,
+			language: &#x27;nl&#x27;,
+			name: &#x27;Dummy JSON title&#x27;,
+			phone: &#x27;+31 (0)123 45 67 89&#x27;,
+			website: &#x27;https://www.rickvandermeij.nl/&#x27;,
+		},
+		errorMessage: null,
+		isLoaded: true,
+		isLoading: false,
+	},
+	routerState: {
+		state: {
+			params: {
+				language: &#x27;nl&#x27;,
+			},
+			queryParams: {
+				q: &#x27;nothing&#x27;,
+			},
+			url: &#x27;nl&#x27;,
+		},
+	},
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/meta/app.tokens.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="LOCAL_STORAGE_KEY"></a>
+                        <span class="name">
+                            <b>
+                            LOCAL_STORAGE_KEY</b>
+                            <a href="#LOCAL_STORAGE_KEY"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new InjectionToken&lt;string[]&gt;(&#x27;appStorage&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="STORAGE_KEYS"></a>
+                        <span class="name">
+                            <b>
+                            STORAGE_KEYS</b>
+                            <a href="#STORAGE_KEYS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new InjectionToken&lt;string[]&gt;(&#x27;StoreKeys&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/meta/storage.metareducer.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="merge"></a>
+                        <span class="name">
+                            <b>
+                            merge</b>
+                            <a href="#merge"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>require(&#x27;lodash.merge&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pick"></a>
+                        <span class="name">
+                            <b>
+                            pick</b>
+                            <a href="#pick"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>require(&#x27;lodash.pick&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/routes/static.paths.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ROUTES"></a>
+                        <span class="name">
+                            <b>
+                            ROUTES</b>
+                            <a href="#ROUTES"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>routesWithLanguages as Array&lt;string&gt;</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Should declare all Route URLs in an Array</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="routesWithLanguages"></a>
+                        <span class="name">
+                            <b>
+                            routesWithLanguages</b>
+                            <a href="#routesWithLanguages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/dummy/dummy.selectors.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectAddress"></a>
+                        <span class="name">
+                            <b>
+                            selectAddress</b>
+                            <a href="#selectAddress"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectEntity,
+	state &#x3D;&gt; {
+		if (state.address) {
+			return {
+				city: state.address.city,
+				street: &#x60;${state.address.street} ${state.address.streetNumber}${state.address.streetNumberAddition}&#x60;,
+				zipcode: state.address.zipcode,
+			};
+		}
+		return null;
+	},
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectEmail"></a>
+                        <span class="name">
+                            <b>
+                            selectEmail</b>
+                            <a href="#selectEmail"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectEntity,
+	state &#x3D;&gt; state.email,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectEntity"></a>
+                        <span class="name">
+                            <b>
+                            selectEntity</b>
+                            <a href="#selectEntity"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectFeature,
+	state &#x3D;&gt; state.entity,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectEntityCurrency"></a>
+                        <span class="name">
+                            <b>
+                            selectEntityCurrency</b>
+                            <a href="#selectEntityCurrency"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectEntity,
+	state &#x3D;&gt; state.currency,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectError"></a>
+                        <span class="name">
+                            <b>
+                            selectError</b>
+                            <a href="#selectError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectFeature,
+	state &#x3D;&gt; state.errorMessage,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectFeature"></a>
+                        <span class="name">
+                            <b>
+                            selectFeature</b>
+                            <a href="#selectFeature"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createFeatureSelector&lt;DummyState&gt;(&#x27;dummyState&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectImage"></a>
+                        <span class="name">
+                            <b>
+                            selectImage</b>
+                            <a href="#selectImage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectEntity,
+	state &#x3D;&gt; state.image,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectIsLoading"></a>
+                        <span class="name">
+                            <b>
+                            selectIsLoading</b>
+                            <a href="#selectIsLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectFeature,
+	state &#x3D;&gt; state.isLoading,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectIsLoadingSuccessfully"></a>
+                        <span class="name">
+                            <b>
+                            selectIsLoadingSuccessfully</b>
+                            <a href="#selectIsLoadingSuccessfully"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectFeature,
+	state &#x3D;&gt; state.isLoaded,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectName"></a>
+                        <span class="name">
+                            <b>
+                            selectName</b>
+                            <a href="#selectName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectEntity,
+	state &#x3D;&gt; state.name,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
