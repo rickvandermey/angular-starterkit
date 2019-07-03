@@ -2,8 +2,8 @@ import { Then } from 'cucumber';
 import { browser } from 'protractor';
 
 import { ElementHelper, StepHelper } from '../helpers';
-import { HeaderPageObject as Header } from '../page_objects/components';
-import { ErrorPageObject as Error } from '../page_objects/pages';
+import { HeaderPageObject as Header } from '../objects/components';
+import { ErrorPageObject as Error } from '../objects/pages';
 
 const chai = require('chai').use(require('chai-as-promised'));
 const expect = chai.expect;
