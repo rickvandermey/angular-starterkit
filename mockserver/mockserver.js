@@ -20,7 +20,7 @@ app.set('port', process.env.PORT || 4000);
 // - mocks should end with .mock.json
 // - presets should end with .preset.json
 apimock.processor.process({
-	src: './mocks',
+	src: './mockserver',
 });
 
 // Add additional logging to the mockServer so we can debug if certain calls ever happened

@@ -89,7 +89,7 @@ Both scripts will provide a Code Coverage file, which can be found in _'./report
 
 ### Running E2E tests with Protractor and Cucumber
 
-Run `npm run test:e2e` to execute the E2E protractor tests. Tests can be found within _./features_ all written in Cucumber style.
+Run `npm run test:e2e` to execute the E2E protractor tests. Tests can be found within _./e2e_ all written in Cucumber style.
 
 This test will provide an report which will be shown at the end of all tests. It can also be found in _./reports/e2e/report_. When tests fails, there will be a screenshot attached to the scenario where the test has failed.
 

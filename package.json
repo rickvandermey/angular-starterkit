@@ -27,7 +27,7 @@
 		"lint": "ng lint && npm run stylelint",
 		"prerender:build": "npm run build:client-and-server-bundles && tsc -p server.tsconfig.json && npm run prerender:generate",
 		"prerender:generate": "cd dist && node prerender",
-		"server:mock": "node ./mocks/mockserver.js",
+		"server:mock": "node ./mockserver/mockserver.js",
 		"ssr:build": "npm run build:client-and-server-bundles && npm run ssr:webpack",
 		"ssr:serve": "node dist/server.js",
 		"ssr:webpack": "webpack --config webpack.server.config.js --progress --colors",
