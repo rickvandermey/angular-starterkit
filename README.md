@@ -22,6 +22,7 @@ Quickstart: `npm run certificate:generate && npm run start:clean`
 -   WPO: Stats for ES5 build and ES2015
 -   Git hooks (husky)
 -   Extend Angular CLI (webpack)
+-   Ability to Mock data (mockServer)
 
 ###### example sites:
 
@@ -36,6 +37,7 @@ Quickstart: `npm run certificate:generate && npm run start:clean`
 ## Development server
 
 `npm run start` available at `https://localhost:4202/` (Hot reloading enabled)
+`npm run start:mock` will use the mock environment, which connects with the mockServer at `http://localhost:4000`
 
 Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called `build`. Run `npm run certificate:generate` to create the required certificates and place them in the required folder.
 
@@ -107,3 +109,7 @@ sample can be fount at _'./documentation/index.html'_
 -   `npm run wpo:stats-es5` to get a clear view of all dependencies and their dependencies for your project.
 -   `npm run wpo:stats-es2015` to get a clear view of all dependencies and their dependencies for your project.
 -   `npm run wpo:lighthouse` to get a lighthouse score for your current project. (change the URL in `ci/fetchLighthouse.js`).
+
+## Mock data (MockServer)
+
+As of version 1.1.0 it is possible to setup a mockServer with `npm run server:mock`. Port will be `http://localhost:4000` and the different status can be set at `http://localhost:4000/mocking`. All data can be setup in _'./mockServer'_. Examples of API, JSON and images are added.
