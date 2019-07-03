@@ -8,6 +8,7 @@
 -   **mockServer: ** Introduced option to use a mockServer with `npm run server:mock`
 -   **mockServer: ** Added mockServer to E2E test
 -   **mockServer: ** Added mock environment
+-   **httpInterceptor: ** Added httpInterceptor to watch all pending XHR calls in applicationState inside NGRX store
 
 ### Breaking Changes
 
