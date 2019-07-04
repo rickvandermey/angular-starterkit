@@ -1,16 +1,16 @@
 # Angular Starterkit --NGRX(redux)-- --IVY-- --Lazy loading-- --Server Side Rendering(SSR)-- --Prerendering-- --Progressive Web App(PWA)-- --Unit Test(Karma)-- --E2E Test(Cucumber)-- --Compodoc-- --NGX translate--
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.x.x.
-On default this build is compiled with AOT (Ahead of Time compiler)
+Powerful Starterkit combining all latest advanced Angular features. Strict typescript mode and preventing pushing untested code. Read more for all features.
 
 Quickstart: `npm run certificate:generate && npm run start:clean`
 
 ## Features
 
--   Modern / Legacy build (ES5 vs ES2015)
--   IVY optin
+-   Modern vs. Legacy build (ES5 vs ES2015)
+-   IVY opt-in
 -   NGRX store (implemented according ngrx.io)
--   Lazy Loading routes
+-   Lazy Loading
+-   HttpInterceptor
 -   NGX-Translate (assets/i18n/{locale}.json)
 -   SSR (Server Side Rendering)
 -   Prerendering

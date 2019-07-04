@@ -4,15 +4,15 @@
 
 ### Features
 
--   **CHANGELOG: ** a Changelog is added
--   **mockServer: ** Introduced option to use a mockServer with `npm run server:mock`
--   **mockServer: ** Added mockServer to E2E test
--   **mockServer: ** Added mock environment
--   **httpInterceptor: ** Added httpInterceptor to watch all pending XHR calls in applicationState inside NGRX store
+-   **CHANGELOG:** a Changelog.md is added
+-   **mockServer:** Introduced option to use a mockServer with `npm run server:mock`
+-   **mockServer:** Added mockServer to E2E test
+-   **mockServer:** Added mock environment
+-   **httpInterceptor:** Added httpInterceptor to watch all pending XHR calls in applicationState inside NGRX store
 
 ### Breaking Changes
 
--   **E2E: ** renamed _'./features'_ to _'./e2e'_
+-   **E2E:** renamed _'./features'_ to _'./e2e'_
 
 ## [1.0.0](https://github.com/rickvandermey/angular-starterkit/tree/1.0.0)
 
