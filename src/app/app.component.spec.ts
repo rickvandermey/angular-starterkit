@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SwUpdate } from '@angular/service-worker';
 import { Store, StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import {
@@ -14,6 +15,7 @@ import { Observable, of } from 'rxjs';
 import { LocalStorageService } from '@services/local-storage.service';
 import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from '@store/meta/app.tokens';
 import { initialState } from '@testing/mock-store';
+import { MockSwUpdate } from '@testing/mocks.spec';
 import { AppComponent as Component } from './app.component';
 import { getMetaReducers } from './app.module';
 
@@ -68,6 +70,7 @@ describe('Components: App Component', () => {
 					provide: USER_PROVIDED_META_REDUCERS,
 					useFactory: getMetaReducers,
 				},
+				{ provide: SwUpdate, useValue: MockSwUpdate },
 			],
 			schemas: [CUSTOM_ELEMENTS_SCHEMA],
 		}).compileComponents();

@@ -6,8 +6,8 @@ import { cold, hot } from 'jasmine-marbles';
 import { of, throwError } from 'rxjs';
 
 import { DummyService } from '@services/dummy.service';
-import { getActions, MockActions } from '@testing/mock-actions';
 import { initialState as mockStore } from '@testing/mock-store';
+import { getActions, MockActions } from '@testing/mocks.spec';
 
 import * as dummyActions from './dummy.actions';
 import { DummyEffects } from './dummy.effects';

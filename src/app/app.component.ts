@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 import { select, Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
@@ -29,7 +30,11 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * @param  {type} private router: Subscription for the Angular Router
 	 * @param  {type} public translate: Subscription for the Angular TranslateService
 	 */
-	constructor(private store: Store<{}>, public translate: TranslateService) {
+	constructor(
+		private store: Store<{}>,
+		public swUpdate: SwUpdate,
+		public translate: TranslateService,
+	) {
 		super();
 		this.routerLanguage$ = this.store.pipe(
 			select(fromRouter.getRouterLanguage),
@@ -42,6 +47,15 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * the first time
 	 */
 	ngOnInit(): void {
+		/* istanbul ignore next */
+		if (this.swUpdate.isEnabled) {
+			this.swUpdate.available.subscribe(() => {
+				if (confirm('new Version is available')) {
+					window.location.reload();
+				}
+			});
+		}
+
 		this.addSubscription(
 			this.routerLanguage$.subscribe((language: string) => {
 				this.translate.use(language);
