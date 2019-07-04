@@ -15,6 +15,7 @@ Quickstart: `npm run certificate:generate && npm run start:clean`
 -   SSR (Server Side Rendering)
 -   Prerendering
 -   PWA (Progressive Web App)
+-   Service Worker detects new build versions
 -   Unit Test (Karma)
 -   E2E Test / Reports (Protractor / Cucumber)
 -   Documentation Generation (Compodoc)
