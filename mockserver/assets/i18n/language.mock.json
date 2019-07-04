@@ -1,0 +1,19 @@
+{
+	"name": "languages",
+	"handler": "../handler.js",
+	"isArray": "false",
+	"request": {
+		"url": "assets/i18n",
+		"method": "GET"
+	},
+	"responses": {
+		"200": {
+			"status": 200,
+			"headers": {
+				"content-type": "application/json"
+			},
+			"file": "./nl.json",
+			"default": true
+		}
+	}
+}

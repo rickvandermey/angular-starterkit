@@ -1,0 +1,9 @@
+{
+	"hello": "Hallo {{value}}",
+	"hello-description": "Angular 8 Applicatie met Redux Store (ngrx) en Lazy Loading.",
+	"NGRX-store-title": "NGRX dummy store data",
+	"error": {
+		"heading": "Oops, er is iets mis gegaan!",
+		"description": "Probeer het opnieuw. Blijf je op deze pagina terugkomen, neem dan contact op"
+	}
+}

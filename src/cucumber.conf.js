@@ -40,7 +40,7 @@ exports.config = {
 		compiler: [],
 		dryRun: false,
 		format: ['json:reports/e2e/results.json'],
-		require: ['../features/step_definitions/**/*.ts'],
+		require: ['../e2e/step_definitions/**/*.ts'],
 		strict: true,
 		tags: ['~@skip', tags], // <string[]> (expression) only execute the features or scenarios with tags matching the expression
 	},
@@ -98,8 +98,15 @@ exports.config = {
 				},
 			},
 		},
+		{
+			package: '@ng-apimock/protractor-plugin',
+			options: {
+				baseUrl: 'http://localhost:4000',
+				globalName: 'ngApimock',
+			},
+		},
 	],
-	specs: ['../features/*.feature'],
+	specs: ['../e2e/*.feature'],
 	useAllAngular2AppRoots: true,
 
 	// Enable TypeScript for the tests

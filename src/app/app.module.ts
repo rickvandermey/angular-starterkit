@@ -1,4 +1,8 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+	HTTP_INTERCEPTORS,
+	HttpClient,
+	HttpClientModule,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {
 	BrowserModule,
@@ -18,6 +22,7 @@ import {
 } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LocalStorageService } from '@services/local-storage.service';
+import * as fromApplication from '@store/application/application.reducer';
 import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from '@store/meta/app.tokens';
 import { storageMetaReducer } from '@store/meta/storage.metareducer';
 import { RouterEffects } from '@store/router/router.effects';
@@ -31,6 +36,9 @@ import { AppRoutingModule, GoogleAnalyticsEffects } from 'routes';
 
 // Modules
 import { ErrorModule } from './modules/error.module';
+
+// Interceptor
+import { AppHttpInterceptor } from './interceptors/http.interceptor';
 
 /**
  * Custom TranslateService Loader to load the given language
@@ -64,7 +72,10 @@ export function getMetaReducers(
 		BrowserTransferStateModule,
 		ErrorModule,
 		HttpClientModule,
-		StoreModule.forRoot({ routerState: routerReducer }),
+		StoreModule.forRoot({
+			applicationState: fromApplication.Applicationreducer,
+			routerState: routerReducer,
+		}),
 		EffectsModule.forRoot([GoogleAnalyticsEffects, RouterEffects]),
 		StoreDevtoolsModule.instrument(),
 		ServiceWorkerModule.register('ngsw-worker.js', {
@@ -79,12 +90,20 @@ export function getMetaReducers(
 		}),
 	],
 	providers: [
-		{ provide: STORAGE_KEYS, useValue: ['dummyState'] },
+		{
+			provide: STORAGE_KEYS,
+			useValue: ['applicationState', 'dummyState', 'routerState'],
+		},
 		{ provide: LOCAL_STORAGE_KEY, useValue: '__app_storage__' },
 		{
 			deps: [STORAGE_KEYS, LOCAL_STORAGE_KEY, LocalStorageService],
 			provide: USER_PROVIDED_META_REDUCERS,
 			useFactory: getMetaReducers,
+		},
+		{
+			multi: true,
+			provide: HTTP_INTERCEPTORS,
+			useClass: AppHttpInterceptor,
 		},
 	],
 })

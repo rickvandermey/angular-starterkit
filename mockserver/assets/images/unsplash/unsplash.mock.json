@@ -1,0 +1,18 @@
+{
+	"name": "unsplash",
+	"isArray": "false",
+	"request": {
+		"url": "assets/images/unsplash",
+		"method": "GET"
+	},
+	"responses": {
+		"200": {
+			"status": 200,
+			"headers": {
+				"content-type": "image/jpeg"
+			},
+			"file": "unsplash.jpeg",
+			"default": true
+		}
+	}
+}

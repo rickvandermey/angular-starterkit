@@ -1,3 +1,4 @@
+import { Client } from '@ng-apimock/base-client';
 import {
 	After,
 	CallbackStepDefinition,
@@ -5,11 +6,14 @@ import {
 	HookScenarioResult,
 	Status,
 	Then,
+	When,
 } from 'cucumber';
 import { browser } from 'protractor';
 
 const chai = require('chai').use(require('chai-as-promised'));
 const expect = chai.expect;
+
+declare const ngApimock: Client; // Must match the global name.
 
 After(function(
 	scenario: HookScenarioResult,
@@ -43,3 +47,14 @@ Then(/^It should navigate to "(.*?)"$/, (url: string) => {
 			browser.waitForAngularEnabled(true),
 		);
 });
+
+When(/^The "(.*?)" Scenario for "(.*?)"$/, (scenario: string, call: string) => {
+	return ngApimock.selectScenario(call, scenario);
+});
+
+When(
+	/^A "(.*?)" seconds delay for "(.*?)"$/,
+	(seconds: string, call: string) => {
+		return ngApimock.delayResponse(call, parseInt(seconds));
+	},
+);

@@ -1,0 +1,10 @@
+{
+	"data": [],
+	"_links": {
+		"self": "http://localhost:4000/api/translations?locale=nl"
+	},
+	"meta": {
+		"query": []
+	},
+	"successful": true
+}
