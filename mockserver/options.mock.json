@@ -1,0 +1,15 @@
+{
+	"name": "options",
+	"isArray": "false",
+	"request": {
+		"url": "/api",
+		"method": "OPTIONS"
+	},
+	"responses": {
+		"200": {
+			"status": 200,
+			"data": {},
+			"default": true
+		}
+	}
+}

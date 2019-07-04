@@ -7,6 +7,14 @@
  */
 export const environment = {
 	/**
+	 * apiCookies will be used to test mocking request
+	 */
+	apiCookies: {},
+	/**
+	 * apiUrl will return the API url for selected enviroment
+	 */
+	apiUrl: `/`,
+	/**
 	 * assetsRoot provides the start of the URI for assets
 	 */
 	assetsRoot: '/assets',

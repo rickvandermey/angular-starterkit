@@ -30,6 +30,9 @@ export interface MockRouterStateSnapshot {
  * Initital state used for the mock store provided by ngrx
  */
 export const initialState = {
+	applicationState: {
+		isPendingRequest: false,
+	},
 	dummyState: {
 		entity: {
 			address: {
