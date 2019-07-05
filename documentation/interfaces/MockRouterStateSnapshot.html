@@ -198,8 +198,13 @@ export interface MockRouterStateSnapshot {
 	url: string;
 }
 
-// Initital state used for the mock store provided by ngrx
+/*
+ * Initital state used for the mock store provided by ngrx
+ */
 export const initialState &#x3D; {
+	applicationState: {
+		isPendingRequest: false,
+	},
 	dummyState: {
 		entity: {
 			address: {

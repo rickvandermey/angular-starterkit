@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [1.1.1](https://github.com/rickvandermey/angular-starterkit/tree/1.1.1)
+
+### Bug fixes
+
+-   **E2E:** fixed path steps in _'cucumber.conf.js'_
+-   **E2E:** added `@skip` tag for example cucumber test
+-   **WPO** fixed stats when IVY is disabled
+
 ## [1.1.0](https://github.com/rickvandermey/angular-starterkit/tree/1.1.0)
 
 ### Features

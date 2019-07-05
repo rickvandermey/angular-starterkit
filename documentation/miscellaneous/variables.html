@@ -63,10 +63,16 @@
                             <a href="#ClearError" title="src/app/store/dummy/dummy.actions.ts"><b>ClearError</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.actions.ts)</a>
                         </li>
                         <li>
+                            <a href="#createApplicationReducer" title="src/app/store/application/application.reducer.ts"><b>createApplicationReducer</b>&nbsp;&nbsp;&nbsp;(src/.../application.reducer.ts)</a>
+                        </li>
+                        <li>
                             <a href="#createDummyReducer" title="src/app/store/dummy/dummy.reducer.ts"><b>createDummyReducer</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#DUMMY_KEY" title="src/app/services/dummy.service.ts"><b>DUMMY_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.mock.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.mock.ts)</a>
                         </li>
                         <li>
                             <a href="#environment" title="src/environments/environment.prod.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
@@ -93,10 +99,13 @@
                             <a href="#go" title="src/app/store/router/router.actions.ts"><b>go</b>&nbsp;&nbsp;&nbsp;(src/.../router.actions.ts)</a>
                         </li>
                         <li>
-                            <a href="#initialState" title="src/app/testing/mock-store.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../mock-store.ts)</a>
+                            <a href="#initialState" title="src/app/store/application/application.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../application.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#initialState" title="src/app/store/dummy/dummy.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/testing/mock-store.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../mock-store.ts)</a>
                         </li>
                         <li>
                             <a href="#languages" title="src/app/globals.ts"><b>languages</b>&nbsp;&nbsp;&nbsp;(src/.../globals.ts)</a>
@@ -150,6 +159,9 @@
                             <a href="#selectFeature" title="src/app/store/dummy/dummy.selectors.ts"><b>selectFeature</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#selectFeature" title="src/app/store/application/application.selectors.ts"><b>selectFeature</b>&nbsp;&nbsp;&nbsp;(src/.../application.selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#selectImage" title="src/app/store/dummy/dummy.selectors.ts"><b>selectImage</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
                         </li>
                         <li>
@@ -159,10 +171,16 @@
                             <a href="#selectIsLoadingSuccessfully" title="src/app/store/dummy/dummy.selectors.ts"><b>selectIsLoadingSuccessfully</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#selectIsMakingRequest" title="src/app/store/application/application.selectors.ts"><b>selectIsMakingRequest</b>&nbsp;&nbsp;&nbsp;(src/.../application.selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#selectName" title="src/app/store/dummy/dummy.selectors.ts"><b>selectName</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
                         </li>
                         <li>
                             <a href="#selectReducerState" title="src/app/store/router/router.selectors.ts"><b>selectReducerState</b>&nbsp;&nbsp;&nbsp;(src/.../router.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SetRequestStatus" title="src/app/store/application/application.actions.ts"><b>SetRequestStatus</b>&nbsp;&nbsp;&nbsp;(src/.../application.actions.ts)</a>
                         </li>
                         <li>
                             <a href="#STORAGE_KEYS" title="src/app/store/meta/app.tokens.ts"><b>STORAGE_KEYS</b>&nbsp;&nbsp;&nbsp;(src/.../app.tokens.ts)</a>
@@ -388,6 +406,65 @@
             </tbody>
         </table>
 </section>
+    <h3>src/app/store/application/application.reducer.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createApplicationReducer"></a>
+                        <span class="name">
+                            <b>
+                            createApplicationReducer</b>
+                            <a href="#createApplicationReducer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createReducer(
+	initialState,
+	on(applicationActions.SetRequestStatus, (state, action) &#x3D;&gt; ({
+		...state,
+		isPendingRequest: action.isPendingRequest,
+	})),
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialState"></a>
+                        <span class="name">
+                            <b>
+                            initialState</b>
+                            <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ApplicationState.html" target="_self" >ApplicationState</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+	isPendingRequest: false,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
     <h3>src/app/store/dummy/dummy.reducer.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -507,6 +584,64 @@
             </tbody>
         </table>
 </section>
+    <h3>src/environments/environment.mock.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="environment"></a>
+                        <span class="name">
+                            <b>
+                            environment</b>
+                            <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+	/**
+	 * apiCookies will be used to test mocking request
+	 */
+	apiCookies: { withCredentials: true },
+	/**
+	 * apiUrl will return the API url for selected enviroment
+	 */
+	apiUrl: &#x60;http://localhost:4000/api/v3/&#x60;,
+	/**
+	 * assetsRoot provides the start of the URI for assets
+	 */
+	assetsRoot: &#x27;http://localhost:4000/assets&#x27;,
+	/**
+	 * Boolean to declare if the environment is in production mode
+	 */
+	production: true,
+
+	/**
+	 * Integer of the version which is defined in the Package.json
+	 */
+	version: require(&#x27;../../package.json&#x27;).version,
+}</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The enviroment Object</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
     <h3>src/environments/environment.prod.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -530,6 +665,14 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
+	/**
+	 * apiCookies will be used to test mocking request
+	 */
+	apiCookies: {},
+	/**
+	 * apiUrl will return the API url for selected enviroment
+	 */
+	apiUrl: &#x60;/&#x60;,
 	/**
 	 * assetsRoot provides the start of the URI for assets
 	 */
@@ -580,6 +723,14 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
+	/**
+	 * apiCookies will be used to test mocking request
+	 */
+	apiCookies: {},
+	/**
+	 * apiUrl will return the API url for selected enviroment
+	 */
+	apiUrl: &#x60;/&#x60;,
 	/**
 	 * assetsRoot provides the start of the URI for assets
 	 */
@@ -836,6 +987,9 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
+	applicationState: {
+		isPendingRequest: false,
+	},
 	dummyState: {
 		entity: {
 			address: {
@@ -1269,6 +1423,94 @@
                         </td>
                     </tr>
 
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/application/application.selectors.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectFeature"></a>
+                        <span class="name">
+                            <b>
+                            selectFeature</b>
+                            <a href="#selectFeature"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createFeatureSelector&lt;ApplicationState&gt;(
+	&#x27;applicationState&#x27;,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectIsMakingRequest"></a>
+                        <span class="name">
+                            <b>
+                            selectIsMakingRequest</b>
+                            <a href="#selectIsMakingRequest"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(
+	selectFeature,
+	state &#x3D;&gt; state.isPendingRequest,
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/application/application.actions.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SetRequestStatus"></a>
+                        <span class="name">
+                            <b>
+                            SetRequestStatus</b>
+                            <a href="#SetRequestStatus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+	&#x27;[Application] SET REQUEST STATUS&#x27;,
+	props&lt;{
+		/**
+		 * isPendingRequest represents the boolean when type SetRequestStatus is called
+		 */
+		isPendingRequest: boolean;
+	}&gt;(),
+)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>SetRequestStatus Action will be used for NGRX Action emitter</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>

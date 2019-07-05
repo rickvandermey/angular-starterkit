@@ -40,7 +40,7 @@ exports.config = {
 		compiler: [],
 		dryRun: false,
 		format: ['json:reports/e2e/results.json'],
-		require: ['../e2e/step_definitions/**/*.ts'],
+		require: ['../e2e/steps/**/*.ts'],
 		strict: true,
 		tags: ['~@skip', tags], // <string[]> (expression) only execute the features or scenarios with tags matching the expression
 	},

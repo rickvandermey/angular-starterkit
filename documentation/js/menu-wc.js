@@ -35,6 +35,11 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </a>
                         </li>
                         <li class="link">
+                            <a href="changelog.html"  data-type="chapter-link">
+                                <span class="icon ion-ios-paper"></span>CHANGELOG
+                            </a>
+                        </li>
+                        <li class="link">
                             <a href="license.html"  data-type="chapter-link">
                                 <span class="icon ion-ios-paper"></span>LICENSE
                             </a>
@@ -61,6 +66,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <a href="additional-documentation/bundle-es2015-analytics.html" data-type="entity-link" data-context-id="additional">Bundle ES2015 Analytics</a>
                                     </li>
                                     <li class="link ">
+                                        <a href="additional-documentation/bundle-analytics-(no-ivy).html" data-type="entity-link" data-context-id="additional">Bundle Analytics (no IVY)</a>
+                                    </li>
+                                    <li class="link ">
                                         <a href="additional-documentation/e2e-testing-report-(cucumber).html" data-type="entity-link" data-context-id="additional">E2E Testing Report (Cucumber)</a>
                                     </li>
                                     <li class="link ">
@@ -85,13 +93,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-f226dbb7dd5bb7337c1b2904b0385512"' : 'data-target="#xs-components-links-module-AppModule-f226dbb7dd5bb7337c1b2904b0385512"' }>
+                                            'data-target="#components-links-module-AppModule-abf5df4a1b29bfdae25f1442c771bfc2"' : 'data-target="#xs-components-links-module-AppModule-abf5df4a1b29bfdae25f1442c771bfc2"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-f226dbb7dd5bb7337c1b2904b0385512"' :
-                                            'id="xs-components-links-module-AppModule-f226dbb7dd5bb7337c1b2904b0385512"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-abf5df4a1b29bfdae25f1442c771bfc2"' :
+                                            'id="xs-components-links-module-AppModule-abf5df4a1b29bfdae25f1442c771bfc2"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -235,13 +243,23 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/LocalStorageService.html" data-type="entity-link">LocalStorageService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/MockActions.html" data-type="entity-link">MockActions</a>
-                                </li>
-                                <li class="link">
                                     <a href="injectables/RouterEffects.html" data-type="entity-link">RouterEffects</a>
                                 </li>
                             </ul>
                         </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#interceptors-links"' :
+                            'data-target="#xs-interceptors-links"' }>
+                            <span class="icon ion-ios-swap"></span>
+                            <span>Interceptors</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="interceptors-links"' : 'id="xs-interceptors-links"' }>
+                            <li class="link">
+                                <a href="interceptors/AppHttpInterceptor.html" data-type="entity-link">AppHttpInterceptor</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#guards-links"' :
                             'data-target="#xs-guards-links"' }>
@@ -268,6 +286,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/AddressShortInterface.html" data-type="entity-link">AddressShortInterface</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ApplicationState.html" data-type="entity-link">ApplicationState</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/DummyInterface.html" data-type="entity-link">DummyInterface</a>
