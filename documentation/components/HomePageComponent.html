@@ -787,19 +787,19 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;page&quot;&gt;
-	&lt;h1&gt;{{ &#x27;hello&#x27; | translate:{value: &#x27;world&#x27;} }}&lt;/h1&gt;
+	&lt;h1&gt;{{ &#x27;hello&#x27; | translate: { value: &#x27;world&#x27; } }}&lt;/h1&gt;
 	&lt;p&gt;{{ &#x27;hello-description&#x27; | translate }}&lt;/p&gt;
-	&lt;hr&gt;
+	&lt;hr /&gt;
 	&lt;h2&gt;{{ &#x27;NGRX-store-title&#x27; | translate }}&lt;/h2&gt;
 	&lt;p&gt;{{ name$ | async }}&lt;/p&gt;
 	&lt;address&gt;
 		&lt;p&gt;{{ email$ | async }}&lt;/p&gt;
-		&lt;p *ngIf&#x3D;&quot;(address$ | async) as address&quot;&gt;
+		&lt;p *ngIf&#x3D;&quot;address$ | async as address&quot;&gt;
 			{{ address.street }}, &lt;br /&gt;
-			{{ address.zipcode }} {{ address.city}}
+			{{ address.zipcode }} {{ address.city }}
 		&lt;/p&gt;
 	&lt;/address&gt;
-	&lt;img src&#x3D;&quot;{{ image$ | async}}&quot; alt&#x3D;&quot;{{ name$ | async }}&quot;&gt;
+	&lt;img src&#x3D;&quot;{{ image$ | async }}&quot; alt&#x3D;&quot;{{ name$ | async }}&quot; /&gt;
 &lt;/section&gt;
 </code></pre>
     </div>
@@ -830,7 +830,7 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section class="page">	<h1>{{ \'hello\' | translate:{value: \'world\'} }}</h1>	<p>{{ \'hello-description\' | translate }}</p>	<hr>	<h2>{{ \'NGRX-store-title\' | translate }}</h2>	<p>{{ name$ | async }}</p>	<address>		<p>{{ email$ | async }}</p>		<p *ngIf="(address$ | async) as address">			{{ address.street }}, <br />			{{ address.zipcode }} {{ address.city}}		</p>	</address>	<img src="{{ image$ | async}}" alt="{{ name$ | async }}"></section></div>'
+        var COMPONENT_TEMPLATE = '<div><section class="page">	<h1>{{ \'hello\' | translate: { value: \'world\' } }}</h1>	<p>{{ \'hello-description\' | translate }}</p>	<hr />	<h2>{{ \'NGRX-store-title\' | translate }}</h2>	<p>{{ name$ | async }}</p>	<address>		<p>{{ email$ | async }}</p>		<p *ngIf="address$ | async as address">			{{ address.street }}, <br />			{{ address.zipcode }} {{ address.city }}		</p>	</address>	<img src="{{ image$ | async }}" alt="{{ name$ | async }}" /></section></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ErrorPageComponent', 'selector': ''},{'name': 'HomePageComponent', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomePageComponent'};
