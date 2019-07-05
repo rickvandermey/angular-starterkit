@@ -5,6 +5,7 @@ Feature: Hello world Feature
 	Scenario: Hello world scenario
 		Given User enters the flow
 
+	@skip
 	Scenario Outline: Server error: <description> for the Session call
 		Given The "<scenario>" Scenario for "translations"
 		When User enters the flow

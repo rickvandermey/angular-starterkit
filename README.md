@@ -98,7 +98,16 @@ This test will provide an report which will be shown at the end of all tests. It
 
 ## Documentation
 
+When IVY is disabled
+
 -   `npm run doc:full` - create documentation with compodoc
+    -   Unit test coverage
+    -   E2E reports
+    -   WPO reports
+
+When IVY is enabled
+
+-   `npm run doc:full:ivy` - create documentation with compodoc
     -   Unit test coverage
     -   E2E reports
     -   WPO reports
@@ -107,8 +116,9 @@ sample can be fount at _'./documentation/index.html'_
 
 ### Website Performance Optimization
 
--   `npm run wpo:stats-es5` to get a clear view of all dependencies and their dependencies for your project.
--   `npm run wpo:stats-es2015` to get a clear view of all dependencies and their dependencies for your project.
+-   `npm run wpo:stats` to get a clear view of all dependencies and their dependencies for your project (when IVY is disabled).
+-   `npm run wpo:stats-es5` to get a clear view of all dependencies and their dependencies for your project (when IVY is enabled).
+-   `npm run wpo:stats-es2015` to get a clear view of all dependencies and their dependencies for your project (when IVY is enabled).
 -   `npm run wpo:lighthouse` to get a lighthouse score for your current project. (change the URL in `ci/fetchLighthouse.js`).
 
 ## Mock data (MockServer)
