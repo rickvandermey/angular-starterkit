@@ -1,12 +1,12 @@
 {
 	"name": "RVDM-Angular-Starterkit",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"homepage": "/",
 	"author": "Rick van der Meij",
 	"private": false,
 	"license": "ISC",
 	"scripts": {
-		"start": "ng serve",
+		"start": "ng serve --extra-webpack-config webpack.partial.js",
 		"start:clean": "npm run clean:install && npm run start",
 		"start:mock": "ng serve --extra-webpack-config webpack.partial.js --configuration=mock",
 		"start:prerender": "npm run prerender:build && cd dist/browser && http-server -g -P \"404\" -c 12960000",
@@ -18,7 +18,7 @@
 		"doc:full": "npm run test:unit-headless && npm run test:e2e && npm run wpo:stats && npm run wpo:lighthouse && npm run doc:reports && npm run doc -- --includes compodoc-additional-doc",
 		"doc:full:ivy": "npm run test:unit-headless && npm run test:e2e && npm run wpo:stats-es2015 && npm run wpo:stats-es5 && npm run wpo:lighthouse && npm run doc:reports && npm run doc -- --includes compodoc-additional-doc",
 		"doc:reports": "npx mkdirp documentation/additional-documentation && npx ncp reports documentation/additional-documentation",
-		"build": "ng build --prod --stats-json",
+		"build": "ng build --prod --stats-json --extra-webpack-config webpack.partial.js",
 		"build:client-and-server-bundles": "npm run build:gzip && ng run $npm_package_name:server:production",
 		"build:gzip": "npm run build && gzip-all \"dist/browser/*.{css,js,html}\"",
 		"format": "prettier --config .prettierrc --ignore-path .prettierignore \"**/*.{ts,json,md,scss,js}\"",

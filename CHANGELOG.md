@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.1.2](https://github.com/rickvandermey/angular-starterkit/tree/1.1.2)
+
+### Bug fixes
+
+-   **Webpack:** fixed extendible webpack for `npm run start` & `npm run build`
+
 ## [1.1.1](https://github.com/rickvandermey/angular-starterkit/tree/1.1.1)
 
 ### Bug fixes
