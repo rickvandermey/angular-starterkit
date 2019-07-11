@@ -2,7 +2,6 @@ const fs = require('fs');
 const os = require('os');
 const opn = require('opn');
 const packageFile = require('../package.json');
-const protractorImageComparison = require('protractor-image-comparison');
 
 var shouldRunHeadless = process.env.npm_config_headless;
 

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.1.3](https://github.com/rickvandermey/angular-starterkit/tree/1.1.3)
+
+### Bug fixes
+
+-   **Testing:** remove `protractor-image-comparison` due not working on Windows and is obsolete
+-   **Development:** Update README.md with quickstart for Windows.
+
 ## [1.1.2](https://github.com/rickvandermey/angular-starterkit/tree/1.1.2)
 
 ### Bug fixes

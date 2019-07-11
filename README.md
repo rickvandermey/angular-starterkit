@@ -2,7 +2,8 @@
 
 Powerful Starterkit combining all latest advanced Angular features. Strict typescript mode and preventing pushing untested code. Read more for all features.
 
-Quickstart: `npm run certificate:generate && npm run start:clean`
+Quickstart for MAC: `npm run certificate:generate:mac && npm run start:clean`
+Quickstart for Windows: remove ssl from `serve` inside _'angular.json'_ and `npm run start:clean`
 
 ## Features
 
@@ -40,7 +41,7 @@ Quickstart: `npm run certificate:generate && npm run start:clean`
 `npm run start` available at `https://localhost:4202/` (Hot reloading enabled)
 `npm run start:mock` will use the mock environment, which connects with the mockServer at `http://localhost:4000`
 
-Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called `build`. Run `npm run certificate:generate` to create the required certificates and place them in the required folder.
+Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called `build`. Run `npm run certificate:generate:mac` to create the required certificates and place them in the required folder.
 
 ### Git hooks
 
