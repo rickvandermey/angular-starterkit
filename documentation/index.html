@@ -32,7 +32,8 @@
 
 <h1 id="angular-starterkit---ngrxredux-----ivy-----lazy-loading-----server-side-renderingssr-----prerendering-----progressive-web-apppwa-----unit-testkarma-----e2e-testcucumber-----compodoc-----ngx-translate--">Angular Starterkit --NGRX(redux)-- --IVY-- --Lazy loading-- --Server Side Rendering(SSR)-- --Prerendering-- --Progressive Web App(PWA)-- --Unit Test(Karma)-- --E2E Test(Cucumber)-- --Compodoc-- --NGX translate--</h1>
 <p>Powerful Starterkit combining all latest advanced Angular features. Strict typescript mode and preventing pushing untested code. Read more for all features.</p>
-<p>Quickstart: <code>npm run certificate:generate &amp;&amp; npm run start:clean</code></p>
+<p>Quickstart for MAC: <code>npm run certificate:generate:mac &amp;&amp; npm run start:clean</code>
+Quickstart for Windows: remove ssl from <code>serve</code> inside <em>&#39;angular.json&#39;</em> and <code>npm run start:clean</code></p>
 <h2 id="features">Features</h2>
 <ul>
 <li>Modern vs. Legacy build (ES5 vs ES2015)</li>
@@ -65,7 +66,7 @@
 <h2 id="development-server">Development server</h2>
 <p><code>npm run start</code> available at <code>https://localhost:4202/</code> (Hot reloading enabled)
 <code>npm run start:mock</code> will use the mock environment, which connects with the mockServer at <code>http://localhost:4000</code></p>
-<p>Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called <code>build</code>. Run <code>npm run certificate:generate</code> to create the required certificates and place them in the required folder.</p>
+<p>Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called <code>build</code>. Run <code>npm run certificate:generate:mac</code> to create the required certificates and place them in the required folder.</p>
 <h3 id="git-hooks">Git hooks</h3>
 <p>Git hooks are active, which means you only can commit when there are no linting errors, and all unit-tests succeeds. Other commmands can be implemented in the <code>package.json</code> with <code>husky</code>.</p>
 <h2 id="build">Build</h2>
