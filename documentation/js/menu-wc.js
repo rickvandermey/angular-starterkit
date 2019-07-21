@@ -66,9 +66,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <a href="additional-documentation/bundle-es2015-analytics.html" data-type="entity-link" data-context-id="additional">Bundle ES2015 Analytics</a>
                                     </li>
                                     <li class="link ">
-                                        <a href="additional-documentation/bundle-analytics-(no-ivy).html" data-type="entity-link" data-context-id="additional">Bundle Analytics (no IVY)</a>
-                                    </li>
-                                    <li class="link ">
                                         <a href="additional-documentation/e2e-testing-report-(cucumber).html" data-type="entity-link" data-context-id="additional">E2E Testing Report (Cucumber)</a>
                                     </li>
                                     <li class="link ">

@@ -8,10 +8,6 @@
 		"file": "./bundlestats-es2015-frame.html"
 	},
 	{
-		"title": "Bundle Analytics (no IVY)",
-		"file": "./bundlestats-frame.html"
-	},
-	{
 		"title": "E2E Testing Report (Cucumber)",
 		"file": "./cucumber-frame.html"
 	},
