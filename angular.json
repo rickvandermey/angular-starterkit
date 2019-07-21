@@ -11,7 +11,7 @@
 			"schematics": {},
 			"architect": {
 				"build": {
-					"builder": "ngx-build-plus:build",
+					"builder": "ngx-build-plus:browser",
 					"options": {
 						"assets": [
 							"src/.htaccess",
