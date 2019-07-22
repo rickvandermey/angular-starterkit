@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [1.2.0](https://github.com/rickvandermey/angular-starterkit/tree/1.2.0)
+
+### Features
+
+-   **Packages:** Updated all dependencies to the latest version of 2019-07-21
+-   **Packages:** Added _'package-lock.json'_ for better understanding of all dependencies
+-   **Development:** Update README.md and new command with fix for webdriver issues for E2E
+
+### Bug fixes
+
+-   **Angular** fixed build version for differential loading with `ngx-build-plus:browser`; es5 vs. es2015
+
 ## [1.1.3](https://github.com/rickvandermey/angular-starterkit/tree/1.1.3)
 
 ### Bug fixes

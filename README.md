@@ -97,6 +97,10 @@ Run `npm run test:e2e` to execute the E2E protractor tests. Tests can be found w
 
 This test will provide an report which will be shown at the end of all tests. It can also be found in _./reports/e2e/report_. When tests fails, there will be a screenshot attached to the scenario where the test has failed.
 
+#### Known issue(s)
+
+When `npm run test:e2e` fails to compile as of webdriver issues, run `npm run test:e2e:fix-webdriver` to fix this compile error and try again.
+
 ## Documentation
 
 When IVY is disabled
