@@ -1,6 +1,5 @@
 {
 	"name": "dummy",
-	"handler": "../handler.js",
 	"isArray": "false",
 	"request": {
 		"url": "assets/dummy",

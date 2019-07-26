@@ -18,6 +18,6 @@ exports.handle = function(
 ) {
 	// Load the file into the data property so the rest can continue to work without any issues
 	mockResponse.data = JSON.parse(
-		fs.readFileSync('./mocks' + nodeRequest.url),
+		fs.readFileSync('./mockserver' + nodeRequest.url),
 	);
 };
