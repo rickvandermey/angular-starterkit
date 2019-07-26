@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.2.1](https://github.com/rickvandermey/angular-starterkit/tree/1.2.1)
+
+### Bug fixes
+
+-   **mockServer** fixed mockServer for serving data like json files and API calls
+
 ## [1.2.0](https://github.com/rickvandermey/angular-starterkit/tree/1.2.0)
 
 ### Features
