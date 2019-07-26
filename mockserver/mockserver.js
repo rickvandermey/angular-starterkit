@@ -120,7 +120,7 @@ app.use(function(req, res, next) {
 			// If a mock has specified a dynamic handler it should be executed here
 			if (mock.handler) {
 				let paths = './' + mock.path + '/' + mock.handler;
-				paths = paths.replace('/mocks', '');
+				paths = paths.replace('/mockserver', '');
 				return require(paths).handle(
 					scenario,
 					request,
