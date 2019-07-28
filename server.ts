@@ -1,9 +1,6 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 
-import { enableProdMode } from '@angular/core';
-import { ngExpressEngine } from '@nguniversal/express-engine';
-import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
@@ -15,12 +12,12 @@ import * as express from 'express';
 const {
 	AppServerModuleNgFactory,
 	LAZY_MODULE_MAP,
+	ngExpressEngine,
+	provideModuleMap,
 } = require('./dist/server/main');
 
 const PORT = process.env.PORT || 4201;
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');
-
-enableProdMode();
 
 // Provide support for window on the server
 const template = readFileSync(join('dist/browser', 'index.html')).toString();
@@ -75,6 +72,12 @@ app.use(
 app.get('*', (req, res) => {
 	res.render('index', {
 		preboot: true,
+		providers: [
+			{
+				provide: 'serverUrl',
+				useValue: `${req.protocol}://${req.get('host')}`,
+			},
+		],
 		req: req,
 		res: res,
 	});
