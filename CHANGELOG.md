@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.2.2](https://github.com/rickvandermey/angular-starterkit/tree/1.2.2)
+
+### Bug fixes
+
+-   **SSR** fixed an issue with Angular 8 for server side rendering for DOM rendering
+
 ## [1.2.1](https://github.com/rickvandermey/angular-starterkit/tree/1.2.1)
 
 ### Bug fixes
