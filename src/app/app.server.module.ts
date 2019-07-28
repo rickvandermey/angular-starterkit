@@ -1,3 +1,4 @@
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {
 	ServerModule,
@@ -8,6 +9,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
+import { UniversalInterceptor } from './ssr/http.interceptor';
 import { TranslateUniversalLoader } from './ssr/translate.loader';
 
 /**
@@ -34,6 +36,14 @@ export function TranslateUniversalService(): TranslateUniversalLoader {
 				useFactory: TranslateUniversalService,
 			},
 		}),
+	],
+	providers: [
+		{
+			/* Multi is important or you will delete all the other interceptors */
+			multi: true,
+			provide: HTTP_INTERCEPTORS,
+			useClass: UniversalInterceptor,
+		},
 	],
 })
 /* istanbul ignore next */
