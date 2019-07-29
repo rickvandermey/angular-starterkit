@@ -67,6 +67,7 @@
 		"@nguniversal/module-map-ngfactory-loader": "8.1.1",
 		"@ngx-translate/core": "11.0.1",
 		"@ngx-translate/http-loader": "4.0.0",
+		"cheerio": "1.0.0-rc.3",
 		"classlist.js": "1.1.20150312",
 		"compression": "1.7.4",
 		"core-js": "3.1.4",
