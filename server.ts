@@ -4,7 +4,7 @@ import 'zone.js/dist/zone-node';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-import cheerio from 'cheerio';
+// import cheerio from 'cheerio';
 import * as compression from 'compression';
 import * as domino from 'domino';
 import * as express from 'express';
@@ -72,37 +72,22 @@ app.use(
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-	let saveState;
-	const cb = state => {
-		saveState = state;
-	};
-	res.render(
-		'index',
-		{
-			preboot: true,
-			providers: [
-				{
-					provide: 'serverUrl',
-					useValue: `${req.protocol}://${req.get('host')}`,
-				},
-				{
-					provide: STATE_CB,
-					useValue: cb,
-				},
-			],
-			req: req,
-			res: res,
-		},
-		(err: Error, html: string) => {
-			const $ = cheerio.load(html);
-			$('body').prepend(
-				`<script>window.__STATE__ =${JSON.stringify(
-					saveState,
-				)}</script>`,
-			);
-			res.status($.html() ? 200 : 500).send($.html() || err.message);
-		},
-	);
+	const cb = () => {};
+	res.render('index', {
+		preboot: true,
+		providers: [
+			{
+				provide: 'serverUrl',
+				useValue: `${req.protocol}://${req.get('host')}`,
+			},
+			{
+				provide: STATE_CB,
+				useValue: cb,
+			},
+		],
+		req: req,
+		res: res,
+	});
 });
 
 app.listen(PORT, () => {
