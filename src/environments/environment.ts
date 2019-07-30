@@ -22,7 +22,10 @@ export const environment = {
 	 * Boolean to declare if the environment is in production mode
 	 */
 	production: false,
-
+	/**
+	 * When building with SSR or Prerender, a given path is needed
+	 */
+	translatePath: '',
 	/**
 	 * Integer of the version which is defined in the Package.json
 	 */

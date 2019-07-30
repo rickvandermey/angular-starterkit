@@ -3,7 +3,6 @@ import 'zone.js/dist/zone-node';
 
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
-import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
@@ -11,9 +10,14 @@ import * as domino from 'domino';
 
 import { languages } from './src/app/globals';
 import { ROUTES } from './src/app/routes/static.paths';
+import { STATE_CB } from './src/app/ssr/tokens';
 // Import module map for lazy loading
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./server/main');
+const {
+	AppServerModuleNgFactory,
+	LAZY_MODULE_MAP,
+	provideModuleMap,
+} = require('./server/main');
 
 enableProdMode();
 
@@ -53,6 +57,7 @@ languages.forEach(language => {
 // Iterate each route path
 let previousRender = Promise.resolve();
 ROUTES.forEach(route => {
+	const cb = () => {};
 	const fullPath = join(BROWSER_FOLDER, route);
 
 	// Make sure the directory structure is there
@@ -65,7 +70,13 @@ ROUTES.forEach(route => {
 		.then(_ =>
 			renderModuleFactory(AppServerModuleNgFactory, {
 				document: index,
-				extraProviders: [provideModuleMap(LAZY_MODULE_MAP)],
+				extraProviders: [
+					provideModuleMap(LAZY_MODULE_MAP),
+					{
+						provide: STATE_CB,
+						useValue: cb,
+					},
+				],
 				url: route,
 			}),
 		)

@@ -5,15 +5,15 @@ export const environment = {
 	/**
 	 * apiCookies will be used to test mocking request
 	 */
-	apiCookies: { withCredentials: true },
+	apiCookies: {},
 	/**
 	 * apiUrl will return the API url for selected enviroment
 	 */
-	apiUrl: `http://localhost:4000/api/v3/`,
+	apiUrl: `/`,
 	/**
 	 * assetsRoot provides the start of the URI for assets
 	 */
-	assetsRoot: 'http://localhost:4000/assets',
+	assetsRoot: '/assets',
 	/**
 	 * Boolean to declare if the environment is in production mode
 	 */
@@ -21,7 +21,7 @@ export const environment = {
 	/**
 	 * When building with SSR or Prerender, a given path is needed
 	 */
-	translatePath: '',
+	translatePath: './browser/assets/i18n',
 	/**
 	 * Integer of the version which is defined in the Package.json
 	 */

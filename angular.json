@@ -133,11 +133,24 @@
 						"tsConfig": "src/tsconfig.server.json"
 					},
 					"configurations": {
-						"production": {
+						"ssr": {
 							"fileReplacements": [
 								{
 									"replace": "src/environments/environment.ts",
-									"with": "src/environments/environment.prod.ts"
+									"with": "src/environments/environment.ssr.ts"
+								}
+							],
+							"optimization": {
+								"scripts": true,
+								"styles": true
+							},
+							"sourceMap": false
+						},
+						"prerender": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prerender.ts"
 								}
 							],
 							"optimization": {
