@@ -23,7 +23,6 @@ import {
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LocalStorageService } from '@services/local-storage.service';
 import * as fromApplication from '@store/application/application.reducer';
-import * as fromDummy from '@store/dummy/dummy.reducer';
 import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from '@store/meta/app.tokens';
 import { storageMetaReducer } from '@store/meta/storage.metareducer';
 import { RouterEffects } from '@store/router/router.effects';
@@ -78,7 +77,6 @@ export function getMetaReducers(
 		StoreModule.forRoot(
 			{
 				applicationState: fromApplication.Applicationreducer,
-				dummyState: fromDummy.Dummyreducer,
 				routerState: routerReducer,
 			},
 			{ initialState: getInitialState },

@@ -22,6 +22,7 @@ export const environment = {
 	 * Boolean to declare if the environment is in production mode
 	 */
 	production: false,
+
 	/**
 	 * Integer of the version which is defined in the Package.json
 	 */
