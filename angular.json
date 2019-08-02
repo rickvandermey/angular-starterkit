@@ -133,7 +133,7 @@
 						"tsConfig": "src/tsconfig.server.json"
 					},
 					"configurations": {
-						"production": {
+						"ssr": {
 							"fileReplacements": [
 								{
 									"replace": "src/environments/environment.ts",

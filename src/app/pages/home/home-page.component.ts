@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
+import { STATE_CB } from '@app/ssr/tokens';
 import { Load as LoadDummy } from '@store/dummy/dummy.actions';
 import { AddressShortInterface } from '@store/dummy/dummy.interface';
 import * as fromDummy from '@store/dummy/dummy.selectors';
@@ -44,7 +45,11 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	 *
 	 *  @param  {type} private title: Service to set the HTML title
 	 */
-	constructor(private readonly store: Store<{}>, private title: Title) {
+	constructor(
+		@Optional() @Inject(STATE_CB) private _stateCb: Function,
+		private readonly store: Store<{}>,
+		private title: Title,
+	) {
 		super();
 
 		this.address$ = this.store.pipe(select(fromDummy.selectAddress));
@@ -60,5 +65,12 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	ngOnInit(): void {
 		this.title.setTitle('Homepage / Angular SSR');
 		this.store.dispatch(LoadDummy());
+
+		this.store.subscribe(state => {
+			/* istanbul ignore if */
+			if (this._stateCb) {
+				this._stateCb(state);
+			}
+		});
 	}
 }

@@ -40,6 +40,8 @@ import { ErrorModule } from './modules/error.module';
 // Interceptor
 import { AppHttpInterceptor } from './interceptors/http.interceptor';
 
+import { getInitialState } from './ssr/tokens';
+
 /**
  * Custom TranslateService Loader to load the given language
  * @param  {HttpClient} http HttpClient to 'mock' the call to the assets i18n json file
@@ -72,10 +74,13 @@ export function getMetaReducers(
 		BrowserTransferStateModule,
 		ErrorModule,
 		HttpClientModule,
-		StoreModule.forRoot({
-			applicationState: fromApplication.Applicationreducer,
-			routerState: routerReducer,
-		}),
+		StoreModule.forRoot(
+			{
+				applicationState: fromApplication.Applicationreducer,
+				routerState: routerReducer,
+			},
+			{ initialState: getInitialState },
+		),
 		EffectsModule.forRoot([GoogleAnalyticsEffects, RouterEffects]),
 		StoreDevtoolsModule.instrument(),
 		ServiceWorkerModule.register('ngsw-worker.js', {
