@@ -4,15 +4,13 @@ import 'zone.js/dist/zone-node';
 import { mkdir, readFileSync, writeFile } from 'fs';
 import { join } from 'path';
 
-// import cheerio from 'cheerio';
 import * as compression from 'compression';
 import * as domino from 'domino';
 import * as express from 'express';
-// import { languages } from './src/app/globals';
+import * as request from 'request';
+
 import { ROUTES } from './src/app/routes/static.paths';
 import { STATE_CB } from './src/app/ssr/tokens';
-
-import * as request from 'request';
 
 const isPrerender =
 	process.argv[2] && process.argv[2] === 'prerender' ? true : false;
