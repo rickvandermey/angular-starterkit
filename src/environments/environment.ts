@@ -23,10 +23,6 @@ export const environment = {
 	 */
 	production: false,
 	/**
-	 * When building with SSR or Prerender, a given path is needed
-	 */
-	translatePath: '',
-	/**
 	 * Integer of the version which is defined in the Package.json
 	 */
 	version: require('../../package.json').version,

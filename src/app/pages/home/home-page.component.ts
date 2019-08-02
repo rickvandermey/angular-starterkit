@@ -67,6 +67,7 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 		this.store.dispatch(LoadDummy());
 
 		this.store.subscribe(state => {
+			/* istanbul ignore if */
 			if (this._stateCb) {
 				this._stateCb(state);
 			}

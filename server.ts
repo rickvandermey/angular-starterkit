@@ -1,14 +1,21 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 
-import { readFileSync } from 'fs';
+import { mkdir, readFileSync, writeFile } from 'fs';
 import { join } from 'path';
 
 // import cheerio from 'cheerio';
 import * as compression from 'compression';
 import * as domino from 'domino';
 import * as express from 'express';
+// import { languages } from './src/app/globals';
+import { ROUTES } from './src/app/routes/static.paths';
 import { STATE_CB } from './src/app/ssr/tokens';
+
+import * as request from 'request';
+
+const isPrerender =
+	process.argv[2] && process.argv[2] === 'prerender' ? true : false;
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {
@@ -73,23 +80,58 @@ app.use(
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
 	const cb = () => {};
-	res.render('index', {
-		preboot: true,
-		providers: [
-			{
-				provide: 'serverUrl',
-				useValue: `${req.protocol}://${req.get('host')}`,
-			},
-			{
-				provide: STATE_CB,
-				useValue: cb,
-			},
-		],
-		req: req,
-		res: res,
-	});
+	res.render(
+		'index',
+		{
+			preboot: true,
+			providers: [
+				{
+					provide: 'serverUrl',
+					useValue: `${req.protocol}://${req.get('host')}`,
+				},
+				{
+					provide: STATE_CB,
+					useValue: cb,
+				},
+			],
+			req: req,
+			res: res,
+		},
+		(err: any, html: any) => {
+			if (isPrerender) {
+				let path = `${DIST_FOLDER}${req.path}/`;
+				let file = path + 'index.html';
+				mkdir(path, { recursive: true }, () => {
+					writeFile(file, html, err => {
+						if (err) throw err;
+						console.log('The file has been saved!', file);
+					});
+				});
+			}
+			if (err) throw err;
+			res.send(html);
+		},
+	);
 });
 
 app.listen(PORT, () => {
 	console.log(`Node Express server listening on http://localhost:${PORT}!`);
 });
+
+if (isPrerender) {
+	doRouteFetch().then(() => {
+		process.exit();
+	});
+}
+
+/**
+ * doRouteFetch will fetch All routes given by ROUTES
+ * @return [description]
+ */
+async function doRouteFetch(): Promise<any> {
+	for (const route of ROUTES) {
+		await new Promise(resolve =>
+			request({ url: `http://localhost:${PORT}${route}` }, resolve),
+		);
+	}
+}

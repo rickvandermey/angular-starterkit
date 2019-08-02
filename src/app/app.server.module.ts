@@ -7,7 +7,6 @@ import {
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-import { environment } from '@environments/environment';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { UniversalInterceptor } from './ssr/http.interceptor';
@@ -18,7 +17,7 @@ import { TranslateUniversalLoader } from './ssr/translate.loader';
  * @return {TranslateUniversalLoader} JSON
  */
 export function TranslateUniversalService(): TranslateUniversalLoader {
-	return new TranslateUniversalLoader(environment.translatePath, '.json');
+	return new TranslateUniversalLoader('dist/browser/assets/i18n', '.json');
 }
 
 /**
