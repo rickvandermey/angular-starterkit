@@ -195,12 +195,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: Store<literal type>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
+<code>constructor(_stateCb: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Function</a>, store: Store<literal type>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/pages/home/home-page.component.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/pages/home/home-page.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -219,6 +219,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                                <tr>
+                                                        <td>_stateCb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                                 <tr>
                                                         <td>store</td>
                                                   
@@ -283,8 +295,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/pages/home/home-page.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/pages/home/home-page.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -554,7 +566,7 @@ Called once, after the first ngOnChanges()</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/home/home-page.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/pages/home/home-page.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -587,7 +599,7 @@ Called once, after the first ngOnChanges()</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/home/home-page.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/home/home-page.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -620,7 +632,7 @@ Called once, after the first ngOnChanges()</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/home/home-page.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/home/home-page.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -653,7 +665,7 @@ Called once, after the first ngOnChanges()</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/pages/home/home-page.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/pages/home/home-page.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -718,11 +730,12 @@ Called once, after the first ngOnChanges()</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, OnInit, Optional } from &#x27;@angular/core&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { select, Store } from &#x27;@ngrx/store&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 
+import { STATE_CB } from &#x27;@app/ssr/tokens&#x27;;
 import { Load as LoadDummy } from &#x27;@store/dummy/dummy.actions&#x27;;
 import { AddressShortInterface } from &#x27;@store/dummy/dummy.interface&#x27;;
 import * as fromDummy from &#x27;@store/dummy/dummy.selectors&#x27;;
@@ -764,7 +777,11 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	 *
 	 *  @param  {type} private title: Service to set the HTML title
 	 */
-	constructor(private readonly store: Store&lt;{}&gt;, private title: Title) {
+	constructor(
+		@Optional() @Inject(STATE_CB) private _stateCb: Function,
+		private readonly store: Store&lt;{}&gt;,
+		private title: Title,
+	) {
 		super();
 
 		this.address$ &#x3D; this.store.pipe(select(fromDummy.selectAddress));
@@ -780,6 +797,13 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	ngOnInit(): void {
 		this.title.setTitle(&#x27;Homepage / Angular SSR&#x27;);
 		this.store.dispatch(LoadDummy());
+
+		this.store.subscribe(state &#x3D;&gt; {
+			/* istanbul ignore if */
+			if (this._stateCb) {
+				this._stateCb(state);
+			}
+		});
 	}
 }
 </code></pre>

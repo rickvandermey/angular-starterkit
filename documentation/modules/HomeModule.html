@@ -228,6 +228,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from &#x27;@angular/core&#x27;;
 import { EffectsModule } from &#x27;@ngrx/effects&#x27;;
 import { StoreModule } from &#x27;@ngrx/store&#x27;;
 
+import { getInitialState } from &#x27;@app/ssr/tokens&#x27;;
 import { DummyService } from &#x27;@services/dummy.service&#x27;;
 import { DummyEffects } from &#x27;@store/dummy/dummy.effects&#x27;;
 import * as fromDummy from &#x27;@store/dummy/dummy.reducer&#x27;;
@@ -243,8 +244,10 @@ import { SharedModule } from &#x27;./shared.module&#x27;;
 	imports: [
 		CommonModule,
 		EffectsModule.forFeature([DummyEffects]),
+		StoreModule.forFeature(&#x27;dummyState&#x27;, fromDummy.Dummyreducer, {
+			initialState: getInitialState,
+		}),
 		SharedModule,
-		StoreModule.forFeature(&#x27;dummyState&#x27;, fromDummy.Dummyreducer),
 		HomeRoutingModule,
 	],
 	providers: [DummyService],

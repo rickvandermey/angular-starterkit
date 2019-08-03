@@ -1,0 +1,68 @@
+[
+  {
+    "description": "\tA user should see the Hello World message",
+    "keyword": "Feature",
+    "name": "Hello world Feature",
+    "line": 1,
+    "id": "hello-world-feature",
+    "tags": [],
+    "uri": "e2e/home.feature",
+    "elements": [
+      {
+        "id": "hello-world-feature;hello-world-scenario",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Hello world scenario",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "User enters the flow",
+            "match": {
+              "location": "Starterkit/node_modules/cucumber/lib/support_code_library_builder/build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 644000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "Starterkit/node_modules/cucumber/lib/support_code_library_builder/build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "Starterkit/node_modules/cucumber/lib/support_code_library_builder/build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "75.0.3770.142"
+      },
+      "device": "MacBook-Pro.localdomain",
+      "platform": {
+        "name": "osx",
+        "version": "18.6.0"
+      }
+    }
+  }
+]
