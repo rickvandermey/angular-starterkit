@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [1.3.0](https://github.com/rickvandermey/angular-starterkit/tree/1.3.0)
+
+### Features
+
+-   **SSR / Prerender** Within SSR and Prerender, store actions within OnInit lifecycle will be rendered on the mockServer
+-   **Service** Updated services with HTTP get handling with correct behaviour for SSR lifecycle
+-   **Packages:** Updated all dependencies to the latest version of 2019-08-03
+
+### Breaking Changes
+
+-   **Prerender** Prerender now works completely different, it uses the SSR config and server to handle each file, see commitHash: _'bd876b5cb040b60d34355f0b41cfc183455b3d52'_
+
 ## [1.2.2](https://github.com/rickvandermey/angular-starterkit/tree/1.2.2)
 
 ### Bug fixes
