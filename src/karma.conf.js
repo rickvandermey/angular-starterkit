@@ -47,7 +47,7 @@ module.exports = function(config) {
 			require('karma-coverage-istanbul-reporter'),
 			require('@angular-devkit/build-angular/plugins/karma'),
 		],
-		reporters: ['progress', 'kjhtml', 'junit'],
+		reporters: ['coverage', 'progress', 'kjhtml', 'junit'],
 		singleRun: false,
 		webpack: { node: { fs: 'empty' } },
 	});
