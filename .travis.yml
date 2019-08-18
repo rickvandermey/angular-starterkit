@@ -15,6 +15,7 @@ before_install:
 install:
     - npm install codecov -g
     - npm ci
+    - npm run test:e2e:fix-webdriver
 script:
     # run build script specified in package.json
     - npm run lint
