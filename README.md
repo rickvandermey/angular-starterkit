@@ -1,9 +1,12 @@
+[![Coverage Status](https://coveralls.io/repos/github/rickvandermey/angular-starterkit/badge.svg?branch=master)](https://coveralls.io/github/rickvandermey/angular-starterkit?branch=master)
+
 # Blazing fast advanced Angular Starterkit
 
 Powerful Starterkit combining all latest advanced Angular features. Strict typescript mode and preventing pushing untested code. Read more for all features.
 
-Quickstart for MAC: `npm run certificate:generate:mac && npm run start:clean`
-Quickstart for Windows: remove ssl from `serve` inside _'angular.json'_ and `npm run start:clean`
+> Quickstart for MAC: `npm run certificate:generate:mac && npm run start:clean`
+
+> Quickstart for Windows: remove ssl from `serve` inside _'angular.json'_ and `npm run start:clean`
 
 ## Features
 
