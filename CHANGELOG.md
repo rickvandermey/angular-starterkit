@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.4.0](https://github.com/rickvandermey/angular-starterkit/tree/1.4.0)
+
+### Features
+
+-   **Packages:** Updated all dependencies to the latest version of 2019-08-18
+
 ## [1.3.0](https://github.com/rickvandermey/angular-starterkit/tree/1.3.0)
 
 ### Features
