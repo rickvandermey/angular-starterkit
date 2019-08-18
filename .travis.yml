@@ -18,7 +18,8 @@ install:
 script:
     # run build script specified in package.json
     - npm run lint
-    - npm run prerender:build
     - npm run test:unit-headless
+    - npm run test:e2e --headless
+    - npm run prerender:build
 after_success:
     - codecov
