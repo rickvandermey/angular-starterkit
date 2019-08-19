@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/rickvandermey/angular-starterkit.svg?branch=master)](https://travis-ci.com/rickvandermey/angular-starterkit)
 [![codecov](https://codecov.io/gh/rickvandermey/angular-starterkit/branch/master/graph/badge.svg)](https://codecov.io/gh/rickvandermey/angular-starterkit)
+[![dependencies](https://david-dm.org/rickvandermey/angular-starterkit.svg)](https://david-dm.org/rickvandermey/angular-starterkit)
 
 # Blazing fast advanced Angular Starterkit
 
