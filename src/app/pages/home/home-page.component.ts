@@ -46,9 +46,9 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	 *  @param  {type} private title: Service to set the HTML title
 	 */
 	constructor(
-		@Optional() @Inject(STATE_CB) private _stateCb: Function,
+		@Optional() @Inject(STATE_CB) private readonly _stateCb: Function,
 		private readonly store: Store<{}>,
-		private title: Title,
+		private readonly title: Title,
 	) {
 		super();
 

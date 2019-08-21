@@ -31,7 +31,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * @param  {type} public translate: Subscription for the Angular TranslateService
 	 */
 	constructor(
-		private store: Store<{}>,
+		private readonly store: Store<{}>,
 		public swUpdate: SwUpdate,
 		public translate: TranslateService,
 	) {

@@ -275,8 +275,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/pages/error/error-page.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/pages/error/error-page.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -547,7 +547,7 @@ Called once, after the first ngOnChanges()</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/error/error-page.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/error/error-page.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -628,7 +628,10 @@ export class ErrorPageComponent extends BaseComponent implements OnInit {
 	 *
 	 * @param  {type} private title: Service to set the HTML title
 	 */
-	constructor(private title: Title, public translate: TranslateService) {
+	constructor(
+		private readonly title: Title,
+		public translate: TranslateService,
+	) {
 		super();
 		translate.use(&#x27;en&#x27;);
 	}

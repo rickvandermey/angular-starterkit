@@ -260,7 +260,7 @@ import { SetRequestStatus } from &#x27;@app/store/application/application.action
  */
 @Injectable()
 export class AppHttpInterceptor implements HttpInterceptor {
-	constructor(private store: Store&lt;{}&gt;) {}
+	constructor(private readonly store: Store&lt;{}&gt;) {}
 
 	/**
 	 * Intercepts HttpRequest or HttpResponse and dispatches an actions
