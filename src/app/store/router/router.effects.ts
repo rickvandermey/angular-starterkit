@@ -15,9 +15,9 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class RouterEffects {
 	constructor(
-		private actions$: Actions,
-		private router: Router,
-		private location: Location,
+		private readonly actions$: Actions,
+		private readonly router: Router,
+		private readonly location: Location,
 	) {}
 
 	/**

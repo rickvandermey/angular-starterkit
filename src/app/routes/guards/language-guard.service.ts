@@ -10,7 +10,7 @@ import { fallbackLanguage, languages } from '@app/globals';
 	providedIn: 'root',
 })
 export class LanguageGuard implements CanActivate {
-	constructor(private router: Router) {}
+	constructor(private readonly router: Router) {}
 
 	/**
 	 * Should the language exist, return true, else return 404

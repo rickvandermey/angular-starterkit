@@ -20,7 +20,10 @@ export class ErrorPageComponent extends BaseComponent implements OnInit {
 	 *
 	 * @param  {type} private title: Service to set the HTML title
 	 */
-	constructor(private title: Title, public translate: TranslateService) {
+	constructor(
+		private readonly title: Title,
+		public translate: TranslateService,
+	) {
 		super();
 		translate.use('en');
 	}

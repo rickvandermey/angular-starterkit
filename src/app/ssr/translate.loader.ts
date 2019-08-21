@@ -1,7 +1,7 @@
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
-const fs = require('fs');
+import * as fs from 'fs';
 
 /**
  * class for SSR translations which implements the TranslateLoader from ngx-translate
@@ -10,8 +10,8 @@ const fs = require('fs');
  */
 export class TranslateUniversalLoader implements TranslateLoader {
 	constructor(
-		private prefix: string = 'i18n',
-		private suffix: string = '.json',
+		private readonly prefix: string = 'i18n',
+		private readonly suffix: string = '.json',
 	) {}
 
 	/**
