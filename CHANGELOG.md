@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [1.5.0](https://github.com/rickvandermey/angular-starterkit/tree/1.5.0)
+
+### Features
+
+-   **Travis:** Introduced Travis CI
+-   **Codecov:** Introduced Codecov as a badge
+-   **SonarCloud:** Introduced SonarCloud
+
 ## [1.4.0](https://github.com/rickvandermey/angular-starterkit/tree/1.4.0)
 
 ### Features
