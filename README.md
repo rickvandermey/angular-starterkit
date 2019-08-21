@@ -1,9 +1,11 @@
+[![Build Status](https://travis-ci.com/rickvandermey/angular-starterkit.svg?branch=master)](https://travis-ci.com/rickvandermey/angular-starterkit)
+[![codecov](https://codecov.io/gh/rickvandermey/angular-starterkit/branch/master/graph/badge.svg)](https://codecov.io/gh/rickvandermey/angular-starterkit)
+[![dependencies Status](https://david-dm.org/rickvandermey/angular-starterkit.svg)](https://david-dm.org/rickvandermey/angular-starterkit)
+[![devDependencies Status](https://david-dm.org/rickvandermey/angular-starterkit/dev-status.svg)](https://david-dm.org/rickvandermey/angular-starterkit?type=dev)
+
 # Blazing fast advanced Angular Starterkit
 
 Powerful Starterkit combining all latest advanced Angular features. Strict typescript mode and preventing pushing untested code. Read more for all features.
-
-Quickstart for MAC: `npm run certificate:generate:mac && npm run start:clean`
-Quickstart for Windows: remove ssl from `serve` inside _'angular.json'_ and `npm run start:clean`
 
 ## Features
 
@@ -26,11 +28,10 @@ Quickstart for Windows: remove ssl from `serve` inside _'angular.json'_ and `npm
 -   🎯 Extend Angular CLI (webpack)
 -   🤩 Ability to Mock data (mockServer)
 
-###### example sites:
+##### Quickstart:
 
--   IVY build - https://angular.rickvandermeij.nl
--   Prerendering (no IVY) - https://angular-prerender.rickvandermeij.nl
--   Server Side Rendering (no IVY) - `npm run start:ssr`
+-   MAC: `npm run certificate:generate:mac && npm run start:clean`
+-   Windows: remove ssl from `serve` inside _'angular.json'_ and `npm run start:clean`
 
 ## Perfect score application 🤩
 
@@ -120,3 +121,9 @@ sample can be fount at _'./documentation/index.html'_
 ## Mock data (MockServer) 🤩
 
 As of version 1.1.0 it is possible to setup a mockServer with `npm run server:mock`. Port will be `http://localhost:4000` and the different status can be set at `http://localhost:4000/mocking`. All data can be setup in _'./mockServer'_. Examples of API, JSON and images are added.
+
+###### example sites:
+
+-   IVY build - https://angular.rickvandermeij.nl
+-   Prerendering (no IVY) - https://angular-prerender.rickvandermeij.nl
+-   Server Side Rendering (no IVY) - `npm run start:ssr`
