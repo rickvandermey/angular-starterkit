@@ -348,9 +348,9 @@ import { Observable } from &#x27;rxjs&#x27;;
 @Injectable()
 export class RouterEffects {
 	constructor(
-		private actions$: Actions,
-		private router: Router,
-		private location: Location,
+		private readonly actions$: Actions,
+		private readonly router: Router,
+		private readonly location: Location,
 	) {}
 
 	/**

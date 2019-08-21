@@ -274,7 +274,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { TranslateLoader } from &#x27;@ngx-translate/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 
-const fs &#x3D; require(&#x27;fs&#x27;);
+import * as fs from &#x27;fs&#x27;;
 
 /**
  * class for SSR translations which implements the TranslateLoader from ngx-translate
@@ -283,8 +283,8 @@ const fs &#x3D; require(&#x27;fs&#x27;);
  */
 export class TranslateUniversalLoader implements TranslateLoader {
 	constructor(
-		private prefix: string &#x3D; &#x27;i18n&#x27;,
-		private suffix: string &#x3D; &#x27;.json&#x27;,
+		private readonly prefix: string &#x3D; &#x27;i18n&#x27;,
+		private readonly suffix: string &#x3D; &#x27;.json&#x27;,
 	) {}
 
 	/**

@@ -16,7 +16,7 @@ export class GoogleAnalyticsEffects {
 	 * @param  {type} private router: Subscription for the Angular Router
 	 */
 	constructor(
-		@Inject(PLATFORM_ID) private platformId: string,
+		@Inject(PLATFORM_ID) private readonly platformId: string,
 		private readonly router: Router,
 	) {}
 

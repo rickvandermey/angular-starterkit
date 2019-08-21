@@ -249,7 +249,7 @@ import { fallbackLanguage, languages } from &#x27;@app/globals&#x27;;
 	providedIn: &#x27;root&#x27;,
 })
 export class LanguageGuard implements CanActivate {
-	constructor(private router: Router) {}
+	constructor(private readonly router: Router) {}
 
 	/**
 	 * Should the language exist, return true, else return 404

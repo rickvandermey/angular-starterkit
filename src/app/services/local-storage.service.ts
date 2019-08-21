@@ -28,5 +28,6 @@ export class LocalStorageService {
 		if (isPlatformBrowser(this.platformId)) {
 			return JSON.parse(sessionStorage.getItem(localStorageKey));
 		}
+		return {};
 	}
 }
