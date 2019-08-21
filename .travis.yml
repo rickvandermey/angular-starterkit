@@ -15,11 +15,11 @@ before_install:
 install:
     - npm install codecov -g
     - npm ci
-    - npm run test:e2e:fix-webdriver
 script:
     # run build script specified in package.json
     - npm run lint
     - npm run test:unit-headless
+    - npm run test:e2e:fix-webdriver
     - npm run test:e2e --headless
     - npm run prerender:build
 after_success:
