@@ -250,7 +250,7 @@ export class DummyService {
 
 		return this.http
 			.get&lt;DummyInterface&gt;(&#x60;${environment.assetsRoot}/dummy/dummy.json&#x60;)
-			.pipe(tap(res &#x3D;&gt; this.state.set(DUMMY_KEY, res as any)));
+			.pipe(tap(res &#x3D;&gt; this.state.set(DUMMY_KEY, res)));
 	}
 }
 </code></pre>
