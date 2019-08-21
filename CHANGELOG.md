@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.5.2](https://github.com/rickvandermey/angular-starterkit/tree/1.5.2)
+
+### Bugfix
+
+-   **SonarCloud:** removed code smells based on stricter Typescript
+
 ## [1.5.1](https://github.com/rickvandermey/angular-starterkit/tree/1.5.1)
 
 ### Bugfix
