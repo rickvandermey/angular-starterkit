@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.5.3](https://github.com/rickvandermey/angular-starterkit/tree/1.5.3)
+
+### Bugfix
+
+-   **Travis:** Integrates SonarCloud in Travis
+
 ## [1.5.2](https://github.com/rickvandermey/angular-starterkit/tree/1.5.2)
 
 ### Bugfix
