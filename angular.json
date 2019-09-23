@@ -92,10 +92,7 @@
 							"src/manifest.json",
 							"src/robots.txt"
 						],
-						"codeCoverageExclude": [
-							"src/app/testing/*",
-							"src/app/ssr/*"
-						],
+						"codeCoverageExclude": ["src/app/testing/*"],
 						"karmaConfig": "src/karma.conf.js",
 						"main": "src/test.ts",
 						"polyfills": "src/polyfills.ts",
