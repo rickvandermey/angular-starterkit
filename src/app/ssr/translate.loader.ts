@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import * as fs from 'fs';
 
+/* istanbul ignore next */
 /**
  * class for SSR translations which implements the TranslateLoader from ngx-translate
  * @param prefix [description]

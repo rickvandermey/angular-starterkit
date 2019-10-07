@@ -239,20 +239,23 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DOCUMENT, isPlatformBrowser } from &#x27;@angular/common&#x27;;
+import {
 	HTTP_INTERCEPTORS,
 	HttpClient,
 	HttpClientModule,
 } from &#x27;@angular/common/http&#x27;;
-import { NgModule } from &#x27;@angular/core&#x27;;
+import { APP_INITIALIZER, NgModule, PLATFORM_ID } from &#x27;@angular/core&#x27;;
 import {
 	BrowserModule,
 	BrowserTransferStateModule,
+	ɵgetDOM,
 } from &#x27;@angular/platform-browser&#x27;;
 import { ServiceWorkerModule } from &#x27;@angular/service-worker&#x27;;
 import { routerReducer } from &#x27;@ngrx/router-store&#x27;;
 import { TranslateLoader, TranslateModule } from &#x27;@ngx-translate/core&#x27;;
 import { TranslateHttpLoader } from &#x27;@ngx-translate/http-loader&#x27;;
+import { PrebootModule } from &#x27;preboot&#x27;;
 
 // NGRX store
 import { EffectsModule } from &#x27;@ngrx/effects&#x27;;
@@ -313,8 +316,10 @@ export function getMetaReducers(
 		AppRoutingModule,
 		BrowserModule.withServerTransition({ appId: &#x27;serverApp&#x27; }),
 		BrowserTransferStateModule,
+		EffectsModule.forRoot([GoogleAnalyticsEffects, RouterEffects]),
 		ErrorModule,
 		HttpClientModule,
+		PrebootModule.withConfig({ appRoot: &#x27;app-root&#x27; }),
 		StoreModule.forRoot(
 			{
 				applicationState: fromApplication.Applicationreducer,
@@ -322,7 +327,6 @@ export function getMetaReducers(
 			},
 			{ initialState: getInitialState },
 		),
-		EffectsModule.forRoot([GoogleAnalyticsEffects, RouterEffects]),
 		StoreDevtoolsModule.instrument(),
 		ServiceWorkerModule.register(&#x27;ngsw-worker.js&#x27;, {
 			enabled: environment.production,
@@ -350,6 +354,38 @@ export function getMetaReducers(
 			multi: true,
 			provide: HTTP_INTERCEPTORS,
 			useClass: AppHttpInterceptor,
+		},
+		{
+			deps: [DOCUMENT, PLATFORM_ID],
+			multi: true,
+			provide: APP_INITIALIZER,
+			useFactory: /* istanbul ignore next */ function(
+				document: HTMLDocument,
+				platformId: Object,
+			): Function {
+				return () &#x3D;&gt; {
+					if (isPlatformBrowser(platformId)) {
+						const dom &#x3D; ɵgetDOM();
+						const styles: any[] &#x3D; Array.prototype.slice.apply(
+							dom.querySelectorAll(
+								document,
+								&#x60;style[ng-transition]&#x60;,
+							),
+						);
+						styles.forEach(el &#x3D;&gt; {
+							// Remove ng-transition attribute to prevent Angular appInitializerFactory
+							// to remove server styles before preboot complete
+							el.removeAttribute(&#x27;ng-transition&#x27;);
+						});
+						document.addEventListener(&#x27;PrebootComplete&#x27;, () &#x3D;&gt; {
+							// After preboot complete, remove the server scripts
+							setTimeout(() &#x3D;&gt;
+								styles.forEach(el &#x3D;&gt; dom.remove(el)),
+							);
+						});
+					}
+				};
+			},
 		},
 	],
 })

@@ -4,6 +4,7 @@ import * as dummyreducer from '../store/dummy/dummy.reducer';
 declare var window: any;
 export const STATE_CB = new InjectionToken('to provide the state cb');
 
+/* istanbul ignore next */
 /**
  * getInitialState will return the initalState from window if defined
  * @return [description]

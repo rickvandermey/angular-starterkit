@@ -1,17 +1,20 @@
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
 	HTTP_INTERCEPTORS,
 	HttpClient,
 	HttpClientModule,
 } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule, PLATFORM_ID } from '@angular/core';
 import {
 	BrowserModule,
 	BrowserTransferStateModule,
+	ɵgetDOM,
 } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { routerReducer } from '@ngrx/router-store';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PrebootModule } from 'preboot';
 
 // NGRX store
 import { EffectsModule } from '@ngrx/effects';
@@ -72,8 +75,10 @@ export function getMetaReducers(
 		AppRoutingModule,
 		BrowserModule.withServerTransition({ appId: 'serverApp' }),
 		BrowserTransferStateModule,
+		EffectsModule.forRoot([GoogleAnalyticsEffects, RouterEffects]),
 		ErrorModule,
 		HttpClientModule,
+		PrebootModule.withConfig({ appRoot: 'app-root' }),
 		StoreModule.forRoot(
 			{
 				applicationState: fromApplication.Applicationreducer,
@@ -81,7 +86,6 @@ export function getMetaReducers(
 			},
 			{ initialState: getInitialState },
 		),
-		EffectsModule.forRoot([GoogleAnalyticsEffects, RouterEffects]),
 		StoreDevtoolsModule.instrument(),
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production,
@@ -109,6 +113,38 @@ export function getMetaReducers(
 			multi: true,
 			provide: HTTP_INTERCEPTORS,
 			useClass: AppHttpInterceptor,
+		},
+		{
+			deps: [DOCUMENT, PLATFORM_ID],
+			multi: true,
+			provide: APP_INITIALIZER,
+			useFactory: /* istanbul ignore next */ function(
+				document: HTMLDocument,
+				platformId: Object,
+			): Function {
+				return () => {
+					if (isPlatformBrowser(platformId)) {
+						const dom = ɵgetDOM();
+						const styles: any[] = Array.prototype.slice.apply(
+							dom.querySelectorAll(
+								document,
+								`style[ng-transition]`,
+							),
+						);
+						styles.forEach(el => {
+							// Remove ng-transition attribute to prevent Angular appInitializerFactory
+							// to remove server styles before preboot complete
+							el.removeAttribute('ng-transition');
+						});
+						document.addEventListener('PrebootComplete', () => {
+							// After preboot complete, remove the server scripts
+							setTimeout(() =>
+								styles.forEach(el => dom.remove(el)),
+							);
+						});
+					}
+				};
+			},
 		},
 	],
 })

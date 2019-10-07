@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.6.0](https://github.com/rickvandermey/angular-starterkit/tree/1.6.0)
+
+### Features
+
+-   **Preboot:** Implemented Preboot and remove flickering between SSG and Angular App
+-   **Packages:** Updated all dependencies to the latest version of 2019-10-07
+
 ## [1.5.3](https://github.com/rickvandermey/angular-starterkit/tree/1.5.3)
 
 ### Bugfix
