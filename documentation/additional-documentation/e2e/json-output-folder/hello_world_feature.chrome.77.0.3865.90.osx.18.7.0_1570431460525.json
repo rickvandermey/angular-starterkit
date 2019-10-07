@@ -1,0 +1,68 @@
+[
+  {
+    "description": "\tA user should see the Hello World message",
+    "keyword": "Feature",
+    "name": "Hello world Feature",
+    "line": 1,
+    "id": "hello-world-feature",
+    "tags": [],
+    "uri": "e2e/home.feature",
+    "elements": [
+      {
+        "id": "hello-world-feature;hello-world-scenario",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Hello world scenario",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "User enters the flow",
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 702000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:18"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "77.0.3865.90"
+      },
+      "device": "Ricks-MBP-2.localdomain",
+      "platform": {
+        "name": "osx",
+        "version": "18.7.0"
+      }
+    }
+  }
+]
