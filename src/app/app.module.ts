@@ -54,6 +54,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
 	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+/* istanbul ignore next */
 /**
  * factory meta-reducer configuration function
  */
@@ -124,12 +125,9 @@ export function getMetaReducers(
 			): Function {
 				return () => {
 					if (isPlatformBrowser(platformId)) {
-						const dom = ɵgetDOM();
+						const dom = ɵgetDOM().getDefaultDocument();
 						const styles: any[] = Array.prototype.slice.apply(
-							dom.querySelectorAll(
-								document,
-								`style[ng-transition]`,
-							),
+							dom.querySelectorAll(`style[ng-transition]`),
 						);
 						styles.forEach(el => {
 							// Remove ng-transition attribute to prevent Angular appInitializerFactory
@@ -139,7 +137,7 @@ export function getMetaReducers(
 						document.addEventListener('PrebootComplete', () => {
 							// After preboot complete, remove the server scripts
 							setTimeout(() =>
-								styles.forEach(el => dom.remove(el)),
+								styles.forEach(el => dom.removeChild(el)),
 							);
 						});
 					}
