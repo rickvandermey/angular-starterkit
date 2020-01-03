@@ -5,7 +5,7 @@
 		"types": ["node"]
 	},
 	"angularCompilerOptions": {
-		"enableIvy": false
+		"enableIvy": true
 	},
 	"files": ["main.ts", "polyfills.ts"],
 	"exclude": ["test.ts", "**/*.spec.ts"]
