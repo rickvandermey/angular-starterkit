@@ -30,7 +30,6 @@
 		"server:mock": "node ./mockserver/mockserver.js",
 		"ssr:build": "npm run build:client-and-server-bundles:ssr",
 		"ssr:serve": "node dist/server/main.js",
-		"ssr:webpack": "webpack --config webpack.server.config.js --progress --colors",
 		"stylelint": "stylelint \"src/{scss,app}/**/*.scss\" --config .stylelintrc --fix",
 		"test": "rimraf \"coverage\" & ng test --code-coverage --browsers Chrome",
 		"test:e2e": "npm run server:mock & rimraf \"reports/e2e/{json-output-folder,report,screenshots}\" && ng e2e",

@@ -9,6 +9,7 @@ import { join } from 'path';
 import * as domino from 'domino';
 import * as request from 'request';
 
+import { MODULE_MAP } from '@nguniversal/module-map-ngfactory-loader';
 import { ROUTES } from './src/app/routes/static.paths';
 import { STATE_CB } from './src/app/ssr/tokens';
 import { AppServerModule } from './src/main.server';
@@ -58,7 +59,12 @@ export function app(): any {
 		'html',
 		ngExpressEngine({
 			bootstrap: AppServerModule,
-			// providers: [provideModuleMap(LAZY_MODULE_MAP)],
+			providers: [
+				{
+					provide: MODULE_MAP,
+					useValue: 'lazy',
+				},
+			],
 		}),
 	);
 
