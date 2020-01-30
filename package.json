@@ -14,6 +14,7 @@
 		"certificate:generate:mac": "cd ci && bash generateCertificateOSX.sh",
 		"clean": "rimraf node_modules reports dist coverage documentation",
 		"clean:install": "npm run clean && npm i",
+		"compress": "gzip-all \"dist/browser/**/*.{css,js,html}\" && bread-compressor -s -a brotli dist/browser/**/*.{css,js,html}",
 		"doc": "compodoc --coverageTestThresholdFail=false",
 		"doc:full": "npm run test:unit-headless && npm run test:e2e && npm run wpo:stats-es2015 && npm run wpo:lighthouse && npm run doc:reports && npm run doc -- --includes compodoc-additional-doc",
 		"doc:reports": "npx mkdirp documentation/additional-documentation && npx ncp reports documentation/additional-documentation",
@@ -95,6 +96,7 @@
 		"@types/lodash.pick": "4.4.6",
 		"@types/node": "13.5.2",
 		"@types/request": "2.48.4",
+		"bread-compressor-cli": "^1.0.8",
 		"chai": "4.2.0",
 		"chai-as-promised": "7.1.1",
 		"codelyzer": "5.2.1",
@@ -146,5 +148,5 @@
 		"Firefox ESR",
 		"not dead",
 		"IE 11"
-		]
+	]
 }
