@@ -4,8 +4,8 @@ import { select, Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
-import * as fromRouter from '@store/router/router.selectors';
-import { BaseComponent } from 'components';
+import { BaseComponent } from './components';
+import * as fromRouter from './store/router/router.selectors';
 
 /**
  * App Component which extends the BaseComponent

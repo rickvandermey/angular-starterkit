@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-import { ErrorPageComponent } from 'pages';
+import { ErrorPageComponent } from '../pages';
 import { SharedModule } from './shared.module';
 
 /**

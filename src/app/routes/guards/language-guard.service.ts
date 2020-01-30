@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
 
-import { fallbackLanguage, languages } from '@app/globals';
+import { fallbackLanguage, languages } from '../../globals';
 
 /**
  * Guard which checks if the given language is permitted as an Route

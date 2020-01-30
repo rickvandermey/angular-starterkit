@@ -1,2 +1,2 @@
-export { ErrorPageComponent } from '@pages/error/error-page.component';
-export { HomePageComponent } from '@pages/home/home-page.component';
+export { ErrorPageComponent } from './error/error-page.component';
+export { HomePageComponent } from './home/home-page.component';

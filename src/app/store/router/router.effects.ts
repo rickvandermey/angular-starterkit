@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import * as routerActions from '@store/router/router.actions';
-import { Observable } from 'rxjs';
+import * as routerActions from './router.actions';
 
 /**
  * RouterEffects class which contains all effects when route effects are triggered

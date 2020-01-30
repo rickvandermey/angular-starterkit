@@ -1,1 +1,1 @@
-export { BaseComponent } from '@components/base/base.component';
+export { BaseComponent } from './base/base.component';
