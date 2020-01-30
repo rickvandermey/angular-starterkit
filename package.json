@@ -63,7 +63,7 @@
 		"@ngrx/store": "8.6.0",
 		"@ngrx/store-devtools": "8.6.0",
 		"@nguniversal/express-engine": "9.0.0-next.14",
-		"@nguniversal/module-map-ngfactory-loader": "8.2.6",
+		"@nguniversal/module-map-ngfactory-loader": "^9.0.0-next.9",
 		"@ngx-translate/core": "11.0.1",
 		"@ngx-translate/http-loader": "4.0.0",
 		"classlist.js": "1.1.20150312",
