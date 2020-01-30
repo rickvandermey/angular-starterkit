@@ -295,6 +295,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
 	return new TranslateHttpLoader(http, &#x27;./assets/i18n/&#x27;, &#x27;.json&#x27;);
 }
 
+/* istanbul ignore next */
 /**
  * factory meta-reducer configuration function
  */
@@ -365,12 +366,9 @@ export function getMetaReducers(
 			): Function {
 				return () &#x3D;&gt; {
 					if (isPlatformBrowser(platformId)) {
-						const dom &#x3D; ɵgetDOM();
+						const dom &#x3D; ɵgetDOM().getDefaultDocument();
 						const styles: any[] &#x3D; Array.prototype.slice.apply(
-							dom.querySelectorAll(
-								document,
-								&#x60;style[ng-transition]&#x60;,
-							),
+							dom.querySelectorAll(&#x60;style[ng-transition]&#x60;),
 						);
 						styles.forEach(el &#x3D;&gt; {
 							// Remove ng-transition attribute to prevent Angular appInitializerFactory
@@ -380,7 +378,7 @@ export function getMetaReducers(
 						document.addEventListener(&#x27;PrebootComplete&#x27;, () &#x3D;&gt; {
 							// After preboot complete, remove the server scripts
 							setTimeout(() &#x3D;&gt;
-								styles.forEach(el &#x3D;&gt; dom.remove(el)),
+								styles.forEach(el &#x3D;&gt; dom.removeChild(el)),
 							);
 						});
 					}
@@ -427,6 +425,7 @@ export class AppModule {}
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
             var COMPODOC_CURRENT_PAGE_URL = 'AppModule.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

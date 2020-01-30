@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 
+import { APP_BASE_HREF } from '@angular/common';
 import { mkdir, readFileSync, writeFile } from 'fs';
 import { join } from 'path';
 
@@ -87,10 +88,8 @@ app.get('*', (req, res) => {
 					provide: 'serverUrl',
 					useValue: `${req.protocol}://${req.get('host')}`,
 				},
-				{
-					provide: STATE_CB,
-					useValue: cb,
-				},
+				{ provide: APP_BASE_HREF, useValue: req.baseUrl },
+				{ provide: STATE_CB, useValue: cb },
 			],
 			req: req,
 			res: res,
