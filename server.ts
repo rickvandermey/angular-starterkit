@@ -13,9 +13,6 @@ import { MODULE_MAP } from '@nguniversal/module-map-ngfactory-loader';
 import { ROUTES } from './src/app/routes/static.paths';
 import { STATE_CB } from './src/app/ssr/tokens';
 import { AppServerModule } from './src/main.server';
-// import { AppServerModule, provideModuleMap } from './src/main.server';
-
-// const { LAZY_MODULE_MAP } = require('./dist/server.js');
 
 const isPrerender =
 	process.argv[2] && process.argv[2] === 'prerender' ? true : false;

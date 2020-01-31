@@ -25,25 +25,24 @@ import {
 } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { LocalStorageService } from './services/local-storage.service';
-import * as fromApplication from './store/application/application.reducer';
-import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from './store/meta/app.tokens';
-import { storageMetaReducer } from './store/meta/storage.metareducer';
-import { RouterEffects } from './store/router/router.effects';
+import { LocalStorageService } from '@services/local-storage.service';
+import * as fromApplication from '@store/application/application.reducer';
+import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from '@store/meta/app.tokens';
+import { storageMetaReducer } from '@store/meta/storage.metareducer';
+import { RouterEffects } from '@store/router/router.effects';
 
 // Core
-import { environment } from '../environments/environment';
+import { environment } from 'environments/environment';
 import { AppComponent } from './app.component';
 
 // Routes
-import { AppRoutingModule, GoogleAnalyticsEffects } from './routes';
+import { AppRoutingModule, GoogleAnalyticsEffects } from 'routes';
 
 // Modules
-import { ErrorModule } from './modules/error.module';
+import { ErrorModule } from '@modules/error.module';
 
 // Interceptor
 import { AppHttpInterceptor } from './interceptors/http.interceptor';
-
 import { getInitialState } from './ssr/tokens';
 
 /**

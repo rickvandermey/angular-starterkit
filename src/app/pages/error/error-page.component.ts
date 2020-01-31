@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 
-import { BaseComponent } from '../../components';
+import { BaseComponent } from 'components';
 
 /**
  * 404 Error page Component which extends the BaseComponent

@@ -1,5 +1,5 @@
 import { Action, ActionReducer } from '@ngrx/store';
-import { LocalStorageService } from '../../services/local-storage.service';
+import { LocalStorageService } from '@services/local-storage.service';
 
 const merge = require('lodash.merge');
 const pick = require('lodash.pick');

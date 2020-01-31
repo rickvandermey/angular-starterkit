@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
-import { SetRequestStatus } from '../store/application/application.actions';
+import { SetRequestStatus } from '@store/application/application.actions';
 
 /**
  * AppHttpInterceptor Intercepts all incoming XHR calls and defines the store if a request is pending

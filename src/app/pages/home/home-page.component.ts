@@ -3,11 +3,11 @@ import { Title } from '@angular/platform-browser';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { BaseComponent } from '../../components';
-import { STATE_CB } from '../../ssr/tokens';
-import { Load as LoadDummy } from '../../store/dummy/dummy.actions';
-import { AddressShortInterface } from '../../store/dummy/dummy.interface';
-import * as fromDummy from '../../store/dummy/dummy.selectors';
+import { STATE_CB } from '@app/ssr/tokens';
+import { Load as LoadDummy } from '@store/dummy/dummy.actions';
+import { AddressShortInterface } from '@store/dummy/dummy.interface';
+import * as fromDummy from '@store/dummy/dummy.selectors';
+import { BaseComponent } from 'components';
 
 /**
  * Home page Component which extends the BaseComponent

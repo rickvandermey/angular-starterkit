@@ -4,8 +4,8 @@ import { makeStateKey, TransferState } from '@angular/platform-browser';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-import { environment } from '../../environments/environment';
-import { DummyInterface } from '../store/dummy/dummy.interface';
+import { environment } from '@environments/environment';
+import { DummyInterface } from '@store/dummy/dummy.interface';
 
 export const DUMMY_KEY = makeStateKey('dummyState');
 

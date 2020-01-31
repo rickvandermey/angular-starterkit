@@ -6,7 +6,7 @@ import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import * as routerActions from './router.actions';
+import * as routerActions from '@store/router/router.actions';
 
 /**
  * RouterEffects class which contains all effects when route effects are triggered

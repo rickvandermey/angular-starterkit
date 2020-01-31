@@ -5,9 +5,9 @@ import {
 	StoreRouterConnectingModule,
 } from '@ngrx/router-store';
 
-import { ErrorPageComponent } from '../pages';
-import { RouterStateUrl } from '../store/router/router.interface';
-import { LanguageGuard } from './guards/language-guard.service';
+import { LanguageGuard } from '@routes/guards/language-guard.service';
+import { RouterStateUrl } from '@store/router/router.interface';
+import { ErrorPageComponent } from 'pages';
 
 /**
  * Class to implements the RouterStateSerializer with a custom serializer
