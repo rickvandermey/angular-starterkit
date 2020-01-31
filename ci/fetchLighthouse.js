@@ -7,7 +7,7 @@ let baseUrl;
 if (process.argv[2]) {
 	baseUrl = `${process.argv[2]}`;
 } else {
-	baseUrl = `https://rickvandermey.github.io/angular-starterkit/documentation/index.html`;
+	baseUrl = `https://angular-prerender.rickvandermeij.nl`;
 }
 
 const outputDir = './reports';
