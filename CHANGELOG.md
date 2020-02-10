@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## [2.0.0](https://github.com/rickvandermey/angular-starterkit/tree/2.0.0)
+
+### Features
+
+-   **Angular:** Updated to Angular 9.x
+-   **IVY:** IVY enabled by default
+
+### Breaking Changes
+
+-   **SSR:** New way to use SSR and Prerender, compare the `server.ts` file with the previous carefully. Also `webpack.server.config.js` is removed
+-   **Compodoc:** Compodoc has its own tsconfig now
+-   **Lighthouse:** Lighthouse new API needs a API key, and could be added optionally
+
 ## [1.6.0](https://github.com/rickvandermey/angular-starterkit/tree/1.6.0)
 
 ### Features

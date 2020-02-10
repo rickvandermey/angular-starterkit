@@ -152,6 +152,7 @@ const appRoutes: Routes &#x3D; [
 	imports: [
 		RouterModule.forRoot(appRoutes, {
 			enableTracing: false,
+			initialNavigation: &#x27;enabled&#x27;,
 			onSameUrlNavigation: &#x27;reload&#x27;,
 		}),
 		StoreRouterConnectingModule.forRoot({
@@ -202,6 +203,7 @@ export class AppRoutingModule {}
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
             var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

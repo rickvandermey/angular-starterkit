@@ -20,7 +20,13 @@
 		"no-var-keyword": true,
 		"object-literal-sort-keys": true,
 		"one-line": [true, "check-open-brace", "check-whitespace"],
-		"ordered-imports": true,
+		"ordered-imports": [
+			true,
+			{
+				"named-imports-order": "case-insensitive",
+				"import-sources-order": "case-insensitive"
+			}
+		],
 		"quotemark": [true, "single"],
 		"semicolon": [true, "always"],
 		"trailing-comma": [

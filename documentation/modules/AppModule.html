@@ -265,6 +265,7 @@ import {
 	USER_PROVIDED_META_REDUCERS,
 } from &#x27;@ngrx/store&#x27;;
 import { StoreDevtoolsModule } from &#x27;@ngrx/store-devtools&#x27;;
+
 import { LocalStorageService } from &#x27;@services/local-storage.service&#x27;;
 import * as fromApplication from &#x27;@store/application/application.reducer&#x27;;
 import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from &#x27;@store/meta/app.tokens&#x27;;
@@ -279,11 +280,10 @@ import { AppComponent } from &#x27;./app.component&#x27;;
 import { AppRoutingModule, GoogleAnalyticsEffects } from &#x27;routes&#x27;;
 
 // Modules
-import { ErrorModule } from &#x27;./modules/error.module&#x27;;
+import { ErrorModule } from &#x27;@modules/error.module&#x27;;
 
 // Interceptor
 import { AppHttpInterceptor } from &#x27;./interceptors/http.interceptor&#x27;;
-
 import { getInitialState } from &#x27;./ssr/tokens&#x27;;
 
 /**
@@ -295,6 +295,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
 	return new TranslateHttpLoader(http, &#x27;./assets/i18n/&#x27;, &#x27;.json&#x27;);
 }
 
+/* istanbul ignore next */
 /**
  * factory meta-reducer configuration function
  */
@@ -365,12 +366,9 @@ export function getMetaReducers(
 			): Function {
 				return () &#x3D;&gt; {
 					if (isPlatformBrowser(platformId)) {
-						const dom &#x3D; ɵgetDOM();
+						const dom &#x3D; ɵgetDOM().getDefaultDocument();
 						const styles: any[] &#x3D; Array.prototype.slice.apply(
-							dom.querySelectorAll(
-								document,
-								&#x60;style[ng-transition]&#x60;,
-							),
+							dom.querySelectorAll(&#x60;style[ng-transition]&#x60;),
 						);
 						styles.forEach(el &#x3D;&gt; {
 							// Remove ng-transition attribute to prevent Angular appInitializerFactory
@@ -380,7 +378,7 @@ export function getMetaReducers(
 						document.addEventListener(&#x27;PrebootComplete&#x27;, () &#x3D;&gt; {
 							// After preboot complete, remove the server scripts
 							setTimeout(() &#x3D;&gt;
-								styles.forEach(el &#x3D;&gt; dom.remove(el)),
+								styles.forEach(el &#x3D;&gt; dom.removeChild(el)),
 							);
 						});
 					}
@@ -427,6 +425,7 @@ export class AppModule {}
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
             var COMPODOC_CURRENT_PAGE_URL = 'AppModule.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

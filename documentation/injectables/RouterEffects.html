@@ -336,10 +336,10 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 import { NavigationExtras, Router } from &#x27;@angular/router&#x27;;
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 import { Action } from &#x27;@ngrx/store&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
 import { map, tap } from &#x27;rxjs/operators&#x27;;
 
 import * as routerActions from &#x27;@store/router/router.actions&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
 
 /**
  * RouterEffects class which contains all effects when route effects are triggered
@@ -439,6 +439,7 @@ export class RouterEffects {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
             var COMPODOC_CURRENT_PAGE_URL = 'RouterEffects.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

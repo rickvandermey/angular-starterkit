@@ -1174,19 +1174,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>createSelector(
-	selectEntity,
-	state &#x3D;&gt; {
-		if (state.address) {
-			return {
-				city: state.address.city,
-				street: &#x60;${state.address.street} ${state.address.streetNumber}${state.address.streetNumberAddition}&#x60;,
-				zipcode: state.address.zipcode,
-			};
-		}
-		return null;
-	},
-)</code>
+                            <i>Default value : </i><code>createSelector(selectEntity, state &#x3D;&gt; {
+	if (state.address) {
+		return {
+			city: state.address.city,
+			street: &#x60;${state.address.street} ${state.address.streetNumber}${state.address.streetNumberAddition}&#x60;,
+			zipcode: state.address.zipcode,
+		};
+	}
+	return null;
+})</code>
                         </td>
                     </tr>
 
@@ -1207,10 +1204,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>createSelector(
-	selectEntity,
-	state &#x3D;&gt; state.email,
-)</code>
+                            <i>Default value : </i><code>createSelector(selectEntity, state &#x3D;&gt; state.email)</code>
                         </td>
                     </tr>
 
@@ -1324,10 +1318,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>createSelector(
-	selectEntity,
-	state &#x3D;&gt; state.image,
-)</code>
+                            <i>Default value : </i><code>createSelector(selectEntity, state &#x3D;&gt; state.image)</code>
                         </td>
                     </tr>
 
@@ -1396,10 +1387,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>createSelector(
-	selectEntity,
-	state &#x3D;&gt; state.name,
-)</code>
+                            <i>Default value : </i><code>createSelector(selectEntity, state &#x3D;&gt; state.name)</code>
                         </td>
                     </tr>
 
@@ -1562,6 +1550,7 @@
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
             var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
