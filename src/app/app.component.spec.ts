@@ -15,7 +15,7 @@ import { Observable, of } from 'rxjs';
 import { LocalStorageService } from '@services/local-storage.service';
 import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from '@store/meta/app.tokens';
 import { initialState } from '@testing/mock-store';
-import { MockSwUpdate } from '@testing/mocks.spec';
+import { MockSwUpdate } from '@testing/mock.spec';
 import { AppComponent as Component } from './app.component';
 import { getMetaReducers } from './app.module';
 
@@ -75,7 +75,7 @@ describe('Components: App Component', () => {
 			schemas: [CUSTOM_ELEMENTS_SCHEMA],
 		}).compileComponents();
 
-		store = TestBed.get(Store);
+		store = TestBed.get(Store) as MockStore<any>;
 		fixture = TestBed.createComponent(Component);
 		app = fixture.debugElement.componentInstance;
 
