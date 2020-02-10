@@ -126,7 +126,7 @@
 					"builder": "@angular-devkit/build-angular:server",
 					"options": {
 						"outputPath": "dist/server",
-						"main": "src/main.server.ts",
+						"main": "server.ts",
 						"tsConfig": "src/tsconfig.server.json"
 					},
 					"configurations": {
@@ -137,10 +137,7 @@
 									"with": "src/environments/environment.prod.ts"
 								}
 							],
-							"optimization": {
-								"scripts": true,
-								"styles": true
-							},
+							"optimization": true,
 							"sourceMap": false
 						}
 					}

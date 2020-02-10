@@ -13,34 +13,22 @@ export const selectEntityCurrency = createSelector(
 	state => state.currency,
 );
 
-export const selectName = createSelector(
-	selectEntity,
-	state => state.name,
-);
+export const selectName = createSelector(selectEntity, state => state.name);
 
-export const selectImage = createSelector(
-	selectEntity,
-	state => state.image,
-);
+export const selectImage = createSelector(selectEntity, state => state.image);
 
-export const selectEmail = createSelector(
-	selectEntity,
-	state => state.email,
-);
+export const selectEmail = createSelector(selectEntity, state => state.email);
 
-export const selectAddress = createSelector(
-	selectEntity,
-	state => {
-		if (state.address) {
-			return {
-				city: state.address.city,
-				street: `${state.address.street} ${state.address.streetNumber}${state.address.streetNumberAddition}`,
-				zipcode: state.address.zipcode,
-			};
-		}
-		return null;
-	},
-);
+export const selectAddress = createSelector(selectEntity, state => {
+	if (state.address) {
+		return {
+			city: state.address.city,
+			street: `${state.address.street} ${state.address.streetNumber}${state.address.streetNumberAddition}`,
+			zipcode: state.address.zipcode,
+		};
+	}
+	return null;
+});
 
 export const selectIsLoading = createSelector(
 	selectFeature,

@@ -253,7 +253,7 @@ import { Store } from &#x27;@ngrx/store&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { finalize } from &#x27;rxjs/operators&#x27;;
 
-import { SetRequestStatus } from &#x27;@app/store/application/application.actions&#x27;;
+import { SetRequestStatus } from &#x27;@store/application/application.actions&#x27;;
 
 /**
  * AppHttpInterceptor Intercepts all incoming XHR calls and defines the store if a request is pending
@@ -316,6 +316,7 @@ export class AppHttpInterceptor implements HttpInterceptor {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interceptor';
             var COMPODOC_CURRENT_PAGE_URL = 'AppHttpInterceptor.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
