@@ -1,20 +1,20 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { TransferState } from '@angular/platform-browser';
-import { Actions } from '@ngrx/effects';
+import { provideMockActions } from '@ngrx/effects/testing';
+import { Action } from '@ngrx/store';
 import { cold, hot } from 'jasmine-marbles';
-import { of, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 
 import { DummyService } from '@services/dummy.service';
 import { initialState as mockStore } from '@testing/mock-store';
-import { getActions, MockActions } from '@testing/mocks.spec';
 
 import * as dummyActions from './dummy.actions';
 import { DummyEffects } from './dummy.effects';
 import { DummyInterface } from './dummy.interface';
 
 describe('Effects: Dummy effects', () => {
-	let actions$: MockActions;
+	let actions$: Observable<Action>;
 	let service: DummyService;
 	let effects: DummyEffects;
 
@@ -27,11 +27,10 @@ describe('Effects: Dummy effects', () => {
 				DummyService,
 				DummyEffects,
 				TransferState,
-				{ provide: Actions, useFactory: getActions },
+				provideMockActions(() => actions$),
 			],
 		});
 
-		actions$ = TestBed.get(Actions);
 		service = TestBed.get(DummyService);
 		effects = TestBed.get(DummyEffects);
 	});
@@ -43,7 +42,7 @@ describe('Effects: Dummy effects', () => {
 			const action = dummyActions.Load();
 			const completion = dummyActions.LoadSuccess({ entity: mockDummy });
 
-			actions$.stream = hot('-a', { a: action });
+			actions$ = hot('-a', { a: action });
 			const expected = cold('-c', { c: completion });
 
 			expect(effects.loadDummy$).toBeObservable(expected);
@@ -59,7 +58,7 @@ describe('Effects: Dummy effects', () => {
 				errorMessage: 'global.something-went-wrong',
 			});
 
-			actions$.stream = hot('-a', { a: action });
+			actions$ = hot('-a', { a: action });
 			const expected = cold('-c', { c: completion });
 
 			expect(effects.loadDummy$).toBeObservable(expected);
