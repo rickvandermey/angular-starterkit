@@ -32,6 +32,10 @@ describe('Effects: Router effects', () => {
 
 	describe('Go', () => {
 		it('should not dispatch', () => {
+			const payload = { path: [`/en/404`] };
+			const action = routerActions.go({ payload });
+			actions$ = hot('-a', { a: action });
+
 			const effect = new RouterEffects(actions$, router, location);
 			const metadata = getEffectsMetadata(effect);
 
@@ -54,6 +58,9 @@ describe('Effects: Router effects', () => {
 
 	describe('Forward', () => {
 		it('should not dispatch', () => {
+			const action = routerActions.forward();
+			actions$ = hot('-a', { a: action });
+
 			const effect = new RouterEffects(actions$, router, location);
 			const metadata = getEffectsMetadata(effect);
 
@@ -75,6 +82,9 @@ describe('Effects: Router effects', () => {
 
 	describe('Back', () => {
 		it('should not dispatch', () => {
+			const action = routerActions.back();
+			actions$ = hot('-a', { a: action });
+
 			const effect = new RouterEffects(actions$, router, location);
 			const metadata = getEffectsMetadata(effect);
 

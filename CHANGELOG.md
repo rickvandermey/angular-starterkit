@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [2.0.1](https://github.com/rickvandermey/angular-starterkit/tree/2.0.1)
+
+### Bugfix
+
+-   **Unit Test:** Stability on unit test with NGRX effects
+
 ## [2.0.0](https://github.com/rickvandermey/angular-starterkit/tree/2.0.0)
 
 ### Features
