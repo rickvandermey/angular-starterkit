@@ -100,7 +100,7 @@ exports.config = {
 		{
 			package: '@ng-apimock/protractor-plugin',
 			options: {
-				baseUrl: 'https://localhost:4000',
+				baseUrl: 'http://localhost:3999',
 				globalName: 'ngApimock',
 			},
 		},
