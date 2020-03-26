@@ -34,7 +34,6 @@
 		"stylelint": "stylelint \"src/{scss,app}/**/*.scss\" --config .stylelintrc --fix",
 		"test": "rimraf \"coverage\" & ng test --code-coverage --browsers Chrome",
 		"test:e2e": "npm run server:mock & rimraf \"reports/e2e/{json-output-folder,report,screenshots}\" && ng e2e",
-		"test:e2e:fix-webdriver": "./node_modules/protractor/bin/webdriver-manager update --versions.chrome 2.35",
 		"test:unit-headless": "npm run test -- --browsers ChromeNoSandbox --watch=false",
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
 		"wpo:stats-es5": "webpack-bundle-analyzer dist/browser/stats-es5.json --mode=static --report=\"reports/wpo/bundle-report-es5.html\" --no-open && npx cpx dist/browser/stats-es5.json reports/wpo",
