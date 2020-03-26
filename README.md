@@ -27,7 +27,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   🚀 WPO: Stats for ES5 build and ES2015
 -   🎯 Git hooks (husky)
 -   🎯 Extend Angular CLI (webpack)
--   🤩 Ability to Mock data (mockServer)
+-   🤩 Ability to Mock data (mockServer) (Docker)
 
 ##### Quickstart:
 
