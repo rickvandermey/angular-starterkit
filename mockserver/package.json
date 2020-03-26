@@ -1,11 +1,10 @@
 {
-	"name": "bookingtool-mock",
+	"name": "starterkit-mock",
 	"version": "1.0.0",
-	"description": "Bookingtool V3 mock server",
+	"description": "Starterkit mock server",
 	"scripts": {
 		"start": "ts-node --project ./tsconfig.json ./mockserver.ts",
 		"watch": "nodemon --watch ./ --exec 'npm start' --delay 1 -e json,html,ts",
-		"publish": "docker build -t aanzeenl/valk-platform-bookingtool-mock . && docker push aanzeenl/valk-platform-bookingtool-mock:latest"
 	},
 	"author": "",
 	"license": "ISC",
