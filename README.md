@@ -11,7 +11,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 ## Features
 
 -   ⭐️ Modern vs. Legacy build (ES5 vs ES2015)
--   😍 IVY opt-in
+-   😍 IVY by default
 -   ⭐️ NGRX store (implemented according ngrx.io)
 -   😴 Lazy Loading
 -   ⭐️ HttpInterceptor
@@ -41,7 +41,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 ## Development server
 
 `npm run start` available at `https://localhost:4202/` (Hot reloading enabled)
-`npm run start:mock` will use the mock environment, which connects with the mockServer at `http://localhost:4000`
+`npm run start:mock` will use the mock environment, which connects with the mockServer at `https://localhost:4000`
 
 Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called `build`. Run `npm run certificate:generate:mac` to create the required certificates and place them in the required folder.
 
@@ -58,9 +58,7 @@ Git hooks are active, which means you only can commit when there are no linting 
 
 ### Ivy Build 😍
 
-To create an Ivy build, you'll need to update `src/tsconfig.app.json` and set `enableIvy: true`.
-
-NOTE: Be aware when doing this, functionality for SSR and Prerendering won't work at this moment (Angular 8.x.x).
+Ivy is set to true by default and works with SSR / Prerendering
 
 ### Server Side Rendering (SSR) 😍
 
@@ -121,7 +119,8 @@ sample can be fount at _'./documentation/index.html'_
 
 ## Mock data (MockServer) 🤩
 
-As of version 1.1.0 it is possible to setup a mockServer with `npm run server:mock`. Port will be `http://localhost:4000` and the different status can be set at `http://localhost:4000/mocking`. All data can be setup in _'./mockServer'_. Examples of API, JSON and images are added.
+As of version 1.1.0 it is possible to setup a mockServer with `npm run server:mock`. Port will be `https://localhost:4000` and the different status can be set at `https://localhost:4000/mocking`. All data can be setup in _'./mockServer'_. Examples of API, JSON and images are added.
+As of version 2.1.0 the mockServer is running through Docker and runs with HTTPS/HTTP2
 
 ###### example sites:
 

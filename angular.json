@@ -118,7 +118,8 @@
 							"src/tsconfig.app.json",
 							"src/tsconfig.spec.json",
 							"src/tsconfig.cucumber.json",
-							"server.tsconfig.json"
+							"server.tsconfig.json",
+							"mockserver/tsconfig.json"
 						]
 					}
 				},

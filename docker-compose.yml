@@ -1,0 +1,18 @@
+---
+version: '2'
+
+services:
+    mock:
+        container_name: starterkit-mock
+        build:
+            context: ./mockserver
+            dockerfile: ./Dockerfile
+        volumes:
+            - ./mockserver/api:/app/api
+            - ./mockserver/assets:/app/assets
+            - ./mockserver/presets:/app/presets
+            - ./build:/build
+        ports:
+            - '3999:3999'
+            - '4000:4000'
+            - '443:443'

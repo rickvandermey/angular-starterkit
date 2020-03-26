@@ -41,7 +41,7 @@ describe('Effects: Router effects', () => {
 
 			expect(metadata.navigate$).toEqual({
 				dispatch: false,
-				resubscribeOnError: true,
+				useEffectsErrorHandler: true,
 			});
 		});
 
@@ -50,7 +50,7 @@ describe('Effects: Router effects', () => {
 			const action = routerActions.go({ payload });
 
 			actions$ = hot('-a', { a: action });
-			effects.navigate$.subscribe(result => {
+			effects.navigate$.subscribe((result) => {
 				expect(result).toEqual(payload);
 			});
 		});
@@ -66,7 +66,7 @@ describe('Effects: Router effects', () => {
 
 			expect(metadata.navigateForward$).toEqual({
 				dispatch: false,
-				resubscribeOnError: true,
+				useEffectsErrorHandler: true,
 			});
 		});
 
@@ -74,7 +74,7 @@ describe('Effects: Router effects', () => {
 			const action = routerActions.forward();
 
 			actions$ = hot('-a', { a: action });
-			effects.navigateForward$.subscribe(result => {
+			effects.navigateForward$.subscribe((result) => {
 				expect(result).toEqual(action);
 			});
 		});
@@ -90,7 +90,7 @@ describe('Effects: Router effects', () => {
 
 			expect(metadata.navigateBack$).toEqual({
 				dispatch: false,
-				resubscribeOnError: true,
+				useEffectsErrorHandler: true,
 			});
 		});
 
@@ -98,7 +98,7 @@ describe('Effects: Router effects', () => {
 			const action = routerActions.back();
 
 			actions$ = hot('-a', { a: action });
-			effects.navigateBack$.subscribe(result => {
+			effects.navigateBack$.subscribe((result) => {
 				expect(result).toEqual(action);
 			});
 		});
