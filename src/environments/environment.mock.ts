@@ -9,11 +9,11 @@ export const environment = {
 	/**
 	 * apiUrl will return the API url for selected enviroment
 	 */
-	apiUrl: `http://localhost:4000/api/v3/`,
+	apiUrl: `https://localhost:4000/api/v3/`,
 	/**
 	 * assetsRoot provides the start of the URI for assets
 	 */
-	assetsRoot: 'http://localhost:4000/assets',
+	assetsRoot: 'https://localhost:4000/assets',
 	/**
 	 * Boolean to declare if the environment is in production mode
 	 */

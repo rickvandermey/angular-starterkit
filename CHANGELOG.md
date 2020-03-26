@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## [2.1.0](https://github.com/rickvandermey/angular-starterkit/tree/2.1.0)
+
+### Features
+
+-   **Packages:** Updated all dependencies to the latest version of 2020-26-03
+-   **mockServer:** Converted mockserver from javascript to Typescript
+-   **mockServer:** Updated mockserver to HTTPS/HTTP2
+-   **mockServer:** Mockserver gets served from Docker image
+-   **mockServer:** Seperated the mockServer with its own package.json
+
+### Bugfix
+
+-   **Travis:** Fix the SonarCloud instance
+-   **Husky:** Downgrade Husky because git hooks doesn't seem to work on V4.
+
 ## [2.0.1](https://github.com/rickvandermey/angular-starterkit/tree/2.0.1)
 
 ### Bugfix

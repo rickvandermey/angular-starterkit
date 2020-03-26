@@ -5,14 +5,14 @@ const packageFile = require('../package.json');
 
 var shouldRunHeadless = process.env.npm_config_headless;
 
-var environment = process.argv.find(function(argument) {
+var environment = process.argv.find(function (argument) {
 	return argument.indexOf('--params.env=') > -1;
 });
 if (environment) {
 	environment = environment.replace('--params.env=', '');
 }
 
-var tags = process.argv.find(function(argument) {
+var tags = process.argv.find(function (argument) {
 	return argument.indexOf('--tags') > -1;
 });
 if (tags) {
@@ -100,7 +100,7 @@ exports.config = {
 		{
 			package: '@ng-apimock/protractor-plugin',
 			options: {
-				baseUrl: 'http://localhost:4000',
+				baseUrl: 'http://localhost:3999',
 				globalName: 'ngApimock',
 			},
 		},
@@ -109,13 +109,13 @@ exports.config = {
 	useAllAngular2AppRoots: true,
 
 	// Enable TypeScript for the tests
-	onPrepare: function() {
+	onPrepare: function () {
 		require('ts-node').register({
 			project: 'src/tsconfig.cucumber.json',
 		});
 	},
 
-	afterLaunch: function() {
+	afterLaunch: function () {
 		opn('reports/e2e/report/index.html');
 	},
 };

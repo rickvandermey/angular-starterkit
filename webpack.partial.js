@@ -15,6 +15,7 @@ module.exports = {
 			fix: true,
 		}),
 	],
+	stats: 'minimal',
 };
 
 if (ENV === 'build') {

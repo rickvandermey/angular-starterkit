@@ -1,6 +1,6 @@
 {
 	"_links": {
-		"self": "http://localhost:4000/api/translations?locale=nl"
+		"self": "https://localhost:4000/api/translations?locale=nl"
 	},
 	"data": {
 		"hello": "Hallo {{value}}",
