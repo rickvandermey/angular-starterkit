@@ -48,7 +48,7 @@ describe('Selectors: dummy selector', () => {
 					currency: 'EUR',
 					email: 'test@domain.com',
 					image:
-						'http://localhost:4000/assets/images/dummy-test/dummy-test.jpg',
+						'https://localhost:4000/assets/images/dummy-test/dummy-test.jpg',
 					language: 'en',
 					name: 'dummys & downies',
 					phone: '0612345678',

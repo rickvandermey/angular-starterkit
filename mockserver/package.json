@@ -4,7 +4,7 @@
 	"description": "Starterkit mock server",
 	"scripts": {
 		"start": "ts-node --project ./tsconfig.json ./mockserver.ts",
-		"watch": "nodemon --watch ./ --exec 'npm start' --delay 1 -e json,html,ts",
+		"watch": "nodemon --watch ./ --exec 'npm start' --delay 1 -e json,html,ts"
 	},
 	"author": "",
 	"license": "ISC",

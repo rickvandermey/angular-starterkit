@@ -41,7 +41,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 ## Development server
 
 `npm run start` available at `https://localhost:4202/` (Hot reloading enabled)
-`npm run start:mock` will use the mock environment, which connects with the mockServer at `http://localhost:4000`
+`npm run start:mock` will use the mock environment, which connects with the mockServer at `https://localhost:4000`
 
 Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called `build`. Run `npm run certificate:generate:mac` to create the required certificates and place them in the required folder.
 
