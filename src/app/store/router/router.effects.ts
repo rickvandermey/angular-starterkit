@@ -45,7 +45,7 @@ export class RouterEffects {
 					this.router.navigate(path, { queryParams, ...extras });
 				}),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	);
 
 	/**
@@ -57,7 +57,7 @@ export class RouterEffects {
 				ofType(routerActions.back),
 				tap(() => this.location.back()),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	);
 
 	/**
@@ -69,6 +69,6 @@ export class RouterEffects {
 				ofType(routerActions.forward),
 				tap(() => this.location.forward()),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	);
 }

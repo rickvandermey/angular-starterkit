@@ -25,12 +25,14 @@ describe('GoogleAnalyticsEffects', () => {
 	});
 
 	it('should not dispatch action', () => {
+		const routerEvent = new NavigationEnd(1, '/', '');
+		mutablerouter.events = cold('a', { a: routerEvent });
 		const effect = new GoogleAnalyticsEffects('browser', mutablerouter);
 		const metadata = getEffectsMetadata(effect);
 
-		expect(metadata.pageView).toEqual({
+		expect(metadata.pageView$).toEqual({
 			dispatch: false,
-			resubscribeOnError: true,
+			useEffectsErrorHandler: true,
 		});
 	});
 
@@ -39,7 +41,7 @@ describe('GoogleAnalyticsEffects', () => {
 		mutablerouter.events = cold('a', { a: routerEvent });
 		const effect = new GoogleAnalyticsEffects('browser', mutablerouter);
 
-		effect.pageView.subscribe(() => {
+		effect.pageView$.subscribe(() => {
 			expect((window as any).ga).toHaveBeenCalled();
 			expect((window as any).ga).toHaveBeenCalledWith(
 				'set',
@@ -55,7 +57,7 @@ describe('GoogleAnalyticsEffects', () => {
 		mutablerouter.events = cold('a', { a: routerEvent });
 		const effect = new GoogleAnalyticsEffects('', mutablerouter);
 
-		effect.pageView.subscribe(() => {
+		effect.pageView$.subscribe(() => {
 			expect((window as any).ga).not.toHaveBeenCalled();
 		});
 	});
