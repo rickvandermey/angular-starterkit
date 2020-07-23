@@ -4,12 +4,12 @@ import {
 	BeforeAll,
 	Given,
 	HookScenarioResult,
-	setDefaultTimeout,
 	Status,
 	Then,
 	When,
+	setDefaultTimeout,
 } from 'cucumber';
-import { browser, Key } from 'protractor';
+import { Key, browser } from 'protractor';
 
 import { BrowserHelper, ConversionHelper, MockHelper } from '../helpers';
 

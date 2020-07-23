@@ -1,8 +1,8 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
+	HTTP_INTERCEPTORS,
 	HttpClient,
 	HttpClientModule,
-	HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule, PLATFORM_ID } from '@angular/core';
 import {

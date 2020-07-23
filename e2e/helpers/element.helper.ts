@@ -1,10 +1,10 @@
 import {
-	browser,
-	by,
-	element,
 	ElementArrayFinder,
 	ElementFinder,
 	Key,
+	browser,
+	by,
+	element,
 } from 'protractor';
 
 /**

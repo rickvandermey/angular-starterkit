@@ -1,6 +1,6 @@
 import { finalize } from 'rxjs/operators';
 
-import { HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpHeaders } from '@angular/common/http';
 import {
 	HttpClientTestingModule,
 	HttpTestingController,
