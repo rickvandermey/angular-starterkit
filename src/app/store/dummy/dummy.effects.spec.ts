@@ -31,8 +31,8 @@ describe('Effects: Dummy effects', () => {
 			],
 		});
 
-		service = TestBed.get(DummyService);
-		effects = TestBed.get(DummyEffects);
+		service = TestBed.inject(DummyService);
+		effects = TestBed.inject(DummyEffects);
 	});
 
 	describe('getDummyData', () => {

@@ -75,7 +75,7 @@ describe('Components: App Component', () => {
 			schemas: [CUSTOM_ELEMENTS_SCHEMA],
 		}).compileComponents();
 
-		store = TestBed.get(Store) as MockStore<any>;
+		store = TestBed.inject(Store) as MockStore<any>;
 		fixture = TestBed.createComponent(Component);
 		app = fixture.debugElement.componentInstance;
 

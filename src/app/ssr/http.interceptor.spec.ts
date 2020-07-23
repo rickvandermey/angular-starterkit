@@ -5,7 +5,7 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { TransferState } from '@angular/platform-browser';
-import { Store, StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 import { DummyService } from '@services/dummy.service';
@@ -33,9 +33,9 @@ describe(`UniversalInterceptor without serverUrl`, () => {
 			],
 		});
 
-		httpMock = TestBed.get(HttpTestingController);
-		store = TestBed.get(Store);
-		service = TestBed.get(DummyService);
+		httpMock = TestBed.inject(HttpTestingController);
+		store = TestBed.inject(MockStore);
+		service = TestBed.inject(DummyService);
 
 		spyOn(store, 'dispatch').and.callThrough();
 	});
@@ -86,9 +86,9 @@ describe(`UniversalInterceptor with serverUrl`, () => {
 			],
 		});
 
-		httpMock = TestBed.get(HttpTestingController);
-		store = TestBed.get(Store);
-		service = TestBed.get(DummyService);
+		httpMock = TestBed.inject(HttpTestingController);
+		store = TestBed.inject(MockStore);
+		service = TestBed.inject(DummyService);
 
 		spyOn(store, 'dispatch').and.callThrough();
 	});

@@ -56,8 +56,8 @@ describe('Pages: Error page', () => {
 
 		fixture = TestBed.createComponent(Component);
 		app = fixture.debugElement.componentInstance;
-		router = TestBed.get(Router);
-		location = TestBed.get(Location);
+		router = TestBed.inject(Router);
+		location = TestBed.inject(Location);
 		fixture.ngZone.run(() => {
 			router.initialNavigation();
 		});
