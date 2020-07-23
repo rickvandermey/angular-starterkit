@@ -33,7 +33,7 @@
 		"ssr:serve": "node dist/server/main.js",
 		"stylelint": "stylelint \"src/{scss,app}/**/*.scss\" --config .stylelintrc --fix",
 		"test": "rimraf \"coverage\" & ng test --code-coverage --browsers Chrome",
-		"test:e2e": "npm run server:mock & webdriver-manager update --standalone=false --gecko=false   && ng e2e --webdriver-update=false && docker-compose down",
+		"test:e2e": "npm run server:mock & webdriver-manager update --standalone=false --gecko=false && ng e2e --webdriver-update=false && docker-compose down",
 		"test:unit-headless": "npm run test -- --browsers ChromeNoSandbox --watch=false",
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
 		"wpo:stats-es5": "webpack-bundle-analyzer dist/browser/stats-es5.json --mode=static --report=\"reports/wpo/bundle-report-es5.html\" --no-open && npx cpx dist/browser/stats-es5.json reports/wpo",
@@ -71,11 +71,11 @@
 		"lodash.pick": "4.4.0",
 		"preboot": "7.0.0",
 		"rxjs": "6.6.0",
-		"tslib": "^2.0.0",
-		"zone.js": "~0.10.3"
+		"tslib": "2.0.0",
+		"zone.js": "0.10.3"
 	},
 	"devDependencies": {
-		"@angular-devkit/build-angular": "~0.901.0",
+		"@angular-devkit/build-angular": "0.901.0",
 		"@angular-devkit/schematics": "9.1.0",
 		"@angular/cli": "9.1.0",
 		"@angular/compiler-cli": "9.1.0",
@@ -104,7 +104,7 @@
 		"gzip-all": "1.0.0",
 		"html-critical-webpack-plugin": "2.1.0",
 		"http-server": "0.12.3",
-		"husky": "^4.2.5",
+		"husky": "4.2.5",
 		"jasmine-marbles": "0.6.0",
 		"karma": "5.1.0",
 		"karma-chrome-launcher": "3.1.0",

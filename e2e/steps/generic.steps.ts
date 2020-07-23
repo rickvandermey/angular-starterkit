@@ -200,7 +200,7 @@ When(
 
 When(/^User dumps the Store$/, async function (): Promise<any> {
 	const store = await browser.executeScriptWithDescription(
-		'return window.sessionStorage.getItem("bookingtool.dev");',
+		'return window.sessionStorage.getItem("store");',
 		'Retrieves the Session Storage',
 	);
 	return this.attach(store);
