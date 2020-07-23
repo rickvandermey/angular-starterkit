@@ -12,6 +12,19 @@ import {
  */
 export class ElementHelper {
 	/**
+	 * Scrolls the specified element into view
+	 * @param element
+	 */
+	static scrollIntoView(element: any): any {
+		return browser.controlFlow().execute(() => {
+			browser.executeScript(
+				'arguments[0].scrollIntoView(false)',
+				element,
+			);
+		});
+	}
+
+	/**
 	 * Sends the given input to the given Element in a way that forces angular to process the changes correctly
 	 *
 	 * @param element Element which will receive said input
@@ -47,6 +60,7 @@ export class ElementHelper {
 
 	/**
 	 * Retrieves an Element based on the testID property attached to said Element
+	 *
 	 * @param elementId
 	 */
 	static getElementByTestId(elementId: string): ElementFinder {
@@ -55,6 +69,7 @@ export class ElementHelper {
 
 	/**
 	 * Retrieves an array of Elements based on the testClass property attached to said Elements
+	 *
 	 * @param elementClass
 	 */
 	static getElementsByTestClass(elementClass: string): ElementArrayFinder {
@@ -65,6 +80,7 @@ export class ElementHelper {
 
 	/**
 	 * Retrieves an Element based on the testID property attached to said Element
+	 *
 	 * @param parent The element which needs to contain said child element
 	 * @param elementId
 	 */
@@ -79,6 +95,7 @@ export class ElementHelper {
 
 	/**
 	 * Retrieves Elements based on the test class property attached to said Element
+	 *
 	 * @param parent The element which needs to contain said child element
 	 * @param elementId
 	 */
@@ -99,10 +116,10 @@ export class ElementHelper {
 	 * @param elementObject
 	 * @param timeout
 	 */
-	static waitUntillElementExists(
+	static async waitUntilElementExists(
 		elementObject: ElementFinder,
 		timeout: number = 10000,
-	): any {
+	): Promise<any> {
 		return browser.wait(() => {
 			return elementObject.isPresent();
 		}, timeout);

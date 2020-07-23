@@ -1,6 +1,5 @@
 const fs = require('fs');
 const lightHouseReportGenerator = require('lighthouse/lighthouse-core/report/report-generator');
-const mkdirp = require('mkdirp');
 const request = require('request');
 
 let baseUrl;
@@ -11,7 +10,7 @@ if (process.argv[2]) {
 }
 
 const outputDir = './reports';
-mkdirp(outputDir, function(error) {
+fs.mkdir(outputDir, { recursive: true }, function (error) {
 	if (error) {
 		console.error(error);
 		process.exit(1);
@@ -28,8 +27,30 @@ if (process.env.PAGESPEED_TOKEN) {
 
 // Encode to allow adding to the url as a request
 const applicationURL = encodeURI(baseUrl);
-generateReport(baseUrl, 'mobile', outputDir);
-generateReport(baseUrl, 'desktop', outputDir);
+
+// We first do a separate request to the application, since first request performs badly
+warmUpS3(baseUrl, () => {
+	console.log('Running pagespeed tests');
+	generateReport(baseUrl, 'mobile', outputDir);
+	generateReport(baseUrl, 'desktop', outputDir);
+});
+
+function warmUpS3(url, callback) {
+	console.log('Prewarming S3');
+	request.get(
+		{
+			url,
+		},
+		(error, httpResponse) => {
+			if (httpResponse && httpResponse.statusCode === 200) {
+				callback();
+			} else {
+				console.log(error, httpResponse.statusCode);
+				process.exit(1);
+			}
+		},
+	);
+}
 
 function generateReport(applicationUrl, strategy, outputDir) {
 	// If this isn't explicitly set it will default to performance
@@ -61,7 +82,7 @@ function generateReport(applicationUrl, strategy, outputDir) {
 					`${outputDir}/lighthouse-${strategy}.html`,
 					`<code>${JSON.stringify(lighthouseObject)}</code>`,
 					'utf8',
-					function(error) {
+					function (error) {
 						if (error) {
 							console.error(
 								`Error (${strategy}) While writing ERROR file for ${baseUrl} the following error occurred: ${error}`,
@@ -81,7 +102,7 @@ function generateReport(applicationUrl, strategy, outputDir) {
 						lighthouseObject.lighthouseResult,
 					),
 					'utf8',
-					function(error) {
+					function (error) {
 						if (error) {
 							console.error(
 								`While writing file for ${baseUrl} the following error occurred: ${error}`,

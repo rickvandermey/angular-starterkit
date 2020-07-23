@@ -1,6 +1,6 @@
 import { finalize } from 'rxjs/operators';
 
-import { HTTP_INTERCEPTORS, HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {
 	HttpClientTestingModule,
 	HttpTestingController,
@@ -63,7 +63,7 @@ describe(`AppHttpInterceptor`, () => {
 					expect(store.dispatch).toHaveBeenCalledWith(action),
 				),
 			)
-			.subscribe(response => {
+			.subscribe((response) => {
 				expect(response).toBeTruthy();
 				expect(store.dispatch).toHaveBeenCalledWith(action);
 			});

@@ -1,4 +1,4 @@
-import { HTTP_INTERCEPTORS, HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {
 	HttpClientTestingModule,
 	HttpTestingController,
@@ -52,7 +52,7 @@ describe(`UniversalInterceptor without serverUrl`, () => {
 			}),
 		};
 
-		service.getDummyData().subscribe(response => {
+		service.getDummyData().subscribe((response) => {
 			expect(response).toBeTruthy();
 		});
 
@@ -105,7 +105,7 @@ describe(`UniversalInterceptor with serverUrl`, () => {
 			}),
 		};
 
-		service.getDummyData().subscribe(response => {
+		service.getDummyData().subscribe((response) => {
 			expect(response).toBeTruthy();
 		});
 

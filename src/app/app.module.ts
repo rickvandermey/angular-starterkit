@@ -1,8 +1,8 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
-	HTTP_INTERCEPTORS,
 	HttpClient,
 	HttpClientModule,
+	HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule, PLATFORM_ID } from '@angular/core';
 import {
@@ -119,7 +119,7 @@ export function getMetaReducers(
 			deps: [DOCUMENT, PLATFORM_ID],
 			multi: true,
 			provide: APP_INITIALIZER,
-			useFactory: /* istanbul ignore next */ function(
+			useFactory: /* istanbul ignore next */ function (
 				document: HTMLDocument,
 				platformId: Object,
 			): Function {
@@ -129,7 +129,7 @@ export function getMetaReducers(
 						const styles: any[] = Array.prototype.slice.apply(
 							dom.querySelectorAll(`style[ng-transition]`),
 						);
-						styles.forEach(el => {
+						styles.forEach((el) => {
 							// Remove ng-transition attribute to prevent Angular appInitializerFactory
 							// to remove server styles before preboot complete
 							el.removeAttribute('ng-transition');
@@ -137,7 +137,7 @@ export function getMetaReducers(
 						document.addEventListener('PrebootComplete', () => {
 							// After preboot complete, remove the server scripts
 							setTimeout(() =>
-								styles.forEach(el => dom.removeChild(el)),
+								styles.forEach((el) => dom.removeChild(el)),
 							);
 						});
 					}
