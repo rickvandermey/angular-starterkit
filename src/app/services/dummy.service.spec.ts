@@ -19,8 +19,8 @@ describe('Service: Dummy service', () => {
 			providers: [DummyService, TransferState],
 		});
 
-		httpTestingController = TestBed.get(HttpTestingController);
-		dummyService = TestBed.get(DummyService);
+		httpTestingController = TestBed.inject(HttpTestingController);
+		dummyService = TestBed.inject(DummyService);
 	});
 
 	afterEach(() => {
@@ -30,7 +30,7 @@ describe('Service: Dummy service', () => {
 
 	describe('#getDummyData', () => {
 		beforeEach(() => {
-			dummyService = TestBed.get(DummyService);
+			dummyService = TestBed.inject(DummyService);
 		});
 
 		it('should return expected Dummy', () => {

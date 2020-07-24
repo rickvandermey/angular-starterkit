@@ -1,3 +1,5 @@
+# Duration: 00:00:00.800
+
 Feature: Hello world Feature
 
 	A user should see the Hello World message

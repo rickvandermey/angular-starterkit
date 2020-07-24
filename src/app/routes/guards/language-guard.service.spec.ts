@@ -30,8 +30,8 @@ describe('Routes: LanguageGuard', () => {
 			],
 		});
 
-		languageGuard = TestBed.get(LanguageGuard);
-		next = TestBed.get(ActivatedRouteSnapshot);
+		languageGuard = TestBed.inject(LanguageGuard);
+		next = TestBed.inject(ActivatedRouteSnapshot);
 	});
 
 	it('should pass the LanguageGuard', () => {

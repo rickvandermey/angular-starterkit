@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
-import { select, Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 

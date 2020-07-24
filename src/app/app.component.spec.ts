@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { SwUpdate } from '@angular/service-worker';
 import { Store, StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
@@ -75,7 +75,7 @@ describe('Components: App Component', () => {
 			schemas: [CUSTOM_ELEMENTS_SCHEMA],
 		}).compileComponents();
 
-		store = TestBed.get(Store) as MockStore<any>;
+		store = TestBed.inject(Store) as MockStore<any>;
 		fixture = TestBed.createComponent(Component);
 		app = fixture.debugElement.componentInstance;
 

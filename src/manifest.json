@@ -2,7 +2,7 @@
 	"background_color": "#fafafa",
 	"content_security_policy": "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.google-analytics.com 'unsafe-inline'; img-src 'self' https://www.google-analytics.com; font-src 'self'; connect-src 'self';",
 	"display": "standalone",
-	"name": "RVDM-Angular-Starterkit",
+	"name": "Angular-Starterkit",
 	"icons": [
 		{
 			"src": "assets/icons/icon-72x72.png",

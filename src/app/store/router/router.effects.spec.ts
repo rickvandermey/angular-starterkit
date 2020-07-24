@@ -24,9 +24,9 @@ describe('Effects: Router effects', () => {
 			providers: [RouterEffects, provideMockActions(() => actions$)],
 		});
 
-		effects = TestBed.get(RouterEffects);
-		location = TestBed.get(Location);
-		router = TestBed.get(Router);
+		effects = TestBed.inject(RouterEffects);
+		location = TestBed.inject(Location);
+		router = TestBed.inject(Router);
 		router.initialNavigation();
 	});
 
