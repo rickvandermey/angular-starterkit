@@ -25,20 +25,17 @@ let credentials: {
 	key: string;
 };
 
-if (
-	fs.existsSync('../build/server.key') &&
-	fs.existsSync('../build/server.crt')
-) {
+if (fs.existsSync('../ci/server.key') && fs.existsSync('../ci/server.crt')) {
 	// Loads the correct key and certificate to host the mock server over https
 	credentials = {
-		cert: fs.readFileSync('../build/server.crt', 'utf8'),
-		key: fs.readFileSync('../build/server.key', 'utf8'),
+		cert: fs.readFileSync('../ci/server.crt', 'utf8'),
+		key: fs.readFileSync('../ci/server.key', 'utf8'),
 	};
 } else {
 	// Falls back to the default key and certificate
 	credentials = {
-		cert: fs.readFileSync('../build/default/server.crt', 'utf8'),
-		key: fs.readFileSync('../build/default/server.key', 'utf8'),
+		cert: fs.readFileSync('../ci/default/server.crt', 'utf8'),
+		key: fs.readFileSync('../ci/default/server.key', 'utf8'),
 	};
 }
 
