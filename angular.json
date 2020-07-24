@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"RVDM-Angular-Starterkit": {
+		"angular-starterkit": {
 			"root": "",
 			"sourceRoot": "src",
 			"projectType": "application",
@@ -146,5 +146,5 @@
 			}
 		}
 	},
-	"defaultProject": "RVDM-Angular-Starterkit"
+	"defaultProject": "angular-starterkit"
 }

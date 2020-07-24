@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { makeStateKey, TransferState } from '@angular/platform-browser';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -32,6 +32,6 @@ export class DummyService {
 
 		return this.http
 			.get<DummyInterface>(`${environment.assetsRoot}/dummy/dummy.json`)
-			.pipe(tap(res => this.state.set(DUMMY_KEY, res)));
+			.pipe(tap((res) => this.state.set(DUMMY_KEY, res)));
 	}
 }
