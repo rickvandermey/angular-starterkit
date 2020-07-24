@@ -49,6 +49,8 @@ Because we are running localhost on SSL (https), you will need to generate a cer
 
 Git hooks are active, which means you only can commit when there are no linting errors, and all unit-tests succeeds. Other commmands can be implemented in the `package.json` with `husky`.
 
+When using nvm, the default node should be > 10. `nvm alias stable default`
+
 ## Build
 
 -   `npm run build` - normal production build
