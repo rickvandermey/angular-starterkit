@@ -57,7 +57,7 @@ describe('storage meta reducer', () => {
 			feature: { foo: 'bar' },
 			nestedFeature: { foo: { bar: 'baz' } },
 		};
-		fakeReducer = function(s: any = state, a: any): any {
+		fakeReducer = function (s: any = state, a: any): any {
 			switch (a.type) {
 				case 'SET': {
 					return { ...a.state };

@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { select, Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { STATE_CB } from '@app/ssr/tokens';
@@ -66,7 +66,7 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 		this.title.setTitle('Homepage / Angular SSR');
 		this.store.dispatch(LoadDummy());
 
-		this.store.subscribe(state => {
+		this.store.subscribe((state) => {
 			/* istanbul ignore if */
 			if (this._stateCb) {
 				this._stateCb(state);

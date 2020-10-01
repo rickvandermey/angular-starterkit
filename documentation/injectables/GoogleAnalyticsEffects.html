@@ -82,7 +82,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#pageView">pageView</a>
+                                <a href="#pageView$">pageView$</a>
                             </li>
                         </ul>
                     </td>
@@ -108,7 +108,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/routes/effects/google-analytics.effects.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/routes/effects/google-analytics.effects.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -170,40 +170,39 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="pageView"></a>
+                        <a name="pageView$"></a>
                         <span class="name">
                             <b>
-                            pageView</b>
-                            <a href="#pageView"><span class="icon ion-ios-link"></span></a>
+                            pageView$</b>
+                            <a href="#pageView$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <i>Type : </i>    <code>Observable&lt;NavigationEnd&gt;</code>
 
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>this.router.events.pipe(
-		filter(event &#x3D;&gt; event instanceof NavigationEnd),
-		tap((event: NavigationEnd) &#x3D;&gt; {
-			if (isPlatformBrowser(this.platformId)) {
-				(window as any).ga(&#x27;set&#x27;, &#x27;page&#x27;, event.urlAfterRedirects);
-				(window as any).ga(&#x27;send&#x27;, &#x27;pageview&#x27;);
-			}
-		}),
+                            <i>Default value : </i><code>createEffect(
+		() &#x3D;&gt;
+			this.router.events.pipe(
+				filter((event) &#x3D;&gt; event instanceof NavigationEnd),
+				tap((event: NavigationEnd) &#x3D;&gt; {
+					if (isPlatformBrowser(this.platformId)) {
+						(window as any).ga(
+							&#x27;set&#x27;,
+							&#x27;page&#x27;,
+							event.urlAfterRedirects,
+						);
+						(window as any).ga(&#x27;send&#x27;, &#x27;pageview&#x27;);
+					}
+				}),
+			),
+		{ dispatch: false, useEffectsErrorHandler: true },
 	)</code>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <b>Decorators : </b>
-                            <br />
-                            <code>
-                                @Effect({dispatch: false, resubscribeOnError: true})<br />
-                            </code>
                         </td>
                     </tr>
                         <tr>
@@ -230,7 +229,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { isPlatformBrowser } from &#x27;@angular/common&#x27;;
 import { Inject, Injectable, PLATFORM_ID } from &#x27;@angular/core&#x27;;
 import { NavigationEnd, Router } from &#x27;@angular/router&#x27;;
-import { Effect } from &#x27;@ngrx/effects&#x27;;
+import { createEffect } from &#x27;@ngrx/effects&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
 import { filter, tap } from &#x27;rxjs/operators&#x27;;
 
 /**
@@ -252,15 +252,22 @@ export class GoogleAnalyticsEffects {
 	/**
 	 * Whenever an Router Event takes place with an instanceof NavigationEnd, trigger the GoogleAnalytics Effect
 	 */
-	@Effect({ dispatch: false, resubscribeOnError: true })
-	pageView: any &#x3D; this.router.events.pipe(
-		filter(event &#x3D;&gt; event instanceof NavigationEnd),
-		tap((event: NavigationEnd) &#x3D;&gt; {
-			if (isPlatformBrowser(this.platformId)) {
-				(window as any).ga(&#x27;set&#x27;, &#x27;page&#x27;, event.urlAfterRedirects);
-				(window as any).ga(&#x27;send&#x27;, &#x27;pageview&#x27;);
-			}
-		}),
+	pageView$: Observable&lt;NavigationEnd&gt; &#x3D; createEffect(
+		() &#x3D;&gt;
+			this.router.events.pipe(
+				filter((event) &#x3D;&gt; event instanceof NavigationEnd),
+				tap((event: NavigationEnd) &#x3D;&gt; {
+					if (isPlatformBrowser(this.platformId)) {
+						(window as any).ga(
+							&#x27;set&#x27;,
+							&#x27;page&#x27;,
+							event.urlAfterRedirects,
+						);
+						(window as any).ga(&#x27;send&#x27;, &#x27;pageview&#x27;);
+					}
+				}),
+			),
+		{ dispatch: false, useEffectsErrorHandler: true },
 	);
 }
 </code></pre>

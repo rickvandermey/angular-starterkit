@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { RouterModule, RouterStateSnapshot, Routes } from '@angular/router';
 import {
 	RouterStateSerializer,
@@ -12,6 +12,7 @@ import { ErrorPageComponent } from 'pages';
 /**
  * Class to implements the RouterStateSerializer with a custom serializer
  */
+@Injectable()
 export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
 	/**
 	 * Serialize the RouterState with the CustomSerialzer
@@ -47,7 +48,7 @@ const appRoutes: Routes = [
 					{
 						loadChildren: () =>
 							import('../modules/home.module').then(
-								m => m.HomeModule,
+								(m) => m.HomeModule,
 							),
 						path: '',
 						pathMatch: 'full',

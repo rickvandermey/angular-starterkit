@@ -18,7 +18,7 @@ Then(/^It should (.*?)show an Error notification$/, async (inverse: string) => {
 Then(/^Error Notification should contain "(.*?)"$/, async (text: string) => {
 	const notification = Header.getErrorNotificationElement();
 	// Wait due to the animation
-	await ElementHelper.waitUntillElementExists(notification);
+	await ElementHelper.waitUntilElementExists(notification);
 	return await StepHelper.handleContainsText(notification, text);
 });
 

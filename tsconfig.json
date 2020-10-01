@@ -7,7 +7,7 @@
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
 		"lib": ["es2018", "dom"],
-		"module": "esnext",
+		"module": "es2020",
 		"moduleResolution": "node",
 		"noEmitOnError": true,
 		"noUnusedLocals": true,

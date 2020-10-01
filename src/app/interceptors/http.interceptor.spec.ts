@@ -7,10 +7,11 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { TransferState } from '@angular/platform-browser';
-import { Store, StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
-import { DummyService } from '@services/dummy.service';
+import { environment } from '@environments/environment';
+import { DummyService } from '@services/dummy/dummy.service';
 import { SetRequestStatus } from '@store/application/application.actions';
 import { initialState } from '@testing/mock-store';
 import { AppHttpInterceptor } from './http.interceptor';
@@ -35,9 +36,9 @@ describe(`AppHttpInterceptor`, () => {
 			],
 		});
 
-		httpMock = TestBed.get(HttpTestingController);
-		store = TestBed.get(Store);
-		service = TestBed.get(DummyService);
+		httpMock = TestBed.inject(HttpTestingController);
+		store = TestBed.inject(MockStore);
+		service = TestBed.inject(DummyService);
 
 		spyOn(store, 'dispatch').and.callThrough();
 	});
@@ -63,13 +64,13 @@ describe(`AppHttpInterceptor`, () => {
 					expect(store.dispatch).toHaveBeenCalledWith(action),
 				),
 			)
-			.subscribe(response => {
+			.subscribe((response) => {
 				expect(response).toBeTruthy();
 				expect(store.dispatch).toHaveBeenCalledWith(action);
 			});
 
 		httpMock
-			.expectOne(`/assets/dummy/dummy.json`)
+			.expectOne(`${environment.assetsRoot}/dummy/dummy.json`)
 			.flush(mockResponse, mockResponse);
 	});
 });

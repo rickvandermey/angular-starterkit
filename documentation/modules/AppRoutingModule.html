@@ -77,7 +77,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, RouterStateSnapshot, Routes } from &#x27;@angular/router&#x27;;
 import {
 	RouterStateSerializer,
@@ -91,6 +91,7 @@ import { ErrorPageComponent } from &#x27;pages&#x27;;
 /**
  * Class to implements the RouterStateSerializer with a custom serializer
  */
+@Injectable()
 export class CustomSerializer implements RouterStateSerializer&lt;RouterStateUrl&gt; {
 	/**
 	 * Serialize the RouterState with the CustomSerialzer
@@ -126,7 +127,7 @@ const appRoutes: Routes &#x3D; [
 					{
 						loadChildren: () &#x3D;&gt;
 							import(&#x27;../modules/home.module&#x27;).then(
-								m &#x3D;&gt; m.HomeModule,
+								(m) &#x3D;&gt; m.HomeModule,
 							),
 						path: &#x27;&#x27;,
 						pathMatch: &#x27;full&#x27;,

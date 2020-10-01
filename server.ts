@@ -14,8 +14,7 @@ import { ROUTES } from './src/app/routes/static.paths';
 import { STATE_CB } from './src/app/ssr/tokens';
 import { AppServerModule } from './src/main.server';
 
-const isPrerender =
-	process.argv[2] && process.argv[2] === 'prerender' ? true : false;
+const isPrerender = process.argv[2] && process.argv[2] === 'prerender';
 
 const PORT = process.env.PORT || 4201;
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');
@@ -33,6 +32,9 @@ export function app(): any {
 	const win = domino.createWindow(template);
 
 	win.fetch = fetch;
+
+	// TODO: Due to type safety improvement this is no longer possible
+	// @ts-ignore
 	global['window'] = win;
 	Object.defineProperty(win.document.body.style, 'transform', {
 		value: () => {
@@ -105,7 +107,7 @@ export function app(): any {
 					let path = `${DIST_FOLDER}${req.path}/`;
 					let file = path + 'index.html';
 					mkdir(path, { recursive: true }, () => {
-						writeFile(file, html, err => {
+						writeFile(file, html, (err) => {
 							if (err) throw err;
 							console.log('The file has been saved!', file);
 						});
@@ -144,7 +146,7 @@ if (isPrerender) {
  */
 async function doRouteFetch(): Promise<any> {
 	for (const route of ROUTES) {
-		await new Promise(resolve =>
+		await new Promise((resolve) =>
 			request({ url: `http://localhost:${PORT}${route}` }, resolve),
 		);
 	}

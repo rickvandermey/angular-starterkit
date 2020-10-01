@@ -4,7 +4,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
 import { getInitialState } from '@app/ssr/tokens';
-import { DummyService } from '@services/dummy.service';
+import { DummyService } from '@services/dummy/dummy.service';
 import { DummyEffects } from '@store/dummy/dummy.effects';
 import * as fromDummy from '@store/dummy/dummy.reducer';
 import { HomePageComponent } from 'pages';
