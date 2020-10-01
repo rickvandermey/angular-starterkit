@@ -4,7 +4,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
-import { DummyService } from '@services/dummy.service';
+import { DummyService } from '@services/dummy/dummy.service';
 import * as dummyActions from './dummy.actions';
 import { DummyInterface } from './dummy.interface';
 

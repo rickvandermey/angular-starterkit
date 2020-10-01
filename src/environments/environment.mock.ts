@@ -3,6 +3,11 @@
  */
 export const environment = {
 	/**
+	 * VAPID_PUBLIC is the vapid public key
+	 */
+	VAPID_PUBLIC:
+		'BEgAWMdgbjHjFJp6i7hCKrbkXzSnRixZKRHLiruZb7hhopEdgvWeUftsjleOVUZEvjhCWHyoeoGsaO3-uH61qYk',
+	/**
 	 * apiCookies will be used to test mocking request
 	 */
 	apiCookies: { withCredentials: true },
@@ -14,6 +19,10 @@ export const environment = {
 	 * assetsRoot provides the start of the URI for assets
 	 */
 	assetsRoot: 'https://localhost:4000/assets',
+	/**
+	 * notificationServer will return the notificationServer url for selected enviroment
+	 */
+	notificationServer: `https://localhost:4000/v1`,
 	/**
 	 * Boolean to declare if the environment is in production mode
 	 */

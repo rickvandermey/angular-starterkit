@@ -57,6 +57,7 @@
 <li>🎯 Git hooks (husky)</li>
 <li>🎯 Extend Angular CLI (webpack)</li>
 <li>🤩 Ability to Mock data (mockServer) (Docker)</li>
+<li>🎰 WebPush integration (mockServer and PWA)</li>
 </ul>
 <h5 id="quickstart">Quickstart:</h5>
 <ul>
@@ -122,19 +123,21 @@
 <p>sample can be fount at <em>&#39;./documentation/index.html&#39;</em></p>
 <h3 id="website-performance-optimization-🚀">Website Performance Optimization 🚀</h3>
 <ul>
-<li><code>npm run wpo:stats</code> to get a clear view of all dependencies and their dependencies for your project (when IVY is disabled).</li>
-<li><code>npm run wpo:stats-es5</code> to get a clear view of all dependencies and their dependencies for your project (when IVY is enabled).</li>
-<li><code>npm run wpo:stats-es2015</code> to get a clear view of all dependencies and their dependencies for your project (when IVY is enabled).</li>
+<li><code>npm run wpo:stats</code> to get a clear view of all dependencies and their dependencies for your project.</li>
 <li><code>npm run wpo:lighthouse</code> to get a lighthouse score for your current project. (change the URL in <code>ci/fetchLighthouse.js</code>).</li>
 </ul>
 <h2 id="mock-data-mockserver-🤩">Mock data (MockServer) 🤩</h2>
 <p>As of version 1.1.0 it is possible to setup a mockServer with <code>npm run server:mock</code>. Port will be <code>https://localhost:4000</code> and the different status can be set at <code>https://localhost:4000/mocking</code>. All data can be setup in <em>&#39;./mockServer&#39;</em>. Examples of API, JSON and images are added.
 As of version 2.1.0 the mockServer is running through Docker and runs with HTTPS/HTTP2</p>
+<h3 id="web-push">Web push</h3>
+<p>Do a POST call to <code>https://localhost:4000/notification</code> to create a mocked push notification.
+Best can be tested after <code>npm run build &amp;&amp; npm run start:dist</code>. The application will then be available at <code>https://localhost:8081</code></p>
+<p>NOTE: for the mockserver to work for this production build use <code>npm run server:mock:prod</code></p>
 <h6 id="example-sites">example sites:</h6>
 <ul>
 <li>IVY build - <a href="https://angular.rickvandermeij.nl">https://angular.rickvandermeij.nl</a></li>
-<li>Prerendering (no IVY) - <a href="https://angular-prerender.rickvandermeij.nl">https://angular-prerender.rickvandermeij.nl</a></li>
-<li>Server Side Rendering (no IVY) - <code>npm run start:ssr</code></li>
+<li>Prerendering - <a href="https://angular-prerender.rickvandermeij.nl">https://angular-prerender.rickvandermeij.nl</a></li>
+<li>Server Side Rendering - <code>npm run start:ssr</code></li>
 </ul>
 
 

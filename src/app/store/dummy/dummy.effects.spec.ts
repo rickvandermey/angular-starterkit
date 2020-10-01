@@ -6,7 +6,7 @@ import { Action } from '@ngrx/store';
 import { cold, hot } from 'jasmine-marbles';
 import { Observable, of, throwError } from 'rxjs';
 
-import { DummyService } from '@services/dummy.service';
+import { DummyService } from '@services/dummy/dummy.service';
 import { initialState as mockStore } from '@testing/mock-store';
 
 import * as dummyActions from './dummy.actions';

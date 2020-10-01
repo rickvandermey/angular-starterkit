@@ -26,9 +26,11 @@ import {
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { LocalStorageService } from '@services/local-storage.service';
+import { PushNotificationService } from '@services/push-notifications/push-notifications.service';
 import * as fromApplication from '@store/application/application.reducer';
 import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from '@store/meta/app.tokens';
 import { storageMetaReducer } from '@store/meta/storage.metareducer';
+import * as fromNotifications from '@store/notifications/notifications.reducer';
 import { RouterEffects } from '@store/router/router.effects';
 
 // Core
@@ -83,6 +85,7 @@ export function getMetaReducers(
 		StoreModule.forRoot(
 			{
 				applicationState: fromApplication.Applicationreducer,
+				notificationState: fromNotifications.reducer,
 				routerState: routerReducer,
 			},
 			{ initialState: getInitialState },
@@ -100,9 +103,15 @@ export function getMetaReducers(
 		}),
 	],
 	providers: [
+		PushNotificationService,
 		{
 			provide: STORAGE_KEYS,
-			useValue: ['applicationState', 'dummyState', 'routerState'],
+			useValue: [
+				'applicationState',
+				'dummyState',
+				'notifications',
+				'routerState',
+			],
 		},
 		{ provide: LOCAL_STORAGE_KEY, useValue: '__app_storage__' },
 		{

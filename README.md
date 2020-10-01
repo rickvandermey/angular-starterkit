@@ -28,6 +28,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   🎯 Git hooks (husky)
 -   🎯 Extend Angular CLI (webpack)
 -   🤩 Ability to Mock data (mockServer) (Docker)
+-   🎰 WebPush integration (mockServer and PWA)
 
 ##### Quickstart:
 

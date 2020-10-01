@@ -55,6 +55,18 @@ export const initialState = {
 		isLoaded: true,
 		isLoading: false,
 	},
+	notifications: {
+		entities: {
+			'2': {
+				body: 'message test',
+				id: 2,
+				timeStamp: new Date(),
+				title: 'title test',
+				type: 'success',
+			},
+		},
+		ids: [2],
+	},
 	routerState: {
 		state: {
 			params: {

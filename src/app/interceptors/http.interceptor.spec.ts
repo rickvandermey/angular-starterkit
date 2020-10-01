@@ -10,7 +10,8 @@ import { TransferState } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
-import { DummyService } from '@services/dummy.service';
+import { environment } from '@environments/environment';
+import { DummyService } from '@services/dummy/dummy.service';
 import { SetRequestStatus } from '@store/application/application.actions';
 import { initialState } from '@testing/mock-store';
 import { AppHttpInterceptor } from './http.interceptor';
@@ -69,7 +70,7 @@ describe(`AppHttpInterceptor`, () => {
 			});
 
 		httpMock
-			.expectOne(`/assets/dummy/dummy.json`)
+			.expectOne(`${environment.assetsRoot}/dummy/dummy.json`)
 			.flush(mockResponse, mockResponse);
 	});
 });

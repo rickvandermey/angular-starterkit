@@ -18,7 +18,7 @@
       },
       {
         "label": "Execution Start Time",
-        "value": "2020-10-01T08:14:14.009Z"
+        "value": "2020-10-01T09:41:00.302Z"
       }
     ]
   },
@@ -30,7 +30,7 @@
   "browser": 3,
   "name": "",
   "version": "version",
-  "time": "2020-10-01T08:14:20.055Z",
+  "time": "2020-10-01T09:41:06.938Z",
   "features": [
     {
       "metadata": {
@@ -48,7 +48,7 @@
       "keyword": "Feature",
       "name": "Hello world Feature",
       "line": 1,
-      "id": "b620b043-c150-4d16-801f-9389b38a83e3-hello-world-feature",
+      "id": "af0c9485-e33a-485d-99b5-6613fb91e292-hello-world-feature",
       "tags": [],
       "uri": "e2e/home.feature",
       "elements": [
@@ -149,7 +149,7 @@
       "keyword": "Feature",
       "name": "Hello world Feature",
       "line": 3,
-      "id": "b5c05b07-158d-4e2f-85ab-c355aabc73ea-hello-world-feature",
+      "id": "162713ba-d440-4e5b-9849-2571e948f6b7-hello-world-feature",
       "tags": [],
       "uri": "e2e/features/home.feature",
       "elements": [
@@ -298,7 +298,7 @@
       "keyword": "Feature",
       "name": "Hello world Feature",
       "line": 3,
-      "id": "3c123293-1602-4b95-bd93-b5548cc23aad-hello-world-feature",
+      "id": "02ba1e29-e61f-47e0-90e0-dc778b33c37b-hello-world-feature",
       "tags": [],
       "uri": "e2e/features/home.feature",
       "elements": [
@@ -318,7 +318,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 99000000
+                "duration": 63000000
               }
             },
             {
@@ -331,9 +331,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 754000000
+                "duration": 762000000
               },
-              "time": "00:00:00.754"
+              "time": "00:00:00.762"
             },
             {
               "keyword": "After",
@@ -343,34 +343,29 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 10000000
+                "duration": 12000000
               },
               "embeddings": [
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601540055970,\"type\":\"\"}",
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601545266023,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601540059426,\"type\":\"\"}",
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601545266265,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601540059877,\"type\":\"\"}",
-                  "mime_type": "text/plain"
-                },
-                {
-                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 64813:8 \\\"[WDS] Live Reloading enabled.\\\"\",\"timestamp\":1601540059925,\"type\":\"\"}",
+                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601545266650,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 }
               ],
               "attachments": [],
               "text": [
-                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601540055970,\"type\":\"\"}",
-                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601540059426,\"type\":\"\"}",
-                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601540059877,\"type\":\"\"}",
-                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 64813:8 \\\"[WDS] Live Reloading enabled.\\\"\",\"timestamp\":1601540059925,\"type\":\"\"}"
+                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601545266023,\"type\":\"\"}",
+                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601545266265,\"type\":\"\"}",
+                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601545266650,\"type\":\"\"}"
               ],
-              "time": "00:00:00.010"
+              "time": "00:00:00.012"
             },
             {
               "keyword": "After",
@@ -380,7 +375,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 2000000
+                "duration": 1000000
               }
             }
           ],
@@ -390,8 +385,8 @@
           "skipped": 0,
           "pending": 0,
           "ambiguous": 0,
-          "duration": 764000000,
-          "time": "00:00:00.764"
+          "duration": 774000000,
+          "time": "00:00:00.774"
         }
       ],
       "scenarios": {
@@ -409,8 +404,8 @@
         "ambiguousPercentage": "0.00",
         "total": 1
       },
-      "duration": 764000000,
-      "time": "00:00:00.764",
+      "duration": 774000000,
+      "time": "00:00:00.774",
       "isFailed": false,
       "isAmbiguous": false,
       "isSkipped": false,

@@ -205,7 +205,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 99000000
+              "duration": 63000000
             }
           },
           {
@@ -218,7 +218,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 754000000
+              "duration": 762000000
             }
           },
           {
@@ -229,23 +229,19 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10000000
+              "duration": 12000000
             },
             "embeddings": [
               {
-                "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601540055970,\"type\":\"\"}",
+                "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601545266023,\"type\":\"\"}",
                 "mime_type": "text/plain"
               },
               {
-                "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601540059426,\"type\":\"\"}",
+                "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601545266265,\"type\":\"\"}",
                 "mime_type": "text/plain"
               },
               {
-                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601540059877,\"type\":\"\"}",
-                "mime_type": "text/plain"
-              },
-              {
-                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 64813:8 \\\"[WDS] Live Reloading enabled.\\\"\",\"timestamp\":1601540059925,\"type\":\"\"}",
+                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601545266650,\"type\":\"\"}",
                 "mime_type": "text/plain"
               }
             ]
@@ -258,7 +254,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1000000
             }
           }
         ]

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { SwUpdate } from '@angular/service-worker';
+import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { Store, StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import {
@@ -13,6 +13,7 @@ import {
 import { Observable, of } from 'rxjs';
 
 import { LocalStorageService } from '@services/local-storage.service';
+import { PushNotificationService } from '@services/push-notifications/push-notifications.service';
 import { LOCAL_STORAGE_KEY, STORAGE_KEYS } from '@store/meta/app.tokens';
 import { initialState } from '@testing/mock-store';
 import { MockSwUpdate } from '@testing/mock.spec';
@@ -49,6 +50,7 @@ describe('Components: App Component', () => {
 					CommonModule,
 					HttpClientModule,
 					StoreModule.forRoot({}),
+					ServiceWorkerModule.register('', { enabled: false }),
 					TranslateModule.forRoot({
 						loader: {
 							provide: TranslateLoader,
@@ -57,6 +59,7 @@ describe('Components: App Component', () => {
 					}),
 				],
 				providers: [
+					PushNotificationService,
 					TranslateService,
 					provideMockStore({ initialState }),
 					{
