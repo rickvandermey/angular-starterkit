@@ -1,8 +1,8 @@
-import { urlencoded } from 'body-parser';
 import * as cookie from 'cookie';
 import * as express from 'express';
 import * as fs from 'fs';
 import * as spdy from 'spdy';
+import * as webpush from 'web-push';
 import * as helper from './helper';
 
 // Add additional logging to the mockServer so we can debug if certain calls ever happened
@@ -12,6 +12,11 @@ import * as helper from './helper';
 const apimock = require('@ng-apimock/core');
 const iocContainer = require('@ng-apimock/core/dist/ioc-container');
 const devInterface = require('@ng-apimock/dev-interface');
+
+// Mock VAPID keys for push notifications
+const PUBLIC_VAPID =
+	'BEgAWMdgbjHjFJp6i7hCKrbkXzSnRixZKRHLiruZb7hhopEdgvWeUftsjleOVUZEvjhCWHyoeoGsaO3-uH61qYk';
+const PRIVATE_VAPID = 'VZAsr1xw5KBAMp3qdpUlBAMfJIeII5cBRvts2VkSqYk';
 
 // NOTE: not ideal but will be refactored when we deal with HTTP2 and typescript refactor
 let credentials: {
@@ -25,17 +30,20 @@ let credentials: {
 	key: string;
 };
 
-if (fs.existsSync('../ci/server.key') && fs.existsSync('../ci/server.crt')) {
+if (
+	fs.existsSync('../build/server.key') &&
+	fs.existsSync('../build/server.crt')
+) {
 	// Loads the correct key and certificate to host the mock server over https
 	credentials = {
-		cert: fs.readFileSync('../ci/server.crt', 'utf8'),
-		key: fs.readFileSync('../ci/server.key', 'utf8'),
+		cert: fs.readFileSync('../build/server.crt', 'utf8'),
+		key: fs.readFileSync('../build/server.key', 'utf8'),
 	};
 } else {
 	// Falls back to the default key and certificate
 	credentials = {
-		cert: fs.readFileSync('../ci/default/server.crt', 'utf8'),
-		key: fs.readFileSync('../ci/default/server.key', 'utf8'),
+		cert: fs.readFileSync('../build/default/server.crt', 'utf8'),
+		key: fs.readFileSync('../build/default/server.key', 'utf8'),
 	};
 }
 
@@ -59,7 +67,7 @@ apimock.processor.process({
 // app.use(morgan('dev'));
 
 // Add form data parser so we can check deprecated request bodies
-app.use(urlencoded({ extended: true }));
+app.use(express.json());
 
 // Add API wide headers which are dictated by nginx
 app.use(
@@ -69,6 +77,9 @@ app.use(
 		next: express.NextFunction,
 	): void => {
 		res.header('Access-Control-Allow-Origin', 'https://localhost:4202');
+		if (process.env.ALLOW_ORIGIN === '8081') {
+			res.header('Access-Control-Allow-Origin', 'https://localhost:8081');
+		}
 
 		res.header(
 			'Access-Control-Allow-Methods',
@@ -77,7 +88,7 @@ app.use(
 
 		res.header(
 			'Access-Control-Allow-Headers',
-			'Authorization, Content-Type, x-xsrf-token, Pragma, Cache-Control',
+			'Authorization, Content-Type, x-xsrf-token, x-requested-with, Pragma, Cache-Control',
 		);
 
 		res.header(
@@ -123,12 +134,34 @@ app.use(
 				let variables = handler.state._global._variables;
 
 				// If there's a session (e2e for instance), match identifier
-				handler.state._sessions.forEach((session: any): any => {
-					if (session._identifier === mockCookie) {
-						scenario = session._mocks[mock.name].scenario;
-						variables = session._variables;
-					}
-				});
+				handler.state._sessions.forEach(
+					(session: {
+						/**
+						 * _identifier is the sessions identifier
+						 */
+						_identifier: string;
+						/**
+						 * _mocks are the sessions object with all scenarios
+						 */
+						_mocks: {
+							[key: string]: {
+								/**
+								 * scenario is the mocks scenario
+								 */
+								scenario: string;
+							};
+						};
+						/**
+						 * _variables are the sessions optional variables
+						 */
+						_variables: {};
+					}): void => {
+						if (session._identifier === mockCookie) {
+							scenario = session._mocks[mock.name].scenario;
+							variables = session._variables;
+						}
+					},
+				);
 
 				const response = mock.responses[scenario];
 				const mockRequest = mock.request;
@@ -183,6 +216,51 @@ app.use(apimock.middleware);
 
 // Bind a route so you can modify the running mock server
 app.use('/mocking', express.static(devInterface));
+
+// Setup push notifcation Mock
+const fakeDatabase = [];
+webpush.setVapidDetails(
+	'mailto:mock@localhost.com',
+	PUBLIC_VAPID,
+	PRIVATE_VAPID,
+);
+
+app.post('/v1/subscription', (req, res) => {
+	const subscription = req.body;
+	fakeDatabase.push(subscription);
+	res.sendStatus(200);
+});
+
+app.post('/v1/notifications', (req, res) => {
+	const id = Math.round(Math.random() * 0x100);
+	const timeStamp = new Date();
+	const notificationPayload = {
+		notification: {
+			body: req.body.body || 'body test',
+			data: { id, timeStamp, type: req.body.type || 'success' },
+			icon: 'assets/icons/intranet512x512t.png',
+			title: req.body.title || 'title test',
+		},
+	};
+
+	const promises = [];
+	fakeDatabase.forEach((subscription) => {
+		promises.push(
+			webpush.sendNotification(
+				subscription,
+				JSON.stringify(notificationPayload),
+			),
+		);
+	});
+	Promise.all(promises).then(() =>
+		res.send({
+			_links: { self: 'https://localhost:4000/v1/notifications' },
+			data: { ...req.body, data: notificationPayload.notification.data },
+			meta: {},
+			successful: true,
+		}),
+	);
+});
 
 // Simple feedback the server is actually running
 app.listen(app.get('port') - 1, () => {

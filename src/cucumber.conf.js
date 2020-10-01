@@ -9,15 +9,18 @@ const runnerIdentifier = process.env.npm_config_runner || 0;
 const totalRunners = process.env.npm_config_total || 1;
 const totalShards = process.env.npm_config_shards * totalRunners || 1;
 
+const retry = process.env.npm_config_retry || 1;
+
 const cliTag = process.env.TAG;
 
-let tags = ['~@skip'];
+const tags = ['~@skip'];
 if (cliTag) {
 	tags.push(cliTag);
 }
 
-let baseUrl = 'https://localhost:4202/';
-let platformData = {
+const baseUrl = 'https://localhost:4202/';
+const defaultChromeDebugPort = 9222;
+const platformData = {
 	device: os.hostname(),
 	platform: {
 		name: os.platform() === 'darwin' ? 'osx' : os.platform(),
@@ -27,19 +30,19 @@ let platformData = {
 
 // If the report folder does not exist create it due to the subsequent processes relying on it existing
 fs.existsSync('../reports') || fs.mkdirSync('../reports');
-
+// noinspection JSUnusedGlobalSymbols
 exports.config = {
+	baseUrl,
 	SELENIUM_PROMISE_MANAGER: false,
 	allScriptsTimeout: 110000,
 	ignoreUncaughtExceptions: true,
-	baseUrl: baseUrl,
 	cucumberOpts: {
+		tags,
 		compiler: [],
 		dryRun: false,
 		format: ['json:reports/e2e/results.json'],
 		require: ['../e2e/steps/**/*.ts'],
-		retry: 2,
-		tags,
+		retry: retry,
 	},
 	directConnect: true,
 	framework: 'custom',
@@ -86,20 +89,19 @@ exports.config = {
 	useAllAngular2AppRoots: true,
 
 	// Enable TypeScript for the tests
-	onPrepare: function () {
+	onPrepare() {
 		require('ts-node').register({
 			project: 'src/tsconfig.cucumber.json',
 		});
 	},
 
 	// Open the newly generated report
-	afterLaunch: function () {
-		// TODO: perhaps make this conditional
+	afterLaunch() {
 		opn('reports/e2e/report/index.html');
 	},
 
 	// Calculate the difference in estimated runtime and actual runtime
-	onCleanUp: function () {
+	onCleanUp() {
 		diffFeatures(parseDurations(), getFeatures());
 	},
 };
@@ -111,13 +113,15 @@ exports.config = {
  * @returns {*[]}
  */
 function getAllFiles(dirPath, arrayOfFiles = []) {
-	let fullPath = __dirname + '/' + dirPath;
-	let files = fs.readdirSync(fullPath);
-	files.forEach(function (file) {
-		if (fs.statSync(fullPath + '/' + file).isDirectory()) {
-			arrayOfFiles = getAllFiles(dirPath + '/' + file, arrayOfFiles);
+	const fullPath = `${__dirname}/${dirPath}`;
+	const files = fs.readdirSync(fullPath);
+
+	files.forEach((file) => {
+		const tempPath = `${fullPath}/${file}`;
+		if (fs.statSync(tempPath).isDirectory()) {
+			arrayOfFiles = getAllFiles(`${dirPath}/${file}`, arrayOfFiles);
 		} else if (file.endsWith('.feature')) {
-			arrayOfFiles.push(fullPath + '/' + file);
+			arrayOfFiles.push(tempPath);
 		}
 	});
 
@@ -134,7 +138,7 @@ function getDuration(filePath) {
 	const lines = data.split(/\r?\n/);
 
 	// Parse the duration from the first line
-	let duration = /^# Duration: (\d\d:\d\d:\d\d\.\d\d\d)/.exec(lines[0]);
+	const duration = /^# Duration: (\d\d:\d\d:\d\d\.\d\d\d)/.exec(lines[0]);
 
 	// If no matches are found fall back to a 1 minute duration and print a warning
 	if (duration === null) {
@@ -153,13 +157,13 @@ function getDuration(filePath) {
  * @returns {[]}
  */
 function getFeatures() {
-	let features = [];
+	const features = [];
 
 	getAllFiles('../e2e/features').forEach((file) => {
-		let duration = getDuration(file);
+		const duration = getDuration(file);
 		features.push({
-			file: file.replace(__dirname + '/', ''),
-			duration: duration,
+			duration,
+			file: file.replace(`${__dirname}/`, ''),
 		});
 	});
 
@@ -172,7 +176,7 @@ function getFeatures() {
  * @returns {number}
  */
 function convertTimeToMillis(time) {
-	return Date.parse('1970-01-01T' + time + 'Z').valueOf();
+	return Date.parse(`1970-01-01T${time}Z`).valueOf();
 }
 
 /**
@@ -189,7 +193,7 @@ function diffFeatures(durations, features) {
 				found = true;
 				const targetDuration = convertTimeToMillis(feature.duration);
 				const resultDuration = convertTimeToMillis(duration.duration);
-				let diffInSeconds =
+				const diffInSeconds =
 					Math.abs(targetDuration - resultDuration) / 1000;
 				if (diffInSeconds > maxAllowedDiffInSeconds) {
 					console.warn(
@@ -231,7 +235,7 @@ function getShardIndexWithLowestDuration(shardDurations) {
  * @returns {Array}
  */
 function parseDurations() {
-	let result = [];
+	const result = [];
 	const report = require('../reports/e2e/report/enriched-output.json');
 
 	report.features.forEach(function (feature) {
@@ -252,7 +256,7 @@ function parseDurations() {
 function assignFeaturesToShards(numberOfShards) {
 	// Sort the features based on duration
 	// Reverse order so we start with the longest durations
-	let features = getFeatures().sort(
+	const features = getFeatures().sort(
 		(a, b) =>
 			convertTimeToMillis(b.duration) - convertTimeToMillis(a.duration),
 	);
@@ -279,7 +283,7 @@ function assignFeaturesToShards(numberOfShards) {
 function printShardDistribution(shards) {
 	shards.forEach(function (shard, i) {
 		if (shouldRunInRunner(i)) {
-			let shardTime = new Date(shard.duration);
+			const shardTime = new Date(shard.duration);
 			console.log(
 				`Shard: ${
 					i + 1
@@ -296,7 +300,10 @@ function printShardDistribution(shards) {
  * @returns {boolean}
  */
 function shouldRunInRunner(shardIndex) {
-	return shardIndex % parseInt(totalRunners) === parseInt(runnerIdentifier);
+	return (
+		shardIndex % parseInt(totalRunners, 10) ===
+		parseInt(runnerIdentifier, 10)
+	);
 }
 
 /**
@@ -306,7 +313,7 @@ function shouldRunInRunner(shardIndex) {
  * @param shards
  */
 function createChromeCapabilities(i, result, shards) {
-	const debugPort = 9222 + i;
+	const debugPort = defaultChromeDebugPort + i;
 	// Offset is to center the first window correctly on a second screen
 	const xOffset = 1500;
 
@@ -318,29 +325,28 @@ function createChromeCapabilities(i, result, shards) {
 	const xPosition = (i % xMax) * width + xOffset;
 	const yPosition = Math.floor(i / yMax) * height;
 
-	let arguments = [
+	const args = [
 		'no-sandbox',
 		'disable-infobars',
 		'--allow-insecure-localhost',
 		'--disable-translate',
 		'--disable-extensions',
-		'--window-size=' + width + ',' + height,
-		'--window-position=' + xPosition + ',' + yPosition,
-		'--remote-debugging-port=' + debugPort,
-		// Enable the option below to start the browser with a devtool tab
+		`--window-size=${width},${height}`,
+		`--window-position=${xPosition},${yPosition}`,
+		`--remote-debugging-port=${debugPort}`,
 		// '--auto-open-devtools-for-tabs',
 	];
 
 	if (shouldRunHeadless) {
-		arguments.push('headless');
+		args.push('headless');
 	}
 
 	result.push({
+		debugPort,
 		browserName: 'chrome',
 		specs: shards[i].files,
-		debugPort: debugPort,
 		chromeOptions: {
-			args: arguments,
+			args,
 			binary: puppeteer.executablePath(),
 			perfLoggingPrefs: {
 				enableNetwork: true,
@@ -351,6 +357,7 @@ function createChromeCapabilities(i, result, shards) {
 			...platformData,
 			device: `${platformData.device} Runner: ${parseInt(
 				runnerIdentifier,
+				10,
 			)} Shard: ${i + 1}`,
 		},
 		loggingPrefs: {
@@ -376,6 +383,7 @@ function createFirefoxCapabilities(i, result, shards) {
 			...platformData,
 			device: `${platformData.device} Runner: ${parseInt(
 				runnerIdentifier,
+				10,
 			)} Shard: ${i + 1}`,
 		},
 		loggingPrefs: {
@@ -399,6 +407,7 @@ function createSafariCapabilities(i, result, shards) {
 			...platformData,
 			device: `${platformData.device} Runner: ${parseInt(
 				runnerIdentifier,
+				10,
 			)} Shard: ${i + 1}`,
 		},
 		loggingPrefs: {
@@ -413,7 +422,7 @@ function createSafariCapabilities(i, result, shards) {
  * @returns {Array}
  */
 function getCapabilities() {
-	let result = [];
+	const result = [];
 
 	const shards = assignFeaturesToShards(totalShards);
 	printShardDistribution(shards);
