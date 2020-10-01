@@ -8,7 +8,11 @@ if (process.argv[2]) {
 } else {
 	baseUrl = `https://angular-prerender.rickvandermeij.nl`;
 }
-
+let APIKEY = '';
+if (process.env.PAGESPEED_TOKEN) {
+	console.log('Using PAGESPEED_TOKEN environment variable.');
+	APIKEY = process.env.PAGESPEED_TOKEN;
+}
 const outputDir = './reports';
 fs.mkdir(outputDir, { recursive: true }, function (error) {
 	if (error) {
@@ -19,24 +23,18 @@ fs.mkdir(outputDir, { recursive: true }, function (error) {
 	}
 });
 
-let APIKEY = '';
-if (process.env.PAGESPEED_TOKEN) {
-	console.log('Using PAGESPEED_TOKEN environment variable.');
-	APIKEY = process.env.PAGESPEED_TOKEN;
-}
-
 // Encode to allow adding to the url as a request
 const applicationURL = encodeURI(baseUrl);
 
 // We first do a separate request to the application, since first request performs badly
-warmUpS3(baseUrl, () => {
+warmUp(baseUrl, () => {
 	console.log('Running pagespeed tests');
 	generateReport(baseUrl, 'mobile', outputDir);
 	generateReport(baseUrl, 'desktop', outputDir);
 });
 
-function warmUpS3(url, callback) {
-	console.log('Prewarming S3');
+function warmUp(url, callback) {
+	console.log('Prewarming');
 	request.get(
 		{
 			url,
