@@ -1,10 +1,19 @@
 # CHANGELOG
 
+## [3.0.0](https://github.com/rickvandermey/angular-starterkit/tree/3.0.0)
+
+### Features
+
+-   **Angular:** Updated to Angular 10.x
+-   **Packages:** Updated all dependencies to the latest version of 2020-10-01
+-   **mockServer:** Add Vapid keys, to make it possible for push notifications
+-   **Push notifications:** Add store to save all push notifications to
+
 ## [2.1.0](https://github.com/rickvandermey/angular-starterkit/tree/2.1.0)
 
 ### Features
 
--   **Packages:** Updated all dependencies to the latest version of 2020-26-03
+-   **Packages:** Updated all dependencies to the latest version of 2020-03-26
 -   **mockServer:** Converted mockserver from javascript to Typescript
 -   **mockServer:** Updated mockserver to HTTPS/HTTP2
 -   **mockServer:** Mockserver gets served from Docker image

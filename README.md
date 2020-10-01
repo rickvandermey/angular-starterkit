@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/rickvandermey/angular-starterkit.svg?branch=master)](https://travis-ci.com/rickvandermey/angular-starterkit)
 [![codecov](https://codecov.io/gh/rickvandermey/angular-starterkit/branch/master/graph/badge.svg)](https://codecov.io/gh/rickvandermey/angular-starterkit)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.rickvandermey.angular-starterkit&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.rickvandermey.angular-starterkit)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=RVDM-Angular-Starterkit&metric=alert_status)](https://sonarcloud.io/dashboard?id=RVDM-Angular-Starterkit)
 [![dependencies Status](https://david-dm.org/rickvandermey/angular-starterkit.svg)](https://david-dm.org/rickvandermey/angular-starterkit)
 [![devDependencies Status](https://david-dm.org/rickvandermey/angular-starterkit/dev-status.svg)](https://david-dm.org/rickvandermey/angular-starterkit?type=dev)
 
