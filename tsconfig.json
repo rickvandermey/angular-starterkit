@@ -1,20 +1,51 @@
-/*
-  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
-  It is not intended to be used to perform a compilation.
-
-  To learn more about this file see: https://angular.io/config/solution-tsconfig.
-*/
 {
-	"files": [],
-	"references": [
-		{
-			"path": "./src/tsconfig.app.json"
+	"compileOnSave": false,
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./src/",
+		"declaration": false,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"lib": ["es2018", "dom"],
+		"module": "es2020",
+		"moduleResolution": "node",
+		"noEmitOnError": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"outDir": "./dist",
+		"paths": {
+			"@app/*": ["app/*"],
+			"@assets/*": ["assets/*"],
+			"assets": ["assets"],
+			"@components/*": ["app/components/*"],
+			"components": ["app/components"],
+			"core-js/es7/reflect": [
+				"../node_modules/core-js/proposals/reflect-metadata"
+			],
+			"core-js/es6/*": ["../node_modules/core-js/es/*"],
+			"@environments/*": ["environments/*"],
+			"environments": ["environments"],
+			"@helpers/*": ["app/helpers/*"],
+			"helpers": ["app/helpers"],
+			"@interfaces/*": ["app/interfaces/*"],
+			"interfaces": ["app/interfaces"],
+			"@modules/*": ["app/modules/*"],
+			"modules": ["app/modules"],
+			"@pages/*": ["app/pages/*"],
+			"pages": ["app/pages"],
+			"@pipes/*": ["app/pipes/*"],
+			"pipes": ["app/pipes"],
+			"@routes/*": ["app/routes/*"],
+			"routes": ["app/routes"],
+			"@services/*": ["app/services/*"],
+			"services": ["app/services"],
+			"@store/*": ["app/store/*"],
+			"store": ["app/store"],
+			"@testing/*": ["app/testing/*"],
+			"testing/*": ["app/testing/*"]
 		},
-		{
-			"path": "./src/tsconfig.spec.json"
-		},
-		{
-			"path": "./src/tsconfig.server.json"
-		}
-	]
+		"sourceMap": true,
+		"target": "es2015",
+		"typeRoots": ["node_modules/@types"]
+	}
 }
