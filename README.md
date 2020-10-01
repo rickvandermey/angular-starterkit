@@ -114,9 +114,7 @@ sample can be fount at _'./documentation/index.html'_
 
 ### Website Performance Optimization 🚀
 
--   `npm run wpo:stats` to get a clear view of all dependencies and their dependencies for your project (when IVY is disabled).
--   `npm run wpo:stats-es5` to get a clear view of all dependencies and their dependencies for your project (when IVY is enabled).
--   `npm run wpo:stats-es2015` to get a clear view of all dependencies and their dependencies for your project (when IVY is enabled).
+-   `npm run wpo:stats` to get a clear view of all dependencies and their dependencies for your project.
 -   `npm run wpo:lighthouse` to get a lighthouse score for your current project. (change the URL in `ci/fetchLighthouse.js`).
 
 ## Mock data (MockServer) 🤩
@@ -124,8 +122,15 @@ sample can be fount at _'./documentation/index.html'_
 As of version 1.1.0 it is possible to setup a mockServer with `npm run server:mock`. Port will be `https://localhost:4000` and the different status can be set at `https://localhost:4000/mocking`. All data can be setup in _'./mockServer'_. Examples of API, JSON and images are added.
 As of version 2.1.0 the mockServer is running through Docker and runs with HTTPS/HTTP2
 
+### Web push
+
+Do a POST call to `https://localhost:4000/notification` to create a mocked push notification.
+Best can be tested after `npm run build && npm run start:dist`. The application will then be available at `https://localhost:8081`
+
+NOTE: for the mockserver to work for this production build use `npm run server:mock:prod`
+
 ###### example sites:
 
 -   IVY build - https://angular.rickvandermeij.nl
--   Prerendering (no IVY) - https://angular-prerender.rickvandermeij.nl
--   Server Side Rendering (no IVY) - `npm run start:ssr`
+-   Prerendering - https://angular-prerender.rickvandermeij.nl
+-   Server Side Rendering - `npm run start:ssr`

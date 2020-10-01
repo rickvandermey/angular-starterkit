@@ -8,6 +8,7 @@
 	"scripts": {
 		"start": "ng serve --extra-webpack-config webpack.partial.js",
 		"start:clean": "npm run clean:install && npm run start",
+		"start:dist": "cd dist/browser && http-server -S -C  ../../build/server.crt -K ../../build/server.key -g -p 8081",
 		"start:mock": "ng serve --extra-webpack-config webpack.partial.js --configuration=mock",
 		"start:prerender": "npm run prerender:build && cd dist/browser && http-server -S -C  ../../build/server.crt -K ../../build/server.key -g -P \"404\" -c 12960000",
 		"start:ssr": "npm run ssr:build && npm run ssr:serve",
@@ -28,7 +29,9 @@
 		"lint": "ng lint && npm run stylelint",
 		"postinstall": "ngcc",
 		"prerender:build": "npm run start:ssr prerender",
+		"server:build": "docker-compose up --build",
 		"server:mock": "docker-compose up",
+		"server:mock:prod": "cd mockserver && ALLOW_ORIGIN='8081' npm run start",
 		"ssr:build": "npm run build:client-and-server-bundles:ssr",
 		"ssr:serve": "node dist/server/main.js",
 		"stylelint": "stylelint \"src/{scss,app}/**/*.scss\" --config .stylelintrc --fix",
