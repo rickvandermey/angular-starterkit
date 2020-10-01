@@ -360,7 +360,7 @@ export function getMetaReducers(
 			deps: [DOCUMENT, PLATFORM_ID],
 			multi: true,
 			provide: APP_INITIALIZER,
-			useFactory: /* istanbul ignore next */ function(
+			useFactory: /* istanbul ignore next */ function (
 				document: HTMLDocument,
 				platformId: Object,
 			): Function {
@@ -370,7 +370,7 @@ export function getMetaReducers(
 						const styles: any[] &#x3D; Array.prototype.slice.apply(
 							dom.querySelectorAll(&#x60;style[ng-transition]&#x60;),
 						);
-						styles.forEach(el &#x3D;&gt; {
+						styles.forEach((el) &#x3D;&gt; {
 							// Remove ng-transition attribute to prevent Angular appInitializerFactory
 							// to remove server styles before preboot complete
 							el.removeAttribute(&#x27;ng-transition&#x27;);
@@ -378,7 +378,7 @@ export function getMetaReducers(
 						document.addEventListener(&#x27;PrebootComplete&#x27;, () &#x3D;&gt; {
 							// After preboot complete, remove the server scripts
 							setTimeout(() &#x3D;&gt;
-								styles.forEach(el &#x3D;&gt; dom.removeChild(el)),
+								styles.forEach((el) &#x3D;&gt; dom.removeChild(el)),
 							);
 						});
 					}

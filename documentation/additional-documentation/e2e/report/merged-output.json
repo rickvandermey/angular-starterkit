@@ -1,0 +1,268 @@
+[
+  {
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "80.0.3987.149"
+      },
+      "device": "Ricks-MacBook-Pro-3.local",
+      "platform": {
+        "name": "osx",
+        "version": "19.3.0"
+      }
+    },
+    "description": "\tA user should see the Hello World message",
+    "keyword": "Feature",
+    "name": "Hello world Feature",
+    "line": 1,
+    "id": "hello-world-feature",
+    "tags": [],
+    "uri": "e2e/home.feature",
+    "elements": [
+      {
+        "id": "hello-world-feature;hello-world-scenario",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Hello world scenario",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "User enters the flow",
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 709000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:18"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "85.0.4182.0"
+      },
+      "device": "Ricks-MacBook-Pro-3.local Runner: 0 Shard: 1",
+      "platform": {
+        "name": "osx",
+        "version": "19.5.0"
+      }
+    },
+    "description": "\tA user should see the Hello World message",
+    "keyword": "Feature",
+    "name": "Hello world Feature",
+    "line": 3,
+    "id": "hello-world-feature",
+    "tags": [],
+    "uri": "e2e/features/home.feature",
+    "elements": [
+      {
+        "id": "hello-world-feature;hello-world-scenario",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Hello world scenario",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 93000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "User enters the flow",
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 664000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8000000
+            },
+            "embeddings": [
+              {
+                "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1595590302294,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1595590302633,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 83513:8 \\\"[WDS] Live Reloading enabled.\\\"\",\"timestamp\":1595590303008,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83587:8 \\\"[WDS] Warnings while compiling.\\\"\",\"timestamp\":1595590303009,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83596:10 \\\"/Users/rickvandermeij/Sources/Angular Starterkit/src/app/app.module.ts depends on 'environments/environment'. CommonJS or AMD dependencies can cause optimization bailouts.\\\\nFor more info see: https://angular.io/guide/build#configuring-commonjs-dependencies\\\"\",\"timestamp\":1595590303010,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83596:10 \\\"/Users/rickvandermeij/Sources/Angular Starterkit/src/app/app.module.ts depends on '@store/meta/storage.metareducer'. CommonJS or AMD dependencies can cause optimization bailouts.\\\\nFor more info see: https://angular.io/guide/build#configuring-commonjs-dependencies\\\"\",\"timestamp\":1595590303010,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "86.0.4240.0"
+      },
+      "device": "Ricks-MacBook-Pro-3.local Runner: 0 Shard: 1",
+      "platform": {
+        "name": "osx",
+        "version": "19.6.0"
+      }
+    },
+    "description": "\tA user should see the Hello World message",
+    "keyword": "Feature",
+    "name": "Hello world Feature",
+    "line": 3,
+    "id": "hello-world-feature",
+    "tags": [],
+    "uri": "e2e/features/home.feature",
+    "elements": [
+      {
+        "id": "hello-world-feature;hello-world-scenario",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Hello world scenario",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 99000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "User enters the flow",
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 754000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e/steps/generic.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            },
+            "embeddings": [
+              {
+                "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601540055970,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601540059426,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601540059877,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 64813:8 \\\"[WDS] Live Reloading enabled.\\\"\",\"timestamp\":1601540059925,\"type\":\"\"}",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

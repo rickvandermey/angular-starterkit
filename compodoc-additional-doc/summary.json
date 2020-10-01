@@ -1,11 +1,7 @@
 [
 	{
-		"title": "Bundle ES5 Analytics",
-		"file": "./bundlestats-es5-frame.html"
-	},
-	{
-		"title": "Bundle ES2015 Analytics",
-		"file": "./bundlestats-es2015-frame.html"
+		"title": "Bundle Analytics",
+		"file": "./bundlestats-frame.html"
 	},
 	{
 		"title": "E2E Testing Report (Cucumber)",

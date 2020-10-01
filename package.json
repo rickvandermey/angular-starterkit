@@ -16,7 +16,7 @@
 		"clean:install": "npm run clean && npm i",
 		"compress": "gzip-all \"dist/browser/**/*.{css,js,html}\" && bread-compressor -s -a brotli dist/browser/**/*.{css,js,html}",
 		"doc": "compodoc --coverageTestThresholdFail=false",
-		"doc:full": "npm run test:unit-headless && npm run test:e2e && npm run wpo:stats-es2015 && npm run wpo:lighthouse && npm run doc:reports && npm run doc -- --includes compodoc-additional-doc",
+		"doc:full": "npm run test:unit-headless && npm run test:e2e && npm run wpo:stats && npm run wpo:lighthouse && npm run doc:reports && npm run doc -- --includes compodoc-additional-doc",
 		"doc:reports": "npx mkdirp documentation/additional-documentation && npx ncp reports documentation/additional-documentation",
 		"build": "ng build --prod --stats-json --extra-webpack-config webpack.partial.js",
 		"build:client-and-server-bundles:ssr": "npm run build:gzip && ng run $npm_package_name:server:ssr --bundleDependencies true",

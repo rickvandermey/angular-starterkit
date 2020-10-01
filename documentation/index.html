@@ -40,7 +40,7 @@
 <h2 id="features">Features</h2>
 <ul>
 <li>⭐️ Modern vs. Legacy build (ES5 vs ES2015)</li>
-<li>😍 IVY opt-in</li>
+<li>😍 IVY by default</li>
 <li>⭐️ NGRX store (implemented according ngrx.io)</li>
 <li>😴 Lazy Loading</li>
 <li>⭐️ HttpInterceptor</li>
@@ -56,7 +56,7 @@
 <li>🚀 WPO: Stats for ES5 build and ES2015</li>
 <li>🎯 Git hooks (husky)</li>
 <li>🎯 Extend Angular CLI (webpack)</li>
-<li>🤩 Ability to Mock data (mockServer)</li>
+<li>🤩 Ability to Mock data (mockServer) (Docker)</li>
 </ul>
 <h5 id="quickstart">Quickstart:</h5>
 <ul>
@@ -67,10 +67,11 @@
 <p><img src="https://angular.rickvandermeij.nl/assets/google-audit.png" alt="Google Lighthouse result" class="img-responsive"></p>
 <h2 id="development-server">Development server</h2>
 <p><code>npm run start</code> available at <code>https://localhost:4202/</code> (Hot reloading enabled)
-<code>npm run start:mock</code> will use the mock environment, which connects with the mockServer at <code>http://localhost:4000</code></p>
+<code>npm run start:mock</code> will use the mock environment, which connects with the mockServer at <code>https://localhost:4000</code></p>
 <p>Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called <code>build</code>. Run <code>npm run certificate:generate:mac</code> to create the required certificates and place them in the required folder.</p>
 <h3 id="git-hooks-🎯">Git hooks 🎯</h3>
 <p>Git hooks are active, which means you only can commit when there are no linting errors, and all unit-tests succeeds. Other commmands can be implemented in the <code>package.json</code> with <code>husky</code>.</p>
+<p>When using nvm, the default node should be &gt; 10. <code>nvm alias stable default</code></p>
 <h2 id="build">Build</h2>
 <ul>
 <li><code>npm run build</code> - normal production build</li>
@@ -79,8 +80,7 @@
 <li><code>npm run ssr:build</code>- production build with Server Side Rendering</li>
 </ul>
 <h3 id="ivy-build-😍">Ivy Build 😍</h3>
-<p>To create an Ivy build, you&#39;ll need to update <code>src/tsconfig.app.json</code> and set <code>enableIvy: true</code>.</p>
-<p>NOTE: Be aware when doing this, functionality for SSR and Prerendering won&#39;t work at this moment (Angular 8.x.x).</p>
+<p>Ivy is set to true by default and works with SSR / Prerendering</p>
 <h3 id="server-side-rendering-ssr-😍">Server Side Rendering (SSR) 😍</h3>
 <p>This project comes with built-in SSR functionality. The effect of SSR will be valuable on larger projects or slower internet connections, run Google Audit with slow network to see the difference.</p>
 <ul>
@@ -128,7 +128,8 @@
 <li><code>npm run wpo:lighthouse</code> to get a lighthouse score for your current project. (change the URL in <code>ci/fetchLighthouse.js</code>).</li>
 </ul>
 <h2 id="mock-data-mockserver-🤩">Mock data (MockServer) 🤩</h2>
-<p>As of version 1.1.0 it is possible to setup a mockServer with <code>npm run server:mock</code>. Port will be <code>http://localhost:4000</code> and the different status can be set at <code>http://localhost:4000/mocking</code>. All data can be setup in <em>&#39;./mockServer&#39;</em>. Examples of API, JSON and images are added.</p>
+<p>As of version 1.1.0 it is possible to setup a mockServer with <code>npm run server:mock</code>. Port will be <code>https://localhost:4000</code> and the different status can be set at <code>https://localhost:4000/mocking</code>. All data can be setup in <em>&#39;./mockServer&#39;</em>. Examples of API, JSON and images are added.
+As of version 2.1.0 the mockServer is running through Docker and runs with HTTPS/HTTP2</p>
 <h6 id="example-sites">example sites:</h6>
 <ul>
 <li>IVY build - <a href="https://angular.rickvandermeij.nl">https://angular.rickvandermeij.nl</a></li>

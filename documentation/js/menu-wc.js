@@ -60,10 +60,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
                                     <li class="link ">
-                                        <a href="additional-documentation/bundle-es5-analytics.html" data-type="entity-link" data-context-id="additional">Bundle ES5 Analytics</a>
-                                    </li>
-                                    <li class="link ">
-                                        <a href="additional-documentation/bundle-es2015-analytics.html" data-type="entity-link" data-context-id="additional">Bundle ES2015 Analytics</a>
+                                        <a href="additional-documentation/bundle-analytics.html" data-type="entity-link" data-context-id="additional">Bundle Analytics</a>
                                     </li>
                                     <li class="link ">
                                         <a href="additional-documentation/e2e-testing-report-(cucumber).html" data-type="entity-link" data-context-id="additional">E2E Testing Report (Cucumber)</a>
@@ -90,13 +87,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-6a555c40f81739941ec73df67b6d4e4d"' : 'data-target="#xs-components-links-module-AppModule-6a555c40f81739941ec73df67b6d4e4d"' }>
+                                            'data-target="#components-links-module-AppModule-cffdfa575609596091e9ec07cf5423dd"' : 'data-target="#xs-components-links-module-AppModule-cffdfa575609596091e9ec07cf5423dd"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-6a555c40f81739941ec73df67b6d4e4d"' :
-                                            'id="xs-components-links-module-AppModule-6a555c40f81739941ec73df67b6d4e4d"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-cffdfa575609596091e9ec07cf5423dd"' :
+                                            'id="xs-components-links-module-AppModule-cffdfa575609596091e9ec07cf5423dd"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -193,6 +190,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
+                                <a href="components/BaseComponent.html" data-type="entity-link">BaseComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/ErrorPageComponent.html" data-type="entity-link">ErrorPageComponent</a>
                             </li>
                             <li class="link">
@@ -209,12 +209,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/BaseComponent.html" data-type="entity-link">BaseComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/CustomSerializer.html" data-type="entity-link">CustomSerializer</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/TranslateUniversalLoader.html" data-type="entity-link">TranslateUniversalLoader</a>
                             </li>
                         </ul>
@@ -227,6 +221,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                                <li class="link">
+                                    <a href="injectables/CustomSerializer.html" data-type="entity-link">CustomSerializer</a>
+                                </li>
                                 <li class="link">
                                     <a href="injectables/DummyEffects.html" data-type="entity-link">DummyEffects</a>
                                 </li>

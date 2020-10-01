@@ -9,10 +9,10 @@ export const selectReducerState = createFeatureSelector<
 
 export const getRouterInfo = createSelector(
 	selectReducerState,
-	state => state && state.state,
+	(state) => state && state.state,
 );
 
 export const getRouterLanguage = createSelector(
 	getRouterInfo,
-	state => state && state.params && state.params.language,
+	(state) => state && state.params && state.params.language,
 );

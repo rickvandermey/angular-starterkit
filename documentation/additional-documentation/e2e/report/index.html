@@ -8,20 +8,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     	<title>RVDM-Angular-Starterkit</title>
 
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="assets/js/html5shiv.min.js"></script>
-        <script src="assets/js/respond.min.js"></script>
-        <![endif]-->
+        
+                <!-- Bootstrap -->
+                <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
+                
+                <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                
+                <!--[if lt IE 9]>
+                <script src="assets/js/html5shiv.min.js"></script>
+                <script src="assets/js/respond.min.js"></script>
+                <![endif]-->
 
-        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+                <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
-        <!-- DataTables -->
-        <link href="assets/css/dataTables.bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/responsive.dataTables.min.css" rel="stylesheet">
+                <!-- DataTables -->
+                <link href="assets/css/dataTables.bootstrap.min.css" rel="stylesheet">
+                <link href="assets/css/responsive.dataTables.min.css" rel="stylesheet">
+        
 
         <!-- Custom Theme Style -->
         <style type="text/css">
@@ -532,7 +536,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
         <tr>
             <td class="chart">
                 <canvas id="feature-chart"></canvas>
-                <div class="total">1</div>
+                <div class="total">3</div>
             </td>
             <td>
                 <table class="tile_info">
@@ -599,7 +603,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
         <tr>
             <td class="chart">
                 <canvas id="scenario-chart"></canvas>
-                <div class="total">1</div>
+                <div class="total">3</div>
             </td>
             <td>
                 <table class="tile_info">
@@ -662,7 +666,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                 
                 <tr>
                     <td class="meta-data-title">Release</td>
-                    <td class="meta-data-data">1.6.0</td>
+                    <td class="meta-data-data">2.1.0</td>
                 </tr>
                 
                 <tr>
@@ -672,7 +676,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                 
                 <tr>
                     <td class="meta-data-title">Execution Start Time</td>
-                    <td class="meta-data-data">Mon Feb 10 2020 21:01:45 GMT+0100 (Central European Standard Time)</td>
+                    <td class="meta-data-data">Thu Oct 01 2020 10:14:14 GMT+0200 (Central European Summer Time)</td>
                 </tr>
                 
             
@@ -710,15 +714,18 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                         <th>Feature name</th>
                         <th><i class="fa fa-tags fa-lg" title="Tags"></i></th>
                         <th>Status</th>
-                        <th class="text-center">
-                            <i class="fa fa-desktop fa-lg"></i>
-                            <i class="fa fa-mobile fa-lg"></i>
-                        </th>
-                        <th>Device</th>
-                        <th>OS</th>
                         
+                            <th class="text-center">
+                                <i class="fa fa-desktop fa-lg"></i>
+                                <i class="fa fa-mobile fa-lg"></i>
+                            </th>
+                            <th>Device</th>
+                            <th>OS</th>
+                            
+                            
+                            <th>Browser</th>
+                            
                         
-                        <th>Browser</th>
                         
                         
                         <th>Duration</th>
@@ -737,7 +744,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     <tr>
                         <td>
-                            <a href="features/15ce9950-9838-455e-b2cc-815cd6a0c378-hello-world-feature.html">Hello world Feature</a>
+                            <a href="features/b620b043-c150-4d16-801f-9389b38a83e3-hello-world-feature.html">Hello world Feature</a>
                         </td>
                         <td class="text-center">
                             
@@ -757,6 +764,71 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 <span>check-circle passed-color</span>
                             </i>
                         </td>
+                        
+                            <td class="text-center">
+                                
+                                
+                                
+                                
+                                
+                                
+                                <i class="fa fa-desktop fa-lg" data-toggle="tooltip" data-placement="top" title="Desktop">
+                                    <span>desktop</span>
+                                </i>
+                            </td>
+                            <td>
+                                
+                                
+                                
+                                
+                                Ricks-MacBook-Pro-3.local
+                            </td>
+                            <td>
+                                
+                                
+                                
+                                
+                                <i class="fa fa-apple fa-lg"><span>apple</span></i>
+                                19.3.0
+                            </td>
+                            
+                            
+                            <td>
+                                
+                                
+                                
+                                
+                                
+                                <i class="fa fa-chrome fa-lg"><span>chrome</span></i>
+                                80.0.3987.149
+                                
+                            </td>
+                            
+                        
+                        
+                        
+                        <td>00:00:00.709</td>
+                        
+                        <td class="text-right ">1</td>
+                        <td class="text-right ">1</td>
+                        <td class="text-right none">0</td>
+                        
+                        
+                        
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <a href="features/b5c05b07-158d-4e2f-85ab-c355aabc73ea-hello-world-feature.html">Hello world Feature</a>
+                        </td>
+                        <td class="text-center">
+                            
+                            
+                            
+                            
+                            
+                        </td>
                         <td class="text-center">
                             
                             
@@ -764,40 +836,130 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                             
                             
                             
-                            <i class="fa fa-desktop fa-lg" data-toggle="tooltip" data-placement="top" title="Desktop">
-                                <span>desktop</span>
+                            <i class="fa fa-check-circle passed-color fa-lg" data-toggle="tooltip" data-placement="top" title="Passed">
+                                <span>check-circle passed-color</span>
                             </i>
                         </td>
+                        
+                            <td class="text-center">
+                                
+                                
+                                
+                                
+                                
+                                
+                                <i class="fa fa-desktop fa-lg" data-toggle="tooltip" data-placement="top" title="Desktop">
+                                    <span>desktop</span>
+                                </i>
+                            </td>
+                            <td>
+                                
+                                
+                                
+                                
+                                Ricks-MacBook-Pro-3.local Runner: 0 Shard: 1
+                            </td>
+                            <td>
+                                
+                                
+                                
+                                
+                                <i class="fa fa-apple fa-lg"><span>apple</span></i>
+                                19.5.0
+                            </td>
+                            
+                            
+                            <td>
+                                
+                                
+                                
+                                
+                                
+                                <i class="fa fa-chrome fa-lg"><span>chrome</span></i>
+                                85.0.4182.0
+                                
+                            </td>
+                            
+                        
+                        
+                        
+                        <td>00:00:00.672</td>
+                        
+                        <td class="text-right ">1</td>
+                        <td class="text-right ">1</td>
+                        <td class="text-right none">0</td>
+                        
+                        
+                        
+                        
+                    </tr>
+                    
+                    <tr>
                         <td>
-                            
-                            
-                            
-                            
-                            Ricks-MacBook-Pro-3.local
+                            <a href="features/3c123293-1602-4b95-bd93-b5548cc23aad-hello-world-feature.html">Hello world Feature</a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             
                             
                             
                             
-                            <i class="fa fa-apple fa-lg"><span>apple</span></i>
-                            19.2.0
-                        </td>
-                        
-                        
-                        <td>
-                            
-                            
-                            
-                            
-                            
-                            <i class="fa fa-chrome fa-lg"><span>chrome</span></i>
-                            79.0.3945.130
                             
                         </td>
+                        <td class="text-center">
+                            
+                            
+                            
+                            
+                            
+                            
+                            <i class="fa fa-check-circle passed-color fa-lg" data-toggle="tooltip" data-placement="top" title="Passed">
+                                <span>check-circle passed-color</span>
+                            </i>
+                        </td>
+                        
+                            <td class="text-center">
+                                
+                                
+                                
+                                
+                                
+                                
+                                <i class="fa fa-desktop fa-lg" data-toggle="tooltip" data-placement="top" title="Desktop">
+                                    <span>desktop</span>
+                                </i>
+                            </td>
+                            <td>
+                                
+                                
+                                
+                                
+                                Ricks-MacBook-Pro-3.local Runner: 0 Shard: 1
+                            </td>
+                            <td>
+                                
+                                
+                                
+                                
+                                <i class="fa fa-apple fa-lg"><span>apple</span></i>
+                                19.6.0
+                            </td>
+                            
+                            
+                            <td>
+                                
+                                
+                                
+                                
+                                
+                                <i class="fa fa-chrome fa-lg"><span>chrome</span></i>
+                                86.0.4240.0
+                                
+                            </td>
+                            
                         
                         
-                        <td>23:06:40.000</td>
+                        
+                        <td>00:00:00.764</td>
                         
                         <td class="text-right ">1</td>
                         <td class="text-right ">1</td>
@@ -828,16 +990,16 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             </div>
          
 
-        <script src="assets/js/jquery-3.2.1.min.js" ></script>
-        <script src="assets/js/bootstrap.min.js"></script>
+        
+            <script src="assets/js/jquery-3.2.1.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/Chart.min.js"></script>
 
-        <!-- DataTables -->
-        <script src="assets/js/jquery.dataTables.min.js"></script>
-        <script src="assets/js/dataTables.bootstrap.min.js"></script>
-        <script src="assets/js/dataTables.responsive.min.js"></script>
-
-        <!-- Chart.js -->
-        <script src="assets/js/Chart.min.js"></script>
+            <!-- DataTables -->
+            <script src="assets/js/jquery.dataTables.min.js"></script>
+            <script src="assets/js/dataTables.bootstrap.min.js"></script>
+            <script src="assets/js/dataTables.responsive.min.js"></script>
+        
 
         <!-- Custom -->
         <script>
@@ -867,7 +1029,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                         ],
                         datasets: [{
                             data: [
-                                1,
+                                3,
                                 0,
                                 0,
                                 0,
@@ -906,7 +1068,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                         ],
                         datasets: [{
                             data: [
-                                1,
+                                3,
                                 0,
                                 0,
                                 0,
