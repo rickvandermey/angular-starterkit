@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import {
+	ActivatedRouteSnapshot,
+	CanActivate,
+	Router,
+	UrlTree,
+} from '@angular/router';
 
 import { fallbackLanguage, languages } from '@app/globals';
 
@@ -18,11 +23,11 @@ export class LanguageGuard implements CanActivate {
 	 * @param  routerState RouterStateSnapshot
 	 * @return boolean | UrlTree
 	 */
-	canActivate(next: ActivatedRouteSnapshot): boolean | Promise<boolean> {
+	canActivate(next: ActivatedRouteSnapshot): boolean | UrlTree {
 		if (languages.includes(next.params.language)) {
 			return true;
 		} else {
-			return this.router.navigate([`${fallbackLanguage}/404`]);
+			return this.router.parseUrl(`${fallbackLanguage}/404`);
 		}
 	}
 }

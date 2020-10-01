@@ -10,6 +10,9 @@
 			"app",
 			"kebab-case"
 		],
+		"deprecation": {
+			"severity": "warning"
+		},
 		"indent": [true, "tabs"],
 		"no-duplicate-imports": true,
 		"no-duplicate-variable": true,
@@ -23,8 +26,8 @@
 		"ordered-imports": [
 			true,
 			{
-				"named-imports-order": "case-insensitive",
-				"import-sources-order": "case-insensitive"
+				"named-imports-order": "lowercase-last",
+				"import-sources-order": "lowercase-last"
 			}
 		],
 		"quotemark": [true, "single"],

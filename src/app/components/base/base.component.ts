@@ -1,9 +1,13 @@
-import { OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 /**
  * Extendable base class, all pages should use.
  */
+@Component({
+	selector: 'app-base-component',
+	template: 'no-ui',
+})
 export abstract class BaseComponent implements OnDestroy {
 	/**
 	 * Array of subscriptions handled by this component.

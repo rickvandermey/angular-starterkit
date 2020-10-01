@@ -1,9 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
-import { select, Store } from '@ngrx/store';
+import {
+	ChangeDetectorRef,
+	Component,
+	Inject,
+	OnInit,
+	PLATFORM_ID,
+} from '@angular/core';
+import { SwPush, SwUpdate } from '@angular/service-worker';
+import { Store, select } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
+import { isPlatformBrowser } from '@angular/common';
+import { environment } from '@environments/environment';
+import { GeneralHelper } from '@helpers/general.helper';
+import { PushNotificationService } from '@services/push-notifications/push-notifications.service';
+import { addNotification } from '@store/notifications/notifications.actions';
+import { NotificationInterface } from '@store/notifications/notifications.interface';
 import * as fromRouter from '@store/router/router.selectors';
 import { BaseComponent } from 'components';
 
@@ -14,7 +26,6 @@ import { BaseComponent } from 'components';
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 })
-
 /**
  * App Component which contains the initial route handling
  */
@@ -23,15 +34,27 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * routerLanguage is an Observable of the routerSelector getRouterLanguage
 	 */
 	routerLanguage$: Observable<string>;
+	/**
+	 * notifications returns messages of swPush
+	 */
+	notifications: NotificationInterface[] = [];
 
 	/**
 	 * constructor - The function which is called when the class is instantiated
-	 *
-	 * @param  {type} private router: Subscription for the Angular Router
-	 * @param  {type} public translate: Subscription for the Angular TranslateService
+	 * @param  {string} platformId - check wether the page is browser or server
+	 * @param  {Store} store - NGRX Store integration
+	 * @param  {ChangeDetectorRef} cd - Subscription for the Angular ChangeDetectorRef
+	 * @param  {PushNotificationService} pushService - Service for the PushNotificationService
+	 * @param  {SwPush} swPush - Subscription for the Angular SwUpdate
+	 * @param  {SwUpdate} swUpdate - Subscription for the Angular SwUpdate
+	 * @param  {TranslateService} translate - Subscription for the Angular TranslateService
 	 */
 	constructor(
+		@Inject(PLATFORM_ID) private readonly platformId: string,
 		private readonly store: Store<{}>,
+		public readonly cd: ChangeDetectorRef,
+		public pushService: PushNotificationService,
+		public swPush: SwPush,
 		public swUpdate: SwUpdate,
 		public translate: TranslateService,
 	) {
@@ -54,6 +77,32 @@ export class AppComponent extends BaseComponent implements OnInit {
 					window.location.reload();
 				}
 			});
+		}
+
+		/* istanbul ignore next */
+		if (isPlatformBrowser(this.platformId) && this.swPush.isEnabled) {
+			this.swPush.messages.subscribe((message) => {
+				const flattenedMessage = GeneralHelper.flattensObject(message);
+				this.store.dispatch(
+					addNotification({ notification: flattenedMessage }),
+				);
+				this.notifications.push(flattenedMessage);
+				this.notifications = GeneralHelper.dateSort(
+					this.notifications,
+					'timeStamp',
+				);
+				this.cd.markForCheck();
+			});
+			this.swPush
+				.requestSubscription({
+					serverPublicKey: environment.VAPID_PUBLIC,
+				})
+				.then((subscription) => {
+					this.pushService
+						.sendSubscriptionToTheServer(subscription)
+						.subscribe();
+				})
+				.catch();
 		}
 
 		this.addSubscription(

@@ -111,7 +111,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/routes/guards/language-guard.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/routes/guards/language-guard.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -176,8 +176,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/routes/guards/language-guard.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/routes/guards/language-guard.service.ts:26</a></div>
                 </td>
             </tr>
 
@@ -221,7 +221,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>boolean | Promise</code>
+                        <b>Returns : </b>    <code>boolean | UrlTree</code>
 
                     </div>
                     <div class="io-description">
@@ -238,7 +238,12 @@
 
         <div class="tab-pane fade  tab-source-code" id="c-source">
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRouteSnapshot, CanActivate, Router } from &#x27;@angular/router&#x27;;
+import {
+	ActivatedRouteSnapshot,
+	CanActivate,
+	Router,
+	UrlTree,
+} from &#x27;@angular/router&#x27;;
 
 import { fallbackLanguage, languages } from &#x27;@app/globals&#x27;;
 
@@ -257,11 +262,11 @@ export class LanguageGuard implements CanActivate {
 	 * @param  routerState RouterStateSnapshot
 	 * @return boolean | UrlTree
 	 */
-	canActivate(next: ActivatedRouteSnapshot): boolean | Promise&lt;boolean&gt; {
+	canActivate(next: ActivatedRouteSnapshot): boolean | UrlTree {
 		if (languages.includes(next.params.language)) {
 			return true;
 		} else {
-			return this.router.navigate([&#x60;${fallbackLanguage}/404&#x60;]);
+			return this.router.parseUrl(&#x60;${fallbackLanguage}/404&#x60;);
 		}
 	}
 }

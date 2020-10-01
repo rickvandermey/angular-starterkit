@@ -7,5 +7,5 @@ export const selectFeature = createFeatureSelector<ApplicationState>(
 
 export const selectIsMakingRequest = createSelector(
 	selectFeature,
-	state => state.isPendingRequest,
+	(state) => state.isPendingRequest,
 );

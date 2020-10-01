@@ -26,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 688000000
+              "duration": 709000000
             }
           },
           {
@@ -36,8 +36,7 @@
               "location": "e2e/steps/generic.steps.ts:18"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           },
           {
@@ -57,12 +56,12 @@
     "metadata": {
       "browser": {
         "name": "chrome",
-        "version": "79.0.3945.130"
+        "version": "80.0.3987.149"
       },
       "device": "Ricks-MacBook-Pro-3.local",
       "platform": {
         "name": "osx",
-        "version": "19.2.0"
+        "version": "19.3.0"
       }
     }
   }

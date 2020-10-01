@@ -14,8 +14,8 @@ export function storageMetaReducer<S, A extends Action = Action>(
 	storageService: LocalStorageService,
 ): (reducer: ActionReducer<S, A>) => (state: S, action: A) => S {
 	let onInit = true; // after load/refresh…
-	return function(reducer: ActionReducer<S, A>): (state: S, action: A) => S {
-		return function(state: S, action: A): S {
+	return function (reducer: ActionReducer<S, A>): (state: S, action: A) => S {
+		return function (state: S, action: A): S {
 			// get the next state.
 			const nextState = reducer(state, action);
 			// init the application state.

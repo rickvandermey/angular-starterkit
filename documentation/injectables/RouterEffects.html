@@ -216,7 +216,7 @@
 					this.router.navigate(path, { queryParams, ...extras });
 				}),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	)</code>
                         </td>
                     </tr>
@@ -261,7 +261,7 @@
 				ofType(routerActions.back),
 				tap(() &#x3D;&gt; this.location.back()),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	)</code>
                         </td>
                     </tr>
@@ -306,7 +306,7 @@
 				ofType(routerActions.forward),
 				tap(() &#x3D;&gt; this.location.forward()),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	)</code>
                         </td>
                     </tr>
@@ -378,7 +378,7 @@ export class RouterEffects {
 					this.router.navigate(path, { queryParams, ...extras });
 				}),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	);
 
 	/**
@@ -390,7 +390,7 @@ export class RouterEffects {
 				ofType(routerActions.back),
 				tap(() &#x3D;&gt; this.location.back()),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	);
 
 	/**
@@ -402,7 +402,7 @@ export class RouterEffects {
 				ofType(routerActions.forward),
 				tap(() &#x3D;&gt; this.location.forward()),
 			),
-		{ dispatch: false, resubscribeOnError: true },
+		{ dispatch: false, useEffectsErrorHandler: true },
 	);
 }
 </code></pre>

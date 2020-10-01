@@ -46,7 +46,7 @@ export const initialState: DummyState = {
 
 const createDummyReducer = createReducer(
 	initialState,
-	on(dummyActions.Load, state => ({
+	on(dummyActions.Load, (state) => ({
 		...state,
 		errorMessage: null,
 		isLoading: true,
@@ -63,7 +63,7 @@ const createDummyReducer = createReducer(
 		isLoaded: true,
 		isLoading: false,
 	})),
-	on(dummyActions.ClearError, state => ({
+	on(dummyActions.ClearError, (state) => ({
 		...state,
 		errorMessage: null,
 	})),

@@ -294,7 +294,7 @@ export const initialState: DummyState &#x3D; {
 
 const createDummyReducer &#x3D; createReducer(
 	initialState,
-	on(dummyActions.Load, state &#x3D;&gt; ({
+	on(dummyActions.Load, (state) &#x3D;&gt; ({
 		...state,
 		errorMessage: null,
 		isLoading: true,
@@ -311,7 +311,7 @@ const createDummyReducer &#x3D; createReducer(
 		isLoaded: true,
 		isLoading: false,
 	})),
-	on(dummyActions.ClearError, state &#x3D;&gt; ({
+	on(dummyActions.ClearError, (state) &#x3D;&gt; ({
 		...state,
 		errorMessage: null,
 	})),
