@@ -36,8 +36,7 @@
 		"test:e2e": "npm run server:mock & webdriver-manager update --standalone=false --gecko=false && ng e2e --webdriver-update=false && docker-compose down",
 		"test:unit-headless": "npm run test -- --browsers ChromeNoSandbox --watch=false",
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
-		"wpo:stats-es5": "webpack-bundle-analyzer dist/browser/stats-es5.json --mode=static --report=\"reports/wpo/bundle-report-es5.html\" --no-open && npx cpx dist/browser/stats-es5.json reports/wpo",
-		"wpo:stats-es2015": "webpack-bundle-analyzer dist/browser/stats-es2015.json --mode=static --report=\"reports/wpo/bundle-report-es2015.html\" --no-open && npx cpx dist/browser/stats-es2015.json reports/wpo"
+		"wpo:stats": "webpack-bundle-analyzer dist/browser/stats.json --mode=static --report=\"reports/wpo/bundle-report.html\" --no-open && npx cpx dist/browser/stats.json reports/wpo"
 	},
 	"husky": {
 		"hooks": {
