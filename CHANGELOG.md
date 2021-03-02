@@ -4,7 +4,7 @@
 
 ### Features
 
--   **Packages:** Updated all dependencies to the latest version of 2020-10-01
+-   **Packages:** Updated all dependencies to the latest version of 2021-02-03
 -   **Packages:** Removed deprecated dependency `@nguniversal/module-map-ngfactory-loader`
 
 ## [3.0.0](https://github.com/rickvandermey/angular-starterkit/tree/3.0.0)
