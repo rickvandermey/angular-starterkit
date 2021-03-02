@@ -28,6 +28,7 @@
 		"format:write": "npm run format -- --write",
 		"lint": "ng lint && npm run stylelint",
 		"postinstall": "ngcc",
+		"prepare": "husky install",
 		"prerender:build": "npm run start:ssr prerender",
 		"server:build": "docker-compose up --build",
 		"server:mock": "docker-compose up",
@@ -40,12 +41,6 @@
 		"test:unit-headless": "npm run test -- --browsers ChromeNoSandbox --watch=false",
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
 		"wpo:stats": "webpack-bundle-analyzer dist/browser/stats.json --mode=static --report=\"reports/wpo/bundle-report.html\" --no-open && npx cpx dist/browser/stats.json reports/wpo"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged && npm run lint",
-			"pre-push": "npm run test:unit-headless"
-		}
 	},
 	"dependencies": {
 		"@angular/animations": "11.2.3",

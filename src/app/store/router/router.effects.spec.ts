@@ -32,6 +32,7 @@ describe('Effects: Router effects', () => {
 
 	describe('Go', () => {
 		it('should not dispatch', () => {
+			spyOn(router, 'navigate');
 			const payload = { path: [`/en/404`] };
 			const action = routerActions.go({ payload });
 			actions$ = hot('-a', { a: action });
@@ -46,6 +47,7 @@ describe('Effects: Router effects', () => {
 		});
 
 		it('should navigate to provided path', () => {
+			spyOn(router, 'navigate');
 			const payload = { path: [`/en/404`] };
 			const action = routerActions.go({ payload });
 

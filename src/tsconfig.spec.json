@@ -4,7 +4,7 @@
 		"baseUrl": "./",
 		"module": "commonjs",
 		"outDir": "../out-tsc/spec",
-		"target": "es5",
+		"target": "es6",
 		"types": ["jasmine", "node"]
 	}
 }
