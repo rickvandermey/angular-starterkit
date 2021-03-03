@@ -8,9 +8,9 @@
 	"scripts": {
 		"start": "ng serve --extra-webpack-config webpack.partial.js",
 		"start:clean": "npm run clean:install && npm run start",
-		"start:dist": "cd dist/browser && http-server -S -C  ../../build/server.crt -K ../../build/server.key -g -p 8081",
+		"start:dist": "cd dist/browser && http-server -S -C  ../../build/default/server.crt -K ../../build/default/server.key -g -p 8081",
 		"start:mock": "ng serve --extra-webpack-config webpack.partial.js --configuration=mock",
-		"start:prerender": "npm run prerender:build && cd dist/browser && http-server -S -C  ../../build/server.crt -K ../../build/server.key -g -P \"404\" -c 12960000",
+		"start:prerender": "npm run prerender:build && cd dist/browser && http-server -S -C  ../../build/default/server.crt -K ../../build/default/server.key -g -P \"404\" -c 12960000",
 		"start:ssr": "npm run ssr:build && npm run ssr:serve",
 		"certificate:generate:mac": "cd ci && bash generateCertificateOSX.sh",
 		"clean": "rimraf node_modules reports dist coverage documentation",
