@@ -7,7 +7,8 @@
 -   **Packages:** Updated all dependencies to the latest version of 2021-02-03
 -   **Packages:** Removed deprecated dependency `@nguniversal/module-map-ngfactory-loader`
 -   **Husky:** Upgrade to latest husky with new hooks
--   **CHROME_BIN:** Provide chromeVersion into package json
+-   **CHROME_BIN:** Provide _'chromeVersion'_ into package json
+-   **Testing:** All reports are now provided inside _'reports'_ folder which will be ignored by `.gitignore`
 
 ### Breaking Changes
 

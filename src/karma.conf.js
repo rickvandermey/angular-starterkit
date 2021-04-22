@@ -14,7 +14,7 @@ module.exports = function (config) {
 		},
 		colors: true,
 		coverageReporter: {
-			dir: 'reports/coverage',
+			dir: '../reports/coverage',
 			reporters: [
 				{ type: 'html', subdir: 'html' },
 				{ type: 'lcovonly', subdir: '.', file: 'lcov.info' },

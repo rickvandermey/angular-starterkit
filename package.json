@@ -36,7 +36,7 @@
 		"ssr:build": "npm run build:client-and-server-bundles:ssr",
 		"ssr:serve": "node dist/server/main.js",
 		"stylelint": "stylelint \"src/{scss,app}/**/*.scss\" --config .stylelintrc --fix",
-		"test": "rimraf \"coverage\" & ng test --code-coverage --browsers Chromium",
+		"test": "ng test --code-coverage --browsers Chromium",
 		"test:e2e": "npm run server:mock -- -d && ng e2e --webdriver-update=false && docker-compose down",
 		"test:unit-headless": "npm run test -- --browsers ChromeNoSandbox --watch=false",
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
@@ -139,12 +139,5 @@
 		"typescript": "4.1.5",
 		"webpack-bundle-analyzer": "4.4.1",
 		"webpack-cli": "4.6.0"
-	},
-	"browserslist": [
-		"> 0.5%",
-		"last 2 versions",
-		"Firefox ESR",
-		"not dead",
-		"IE 11"
-	]
+	}
 }
