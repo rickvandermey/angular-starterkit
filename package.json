@@ -1,6 +1,6 @@
 {
 	"name": "RVDM-Angular-Starterkit",
-	"version": "3.1.0",
+	"version": "4.0.0",
 	"homepage": "/",
 	"author": "Rick van der Meij",
 	"private": false,
@@ -115,7 +115,6 @@
 		"lighthouse": "7.3.0",
 		"multiple-cucumber-html-reporter": "1.18.0",
 		"ncp": "2.0.0",
-		"ngx-build-plus": "11.0.0",
 		"node-fetch": "2.6.1",
 		"onchange": "7.1.0",
 		"opn": "6.0.0",

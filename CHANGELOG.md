@@ -1,11 +1,17 @@
 # CHANGELOG
 
-## [3.1.0](https://github.com/rickvandermey/angular-starterkit/tree/3.1.0)
+## [4.0.0](https://github.com/rickvandermey/angular-starterkit/tree/3.1.0)
 
 ### Features
 
 -   **Packages:** Updated all dependencies to the latest version of 2021-02-03
 -   **Packages:** Removed deprecated dependency `@nguniversal/module-map-ngfactory-loader`
+-   **Husky:** Upgrade to latest husky with new hooks
+-   **CHROME_BIN:** Provide chromeVersion into package json
+
+### Breaking Changes
+
+-   **NGX-build-plus:** removed ngx-build-plus because seems obsolete
 
 ## [3.0.0](https://github.com/rickvandermey/angular-starterkit/tree/3.0.0)
 
