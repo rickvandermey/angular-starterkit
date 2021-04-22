@@ -10,6 +10,10 @@
 -   **CHROME_BIN:** Provide _'chromeVersion'_ into package json
 -   **Testing:** All reports are now provided inside _'reports'_ folder which will be ignored by `.gitignore`
 
+### Bugfix
+
+-   **Travis:** Fix the SonarCloud instance, moving from dist trusty to xenial. Java 11 supported
+
 ### Breaking Changes
 
 -   **NGX-build-plus:** removed ngx-build-plus because seems obsolete
