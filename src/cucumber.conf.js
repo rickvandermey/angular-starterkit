@@ -18,7 +18,7 @@ if (cliTag) {
 	tags.push(cliTag);
 }
 
-const baseUrl = 'https://localhost:4202/';
+const applicationUrl = 'https://localhost:4202/';
 const defaultChromeDebugPort = 9222;
 const platformData = {
 	device: os.hostname(),
@@ -32,7 +32,7 @@ const platformData = {
 fs.existsSync('../reports') || fs.mkdirSync('../reports');
 // noinspection JSUnusedGlobalSymbols
 exports.config = {
-	baseUrl,
+	applicationUrl,
 	SELENIUM_PROMISE_MANAGER: false,
 	allScriptsTimeout: 110000,
 	ignoreUncaughtExceptions: true,
@@ -42,7 +42,7 @@ exports.config = {
 		dryRun: false,
 		format: ['json:reports/e2e/results.json'],
 		require: ['../e2e/steps/**/*.ts'],
-		retry: retry,
+		retry,
 	},
 	directConnect: true,
 	framework: 'custom',
@@ -70,7 +70,7 @@ exports.config = {
 						{ label: 'Release', value: packageFile.version },
 						{
 							label: 'Homepage',
-							value: `<a href="${baseUrl}">${baseUrl}</a>`,
+							value: `<a href="${applicationUrl}">${applicationUrl}</a>`,
 						},
 						{ label: 'Execution Start Time', value: new Date() },
 					],
@@ -186,6 +186,7 @@ function convertTimeToMillis(time) {
  */
 function diffFeatures(durations, features) {
 	const maxAllowedDiffInSeconds = 20;
+	const millisecondsInSecond = 1000;
 	durations.forEach(function (duration) {
 		let found = false;
 		features.forEach(function (feature) {
@@ -194,7 +195,8 @@ function diffFeatures(durations, features) {
 				const targetDuration = convertTimeToMillis(feature.duration);
 				const resultDuration = convertTimeToMillis(duration.duration);
 				const diffInSeconds =
-					Math.abs(targetDuration - resultDuration) / 1000;
+					Math.abs(targetDuration - resultDuration) /
+					millisecondsInSecond;
 				if (diffInSeconds > maxAllowedDiffInSeconds) {
 					console.warn(
 						`Feature: ${feature.file} had a difference of ${diffInSeconds} seconds and should be updated to: ${duration.duration} from ${feature.duration}`,
@@ -328,6 +330,8 @@ function createChromeCapabilities(i, result, shards) {
 	const args = [
 		'no-sandbox',
 		'disable-infobars',
+		'--no-sandbox',
+		'--disable-dev-shm-usage',
 		'--allow-insecure-localhost',
 		'--disable-translate',
 		'--disable-extensions',
