@@ -11,8 +11,9 @@
 			"schematics": {},
 			"architect": {
 				"build": {
-					"builder": "ngx-build-plus:browser",
+					"builder": "@angular-devkit/build-angular:browser",
 					"options": {
+						"aot": true,
 						"assets": [
 							"src/.htaccess",
 							"src/assets",
@@ -44,7 +45,6 @@
 									"with": "src/environments/environment.prod.ts"
 								}
 							],
-							"aot": true,
 							"buildOptimizer": true,
 							"extractCss": true,
 							"extractLicenses": true,
@@ -58,14 +58,13 @@
 					}
 				},
 				"serve": {
-					"builder": "ngx-build-plus:dev-server",
+					"builder": "@angular-devkit/build-angular:dev-server",
 					"options": {
-						"aot": true,
 						"browserTarget": "RVDM-Angular-Starterkit:build",
 						"port": 4202,
 						"ssl": true,
-						"sslKey": "build/server.key",
-						"sslCert": "build/server.crt"
+						"sslKey": "build/default/server.key",
+						"sslCert": "build/default/server.crt"
 					},
 					"configurations": {
 						"mock": {
@@ -76,14 +75,8 @@
 						}
 					}
 				},
-				"extract-i18n": {
-					"builder": "@angular-devkit/build-angular:extract-i18n",
-					"options": {
-						"browserTarget": "RVDM-Angular-Starterkit:build"
-					}
-				},
 				"test": {
-					"builder": "ngx-build-plus:karma",
+					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
 						"assets": [
 							"src/.htaccess",
@@ -105,8 +98,7 @@
 					"builder": "@angular-devkit/build-angular:protractor",
 					"options": {
 						"devServerTarget": "RVDM-Angular-Starterkit:serve:mock",
-						"protractorConfig": "src/cucumber.conf.js",
-						"webdriverUpdate": false
+						"protractorConfig": "src/cucumber.conf.js"
 					}
 				},
 				"lint": {

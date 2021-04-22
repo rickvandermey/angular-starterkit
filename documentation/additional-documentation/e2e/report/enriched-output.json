@@ -10,7 +10,7 @@
       },
       {
         "label": "Release",
-        "value": "2.1.0"
+        "value": "4.0.0"
       },
       {
         "label": "Homepage",
@@ -18,7 +18,7 @@
       },
       {
         "label": "Execution Start Time",
-        "value": "2020-10-01T09:41:00.302Z"
+        "value": "2021-04-22T11:26:39.949Z"
       }
     ]
   },
@@ -27,129 +27,28 @@
   "hideMetadata": false,
   "displayReportTime": false,
   "displayDuration": true,
-  "browser": 3,
+  "browser": 1,
   "name": "",
   "version": "version",
-  "time": "2020-10-01T09:41:06.938Z",
+  "time": "2021-04-22T11:26:47.609Z",
   "features": [
     {
       "metadata": {
         "browser": {
           "name": "chrome",
-          "version": "80.0.3987.149"
+          "version": "91.0.4469.0"
         },
-        "device": "Ricks-MacBook-Pro-3.local",
+        "device": "Ricks-MacBook-Pro.local Runner: 0 Shard: 1",
         "platform": {
           "name": "osx",
-          "version": "19.3.0"
-        }
-      },
-      "description": "\tA user should see the Hello World message",
-      "keyword": "Feature",
-      "name": "Hello world Feature",
-      "line": 1,
-      "id": "af0c9485-e33a-485d-99b5-6613fb91e292-hello-world-feature",
-      "tags": [],
-      "uri": "e2e/home.feature",
-      "elements": [
-        {
-          "id": "hello-world-feature;hello-world-scenario",
-          "keyword": "Scenario",
-          "line": 5,
-          "name": "Hello world scenario",
-          "tags": [],
-          "type": "scenario",
-          "steps": [
-            {
-              "arguments": [],
-              "keyword": "Given ",
-              "line": 6,
-              "name": "User enters the flow",
-              "match": {
-                "location": "e2e/steps/generic.steps.ts:32"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 709000000
-              },
-              "time": "00:00:00.709"
-            },
-            {
-              "keyword": "After",
-              "hidden": true,
-              "match": {
-                "location": "e2e/steps/generic.steps.ts:18"
-              },
-              "result": {
-                "status": "passed"
-              }
-            },
-            {
-              "keyword": "After",
-              "hidden": true,
-              "match": {
-                "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 1000000
-              }
-            }
-          ],
-          "passed": 1,
-          "failed": 0,
-          "notDefined": 0,
-          "skipped": 0,
-          "pending": 0,
-          "ambiguous": 0,
-          "duration": 709000000,
-          "time": "00:00:00.709"
-        }
-      ],
-      "scenarios": {
-        "passed": 1,
-        "failed": 0,
-        "notDefined": 0,
-        "skipped": 0,
-        "pending": 0,
-        "ambiguous": 0,
-        "passedPercentage": "100.00",
-        "failedPercentage": "0.00",
-        "notdefinedPercentage": "0.00",
-        "skippedPercentage": "0.00",
-        "pendingPercentage": "0.00",
-        "ambiguousPercentage": "0.00",
-        "total": 1
-      },
-      "duration": 709000000,
-      "time": "00:00:00.709",
-      "isFailed": false,
-      "isAmbiguous": false,
-      "isSkipped": false,
-      "isNotdefined": false,
-      "isPending": false,
-      "app": 0,
-      "browser": 0,
-      "passed": null,
-      "totalTime": null
-    },
-    {
-      "metadata": {
-        "browser": {
-          "name": "chrome",
-          "version": "85.0.4182.0"
-        },
-        "device": "Ricks-MacBook-Pro-3.local Runner: 0 Shard: 1",
-        "platform": {
-          "name": "osx",
-          "version": "19.5.0"
+          "version": "20.3.0"
         }
       },
       "description": "\tA user should see the Hello World message",
       "keyword": "Feature",
       "name": "Hello world Feature",
       "line": 3,
-      "id": "162713ba-d440-4e5b-9849-2571e948f6b7-hello-world-feature",
+      "id": "df43f5b2-cd8d-4dcb-a7b1-565f3b5e4320-hello-world-feature",
       "tags": [],
       "uri": "e2e/features/home.feature",
       "elements": [
@@ -169,7 +68,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 93000000
+                "duration": 74000000
               }
             },
             {
@@ -182,9 +81,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 664000000
+                "duration": 736000000
               },
-              "time": "00:00:00.664"
+              "time": "00:00:00.736"
             },
             {
               "keyword": "After",
@@ -194,44 +93,34 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 8000000
+                "duration": 23000000
               },
               "embeddings": [
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1595590302294,\"type\":\"\"}",
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1619090806684,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1595590302633,\"type\":\"\"}",
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1619090806904,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 83513:8 \\\"[WDS] Live Reloading enabled.\\\"\",\"timestamp\":1595590303008,\"type\":\"\"}",
+                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1619090807288,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83587:8 \\\"[WDS] Warnings while compiling.\\\"\",\"timestamp\":1595590303009,\"type\":\"\"}",
-                  "mime_type": "text/plain"
-                },
-                {
-                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83596:10 \\\"/Users/rickvandermeij/Sources/Angular Starterkit/src/app/app.module.ts depends on 'environments/environment'. CommonJS or AMD dependencies can cause optimization bailouts.\\\\nFor more info see: https://angular.io/guide/build#configuring-commonjs-dependencies\\\"\",\"timestamp\":1595590303010,\"type\":\"\"}",
-                  "mime_type": "text/plain"
-                },
-                {
-                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83596:10 \\\"/Users/rickvandermeij/Sources/Angular Starterkit/src/app/app.module.ts depends on '@store/meta/storage.metareducer'. CommonJS or AMD dependencies can cause optimization bailouts.\\\\nFor more info see: https://angular.io/guide/build#configuring-commonjs-dependencies\\\"\",\"timestamp\":1595590303010,\"type\":\"\"}",
+                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1619090807445,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 }
               ],
               "attachments": [],
               "text": [
-                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1595590302294,\"type\":\"\"}",
-                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1595590302633,\"type\":\"\"}",
-                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 83513:8 \\\"[WDS] Live Reloading enabled.\\\"\",\"timestamp\":1595590303008,\"type\":\"\"}",
-                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83587:8 \\\"[WDS] Warnings while compiling.\\\"\",\"timestamp\":1595590303009,\"type\":\"\"}",
-                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83596:10 \\\"/Users/rickvandermeij/Sources/Angular Starterkit/src/app/app.module.ts depends on 'environments/environment'. CommonJS or AMD dependencies can cause optimization bailouts.\\\\nFor more info see: https://angular.io/guide/build#configuring-commonjs-dependencies\\\"\",\"timestamp\":1595590303010,\"type\":\"\"}",
-                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/vendor.js 83596:10 \\\"/Users/rickvandermeij/Sources/Angular Starterkit/src/app/app.module.ts depends on '@store/meta/storage.metareducer'. CommonJS or AMD dependencies can cause optimization bailouts.\\\\nFor more info see: https://angular.io/guide/build#configuring-commonjs-dependencies\\\"\",\"timestamp\":1595590303010,\"type\":\"\"}"
+                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1619090806684,\"type\":\"\"}",
+                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1619090806904,\"type\":\"\"}",
+                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1619090807288,\"type\":\"\"}",
+                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1619090807445,\"type\":\"\"}"
               ],
-              "time": "00:00:00.008"
+              "time": "00:00:00.023"
             },
             {
               "keyword": "After",
@@ -241,7 +130,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 1000000
+                "duration": 3000000
               }
             }
           ],
@@ -251,8 +140,8 @@
           "skipped": 0,
           "pending": 0,
           "ambiguous": 0,
-          "duration": 672000000,
-          "time": "00:00:00.672"
+          "duration": 759000000,
+          "time": "00:00:00.759"
         }
       ],
       "scenarios": {
@@ -270,142 +159,8 @@
         "ambiguousPercentage": "0.00",
         "total": 1
       },
-      "duration": 672000000,
-      "time": "00:00:00.672",
-      "isFailed": false,
-      "isAmbiguous": false,
-      "isSkipped": false,
-      "isNotdefined": false,
-      "isPending": false,
-      "app": 0,
-      "browser": 0,
-      "passed": null,
-      "totalTime": null
-    },
-    {
-      "metadata": {
-        "browser": {
-          "name": "chrome",
-          "version": "86.0.4240.0"
-        },
-        "device": "Ricks-MacBook-Pro-3.local Runner: 0 Shard: 1",
-        "platform": {
-          "name": "osx",
-          "version": "19.6.0"
-        }
-      },
-      "description": "\tA user should see the Hello World message",
-      "keyword": "Feature",
-      "name": "Hello world Feature",
-      "line": 3,
-      "id": "02ba1e29-e61f-47e0-90e0-dc778b33c37b-hello-world-feature",
-      "tags": [],
-      "uri": "e2e/features/home.feature",
-      "elements": [
-        {
-          "id": "hello-world-feature;hello-world-scenario",
-          "keyword": "Scenario",
-          "line": 7,
-          "name": "Hello world scenario",
-          "tags": [],
-          "type": "scenario",
-          "steps": [
-            {
-              "keyword": "Before",
-              "hidden": true,
-              "match": {
-                "location": "e2e/steps/generic.steps.ts:28"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 63000000
-              }
-            },
-            {
-              "arguments": [],
-              "keyword": "Given ",
-              "line": 8,
-              "name": "User enters the flow",
-              "match": {
-                "location": "e2e/steps/generic.steps.ts:108"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 762000000
-              },
-              "time": "00:00:00.762"
-            },
-            {
-              "keyword": "After",
-              "hidden": true,
-              "match": {
-                "location": "e2e/steps/generic.steps.ts:37"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 12000000
-              },
-              "embeddings": [
-                {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601545266023,\"type\":\"\"}",
-                  "mime_type": "text/plain"
-                },
-                {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601545266265,\"type\":\"\"}",
-                  "mime_type": "text/plain"
-                },
-                {
-                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601545266650,\"type\":\"\"}",
-                  "mime_type": "text/plain"
-                }
-              ],
-              "attachments": [],
-              "text": [
-                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1601545266023,\"type\":\"\"}",
-                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1601545266265,\"type\":\"\"}",
-                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 33639:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1601545266650,\"type\":\"\"}"
-              ],
-              "time": "00:00:00.012"
-            },
-            {
-              "keyword": "After",
-              "hidden": true,
-              "match": {
-                "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
-              },
-              "result": {
-                "status": "passed",
-                "duration": 1000000
-              }
-            }
-          ],
-          "passed": 2,
-          "failed": 0,
-          "notDefined": 0,
-          "skipped": 0,
-          "pending": 0,
-          "ambiguous": 0,
-          "duration": 774000000,
-          "time": "00:00:00.774"
-        }
-      ],
-      "scenarios": {
-        "passed": 1,
-        "failed": 0,
-        "notDefined": 0,
-        "skipped": 0,
-        "pending": 0,
-        "ambiguous": 0,
-        "passedPercentage": "100.00",
-        "failedPercentage": "0.00",
-        "notdefinedPercentage": "0.00",
-        "skippedPercentage": "0.00",
-        "pendingPercentage": "0.00",
-        "ambiguousPercentage": "0.00",
-        "total": 1
-      },
-      "duration": 774000000,
-      "time": "00:00:00.774",
+      "duration": 759000000,
+      "time": "00:00:00.759",
       "isFailed": false,
       "isAmbiguous": false,
       "isSkipped": false,
@@ -420,11 +175,11 @@
   "featureCount": {
     "ambiguous": 0,
     "failed": 0,
-    "passed": 3,
+    "passed": 1,
     "notDefined": 0,
     "pending": 0,
     "skipped": 0,
-    "total": 3,
+    "total": 1,
     "ambiguousPercentage": "0.00",
     "failedPercentage": "0.00",
     "notdefinedPercentage": "0.00",
@@ -439,8 +194,8 @@
     "notDefined": 0,
     "pending": 0,
     "skipped": 0,
-    "passed": 3,
-    "total": 3,
+    "passed": 1,
+    "total": 1,
     "ambiguousPercentage": "0.00",
     "failedPercentage": "0.00",
     "notdefinedPercentage": "0.00",

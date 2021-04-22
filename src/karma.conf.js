@@ -8,23 +8,24 @@ module.exports = function (config) {
 	config.set({
 		autoWatch: true,
 		basePath: '',
-		browsers: ['Chrome', 'ChromeNoSandbox'],
+		browsers: ['Chromium', 'ChromeNoSandbox'],
 		client: {
 			clearContext: false, // leave Jasmine Spec Runner output visible in browser
 		},
 		colors: true,
-		coverageIstanbulReporter: {
-			dir: require('path').join(__dirname, '../coverage'),
-			fixWebpackSourcePaths: true,
-			reports: ['html', 'lcovonly', 'json-summary'],
-			skipFilesWithNoCoverage: false,
-			thresholds: {
-				emitWarning: false, // set to `true` to not fail the test command when thresholds are not met
+		coverageReporter: {
+			dir: '../reports/coverage',
+			reporters: [
+				{ type: 'html', subdir: 'html' },
+				{ type: 'lcovonly', subdir: '.', file: 'lcov.info' },
+				{ type: 'json-summary', subdir: '.', file: 'report-json.json' },
+			],
+			check: {
 				global: {
-					statements: 100,
-					lines: 100,
 					branches: 100,
 					functions: 100,
+					lines: 100,
+					statements: 100,
 				},
 			},
 		},
@@ -41,22 +42,22 @@ module.exports = function (config) {
 		},
 		frameworks: ['jasmine', '@angular-devkit/build-angular'],
 		junitReporter: {
-			outputDir: '../test-reports', // Src is used as CWD
+			outputDir: '../reports', // Src is used as CWD
 			outputFile: 'junit.xml',
 			useBrowserName: false,
 		},
 		logLevel: config.LOG_INFO,
 		port: 9876,
 		plugins: [
-			require('karma-jasmine'),
+			require('karma-coverage'),
 			require('karma-chrome-launcher'),
+			require('karma-jasmine'),
 			require('karma-jasmine-html-reporter'),
 			require('karma-junit-reporter'),
-			require('karma-coverage-istanbul-reporter'),
 			require('@angular-devkit/build-angular/plugins/karma'),
 		],
 		processKillTimeout: 6000,
-		reporters: ['progress', 'kjhtml', 'junit'],
+		reporters: ['progress', 'coverage', 'kjhtml', 'junit'],
 		retryLimit: 3,
 		singleRun: false,
 		webpack: { node: { fs: 'empty' } },

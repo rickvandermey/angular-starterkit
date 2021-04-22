@@ -32,7 +32,7 @@
 
 <p><a href="https://travis-ci.com/rickvandermey/angular-starterkit"><img src="https://travis-ci.com/rickvandermey/angular-starterkit.svg?branch=master" alt="Build Status" class="img-responsive"></a>
 <a href="https://codecov.io/gh/rickvandermey/angular-starterkit"><img src="https://codecov.io/gh/rickvandermey/angular-starterkit/branch/master/graph/badge.svg" alt="codecov" class="img-responsive"></a>
-<a href="https://sonarcloud.io/dashboard?id=com.github.rickvandermey.angular-starterkit"><img src="https://sonarcloud.io/api/project_badges/measure?project=com.github.rickvandermey.angular-starterkit&metric=alert_status" alt="Quality Gate Status" class="img-responsive"></a>
+<a href="https://sonarcloud.io/dashboard?id=RVDM-Angular-Starterkit"><img src="https://sonarcloud.io/api/project_badges/measure?project=RVDM-Angular-Starterkit&metric=alert_status" alt="Quality Gate Status" class="img-responsive"></a>
 <a href="https://david-dm.org/rickvandermey/angular-starterkit"><img src="https://david-dm.org/rickvandermey/angular-starterkit.svg" alt="dependencies Status" class="img-responsive"></a>
 <a href="https://david-dm.org/rickvandermey/angular-starterkit?type=dev"><img src="https://david-dm.org/rickvandermey/angular-starterkit/dev-status.svg" alt="devDependencies Status" class="img-responsive"></a></p>
 <h1 id="blazing-fast-advanced-angular-starterkit">Blazing fast advanced Angular Starterkit</h1>
@@ -55,7 +55,6 @@
 <li>🚀 WPO: Google Lighthouse reporter (save to Compodoc additional docs)</li>
 <li>🚀 WPO: Stats for ES5 build and ES2015</li>
 <li>🎯 Git hooks (husky)</li>
-<li>🎯 Extend Angular CLI (webpack)</li>
 <li>🤩 Ability to Mock data (mockServer) (Docker)</li>
 <li>🎰 WebPush integration (mockServer and PWA)</li>
 </ul>
@@ -90,17 +89,19 @@
 </ul>
 <h3 id="prerendering-angular-😍😍😍">Prerendering Angular 😍😍😍</h3>
 <ul>
-<li>For Serving - <code>npm run start:prerender</code></li>
-<li>For Building - <code>npm run prerender:build</code></li>
-</ul>
-<h3 id="extend-the-angular-cli-settings-webpack-🎯">Extend the Angular CLI settings (Webpack) 🎯</h3>
-<p>It is possible to extend the Angular CLI settings via a <code>webpack.partial.js</code>. Angular CLI will still optimize all functionality without being ejected. The Webpack Partial still gives you the opportunity the specify certain extra configurations in Webpack.</p>
+<li><p>For Serving - <code>npm run start:prerender</code></p>
+</li>
+<li><p>For Building - <code>npm run prerender:build</code></p>
 <h2 id="testing">Testing</h2>
-<ul>
-<li><code>npm run lint</code> - Linting application</li>
-<li><code>npm run test</code> - Unit test Watcher</li>
-<li><code>npm run test:unit-headless</code> - Unit test single Run</li>
-<li><code>npm run test:e2e</code> - End to End test with Protractor and reports with Cucumber</li>
+</li>
+<li><p><code>npm run lint</code> - Linting application</p>
+</li>
+<li><p><code>npm run test</code> - Unit test Watcher</p>
+</li>
+<li><p><code>npm run test:unit-headless</code> - Unit test single Run</p>
+</li>
+<li><p><code>npm run test:e2e</code> - End to End test with Protractor and reports with Cucumber</p>
+</li>
 </ul>
 <h3 id="running-unit-tests-with-karma-🤓">Running unit tests with Karma 🤓</h3>
 <p>Run <code>npm run test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>. This script will be run as a watcher. Most effective to run this alongside <code>npm run start</code> while developing.</p>

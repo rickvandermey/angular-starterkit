@@ -4,7 +4,6 @@ import {
 	ServerModule,
 	ServerTransferStateModule,
 } from '@angular/platform-server';
-import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
@@ -27,7 +26,6 @@ export function TranslateUniversalService(): TranslateUniversalLoader {
 	bootstrap: [AppComponent],
 	imports: [
 		AppModule,
-		ModuleMapLoaderModule,
 		ServerModule,
 		ServerTransferStateModule,
 		TranslateModule.forRoot({

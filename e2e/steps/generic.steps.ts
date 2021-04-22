@@ -45,7 +45,7 @@ After(async function (scenario: HookScenarioResult): Promise<void> {
 					!entry.message.startsWith('https://localhost:4000/') &&
 					!entry.message.startsWith('http://localhost:3999/') &&
 					!entry.message.startsWith(
-						'https://www.google-analytics.com/analytics.js',
+						'https://www.google-analytics.com/',
 					)
 				) {
 					throw new Error(`Error log detected: ${entry.message}`);

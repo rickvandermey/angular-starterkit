@@ -59,6 +59,13 @@
             <code>src/app/services/push-notifications/push-notifications.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>PushNotificationService provides a service to get push notifications</p>
+
+            </p>
 
 
 
@@ -108,7 +115,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/push-notifications/push-notifications.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/push-notifications/push-notifications.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -173,8 +180,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/services/push-notifications/push-notifications.service.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/services/push-notifications/push-notifications.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -213,15 +220,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>sendNotification(notification: literal type)</code>
+<code>sendNotification(notification: <a href="../interfaces/NotificationInterface.html">NotificationInterface</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/services/push-notifications/push-notifications.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/services/push-notifications/push-notifications.service.ts:65</a></div>
                 </td>
             </tr>
 
@@ -245,7 +252,7 @@
                                 <tr>
                                     <td>notification</td>
                                     <td>
-                                            <code>literal type</code>
+                                                <code><a href="../interfaces/NotificationInterface.html" target="_self" >NotificationInterface</a></code>
                                     </td>
 
                                     <td>
@@ -295,8 +302,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/services/push-notifications/push-notifications.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/services/push-notifications/push-notifications.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -364,6 +371,9 @@ import { Observable } from &#x27;rxjs&#x27;;
 import { environment } from &#x27;@environments/environment&#x27;;
 import { NotificationInterface } from &#x27;@store/notifications/notifications.interface&#x27;;
 
+/**
+ * PushNotificationService provides a service to get push notifications
+ */
 @Injectable()
 export class PushNotificationService {
 	constructor(private readonly http: HttpClient) {}
@@ -387,12 +397,30 @@ export class PushNotificationService {
 	 * @return the response of the HTTP GET
 	 */
 	loadNotifications(): Observable&lt;
-		{ headers: HttpHeaders } | { data: NotificationInterface }
+		| {
+				/**
+				 * headers are the HttpHeaders
+				 */
+				headers: HttpHeaders;
+				/* tslint:disable-next-line */
+		  }
+		| {
+				/**
+				 * data is the response of the call
+				 */
+				data: NotificationInterface;
+				/* tslint:disable-next-line */
+		  }
 	&gt; {
-		return this.http.get&lt;{ data: NotificationInterface }&gt;(
-			&#x60;${environment.apiUrl}/notifications&#x60;,
-			{ ...environment.apiCookies, observe: &#x27;response&#x27; },
-		);
+		return this.http.get&lt;{
+			/**
+			 * data is the response of the call
+			 */
+			data: NotificationInterface;
+		}&gt;(&#x60;${environment.apiUrl}/notifications&#x60;, {
+			...environment.apiCookies,
+			observe: &#x27;response&#x27;,
+		});
 	}
 
 	/**
@@ -400,11 +428,14 @@ export class PushNotificationService {
 	 * @param { title: string, body: string; type: string } notification - which should be the notification
 	 * @return the response of the HTTP POST
 	 */
-	sendNotification(notification: {
-		title: string;
-		body: string;
-		type: string;
-	}): Observable&lt;{ headers: HttpHeaders }&gt; {
+	sendNotification(
+		notification: NotificationInterface,
+	): Observable&lt;{
+		/**
+		 * headers are the HttpHeaders
+		 */
+		headers: HttpHeaders;
+	}&gt; {
 		return this.http.post(
 			&#x60;${environment.apiUrl}/notifications&#x60;,
 			{ ...notification },
