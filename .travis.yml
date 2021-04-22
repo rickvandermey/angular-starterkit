@@ -21,6 +21,7 @@ install:
 script:
     - npm run lint
     - npm run test:unit-headless
+    - node node_modules/protractor/bin/webdriver-manager update
     - npm run test:e2e --headless
     - npm run prerender:build
     - sonar-scanner
