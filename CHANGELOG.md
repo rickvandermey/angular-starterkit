@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [4.0.0](https://github.com/rickvandermey/angular-starterkit/tree/3.1.0)
+## [4.0.0](https://github.com/rickvandermey/angular-starterkit/tree/4.0.0)
 
 ### Features
 
