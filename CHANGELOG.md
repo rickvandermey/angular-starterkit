@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## [4.0.0](https://github.com/rickvandermey/angular-starterkit/tree/4.0.0)
+
+### Features
+
+-   **Packages:** Updated all dependencies to the latest version of 2021-02-03
+-   **Packages:** Removed deprecated dependency `@nguniversal/module-map-ngfactory-loader`
+-   **Husky:** Upgrade to latest husky with new hooks
+-   **CHROME_BIN:** Provide _'chromeVersion'_ into package json
+-   **Testing:** All reports are now provided inside _'reports'_ folder which will be ignored by `.gitignore`
+
+### Bugfix
+
+-   **Travis:** Fix the SonarCloud instance, moving from dist trusty to xenial. Java 11 supported
+
+### Breaking Changes
+
+-   **NGX-build-plus:** removed ngx-build-plus because seems obsolete
+
 ## [3.0.0](https://github.com/rickvandermey/angular-starterkit/tree/3.0.0)
 
 ### Features

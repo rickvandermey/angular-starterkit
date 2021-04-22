@@ -49,4 +49,4 @@ ci/rootCA.srl
 ci/server.crt
 ci/server.csr
 ci/server.key
-test-reports
+reports

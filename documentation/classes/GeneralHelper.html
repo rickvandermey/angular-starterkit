@@ -148,7 +148,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/helpers/general.helper.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/helpers/general.helper.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -211,8 +211,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/helpers/general.helper.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/helpers/general.helper.ts:46</a></div>
                 </td>
             </tr>
 
@@ -310,8 +310,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/helpers/general.helper.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/helpers/general.helper.ts:34</a></div>
                 </td>
             </tr>
 
@@ -397,6 +397,29 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class GeneralHelper {
 	/**
+	 * flattensObject Flatten a multidimensional object
+	 * @param { any } obj
+	 * @return { any } flattened object
+	 */
+	static flattensObject &#x3D; (obj: any): any &#x3D;&gt; {
+		const flattened &#x3D; {};
+
+		Object.keys(obj).forEach((key) &#x3D;&gt; {
+			if (typeof obj[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; obj[key] !&#x3D;&#x3D; null) {
+				Object.assign(
+					flattened,
+					GeneralHelper.flattensObject(obj[key]),
+				);
+			} else {
+				flattened[key] &#x3D; obj[key];
+			}
+		});
+
+		return flattened;
+		/* tslint:disable:semicolon */
+	};
+
+	/**
 	 * sort will sort the given object by the given field param
 	 * @param { any[] } data - all object data in an array
 	 * @param { string } field - the field which will be used to sort
@@ -418,28 +441,6 @@
 		return data.sort((a, b) &#x3D;&gt; {
 			return new Date(b[field]).getTime() - new Date(a[field]).getTime();
 		});
-	}
-
-	/**
-	 * flattensObject Flatten a multidimensional object
-	 * @param { any } obj
-	 * @return { any } flattened object
-	 */
-	static flattensObject &#x3D; (obj: any): any &#x3D;&gt; {
-		const flattened &#x3D; {};
-
-		Object.keys(obj).forEach((key) &#x3D;&gt; {
-			if (typeof obj[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; obj[key] !&#x3D;&#x3D; null) {
-				Object.assign(
-					flattened,
-					GeneralHelper.flattensObject(obj[key]),
-				);
-			} else {
-				flattened[key] &#x3D; obj[key];
-			}
-		});
-
-		return flattened;
 	}
 }
 </code></pre>

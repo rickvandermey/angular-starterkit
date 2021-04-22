@@ -26,7 +26,6 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   🚀 WPO: Google Lighthouse reporter (save to Compodoc additional docs)
 -   🚀 WPO: Stats for ES5 build and ES2015
 -   🎯 Git hooks (husky)
--   🎯 Extend Angular CLI (webpack)
 -   🤩 Ability to Mock data (mockServer) (Docker)
 -   🎰 WebPush integration (mockServer and PWA)
 
@@ -74,11 +73,6 @@ This project comes with built-in SSR functionality. The effect of SSR will be va
 
 -   For Serving - `npm run start:prerender`
 -   For Building - `npm run prerender:build`
-
-### Extend the Angular CLI settings (Webpack) 🎯
-
-It is possible to extend the Angular CLI settings via a `webpack.partial.js`. Angular CLI will still optimize all functionality without being ejected. The Webpack Partial still gives you the opportunity the specify certain extra configurations in Webpack.
-
 ## Testing
 
 -   `npm run lint` - Linting application
