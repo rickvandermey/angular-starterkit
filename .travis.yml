@@ -2,7 +2,7 @@ language: node_js
 node_js:
     - '14'
 sudo: required
-dist: trusty
+dist: xenial
 addons:
     chrome: stable
     sonarcloud:
