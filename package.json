@@ -37,7 +37,7 @@
 		"ssr:serve": "node dist/server/main.js",
 		"stylelint": "stylelint \"src/{scss,app}/**/*.scss\" --config .stylelintrc --fix",
 		"test": "rimraf \"coverage\" & ng test --code-coverage --browsers Chromium",
-		"test:e2e": "npm run server:mock -- --detach && ng e2e --webdriver-update=false && docker-compose down",
+		"test:e2e": "npm run server:mock -- --d && ng e2e --webdriver-update=false && docker-compose down",
 		"test:unit-headless": "npm run test -- --browsers ChromeNoSandbox --watch=false",
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
 		"wpo:stats": "webpack-bundle-analyzer dist/browser/stats.json --mode=static --report=\"reports/wpo/bundle-report.html\" --no-open && npx cpx dist/browser/stats.json reports/wpo"
