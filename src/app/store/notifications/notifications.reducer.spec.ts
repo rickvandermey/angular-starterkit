@@ -1,6 +1,6 @@
 import { initialState } from '@testing/mock-store';
 import * as notificationsActions from './notifications.actions';
-import { initialState as reducerState, reducer } from './notifications.reducer';
+import { reducer, initialState as reducerState } from './notifications.reducer';
 
 describe('Reducers: Notifications Reducer', () => {
 	describe('loadNotificationsSuccess', () => {

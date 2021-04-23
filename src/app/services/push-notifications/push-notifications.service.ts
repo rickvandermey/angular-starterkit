@@ -36,14 +36,14 @@ export class PushNotificationService {
 				 * headers are the HttpHeaders
 				 */
 				headers: HttpHeaders;
-				/* tslint:disable-next-line */
+				/* eslint-disable-next-line */
 		  }
 		| {
 				/**
 				 * data is the response of the call
 				 */
 				data: NotificationInterface;
-				/* tslint:disable-next-line */
+				/* eslint-disable-next-line */
 		  }
 	> {
 		return this.http.get<{
