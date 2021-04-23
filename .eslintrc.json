@@ -1,0 +1,64 @@
+{
+	"root": true,
+	"ignorePatterns": ["projects/**/*"],
+	"overrides": [
+		{
+			"files": ["*.ts"],
+			"parserOptions": {
+				"project": ["tsconfig.json", "e2e/tsconfig.json"],
+				"createDefaultProgram": true
+			},
+			"extends": [
+				"plugin:@angular-eslint/recommended",
+				"plugin:@angular-eslint/template/process-inline-templates"
+			],
+			"rules": {
+				"@angular-eslint/component-selector": [
+					"error",
+					{
+						"prefix": "app",
+						"style": "kebab-case",
+						"type": "element"
+					}
+				],
+				"@angular-eslint/directive-selector": [
+					"error",
+					{
+						"prefix": "app",
+						"style": "camelCase",
+						"type": "attribute"
+					}
+				],
+				"brace-style": ["error", "1tbs"],
+				"comma-dangle": ["error", "always-multiline"],
+				"no-duplicate-imports": "error",
+				"no-redeclare": "error",
+				"sort-imports": [
+					"error",
+					{
+						"ignoreCase": true,
+						"ignoreDeclarationSort": true,
+						"ignoreMemberSort": false,
+						"memberSyntaxSortOrder": [
+							"none",
+							"all",
+							"multiple",
+							"single"
+						],
+						"allowSeparatedGroups": true
+					}
+				],
+				"sort-keys": [
+					"error",
+					"asc",
+					{ "caseSensitive": true, "natural": false, "minKeys": 2 }
+				]
+			}
+		},
+		{
+			"files": ["*.html"],
+			"extends": ["plugin:@angular-eslint/template/recommended"],
+			"rules": {}
+		}
+	]
+}

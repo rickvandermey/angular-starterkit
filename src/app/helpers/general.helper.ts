@@ -22,7 +22,7 @@ export class GeneralHelper {
 		});
 
 		return flattened;
-		/* tslint:disable:semicolon */
+		/* eslint-disable @typescript-eslint/semi, @typescript-eslint/member-delimiter-style */
 	};
 
 	/**

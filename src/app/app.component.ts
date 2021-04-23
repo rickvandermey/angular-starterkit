@@ -6,7 +6,7 @@ import {
 	PLATFORM_ID,
 } from '@angular/core';
 import { SwPush, SwUpdate } from '@angular/service-worker';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 

@@ -1,0 +1,13 @@
+# Files with these extensions are often replaced within angular json and doesnt really exist inside the project
+**/*.mock.ts
+**/*.uat.ts
+**/*.prod.ts
+**/*.test.ts
+
+# Project
+src/main.server.ts
+
+# Generics
+node_modules/**
+dist/**
+ssl/**
