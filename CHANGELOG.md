@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [4.1.0](https://github.com/rickvandermey/angular-starterkit/tree/4.1.0)
+
+### Breaking Changes
+
+-   **ESLint:** migrate from TSlint to ESlint, tslint is deprecated
+
 ## [4.0.0](https://github.com/rickvandermey/angular-starterkit/tree/4.0.0)
 
 ### Features

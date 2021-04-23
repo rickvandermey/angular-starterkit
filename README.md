@@ -73,6 +73,7 @@ This project comes with built-in SSR functionality. The effect of SSR will be va
 
 -   For Serving - `npm run start:prerender`
 -   For Building - `npm run prerender:build`
+
 ## Testing
 
 -   `npm run lint` - Linting application

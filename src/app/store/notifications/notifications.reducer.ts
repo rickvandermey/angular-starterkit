@@ -1,4 +1,4 @@
-import { EntityAdapter, EntityState, createEntityAdapter } from '@ngrx/entity';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
 
 import * as NotificationActions from './notifications.actions';
@@ -11,9 +11,7 @@ export interface NotificationsState extends EntityState<NotificationInterface> {
 	entities: { [item: string]: NotificationInterface } | null;
 }
 
-export const adapter: EntityAdapter<NotificationInterface> = createEntityAdapter<
-	NotificationInterface
->();
+export const adapter: EntityAdapter<NotificationInterface> = createEntityAdapter<NotificationInterface>();
 
 export const initialState: NotificationsState = adapter.getInitialState();
 

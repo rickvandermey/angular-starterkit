@@ -102,17 +102,9 @@
 					}
 				},
 				"lint": {
-					"builder": "@angular-devkit/build-angular:tslint",
+					"builder": "@angular-eslint/builder:lint",
 					"options": {
-						"exclude": ["**/node_modules/**"],
-						"files": ["**/*.ts"],
-						"tsConfig": [
-							"src/tsconfig.app.json",
-							"src/tsconfig.spec.json",
-							"src/tsconfig.cucumber.json",
-							"server.tsconfig.json",
-							"mockserver/tsconfig.json"
-						]
+						"lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
 					}
 				},
 				"server": {
@@ -138,5 +130,8 @@
 			}
 		}
 	},
-	"defaultProject": "RVDM-Angular-Starterkit"
+	"defaultProject": "RVDM-Angular-Starterkit",
+	"cli": {
+		"defaultCollection": "@angular-eslint/schematics"
+	}
 }
