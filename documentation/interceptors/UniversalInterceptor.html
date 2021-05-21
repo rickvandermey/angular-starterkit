@@ -268,7 +268,7 @@ export class UniversalInterceptor implements HttpInterceptor {
 		request: HttpRequest&lt;any&gt;,
 		next: HttpHandler,
 	): Observable&lt;HttpEvent&lt;any&gt;&gt; {
-		/* tslint:disable:indent */
+		/* eslint-disable @typescript-eslint/indent */
 		const serverReq &#x3D; !this.serverUrl
 			? request
 			: request.clone({

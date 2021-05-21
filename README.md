@@ -77,7 +77,8 @@ This project comes with built-in SSR functionality. The effect of SSR will be va
 ## Testing
 
 -   `npm run lint` - Linting application
--   `npm run test` - Unit test Watcher
+-   `npm run test` - Unit test Watcher (only runs tests for changed files)
+-   `npm run test-all` - Unit test Watcher (runs all tests)
 -   `npm run test:ci` - Unit test single Run
 -   `npm run test:e2e` - End to End test with Protractor and reports with Cucumber
 

@@ -1,6 +1,9 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as applicationActions from './application.actions';
 
+/**
+ * Application store state
+ */
 export interface ApplicationState {
 	/**
 	 * isPendingRequest represents the state wether a XHR call is pending
