@@ -80,12 +80,12 @@ module.exports = {
 	// A set of global variables that need to be available in all test environments
 	globals: {
 		'ts-jest': {
-			isolatedModules: true,
-			tsconfig: '<rootDir>/src/tsconfig.spec.json',
+			isolatedModules: false, // @TODO: Should be set to true when https://github.com/istanbuljs/istanbuljs/issues/70 is resolved in jest-preset-angular
+			tsconfig: 'src/tsconfig.spec.json',
 		},
 		'jest-preset-angular': {
-			isolatedModules: false, // Should be set to true when https://github.com/istanbuljs/istanbuljs/issues/70 is resolved in jest-preset-angular
-			tsconfig: '<rootDir>/src/tsconfig.spec.json',
+			isolatedModules: false, // @TODO: Should be set to true when https://github.com/istanbuljs/istanbuljs/issues/70 is resolved in jest-preset-angular
+			tsconfig: 'src/tsconfig.spec.json',
 		},
 	},
 
@@ -164,9 +164,7 @@ module.exports = {
 	// rootDir: undefined,
 
 	// A list of paths to directories that Jest should use to search for files in
-	// roots: [
-	//   "<rootDir>"
-	// ],
+	roots: ['src'],
 
 	// Allows you to use a custom runner instead of Jest's default test runner
 	// runner: "jest-runner",
