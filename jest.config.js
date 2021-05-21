@@ -79,11 +79,11 @@ module.exports = {
 	// A set of global variables that need to be available in all test environments
 	globals: {
 		'ts-jest': {
-			isolatedModules: false,
+			isolatedModules: true,
 			tsconfig: '<rootDir>/src/tsconfig.spec.json',
 		},
 		'jest-preset-angular': {
-			isolatedModules: false,
+			isolatedModules: false, // Should be set to true when https://github.com/istanbuljs/istanbuljs/issues/70 is resolved in jest-preset-angular
 			tsconfig: '<rootDir>/src/tsconfig.spec.json',
 		},
 	},
