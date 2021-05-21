@@ -38,7 +38,7 @@ describe(`UniversalInterceptor without serverUrl`, () => {
 		store = TestBed.inject(MockStore);
 		service = TestBed.inject(DummyService);
 
-		spyOn(store, 'dispatch').and.callThrough();
+		jest.spyOn(store, 'dispatch');
 	});
 
 	afterEach(() => {
@@ -91,7 +91,7 @@ describe(`UniversalInterceptor with serverUrl`, () => {
 		store = TestBed.inject(MockStore);
 		service = TestBed.inject(DummyService);
 
-		spyOn(store, 'dispatch').and.callThrough();
+		jest.spyOn(store, 'dispatch');
 	});
 
 	afterEach(() => {

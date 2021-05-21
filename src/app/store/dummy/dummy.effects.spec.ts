@@ -37,7 +37,9 @@ describe('Effects: Dummy effects', () => {
 
 	describe('getDummyData', () => {
 		it('should dispatch action on load', () => {
-			spyOn(service, 'getDummyData').and.returnValue(of(mockDummy));
+			jest.spyOn(service, 'getDummyData').mockImplementation(() =>
+				of(mockDummy),
+			);
 
 			const action = dummyActions.Load();
 			const completion = dummyActions.LoadSuccess({ entity: mockDummy });
@@ -49,7 +51,7 @@ describe('Effects: Dummy effects', () => {
 		});
 
 		it('should dispatch action when failed', () => {
-			spyOn(service, 'getDummyData').and.returnValue(
+			jest.spyOn(service, 'getDummyData').mockImplementation(() =>
 				throwError({ status: 404 }),
 			);
 

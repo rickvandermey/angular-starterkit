@@ -86,7 +86,7 @@ describe('Components: App Component', () => {
 			fixture = TestBed.createComponent(Component);
 			app = fixture.debugElement.componentInstance;
 
-			spyOn(store, 'dispatch').and.callThrough();
+			jest.spyOn(store, 'dispatch');
 			fixture.detectChanges();
 		}),
 	);

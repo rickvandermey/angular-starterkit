@@ -34,7 +34,7 @@ import * as fromNotifications from '@store/notifications/notifications.reducer';
 import { RouterEffects } from '@store/router/router.effects';
 
 // Core
-import { environment } from 'environments/environment';
+import { environment } from '@environments/environment';
 import { AppComponent } from './app.component';
 
 // Routes
