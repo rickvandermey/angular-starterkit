@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/en/configuration.html
  */
 
-export default {
+module.exports = {
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
 
@@ -36,8 +36,7 @@ export default {
 	// An array of regexp pattern strings used to skip coverage collection
 	coveragePathIgnorePatterns: [
 		'<rootDir>/node_modules/',
-		'<rootDir>/src/test.ts',
-		'<rootDir>/src/app/testing/mock.spec.ts',
+		'<rootDir>/src/app/testing/',
 		'/index.ts',
 	],
 
@@ -78,9 +77,13 @@ export default {
 	// globalTeardown: undefined,
 
 	// A set of global variables that need to be available in all test environments
-	// globals: {},
 	globals: {
 		'ts-jest': {
+			isolatedModules: false,
+			tsconfig: '<rootDir>/src/tsconfig.spec.json',
+		},
+		'jest-preset-angular': {
+			isolatedModules: false,
 			tsconfig: '<rootDir>/src/tsconfig.spec.json',
 		},
 	},
@@ -172,7 +175,7 @@ export default {
 
 	// A list of paths to modules that run some code to configure or set up the testing framework before each test
 	// setupFilesAfterEnv: [],
-	setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 
 	// The number of seconds after which a test is considered as slow and reported as such in the results.
 	// slowTestThreshold: 5,
@@ -196,11 +199,7 @@ export default {
 	// ],
 
 	// An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-	testPathIgnorePatterns: [
-		'/node_modules/',
-		'/src/test.ts',
-		'/src/app/testing/mock.spec.ts',
-	],
+	testPathIgnorePatterns: ['/node_modules/', '/src/app/testing/'],
 
 	// The regexp pattern or array of patterns that Jest uses to detect test files
 	// testRegex: [],

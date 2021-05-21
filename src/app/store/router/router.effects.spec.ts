@@ -6,7 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { getEffectsMetadata } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
-import { hot } from 'jasmine-marbles';
+import { hot } from 'jest-marbles';
 import { Observable } from 'rxjs';
 
 import * as routerActions from './router.actions';
