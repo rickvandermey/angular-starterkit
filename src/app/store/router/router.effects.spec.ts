@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { Router, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { getEffectsMetadata } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -11,25 +11,6 @@ import { Observable } from 'rxjs';
 
 import * as routerActions from './router.actions';
 import { RouterEffects } from './router.effects';
-import { ErrorPageComponent as Component } from '@pages/error/error-page.component';
-
-const errorRoutes: Routes = [
-	{
-		children: [
-			{
-				component: Component,
-				path: '404',
-			},
-			{
-				path: '**',
-				pathMatch: 'full',
-				redirectTo: '404',
-			},
-		],
-		component: null,
-		path: '',
-	},
-];
 
 describe('Effects: Router effects', () => {
 	let actions$: Observable<Action>;
@@ -39,10 +20,7 @@ describe('Effects: Router effects', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			imports: [
-				HttpClientTestingModule,
-				RouterTestingModule.withRoutes(errorRoutes),
-			],
+			imports: [HttpClientTestingModule, RouterTestingModule],
 			providers: [RouterEffects, provideMockActions(() => actions$)],
 		});
 
@@ -54,7 +32,7 @@ describe('Effects: Router effects', () => {
 
 	describe('Go', () => {
 		it('should not dispatch', () => {
-			jest.spyOn(router, 'navigate');
+			jest.spyOn(router, 'navigate').mockImplementation();
 			const payload = { path: [`/en/404`] };
 			const action = routerActions.go({ payload });
 			actions$ = hot('-a', { a: action });
@@ -69,7 +47,7 @@ describe('Effects: Router effects', () => {
 		});
 
 		it('should navigate to provided path', () => {
-			jest.spyOn(router, 'navigate');
+			jest.spyOn(router, 'navigate').mockImplementation();
 			const payload = { path: [`/en/404`] };
 			const action = routerActions.go({ payload });
 
