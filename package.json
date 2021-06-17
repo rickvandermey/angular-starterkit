@@ -135,7 +135,6 @@
 		"puppeteer": "9.0.0",
 		"purgecss-webpack-plugin": "4.0.3",
 		"rimraf": "3.0.2",
-		"rxjs-tslint": "0.1.8",
 		"spdy": "4.0.2",
 		"stylelint": "13.12.0",
 		"stylelint-order": "4.1.0",
@@ -143,7 +142,6 @@
 		"timeshift-js": "1.1.1",
 		"ts-loader": "9.1.0",
 		"ts-node": "9.1.1",
-		"tslint-immutable": "6.0.1",
 		"typescript": "4.1.5",
 		"webpack-bundle-analyzer": "4.4.1",
 		"webpack-cli": "4.6.0"
