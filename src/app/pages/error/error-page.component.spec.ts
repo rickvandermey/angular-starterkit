@@ -1,13 +1,12 @@
 import { CommonModule, Location } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { createTranslateLoader } from '@app/app.module';
 import { ErrorPageComponent as Component } from './error-page.component';
 
 const errorRoutes: Routes = [
@@ -43,13 +42,7 @@ describe('Pages: Error page', () => {
 					HttpClientModule,
 					StoreModule.forRoot({}),
 					RouterTestingModule.withRoutes(errorRoutes),
-					TranslateModule.forRoot({
-						loader: {
-							deps: [HttpClient],
-							provide: TranslateLoader,
-							useFactory: createTranslateLoader,
-						},
-					}),
+					TranslateModule.forRoot({}),
 				],
 				providers: [Location],
 				schemas: [CUSTOM_ELEMENTS_SCHEMA],

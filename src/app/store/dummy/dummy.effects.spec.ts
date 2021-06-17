@@ -3,8 +3,8 @@ import { TestBed } from '@angular/core/testing';
 import { TransferState } from '@angular/platform-browser';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
-import { cold, hot } from 'jasmine-marbles';
 import { Observable, of, throwError } from 'rxjs';
+import { TestScheduler } from 'rxjs/testing';
 
 import { DummyService } from '@services/dummy/dummy.service';
 import { initialState as mockStore } from '@testing/mock-store';
@@ -17,6 +17,7 @@ describe('Effects: Dummy effects', () => {
 	let actions$: Observable<Action>;
 	let service: DummyService;
 	let effects: DummyEffects;
+	let testScheduler: TestScheduler;
 
 	const mockDummy: DummyInterface = mockStore.dummyState.entity;
 
@@ -33,35 +34,46 @@ describe('Effects: Dummy effects', () => {
 
 		service = TestBed.inject(DummyService);
 		effects = TestBed.inject(DummyEffects);
+		testScheduler = new TestScheduler((actual, expected) => {
+			expect(actual).toEqual(expected);
+		});
 	});
 
 	describe('getDummyData', () => {
 		it('should dispatch action on load', () => {
-			spyOn(service, 'getDummyData').and.returnValue(of(mockDummy));
+			jest.spyOn(service, 'getDummyData').mockImplementation(() =>
+				of(mockDummy),
+			);
 
-			const action = dummyActions.Load();
-			const completion = dummyActions.LoadSuccess({ entity: mockDummy });
+			testScheduler.run(({ hot, expectObservable }) => {
+				const action = dummyActions.Load();
+				const completion = dummyActions.LoadSuccess({
+					entity: mockDummy,
+				});
 
-			actions$ = hot('-a', { a: action });
-			const expected = cold('-c', { c: completion });
-
-			expect(effects.loadDummy$).toBeObservable(expected);
+				actions$ = hot('-a', { a: action });
+				expectObservable(effects.loadDummy$).toBe('-c', {
+					c: completion,
+				});
+			});
 		});
 
 		it('should dispatch action when failed', () => {
-			spyOn(service, 'getDummyData').and.returnValue(
+			jest.spyOn(service, 'getDummyData').mockImplementation(() =>
 				throwError({ status: 404 }),
 			);
 
-			const action = dummyActions.Load();
-			const completion = dummyActions.LoadFail({
-				errorMessage: 'global.something-went-wrong',
+			testScheduler.run(({ hot, expectObservable }) => {
+				const action = dummyActions.Load();
+				const completion = dummyActions.LoadFail({
+					errorMessage: 'global.something-went-wrong',
+				});
+
+				actions$ = hot('-a', { a: action });
+				expectObservable(effects.loadDummy$).toBe('-c', {
+					c: completion,
+				});
 			});
-
-			actions$ = hot('-a', { a: action });
-			const expected = cold('-c', { c: completion });
-
-			expect(effects.loadDummy$).toBeObservable(expected);
 		});
 	});
 });

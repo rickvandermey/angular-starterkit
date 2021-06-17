@@ -25,7 +25,7 @@ export class ErrorPageComponent extends BaseComponent implements OnInit {
 		public translate: TranslateService,
 	) {
 		super();
-		translate.use('en');
+		this.translate.use('en');
 	}
 
 	/**

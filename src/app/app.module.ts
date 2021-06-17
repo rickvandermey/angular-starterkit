@@ -34,7 +34,7 @@ import * as fromNotifications from '@store/notifications/notifications.reducer';
 import { RouterEffects } from '@store/router/router.effects';
 
 // Core
-import { environment } from 'environments/environment';
+import { environment } from '@environments/environment';
 import { AppComponent } from './app.component';
 
 // Routes
@@ -45,8 +45,10 @@ import { ErrorModule } from '@modules/error.module';
 
 // Interceptor
 import { AppHttpInterceptor } from './interceptors/http.interceptor';
+import { AppHttpInterceptor as CoreAppHttpInterceptor } from './ssr/app.interceptor';
 import { getInitialState } from './ssr/tokens';
 
+/* istanbul ignore next */
 /**
  * Custom TranslateService Loader to load the given language
  * @param  {HttpClient} http HttpClient to 'mock' the call to the assets i18n json file
@@ -124,6 +126,12 @@ export function getMetaReducers(
 			provide: HTTP_INTERCEPTORS,
 			useClass: AppHttpInterceptor,
 		},
+		{
+			multi: true,
+			provide: HTTP_INTERCEPTORS,
+			useClass: CoreAppHttpInterceptor,
+		},
+
 		{
 			deps: [DOCUMENT, PLATFORM_ID],
 			multi: true,

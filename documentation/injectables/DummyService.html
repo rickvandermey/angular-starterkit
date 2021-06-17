@@ -103,12 +103,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, state: <a href="https://angular.io/api/platform-browser/TransferState" target="_blank">TransferState</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/dummy/dummy.service.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/dummy/dummy.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -130,18 +130,6 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>state</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/TransferState" target="_blank" >TransferState</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -185,8 +173,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/services/dummy/dummy.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/services/dummy/dummy.service.ts:19</a></div>
                 </td>
             </tr>
 
@@ -218,39 +206,26 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
-import { TransferState, makeStateKey } from &#x27;@angular/platform-browser&#x27;;
-import { Observable, of } from &#x27;rxjs&#x27;;
-import { tap } from &#x27;rxjs/operators&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
 
 import { environment } from &#x27;@environments/environment&#x27;;
 import { DummyInterface } from &#x27;@store/dummy/dummy.interface&#x27;;
-
-export const DUMMY_KEY &#x3D; makeStateKey(&#x27;dummyState&#x27;);
 
 /**
  * DummyService provides a service to use CRUD actions
  */
 @Injectable()
 export class DummyService {
-	constructor(
-		private readonly http: HttpClient,
-		private readonly state: TransferState,
-	) {}
+	constructor(private readonly http: HttpClient) {}
 
 	/**
 	 * Get dummy info
 	 * @return the response of the HTTP Get
 	 */
 	getDummyData(): Observable&lt;DummyInterface&gt; {
-		const dummy &#x3D; this.state.get(DUMMY_KEY, null as any);
-
-		if (dummy) {
-			return of(dummy);
-		}
-
-		return this.http
-			.get&lt;DummyInterface&gt;(&#x60;${environment.assetsRoot}/dummy/dummy.json&#x60;)
-			.pipe(tap((res) &#x3D;&gt; this.state.set(DUMMY_KEY, res)));
+		return this.http.get&lt;DummyInterface&gt;(
+			&#x60;${environment.assetsRoot}/dummy/dummy.json&#x60;,
+		);
 	}
 }
 </code></pre>

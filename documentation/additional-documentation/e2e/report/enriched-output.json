@@ -10,7 +10,7 @@
       },
       {
         "label": "Release",
-        "value": "4.0.0"
+        "value": "5.0.0"
       },
       {
         "label": "Homepage",
@@ -18,7 +18,7 @@
       },
       {
         "label": "Execution Start Time",
-        "value": "2021-04-22T11:26:39.949Z"
+        "value": "2021-06-17T13:02:51.436Z"
       }
     ]
   },
@@ -30,25 +30,25 @@
   "browser": 1,
   "name": "",
   "version": "version",
-  "time": "2021-04-22T11:26:47.609Z",
+  "time": "2021-06-17T13:02:56.244Z",
   "features": [
     {
       "metadata": {
         "browser": {
           "name": "chrome",
-          "version": "91.0.4469.0"
+          "version": "92.0.4512.0"
         },
-        "device": "Ricks-MacBook-Pro.local Runner: 0 Shard: 1",
+        "device": "MBP-Rick Runner: 0 Shard: 1",
         "platform": {
           "name": "osx",
-          "version": "20.3.0"
+          "version": "20.5.0"
         }
       },
       "description": "\tA user should see the Hello World message",
       "keyword": "Feature",
       "name": "Hello world Feature",
       "line": 3,
-      "id": "df43f5b2-cd8d-4dcb-a7b1-565f3b5e4320-hello-world-feature",
+      "id": "c28c8ce2-7013-4c78-acfd-7d99aff3eba7-hello-world-feature",
       "tags": [],
       "uri": "e2e/features/home.feature",
       "elements": [
@@ -68,7 +68,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 74000000
+                "duration": 44000000
               }
             },
             {
@@ -81,9 +81,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 736000000
+                "duration": 332000000
               },
-              "time": "00:00:00.736"
+              "time": "00:00:00.332"
             },
             {
               "keyword": "After",
@@ -93,34 +93,29 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 23000000
+                "duration": 5000000
               },
               "embeddings": [
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1619090806684,\"type\":\"\"}",
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1623934973335,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1619090806904,\"type\":\"\"}",
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1623934975924,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1619090807288,\"type\":\"\"}",
-                  "mime_type": "text/plain"
-                },
-                {
-                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1619090807445,\"type\":\"\"}",
+                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1623934976166,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 }
               ],
               "attachments": [],
               "text": [
-                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1619090806684,\"type\":\"\"}",
-                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1619090806904,\"type\":\"\"}",
-                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1619090807288,\"type\":\"\"}",
-                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1619090807445,\"type\":\"\"}"
+                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1623934973335,\"type\":\"\"}",
+                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1623934975924,\"type\":\"\"}",
+                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1623934976166,\"type\":\"\"}"
               ],
-              "time": "00:00:00.023"
+              "time": "00:00:00.005"
             },
             {
               "keyword": "After",
@@ -130,7 +125,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 3000000
+                "duration": 1000000
               }
             }
           ],
@@ -140,8 +135,8 @@
           "skipped": 0,
           "pending": 0,
           "ambiguous": 0,
-          "duration": 759000000,
-          "time": "00:00:00.759"
+          "duration": 337000000,
+          "time": "00:00:00.337"
         }
       ],
       "scenarios": {
@@ -159,8 +154,8 @@
         "ambiguousPercentage": "0.00",
         "total": 1
       },
-      "duration": 759000000,
-      "time": "00:00:00.759",
+      "duration": 337000000,
+      "time": "00:00:00.337",
       "isFailed": false,
       "isAmbiguous": false,
       "isSkipped": false,

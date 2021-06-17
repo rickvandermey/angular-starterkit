@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">36.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>4/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">22.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>2/9</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,7 +122,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,8 +131,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,11 +140,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,8 +153,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnDestroy } from '@angular/core';
@@ -173,7 +173,7 @@ export abstract class BaseComponent implements OnDestroy {
 	/**
 	 * Array of subscriptions handled by this component.
 	 */
-	protected mutableSubscriptions: Array&lt;Subscription&gt; = [];
+	protected <span class="cstat-no" title="statement not covered" >mutableSubscriptions: Array&lt;Subscription&gt; = [];</span>
 &nbsp;
 	/**
 	 * Add a subscription.
@@ -181,33 +181,33 @@ export abstract class BaseComponent implements OnDestroy {
 	 * @param { Subscription } subscription
 	 * @return { Subscription }
 	 */
-	protected addSubscription(subscription: Subscription): Subscription {
-		this.mutableSubscriptions.push(subscription);
-		return subscription;
+	protected <span class="fstat-no" title="function not covered" >addSubscription(</span>subscription: Subscription): Subscription {
+<span class="cstat-no" title="statement not covered" >		this.mutableSubscriptions.push(subscription);</span>
+<span class="cstat-no" title="statement not covered" >		return subscription;</span>
 	}
 &nbsp;
 	/**
 	 * Unsubscribe from all subscriptions.
 	 * @access Protected
 	 */
-	protected unsubscribeAll(): void {
-		this.mutableSubscriptions.forEach(
-			(subscription: Subscription) =&gt;
-				!subscription['isUnsubscribed'] &amp;&amp; subscription.unsubscribe(),
+	protected <span class="fstat-no" title="function not covered" >unsubscribeAll(</span>): void {
+<span class="cstat-no" title="statement not covered" >		this.mutableSubscriptions.forEach(</span>
+<span class="fstat-no" title="function not covered" >			(s</span>ubscription: Subscription) =&gt;
+<span class="cstat-no" title="statement not covered" >				!subscription['isUnsubscribed'] &amp;&amp; subscription.unsubscribe(),</span>
 		);
 	}
 &nbsp;
 	/**
 	 * Should be used by all pages when ngOnDestroy wants to be triggered.
 	 */
-	protected extendedNgOnDestroy(): void {}
+	protected <span class="fstat-no" title="function not covered" >extendedNgOnDestroy(</span>): void {}
 &nbsp;
 	/**
 	 * Destructor which unsubscribe the dangling subscriptions.
 	 */
-	ngOnDestroy(): void {
-		this.unsubscribeAll();
-		this.extendedNgOnDestroy();
+<span class="fstat-no" title="function not covered" >	ngOnDestroy(</span>): void {
+<span class="cstat-no" title="statement not covered" >		this.unsubscribeAll();</span>
+<span class="cstat-no" title="statement not covered" >		this.extendedNgOnDestroy();</span>
 	}
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -217,7 +217,7 @@ export abstract class BaseComponent implements OnDestroy {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 22 2021 13:26:05 GMT+0200 (Central European Summer Time)
+                at Mon Jun 14 2021 15:48:39 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

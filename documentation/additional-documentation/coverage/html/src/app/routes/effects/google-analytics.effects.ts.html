@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>8/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">42.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>6/14</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -120,25 +120,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -163,26 +163,26 @@ export class GoogleAnalyticsEffects {
 	 * @param  {type} private platformId: check wether the page is browser or server
 	 * @param  {type} private router: Subscription for the Angular Router
 	 */
-	constructor(
-		@Inject(PLATFORM_ID) private readonly platformId: string,
-		private readonly router: Router,
+<span class="fstat-no" title="function not covered" >	constructor(</span>
+		@Inject(PLATFORM_ID) private readonly <span class="cstat-no" title="statement not covered" >platformId: string,</span>
+		private readonly <span class="cstat-no" title="statement not covered" >router: R</span>outer,
 	) {}
 &nbsp;
 	/**
 	 * Whenever an Router Event takes place with an instanceof NavigationEnd, trigger the GoogleAnalytics Effect
 	 */
-	pageView$: Observable&lt;NavigationEnd&gt; = createEffect(
-		() =&gt;
-			this.router.events.pipe(
-				filter((event) =&gt; event instanceof NavigationEnd),
-				tap((event: NavigationEnd) =&gt; {
-					if (isPlatformBrowser(this.platformId)) {
-						(window as any).ga(
+<span class="cstat-no" title="statement not covered" >	pageView$: Observable&lt;NavigationEnd&gt; = createEffect(</span>
+<span class="fstat-no" title="function not covered" >		() =</span>&gt;
+<span class="cstat-no" title="statement not covered" >			this.router.events.pipe(</span>
+				filter(<span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; <span class="cstat-no" title="statement not covered" >event instanceof NavigationEnd)</span>,
+				tap(<span class="fstat-no" title="function not covered" >(e</span>vent: NavigationEnd) =&gt; {
+<span class="cstat-no" title="statement not covered" >					if (isPlatformBrowser(this.platformId)) {</span>
+						(<span class="cstat-no" title="statement not covered" >window as any).ga(</span>
 							'set',
 							'page',
 							event.urlAfterRedirects,
 						);
-						(window as any).ga('send', 'pageview');
+						(<span class="cstat-no" title="statement not covered" >window as any).ga('send', 'pageview');</span>
 					}
 				}),
 			),
@@ -196,7 +196,7 @@ export class GoogleAnalyticsEffects {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 22 2021 13:26:05 GMT+0200 (Central European Summer Time)
+                at Mon Jun 14 2021 15:48:39 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

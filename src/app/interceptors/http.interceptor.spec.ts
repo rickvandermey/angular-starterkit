@@ -40,7 +40,7 @@ describe(`AppHttpInterceptor`, () => {
 		store = TestBed.inject(MockStore);
 		service = TestBed.inject(DummyService);
 
-		spyOn(store, 'dispatch').and.callThrough();
+		jest.spyOn(store, 'dispatch');
 	});
 
 	afterEach(() => {

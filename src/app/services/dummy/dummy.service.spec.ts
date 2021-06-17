@@ -3,7 +3,6 @@ import {
 	HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { TransferState } from '@angular/platform-browser';
 
 import { environment } from '@environments/environment';
 import { DummyInterface } from '@store/dummy/dummy.interface';
@@ -17,7 +16,7 @@ describe('Service: Dummy service', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientTestingModule],
-			providers: [DummyService, TransferState],
+			providers: [DummyService],
 		});
 
 		httpTestingController = TestBed.inject(HttpTestingController);
@@ -46,13 +45,6 @@ describe('Service: Dummy service', () => {
 			httpTestingController
 				.expectOne(`${environment.assetsRoot}/dummy/dummy.json`)
 				.flush(mockDummy, { status: 200, statusText: 'Ok' });
-
-			// After the call has been made, return dummy as Observable
-			dummyService
-				.getDummyData()
-				.subscribe((response: DummyInterface) => {
-					expect(response).toEqual(mockDummy);
-				});
 		});
 	});
 });

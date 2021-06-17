@@ -103,12 +103,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(serverUrl: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>constructor(transferState: <a href="https://angular.io/api/platform-browser/TransferState" target="_blank">TransferState</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/ssr/http.interceptor.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/ssr/http.interceptor.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -126,10 +126,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>serverUrl</td>
+                                                        <td>transferState</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                                        <code><a href="https://angular.io/api/platform-browser/TransferState" target="_blank" >TransferState</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -166,22 +166,22 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>intercept(request: HttpRequest<any>, next: <a href="https://angular.io/api/common/http/HttpHandler" target="_blank">HttpHandler</a>)</code>
+<code>intercept(req: HttpRequest<any>, next: <a href="https://angular.io/api/common/http/HttpHandler" target="_blank">HttpHandler</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/ssr/http.interceptor.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/ssr/http.interceptor.ts:25</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Intercepts HttpRequest or HttpResponse and dispatches an actions
+                    <div class="io-description"><p>Intercepts HttpRequest or HttpResponse and set the transferState
 to save the status in the store</p>
 </div>
 
@@ -197,7 +197,7 @@ to save the status in the store</p>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>request</td>
+                                    <td>req</td>
                                     <td>
                                             <code>HttpRequest&lt;any&gt;</code>
                                     </td>
@@ -226,7 +226,7 @@ to save the status in the store</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;HttpEvent&lt;any&gt;&gt;</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -243,39 +243,37 @@ to save the status in the store</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-	HttpEvent,
 	HttpHandler,
 	HttpInterceptor,
 	HttpRequest,
+	HttpResponse,
 } from &#x27;@angular/common/http&#x27;;
-import { Inject, Injectable, Optional } from &#x27;@angular/core&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { makeStateKey, TransferState } from &#x27;@angular/platform-browser&#x27;;
+import { tap } from &#x27;rxjs/operators&#x27;;
 
+/* istanbul ignore next */
 /**
  * AppHttpInterceptor Intercepts all incoming XHR calls and defines the store if a request is pending
  */
 @Injectable()
 export class UniversalInterceptor implements HttpInterceptor {
-	constructor(@Optional() @Inject(&#x27;serverUrl&#x27;) protected serverUrl: string) {}
-
+	constructor(private readonly transferState: TransferState) {}
+	/* istanbul ignore next */
 	/**
-	 * Intercepts HttpRequest or HttpResponse and dispatches an actions
+	 * Intercepts HttpRequest or HttpResponse and set the transferState
 	 * to save the status in the store
 	 * @param  {HttpRequest&lt;any&gt;} request
 	 * @param  {HttpHandler} next
 	 */
-	intercept(
-		request: HttpRequest&lt;any&gt;,
-		next: HttpHandler,
-	): Observable&lt;HttpEvent&lt;any&gt;&gt; {
-		/* tslint:disable:indent */
-		const serverReq &#x3D; !this.serverUrl
-			? request
-			: request.clone({
-					url: &#x60;${this.serverUrl}${request.url}&#x60;,
-			  });
-
-		return next.handle(serverReq);
+	intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler) {
+		return next.handle(req).pipe(
+			tap((event) &#x3D;&gt; {
+				if (event instanceof HttpResponse) {
+					this.transferState.set(makeStateKey(req.url), event.body);
+				}
+			}),
+		);
 	}
 }
 </code></pre>

@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## [5.0.0](https://github.com/rickvandermey/angular-starterkit/tree/5.0.0)
+
+### Breaking Changes
+
+-   **Testing:** migrate from Karma/jasmine to Jest, faster experience, inline test runners
+-   **Testing:** moved from marbles and using testScheduler from rxjs
+
+### Features
+
+-   **Angular:** Updated to Angular 12.x
+-   **SSR:** Created new interceptor for transferStateKey management
+-   **Packages:** Updated all dependencies to the latest version of 2021-06-17
+
 ## [4.1.0](https://github.com/rickvandermey/angular-starterkit/tree/4.1.0)
 
 ### Breaking Changes

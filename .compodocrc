@@ -3,4 +3,4 @@ hideGenerator: true
 name: RVDM Angular Starterkit
 output: ./documentation
 tsconfig: ./src/tsconfig.compodoc.json
-unitTestCoverage: ./reports/coverage/report-json.json
+unitTestCoverage: ./coverage/coverage-summary.json

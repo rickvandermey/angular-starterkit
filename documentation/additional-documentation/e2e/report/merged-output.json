@@ -3,12 +3,12 @@
     "metadata": {
       "browser": {
         "name": "chrome",
-        "version": "91.0.4469.0"
+        "version": "92.0.4512.0"
       },
-      "device": "Ricks-MacBook-Pro.local Runner: 0 Shard: 1",
+      "device": "MBP-Rick Runner: 0 Shard: 1",
       "platform": {
         "name": "osx",
-        "version": "20.3.0"
+        "version": "20.5.0"
       }
     },
     "description": "\tA user should see the Hello World message",
@@ -35,7 +35,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 74000000
+              "duration": 44000000
             }
           },
           {
@@ -48,7 +48,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 736000000
+              "duration": 332000000
             }
           },
           {
@@ -59,23 +59,19 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23000000
+              "duration": 5000000
             },
             "embeddings": [
               {
-                "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1619090806684,\"type\":\"\"}",
+                "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1623934973335,\"type\":\"\"}",
                 "mime_type": "text/plain"
               },
               {
-                "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1619090806904,\"type\":\"\"}",
+                "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1623934975924,\"type\":\"\"}",
                 "mime_type": "text/plain"
               },
               {
-                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1619090807288,\"type\":\"\"}",
-                "mime_type": "text/plain"
-              },
-              {
-                "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1619090807445,\"type\":\"\"}",
+                "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1623934976166,\"type\":\"\"}",
                 "mime_type": "text/plain"
               }
             ]
@@ -88,7 +84,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 1000000
             }
           }
         ]

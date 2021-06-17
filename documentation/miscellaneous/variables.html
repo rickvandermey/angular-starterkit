@@ -79,9 +79,6 @@
                             <a href="#createDummyReducer" title="src/app/store/dummy/dummy.reducer.ts"><b>createDummyReducer</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.reducer.ts)</a>
                         </li>
                         <li>
-                            <a href="#DUMMY_KEY" title="src/app/services/dummy/dummy.service.ts"><b>DUMMY_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.service.ts)</a>
-                        </li>
-                        <li>
                             <a href="#environment" title="src/environments/environment.mock.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.mock.ts)</a>
                         </li>
                         <li>
@@ -109,13 +106,13 @@
                             <a href="#initialState" title="src/app/testing/mock-store.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../mock-store.ts)</a>
                         </li>
                         <li>
+                            <a href="#initialState" title="src/app/store/application/application.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../application.reducer.ts)</a>
+                        </li>
+                        <li>
                             <a href="#initialState" title="src/app/store/dummy/dummy.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#initialState" title="src/app/store/notifications/notifications.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../notifications.reducer.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#initialState" title="src/app/store/application/application.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../application.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#languages" title="src/app/globals.ts"><b>languages</b>&nbsp;&nbsp;&nbsp;(src/.../globals.ts)</a>
@@ -181,13 +178,13 @@
                             <a href="#selectError" title="src/app/store/dummy/dummy.selectors.ts"><b>selectError</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#selectFeature" title="src/app/store/application/application.selectors.ts"><b>selectFeature</b>&nbsp;&nbsp;&nbsp;(src/.../application.selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#selectFeature" title="src/app/store/dummy/dummy.selectors.ts"><b>selectFeature</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
                         </li>
                         <li>
                             <a href="#selectFeature" title="src/app/store/notifications/notifications.selectors.ts"><b>selectFeature</b>&nbsp;&nbsp;&nbsp;(src/.../notifications.selectors.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#selectFeature" title="src/app/store/application/application.selectors.ts"><b>selectFeature</b>&nbsp;&nbsp;&nbsp;(src/.../application.selectors.ts)</a>
                         </li>
                         <li>
                             <a href="#selectImage" title="src/app/store/dummy/dummy.selectors.ts"><b>selectImage</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.selectors.ts)</a>
@@ -254,9 +251,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>createEntityAdapter&lt;
-	NotificationInterface
-&gt;()</code>
+                            <i>Default value : </i><code>createEntityAdapter&lt;NotificationInterface&gt;()</code>
                         </td>
                     </tr>
 
@@ -870,30 +865,6 @@
 	isLoaded: false,
 	isLoading: false,
 }</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
-    <h3>src/app/services/dummy/dummy.service.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="DUMMY_KEY"></a>
-                        <span class="name">
-                            <b>
-                            DUMMY_KEY</b>
-                            <a href="#DUMMY_KEY"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>makeStateKey(&#x27;dummyState&#x27;)</code>
                         </td>
                     </tr>
 
@@ -1787,9 +1758,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>createFeatureSelector&lt;
-	fromReducer.NotificationsState
-&gt;(&#x27;notifications&#x27;)</code>
+                            <i>Default value : </i><code>createFeatureSelector&lt;fromReducer.NotificationsState&gt;(
+	&#x27;notifications&#x27;,
+)</code>
                         </td>
                     </tr>
 

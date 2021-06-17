@@ -6,8 +6,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { getEffectsMetadata } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
-import { hot } from 'jasmine-marbles';
 import { Observable } from 'rxjs';
+import { TestScheduler } from 'rxjs/testing';
 
 import * as routerActions from './router.actions';
 import { RouterEffects } from './router.effects';
@@ -17,6 +17,7 @@ describe('Effects: Router effects', () => {
 	let effects: RouterEffects;
 	let router: Router;
 	let location: Location;
+	let testScheduler: TestScheduler;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
@@ -26,82 +27,97 @@ describe('Effects: Router effects', () => {
 
 		effects = TestBed.inject(RouterEffects);
 		location = TestBed.inject(Location);
+		testScheduler = new TestScheduler((actual, expected) => {
+			expect(actual).toEqual(expected);
+		});
 		router = TestBed.inject(Router);
 		router.initialNavigation();
 	});
 
 	describe('Go', () => {
 		it('should not dispatch', () => {
-			spyOn(router, 'navigate');
-			const payload = { path: [`/en/404`] };
-			const action = routerActions.go({ payload });
-			actions$ = hot('-a', { a: action });
+			jest.spyOn(router, 'navigate').mockImplementation();
+			testScheduler.run(({ hot }) => {
+				const payload = { path: [`/en/404`] };
+				const action = routerActions.go({ payload });
+				actions$ = hot('-a', { a: action });
 
-			const effect = new RouterEffects(actions$, router, location);
-			const metadata = getEffectsMetadata(effect);
+				const effect = new RouterEffects(actions$, router, location);
+				const metadata = getEffectsMetadata(effect);
 
-			expect(metadata.navigate$).toEqual({
-				dispatch: false,
-				useEffectsErrorHandler: true,
+				expect(metadata.navigate$).toEqual({
+					dispatch: false,
+					useEffectsErrorHandler: true,
+				});
 			});
 		});
 
 		it('should navigate to provided path', () => {
-			spyOn(router, 'navigate');
-			const payload = { path: [`/en/404`] };
-			const action = routerActions.go({ payload });
+			jest.spyOn(router, 'navigate').mockImplementation();
 
-			actions$ = hot('-a', { a: action });
-			effects.navigate$.subscribe((result) => {
-				expect(result).toEqual(payload);
+			testScheduler.run(({ hot }) => {
+				const payload = { path: [`/en/404`] };
+				const action = routerActions.go({ payload });
+
+				actions$ = hot('-a', { a: action });
+				effects.navigate$.subscribe((result) => {
+					expect(result).toEqual(payload);
+				});
 			});
 		});
 	});
 
 	describe('Forward', () => {
 		it('should not dispatch', () => {
-			const action = routerActions.forward();
-			actions$ = hot('-a', { a: action });
+			testScheduler.run(({ hot }) => {
+				const action = routerActions.forward();
+				actions$ = hot('-a', { a: action });
 
-			const effect = new RouterEffects(actions$, router, location);
-			const metadata = getEffectsMetadata(effect);
+				const effect = new RouterEffects(actions$, router, location);
+				const metadata = getEffectsMetadata(effect);
 
-			expect(metadata.navigateForward$).toEqual({
-				dispatch: false,
-				useEffectsErrorHandler: true,
+				expect(metadata.navigateForward$).toEqual({
+					dispatch: false,
+					useEffectsErrorHandler: true,
+				});
 			});
 		});
 
 		it('should navigate to back', () => {
-			const action = routerActions.forward();
+			testScheduler.run(({ hot }) => {
+				const action = routerActions.forward();
 
-			actions$ = hot('-a', { a: action });
-			effects.navigateForward$.subscribe((result) => {
-				expect(result).toEqual(action);
+				actions$ = hot('-a', { a: action });
+				effects.navigateForward$.subscribe((result) => {
+					expect(result).toEqual(action);
+				});
 			});
 		});
 	});
 
 	describe('Back', () => {
 		it('should not dispatch', () => {
-			const action = routerActions.back();
-			actions$ = hot('-a', { a: action });
+			testScheduler.run(({ hot }) => {
+				const action = routerActions.back();
+				actions$ = hot('-a', { a: action });
 
-			const effect = new RouterEffects(actions$, router, location);
-			const metadata = getEffectsMetadata(effect);
+				const effect = new RouterEffects(actions$, router, location);
+				const metadata = getEffectsMetadata(effect);
 
-			expect(metadata.navigateBack$).toEqual({
-				dispatch: false,
-				useEffectsErrorHandler: true,
+				expect(metadata.navigateBack$).toEqual({
+					dispatch: false,
+					useEffectsErrorHandler: true,
+				});
 			});
 		});
 
 		it('should navigate to forward', () => {
-			const action = routerActions.back();
-
-			actions$ = hot('-a', { a: action });
-			effects.navigateBack$.subscribe((result) => {
-				expect(result).toEqual(action);
+			testScheduler.run(({ hot }) => {
+				const action = routerActions.back();
+				actions$ = hot('-a', { a: action });
+				effects.navigateBack$.subscribe((result) => {
+					expect(result).toEqual(action);
+				});
 			});
 		});
 	});

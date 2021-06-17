@@ -49,7 +49,7 @@
 <li>🚀 Prerendering (for SEO and static HTML generation)</li>
 <li>😍 PWA (Progressive Web App)</li>
 <li>😍 Service Worker detects new build versions</li>
-<li>🤓 Unit Test (Karma)</li>
+<li>🤓 Unit Test (Jest)</li>
 <li>🤓 E2E Test / Reports (Protractor / Cucumber)</li>
 <li>🗃 Documentation Generation (Compodoc)</li>
 <li>🚀 WPO: Google Lighthouse reporter (save to Compodoc additional docs)</li>
@@ -89,23 +89,21 @@
 </ul>
 <h3 id="prerendering-angular-😍😍😍">Prerendering Angular 😍😍😍</h3>
 <ul>
-<li><p>For Serving - <code>npm run start:prerender</code></p>
-</li>
-<li><p>For Building - <code>npm run prerender:build</code></p>
-<h2 id="testing">Testing</h2>
-</li>
-<li><p><code>npm run lint</code> - Linting application</p>
-</li>
-<li><p><code>npm run test</code> - Unit test Watcher</p>
-</li>
-<li><p><code>npm run test:unit-headless</code> - Unit test single Run</p>
-</li>
-<li><p><code>npm run test:e2e</code> - End to End test with Protractor and reports with Cucumber</p>
-</li>
+<li>For Serving - <code>npm run start:prerender</code></li>
+<li>For Building - <code>npm run prerender:build</code></li>
 </ul>
-<h3 id="running-unit-tests-with-karma-🤓">Running unit tests with Karma 🤓</h3>
-<p>Run <code>npm run test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>. This script will be run as a watcher. Most effective to run this alongside <code>npm run start</code> while developing.</p>
-<p>Run <code>test:unit-headless</code> to execute a single run for the Unit test. Best usecases are for pre-commit checks and in pipeline scripts.</p>
+<h2 id="testing">Testing</h2>
+<ul>
+<li><code>npm run lint</code> - Linting application</li>
+<li><code>npm run test</code> - Unit test Watcher (only runs tests for changed files)</li>
+<li><code>npm run test-all</code> - Unit test Watcher (runs all tests)</li>
+<li><code>npm run test:ci</code> - Unit test single Run</li>
+<li><code>npm run test:e2e</code> - End to End test with Protractor and reports with Cucumber</li>
+</ul>
+<h3 id="running-unit-tests-with-jest-🤓">Running unit tests with Jest 🤓</h3>
+<p>Run <code>npm run test</code> to execute the unit tests via <a href="https://jestjs.io/">Jest</a>. This script will be run as a watcher and only runs tests for changed files. Most effective to run this alongside <code>npm run start</code> while developing.</p>
+<p>Run <code>test-all</code> to execute a all unit tests when a file change.</p>
+<p>Run <code>test:ci</code> to execute a single run for the Unit test. Best usecases are for pre-commit checks and in pipeline scripts.</p>
 <p>Both scripts will provide a Code Coverage file, which can be found in <em>&#39;./reports/coverage&#39;</em></p>
 <h3 id="running-e2e-tests-with-protractor-and-cucumber-🤓">Running E2E tests with Protractor and Cucumber 🤓</h3>
 <p>Run <code>npm run test:e2e</code> to execute the E2E protractor tests. Tests can be found within <em>./e2e</em> all written in Cucumber style.</p>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">16.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>2/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">16.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>2/12</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -118,32 +118,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,8 +142,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,22 +168,22 @@ export class GeneralHelper {
 	 * @param { any } obj
 	 * @return { any } flattened object
 	 */
-	static flattensObject = (obj: any): any =&gt; {
-		const flattened = {};
+	static flattensObject = <span class="fstat-no" title="function not covered" >(o</span>bj: any): any =&gt; {
+		const flattened = <span class="cstat-no" title="statement not covered" >{};</span>
 &nbsp;
-		Object.keys(obj).forEach((key) =&gt; {
-			if (typeof obj[key] === 'object' &amp;&amp; obj[key] !== null) {
-				Object.assign(
+<span class="cstat-no" title="statement not covered" >		Object.keys(obj).forEach(<span class="fstat-no" title="function not covered" >(k</span>ey) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			if (typeof obj[key] === 'object' &amp;&amp; obj[key] !== null) {</span>
+<span class="cstat-no" title="statement not covered" >				Object.assign(</span>
 					flattened,
 					GeneralHelper.flattensObject(obj[key]),
 				);
 			} else {
-				flattened[key] = obj[key];
+<span class="cstat-no" title="statement not covered" >				flattened[key] = obj[key];</span>
 			}
 		});
 &nbsp;
-		return flattened;
-		/* tslint:disable:semicolon */
+<span class="cstat-no" title="statement not covered" >		return flattened;</span>
+		/* eslint-disable @typescript-eslint/semi, @typescript-eslint/member-delimiter-style */
 	};
 &nbsp;
 	/**
@@ -192,9 +192,9 @@ export class GeneralHelper {
 	 * @param { string } field - the field which will be used to sort
 	 * @return { any[] }
 	 */
-	static sort(data: any[], field: string): any[] {
-		return data.sort((a, b) =&gt;
-			a[field] &gt; b[field] ? 1 : b[field] &gt; a[field] ? -1 : 0,
+<span class="fstat-no" title="function not covered" >	static </span>sort(data: any[], field: string): any[] {
+<span class="cstat-no" title="statement not covered" >		return data.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >			a[field] &gt; b[field] ? 1 : b[field] &gt; a[field] ? -1 : 0,</span>
 		);
 	}
 &nbsp;
@@ -204,9 +204,9 @@ export class GeneralHelper {
 	 * @param { string } field - the field which will be used to sort
 	 * @return { any[] }
 	 */
-	static dateSort(data: any[], field: string): any[] {
-		return data.sort((a, b) =&gt; {
-			return new Date(b[field]).getTime() - new Date(a[field]).getTime();
+<span class="fstat-no" title="function not covered" >	static </span>dateSort(data: any[], field: string): any[] {
+<span class="cstat-no" title="statement not covered" >		return data.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			return new Date(b[field]).getTime() - new Date(a[field]).getTime();</span>
 		});
 	}
 }
@@ -217,7 +217,7 @@ export class GeneralHelper {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 22 2021 13:26:05 GMT+0200 (Central European Summer Time)
+                at Mon Jun 14 2021 15:48:39 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

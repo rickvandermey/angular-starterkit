@@ -1,5 +1,4 @@
 import { Observable, Subject } from 'rxjs';
-import CreateSpy = jasmine.createSpy;
 
 /**
  * MockSwUpdate mocks the SwUpdate
@@ -46,16 +45,12 @@ export class MockSwUpdate {
 	/**
 	 * activateUpdate mocked function of SwUpdate
 	 */
-	activateUpdate: any = CreateSpy(
-		'MockSwUpdate.activateUpdate',
-	).and.callFake(() => Promise.resolve());
+	activateUpdate: any = jest.fn().mockImplementation(() => Promise.resolve());
 
 	/**
 	 * checkForUpdate mocked function of SwUpdate
 	 */
-	checkForUpdate: any = CreateSpy(
-		'MockSwUpdate.checkForUpdate',
-	).and.callFake(() => Promise.resolve());
+	checkForUpdate: any = jest.fn().mockImplementation(() => Promise.resolve());
 
 	constructor() {}
 }

@@ -66,9 +66,6 @@ apimock.processor.process({
 // NOTE: Enable to allow additional logging
 // app.use(morgan('dev'));
 
-// Add form data parser so we can check deprecated request bodies
-app.use(express.json());
-
 // Add API wide headers which are dictated by nginx
 app.use(
 	(
