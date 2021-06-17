@@ -32,6 +32,10 @@ export class DummyService {
 
 		return this.http
 			.get<DummyInterface>(`${environment.assetsRoot}/dummy/dummy.json`)
-			.pipe(tap((res) => this.state.set(DUMMY_KEY, res)));
+			.pipe(
+				tap((res) =>
+					this.state.set(DUMMY_KEY, (res as unknown) as void),
+				),
+			);
 	}
 }
