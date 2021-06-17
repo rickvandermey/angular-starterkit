@@ -44,7 +44,7 @@
 		"wpo:stats": "webpack-bundle-analyzer dist/browser/stats.json --mode=static --report=\"reports/wpo/bundle-report.html\" --no-open && npx cpx dist/browser/stats.json reports/wpo"
 	},
 	"config": {
-		"chromeVersion": "89.0.4389.23"
+		"chromeVersion": "92.0.4512.0"
 	},
 	"dependencies": {
 		"@angular/animations": "12.0.5",
@@ -132,7 +132,7 @@
 		"protractor": "7.0.0",
 		"protractor-cucumber-framework": "7.0.2",
 		"protractor-multiple-cucumber-html-reporter-plugin": "1.8.1",
-		"puppeteer": "9.0.0",
+		"puppeteer": "^10.0.0",
 		"purgecss-webpack-plugin": "4.0.3",
 		"rimraf": "3.0.2",
 		"spdy": "4.0.2",
