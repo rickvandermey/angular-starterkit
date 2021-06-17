@@ -45,6 +45,7 @@ import { ErrorModule } from '@modules/error.module';
 
 // Interceptor
 import { AppHttpInterceptor } from './interceptors/http.interceptor';
+import { AppHttpInterceptor as CoreAppHttpInterceptor } from './ssr/app.interceptor';
 import { getInitialState } from './ssr/tokens';
 
 /* istanbul ignore next */
@@ -125,6 +126,12 @@ export function getMetaReducers(
 			provide: HTTP_INTERCEPTORS,
 			useClass: AppHttpInterceptor,
 		},
+		{
+			multi: true,
+			provide: HTTP_INTERCEPTORS,
+			useClass: CoreAppHttpInterceptor,
+		},
+
 		{
 			deps: [DOCUMENT, PLATFORM_ID],
 			multi: true,

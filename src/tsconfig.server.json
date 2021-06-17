@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"outDir": "../out-tsc/app-server",
+		"skipLibCheck": true,
 		"target": "es2016"
 	},
 	"angularCompilerOptions": {
