@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">53.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>26/26</span>
+                <span class='fraction'>14/26</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/24</span>
+                <span class='fraction'>12/24</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -210,7 +210,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,29 +223,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -278,9 +265,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -293,7 +293,7 @@
 	PLATFORM_ID,
 } from '@angular/core';
 import { SwPush, SwUpdate } from '@angular/service-worker';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 &nbsp;
@@ -324,7 +324,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 	/**
 	 * notifications returns messages of swPush
 	 */
-	notifications: NotificationInterface[] = [];
+<span class="cstat-no" title="statement not covered" >	notifications: NotificationInterface[] = [];</span>
 &nbsp;
 	/**
 	 * constructor - The function which is called when the class is instantiated
@@ -336,17 +336,17 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * @param  {SwUpdate} swUpdate - Subscription for the Angular SwUpdate
 	 * @param  {TranslateService} translate - Subscription for the Angular TranslateService
 	 */
-	constructor(
-		@Inject(PLATFORM_ID) private readonly platformId: string,
-		private readonly store: Store&lt;{}&gt;,
-		public readonly cd: ChangeDetectorRef,
-		public pushService: PushNotificationService,
-		public swPush: SwPush,
-		public swUpdate: SwUpdate,
-		public translate: TranslateService,
+<span class="fstat-no" title="function not covered" >	constructor(</span>
+		@Inject(PLATFORM_ID) private readonly <span class="cstat-no" title="statement not covered" >platformId: string,</span>
+		private readonly <span class="cstat-no" title="statement not covered" >store: S</span>tore&lt;{}&gt;,
+		public readonly <span class="cstat-no" title="statement not covered" >cd: C</span>hangeDetectorRef,
+		public <span class="cstat-no" title="statement not covered" >pushService: P</span>ushNotificationService,
+		public <span class="cstat-no" title="statement not covered" >swPush: S</span>wPush,
+		public <span class="cstat-no" title="statement not covered" >swUpdate: S</span>wUpdate,
+		public <span class="cstat-no" title="statement not covered" >translate: T</span>ranslateService,
 	) {
-		super();
-		this.routerLanguage$ = this.store.pipe(
+<span class="cstat-no" title="statement not covered" >		super();</span>
+<span class="cstat-no" title="statement not covered" >		this.routerLanguage$ = this.store.pipe(</span>
 			select(fromRouter.getRouterLanguage),
 		);
 	}
@@ -356,7 +356,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * change detector has checked the directive's data-bound properties for
 	 * the first time
 	 */
-	ngOnInit(): void {
+<span class="fstat-no" title="function not covered" >	ngOnInit(</span>): void {
 		/* istanbul ignore next */
 		if (this.swUpdate.isEnabled) {
 			this.swUpdate.available.subscribe(() =&gt; {
@@ -392,9 +392,9 @@ export class AppComponent extends BaseComponent implements OnInit {
 				.catch();
 		}
 &nbsp;
-		this.addSubscription(
-			this.routerLanguage$.subscribe((language: string) =&gt; {
-				this.translate.use(language);
+<span class="cstat-no" title="statement not covered" >		this.addSubscription(</span>
+			this.routerLanguage$.subscribe(<span class="fstat-no" title="function not covered" >(l</span>anguage: string) =&gt; {
+<span class="cstat-no" title="statement not covered" >				this.translate.use(language);</span>
 			}),
 		);
 	}
@@ -406,7 +406,7 @@ export class AppComponent extends BaseComponent implements OnInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 22 2021 13:26:05 GMT+0200 (Central European Summer Time)
+                at Mon Jun 14 2021 15:48:39 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

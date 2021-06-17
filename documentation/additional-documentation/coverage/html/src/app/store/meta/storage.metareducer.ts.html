@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">21.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>3/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">21.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>3/14</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,25 +109,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -141,30 +141,30 @@ const pick = require('lodash.pick');
  * @param  reducer the given ActionReducer
  * @return state
  */
-export function storageMetaReducer&lt;S, A extends Action = Action&gt;(
+export function <span class="fstat-no" title="function not covered" >storageMetaReducer&lt;</span>S, A extends Action = Action&gt;(
 	saveKeys: string[],
 	localStorageKey: string,
 	storageService: LocalStorageService,
 ): (reducer: ActionReducer&lt;S, A&gt;) =&gt; (state: S, action: A) =&gt; S {
-	let onInit = true; // after load/refresh…
-	return function (reducer: ActionReducer&lt;S, A&gt;): (state: S, action: A) =&gt; S {
-		return function (state: S, action: A): S {
+	let onInit = <span class="cstat-no" title="statement not covered" >true;</span> // after load/refresh…
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >function (r</span>educer: ActionReducer&lt;S, A&gt;): (state: S, action: A) =&gt; S {</span>
+<span class="cstat-no" title="statement not covered" >		return <span class="fstat-no" title="function not covered" >function (s</span>tate: S, action: A): S {</span>
 			// get the next state.
-			const nextState = reducer(state, action);
+			const nextState = <span class="cstat-no" title="statement not covered" >reducer(state, action);</span>
 			// init the application state.
-			if (onInit) {
-				onInit = false;
-				const savedState = storageService.getSavedState(
+<span class="cstat-no" title="statement not covered" >			if (onInit) {</span>
+<span class="cstat-no" title="statement not covered" >				onInit = false;</span>
+				const savedState = <span class="cstat-no" title="statement not covered" >storageService.getSavedState(</span>
 					localStorageKey,
 				);
-				return merge(nextState, savedState);
+<span class="cstat-no" title="statement not covered" >				return merge(nextState, savedState);</span>
 			}
 &nbsp;
 			// save the next state to the application storage.
-			const stateToSave = pick(nextState, saveKeys);
-			storageService.setSavedState(stateToSave, localStorageKey);
+			const stateToSave = <span class="cstat-no" title="statement not covered" >pick(nextState, saveKeys);</span>
+<span class="cstat-no" title="statement not covered" >			storageService.setSavedState(stateToSave, localStorageKey);</span>
 &nbsp;
-			return nextState;
+<span class="cstat-no" title="statement not covered" >			return nextState;</span>
 		};
 	};
 }
@@ -175,7 +175,7 @@ export function storageMetaReducer&lt;S, A extends Action = Action&gt;(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 22 2021 13:26:05 GMT+0200 (Central European Summer Time)
+                at Mon Jun 14 2021 15:48:39 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
