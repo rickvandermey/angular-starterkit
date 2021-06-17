@@ -213,7 +213,7 @@ export class CustomSerializer implements RouterStateSerializer&lt;RouterStateUrl
 			root: { queryParams },
 		} &#x3D; routerState;
 		const { params } &#x3D; route;
-		return { url, params, queryParams };
+		return { params, queryParams, url };
 	}
 }
 

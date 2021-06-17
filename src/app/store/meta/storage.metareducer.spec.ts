@@ -2,7 +2,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
 
 import { storageMetaReducer } from './storage.metareducer';
-import Spy = jasmine.Spy;
 
 /**
  * localStorageServiceMock mocks LocalStorageService
@@ -42,17 +41,14 @@ describe('storage meta reducer', () => {
 	const localStorageKey = '__state__';
 
 	let localStorageServiceMock: LocalStorageServiceMock;
-	let setStateSpy: Spy;
+	let setStateSpy: any;
 
 	let state: any;
 	let fakeReducer: (s: any, a: any) => {};
 
 	beforeEach(() => {
 		localStorageServiceMock = new LocalStorageServiceMock('browser');
-		setStateSpy = spyOn(
-			localStorageServiceMock,
-			'setSavedState',
-		).and.callThrough();
+		setStateSpy = jest.spyOn(localStorageServiceMock, 'setSavedState');
 		state = {
 			feature: { foo: 'bar' },
 			nestedFeature: { foo: { bar: 'baz' } },

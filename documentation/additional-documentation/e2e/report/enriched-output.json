@@ -6,11 +6,11 @@
     "data": [
       {
         "label": "Project",
-        "value": "RVDM-Angular-Starterkit"
+        "value": "rvdm-angular-starterkit"
       },
       {
         "label": "Release",
-        "value": "4.0.0"
+        "value": "4.1.0"
       },
       {
         "label": "Homepage",
@@ -18,7 +18,7 @@
       },
       {
         "label": "Execution Start Time",
-        "value": "2021-04-22T11:26:39.949Z"
+        "value": "2021-05-21T10:24:00.407Z"
       }
     ]
   },
@@ -30,7 +30,7 @@
   "browser": 1,
   "name": "",
   "version": "version",
-  "time": "2021-04-22T11:26:47.609Z",
+  "time": "2021-05-21T10:24:05.722Z",
   "features": [
     {
       "metadata": {
@@ -38,17 +38,17 @@
           "name": "chrome",
           "version": "91.0.4469.0"
         },
-        "device": "Ricks-MacBook-Pro.local Runner: 0 Shard: 1",
+        "device": "Stevens-MacBook-Pro.local Runner: 0 Shard: 1",
         "platform": {
           "name": "osx",
-          "version": "20.3.0"
+          "version": "18.7.0"
         }
       },
       "description": "\tA user should see the Hello World message",
       "keyword": "Feature",
       "name": "Hello world Feature",
       "line": 3,
-      "id": "df43f5b2-cd8d-4dcb-a7b1-565f3b5e4320-hello-world-feature",
+      "id": "3af82358-c9f4-465d-ad25-1ea5ade99922-hello-world-feature",
       "tags": [],
       "uri": "e2e/features/home.feature",
       "elements": [
@@ -68,7 +68,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 74000000
+                "duration": 56000000
               }
             },
             {
@@ -81,9 +81,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 736000000
+                "duration": 527000000
               },
-              "time": "00:00:00.736"
+              "time": "00:00:00.527"
             },
             {
               "keyword": "After",
@@ -93,34 +93,29 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 23000000
+                "duration": 9000000
               },
               "embeddings": [
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1619090806684,\"type\":\"\"}",
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1621592641954,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1619090806904,\"type\":\"\"}",
+                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1621592645492,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1619090807288,\"type\":\"\"}",
-                  "mime_type": "text/plain"
-                },
-                {
-                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1619090807445,\"type\":\"\"}",
+                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1621592645636,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 }
               ],
               "attachments": [],
               "text": [
-                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1619090806684,\"type\":\"\"}",
-                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1619090806904,\"type\":\"\"}",
-                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1619090807288,\"type\":\"\"}",
-                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1619090807445,\"type\":\"\"}"
+                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1621592641954,\"type\":\"\"}",
+                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/vendor.js 34026:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1621592645492,\"type\":\"\"}",
+                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1621592645636,\"type\":\"\"}"
               ],
-              "time": "00:00:00.023"
+              "time": "00:00:00.009"
             },
             {
               "keyword": "After",
@@ -130,7 +125,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 3000000
+                "duration": 0
               }
             }
           ],
@@ -140,8 +135,8 @@
           "skipped": 0,
           "pending": 0,
           "ambiguous": 0,
-          "duration": 759000000,
-          "time": "00:00:00.759"
+          "duration": 536000000,
+          "time": "00:00:00.536"
         }
       ],
       "scenarios": {
@@ -159,8 +154,8 @@
         "ambiguousPercentage": "0.00",
         "total": 1
       },
-      "duration": 759000000,
-      "time": "00:00:00.759",
+      "duration": 536000000,
+      "time": "00:00:00.536",
       "isFailed": false,
       "isAmbiguous": false,
       "isSkipped": false,
@@ -187,7 +182,7 @@
     "skippedPercentage": "0.00",
     "passedPercentage": "100.00"
   },
-  "reportName": "RVDM-Angular-Starterkit",
+  "reportName": "rvdm-angular-starterkit",
   "scenarios": {
     "failed": 0,
     "ambiguous": 0,

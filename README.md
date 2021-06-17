@@ -20,7 +20,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   🚀 Prerendering (for SEO and static HTML generation)
 -   😍 PWA (Progressive Web App)
 -   😍 Service Worker detects new build versions
--   🤓 Unit Test (Karma)
+-   🤓 Unit Test (Jest)
 -   🤓 E2E Test / Reports (Protractor / Cucumber)
 -   🗃 Documentation Generation (Compodoc)
 -   🚀 WPO: Google Lighthouse reporter (save to Compodoc additional docs)
@@ -77,15 +77,18 @@ This project comes with built-in SSR functionality. The effect of SSR will be va
 ## Testing
 
 -   `npm run lint` - Linting application
--   `npm run test` - Unit test Watcher
--   `npm run test:unit-headless` - Unit test single Run
+-   `npm run test` - Unit test Watcher (only runs tests for changed files)
+-   `npm run test-all` - Unit test Watcher (runs all tests)
+-   `npm run test:ci` - Unit test single Run
 -   `npm run test:e2e` - End to End test with Protractor and reports with Cucumber
 
-### Running unit tests with Karma 🤓
+### Running unit tests with Jest 🤓
 
-Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io). This script will be run as a watcher. Most effective to run this alongside `npm run start` while developing.
+Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/). This script will be run as a watcher and only runs tests for changed files. Most effective to run this alongside `npm run start` while developing.
 
-Run `test:unit-headless` to execute a single run for the Unit test. Best usecases are for pre-commit checks and in pipeline scripts.
+Run `test-all` to execute a all unit tests when a file change.
+
+Run `test:ci` to execute a single run for the Unit test. Best usecases are for pre-commit checks and in pipeline scripts.
 
 Both scripts will provide a Code Coverage file, which can be found in _'./reports/coverage'_
 

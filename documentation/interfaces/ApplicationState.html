@@ -64,6 +64,13 @@
             <code>src/app/store/application/application.reducer.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Application store state</p>
+
+            </p>
 
 
         <section>
@@ -135,6 +142,9 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Action, createReducer, on } from &#x27;@ngrx/store&#x27;;
 import * as applicationActions from &#x27;./application.actions&#x27;;
 
+/**
+ * Application store state
+ */
 export interface ApplicationState {
 	/**
 	 * isPendingRequest represents the state wether a XHR call is pending

@@ -1,10 +1,12 @@
 {
 	"extends": "../tsconfig.json",
 	"compilerOptions": {
+		"allowJs": true,
 		"baseUrl": "./",
+		"emitDecoratorMetadata": true,
 		"module": "commonjs",
 		"outDir": "../out-tsc/spec",
 		"target": "es6",
-		"types": ["jasmine", "node"]
+		"types": ["jest", "node"]
 	}
 }

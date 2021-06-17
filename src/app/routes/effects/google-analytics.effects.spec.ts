@@ -1,6 +1,6 @@
 import { NavigationEnd } from '@angular/router';
 import { getEffectsMetadata } from '@ngrx/effects';
-import { cold } from 'jasmine-marbles';
+import { cold } from 'jest-marbles';
 import { GoogleAnalyticsEffects } from './google-analytics.effects';
 
 describe('GoogleAnalyticsEffects', () => {
@@ -17,7 +17,7 @@ describe('GoogleAnalyticsEffects', () => {
 			},
 		};
 
-		(window as any).ga = jasmine.createSpy('ga');
+		(window as any).ga = jest.fn();
 	});
 
 	afterAll(() => {

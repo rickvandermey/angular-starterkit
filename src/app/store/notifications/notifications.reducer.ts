@@ -4,6 +4,9 @@ import { Action, createReducer, on } from '@ngrx/store';
 import * as NotificationActions from './notifications.actions';
 import { NotificationInterface } from './notifications.interface';
 
+/**
+ * Notification store state
+ */
 export interface NotificationsState extends EntityState<NotificationInterface> {
 	/**
 	 * entities are all notifications entities for the the store

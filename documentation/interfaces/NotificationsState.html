@@ -64,6 +64,13 @@
             <code>src/app/store/notifications/notifications.reducer.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Notification store state</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -138,12 +145,15 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { EntityAdapter, EntityState, createEntityAdapter } from &#x27;@ngrx/entity&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createEntityAdapter, EntityAdapter, EntityState } from &#x27;@ngrx/entity&#x27;;
 import { Action, createReducer, on } from &#x27;@ngrx/store&#x27;;
 
 import * as NotificationActions from &#x27;./notifications.actions&#x27;;
 import { NotificationInterface } from &#x27;./notifications.interface&#x27;;
 
+/**
+ * Notification store state
+ */
 export interface NotificationsState extends EntityState&lt;NotificationInterface&gt; {
 	/**
 	 * entities are all notifications entities for the the store
@@ -151,9 +161,7 @@ export interface NotificationsState extends EntityState&lt;NotificationInterface
 	entities: { [item: string]: NotificationInterface } | null;
 }
 
-export const adapter: EntityAdapter&lt;NotificationInterface&gt; &#x3D; createEntityAdapter&lt;
-	NotificationInterface
-&gt;();
+export const adapter: EntityAdapter&lt;NotificationInterface&gt; &#x3D; createEntityAdapter&lt;NotificationInterface&gt;();
 
 export const initialState: NotificationsState &#x3D; adapter.getInitialState();
 

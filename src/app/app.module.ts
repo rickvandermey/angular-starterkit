@@ -34,7 +34,7 @@ import * as fromNotifications from '@store/notifications/notifications.reducer';
 import { RouterEffects } from '@store/router/router.effects';
 
 // Core
-import { environment } from 'environments/environment';
+import { environment } from '@environments/environment';
 import { AppComponent } from './app.component';
 
 // Routes
@@ -47,6 +47,7 @@ import { ErrorModule } from '@modules/error.module';
 import { AppHttpInterceptor } from './interceptors/http.interceptor';
 import { getInitialState } from './ssr/tokens';
 
+/* istanbul ignore next */
 /**
  * Custom TranslateService Loader to load the given language
  * @param  {HttpClient} http HttpClient to 'mock' the call to the assets i18n json file

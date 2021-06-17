@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { TransferState } from '@angular/platform-browser';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
-import { cold, hot } from 'jasmine-marbles';
+import { cold, hot } from 'jest-marbles';
 import { Observable, of, throwError } from 'rxjs';
 
 import { DummyService } from '@services/dummy/dummy.service';
@@ -37,7 +37,9 @@ describe('Effects: Dummy effects', () => {
 
 	describe('getDummyData', () => {
 		it('should dispatch action on load', () => {
-			spyOn(service, 'getDummyData').and.returnValue(of(mockDummy));
+			jest.spyOn(service, 'getDummyData').mockImplementation(() =>
+				of(mockDummy),
+			);
 
 			const action = dummyActions.Load();
 			const completion = dummyActions.LoadSuccess({ entity: mockDummy });
@@ -49,7 +51,7 @@ describe('Effects: Dummy effects', () => {
 		});
 
 		it('should dispatch action when failed', () => {
-			spyOn(service, 'getDummyData').and.returnValue(
+			jest.spyOn(service, 'getDummyData').mockImplementation(() =>
 				throwError({ status: 404 }),
 			);
 
