@@ -38,13 +38,13 @@
 		"stylelint": "stylelint \"src/{scss,app}/**/*.scss\" --config .stylelintrc --fix",
 		"test": "ng test --watch",
 		"test-all": "ng test --watchAll",
-		"test:e2e": "npm run server:mock -- -d && ng e2e --webdriver-update=false && docker-compose down",
+		"test:e2e": "npm run server:mock -- -d && ng e2e && docker-compose down",
 		"test:ci": "ng test",
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
 		"wpo:stats": "webpack-bundle-analyzer dist/browser/stats.json --mode=static --report=\"reports/wpo/bundle-report.html\" --no-open && npx cpx dist/browser/stats.json reports/wpo"
 	},
 	"config": {
-		"chromeVersion": "92.0.4512.0"
+		"chromeVersion": "91.0.4472.101"
 	},
 	"dependencies": {
 		"@angular/animations": "12.0.5",
@@ -119,7 +119,6 @@
 		"http-server": "0.12.3",
 		"husky": "6.0.0",
 		"jest": "27.0.4",
-		"jest-marbles": "2.5.1",
 		"jest-preset-angular": "9.0.4",
 		"lighthouse": "8.0.0",
 		"multiple-cucumber-html-reporter": "1.18.0",
