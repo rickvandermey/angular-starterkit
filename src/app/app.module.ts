@@ -41,7 +41,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, GoogleAnalyticsEffects } from 'routes';
 
 // Modules
-import { ErrorModule } from '@modules/error.module';
+import { ErrorModule } from '@app/pages/error/error.module';
 
 // Interceptor
 import { AppHttpInterceptor } from './interceptors/http.interceptor';

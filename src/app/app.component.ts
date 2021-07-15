@@ -3,6 +3,7 @@ import {
 	Component,
 	Inject,
 	OnInit,
+	Optional,
 	PLATFORM_ID,
 } from '@angular/core';
 import { SwPush, SwUpdate } from '@angular/service-worker';
@@ -18,6 +19,7 @@ import { addNotification } from '@store/notifications/notifications.actions';
 import { NotificationInterface } from '@store/notifications/notifications.interface';
 import * as fromRouter from '@store/router/router.selectors';
 import { BaseComponent } from 'components';
+import { STATE_CB } from './ssr/tokens';
 
 /**
  * App Component which extends the BaseComponent
@@ -50,6 +52,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * @param  {TranslateService} translate - Subscription for the Angular TranslateService
 	 */
 	constructor(
+		@Optional() @Inject(STATE_CB) private readonly _stateCb: Function,
 		@Inject(PLATFORM_ID) private readonly platformId: string,
 		private readonly store: Store<{}>,
 		public readonly cd: ChangeDetectorRef,
@@ -110,5 +113,12 @@ export class AppComponent extends BaseComponent implements OnInit {
 				this.translate.use(language);
 			}),
 		);
+
+		this.store.subscribe((state) => {
+			/* istanbul ignore if */
+			if (this._stateCb) {
+				this._stateCb(state);
+			}
+		});
 	}
 }

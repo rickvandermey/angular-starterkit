@@ -3,11 +3,12 @@ import * as entitiesSelectors from './entities.selectors';
 
 describe('Selectors: Entities selector', () => {
 	it('should return all entities as an array', () => {
-		const selectedState = entitiesSelectors.selectAllEntities(mockStore);
+		const selectedState =
+			entitiesSelectors.selectStandardEntities(mockStore);
 		expect(selectedState).toEqual(mockStore.entitiesState.entities);
 	});
 	it('should return all entities ids as an array', () => {
-		const selectedState = entitiesSelectors.selectAllIds(mockStore);
+		const selectedState = entitiesSelectors.selectStandardIds(mockStore);
 		expect(selectedState).toEqual(mockStore.entitiesState.ids);
 	});
 	it('should return loading state', () => {

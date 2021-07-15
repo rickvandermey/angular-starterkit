@@ -1,10 +1,9 @@
-import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Dictionary } from '@ngrx/entity';
 import { select, Store } from '@ngrx/store';
+import { EventReplayer } from 'preboot';
 import { Observable } from 'rxjs';
 
-import { STATE_CB } from '@app/ssr/tokens';
 import { Load } from '@store/entities/entities.actions';
 import { EntityInterface } from '@store/entities/entities.interface';
 import * as entitiesSelectors from '@store/entities/entities.selectors';
@@ -24,7 +23,8 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	/**
 	 * entities$ is an Observable of the EntityInterface[] from the EntitiesStore
 	 */
-	entities$: Observable<Dictionary<EntityInterface>>;
+	entities$: Observable<EntityInterface[]>;
+	entities: EntityInterface[];
 
 	/**
 	 * constructor - The function which is called when the class is instantiated
@@ -32,7 +32,7 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	 *  @param  {type} private title: Service to set the HTML title
 	 */
 	constructor(
-		@Optional() @Inject(STATE_CB) private readonly _stateCb: Function,
+		private readonly replayer: EventReplayer,
 		private readonly store: Store<{}>,
 		private readonly title: Title,
 	) {
@@ -51,11 +51,11 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 		this.title.setTitle('Homepage / Angular SSR');
 		this.store.dispatch(Load());
 
-		this.store.subscribe((state) => {
-			/* istanbul ignore if */
-			if (this._stateCb) {
-				this._stateCb(state);
-			}
-		});
+		this.addSubscription(
+			this.entities$.subscribe((entities) => {
+				this.entities = entities;
+				this.replayer.replayAll();
+			}),
+		);
 	}
 }
