@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	      <link rel="stylesheet" href="./styles/style.css">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -48,37 +49,37 @@
     </ol>
     <ul class="dependencies-list">
         <li>
-            <b>@angular/animations</b> : 12.0.5</li>
+            <b>@angular/animations</b> : 12.1.2</li>
         <li>
-            <b>@angular/common</b> : 12.0.5</li>
+            <b>@angular/common</b> : 12.1.2</li>
         <li>
-            <b>@angular/compiler</b> : 12.0.5</li>
+            <b>@angular/compiler</b> : 12.1.2</li>
         <li>
-            <b>@angular/core</b> : 12.0.5</li>
+            <b>@angular/core</b> : 12.1.2</li>
         <li>
-            <b>@angular/forms</b> : 12.0.5</li>
+            <b>@angular/forms</b> : 12.1.2</li>
         <li>
-            <b>@angular/platform-browser</b> : 12.0.5</li>
+            <b>@angular/platform-browser</b> : 12.1.2</li>
         <li>
-            <b>@angular/platform-browser-dynamic</b> : 12.0.5</li>
+            <b>@angular/platform-browser-dynamic</b> : 12.1.2</li>
         <li>
-            <b>@angular/platform-server</b> : 12.0.5</li>
+            <b>@angular/platform-server</b> : 12.1.2</li>
         <li>
-            <b>@angular/router</b> : 12.0.5</li>
+            <b>@angular/router</b> : 12.1.2</li>
         <li>
-            <b>@angular/service-worker</b> : 12.0.5</li>
+            <b>@angular/service-worker</b> : 12.1.2</li>
         <li>
-            <b>@ngrx/effects</b> : 12.1.0</li>
+            <b>@ngrx/effects</b> : 12.2.0</li>
         <li>
-            <b>@ngrx/entity</b> : 12.1.0</li>
+            <b>@ngrx/entity</b> : 12.2.0</li>
         <li>
-            <b>@ngrx/router-store</b> : 12.1.0</li>
+            <b>@ngrx/router-store</b> : 12.2.0</li>
         <li>
-            <b>@ngrx/store</b> : 12.1.0</li>
+            <b>@ngrx/store</b> : 12.2.0</li>
         <li>
-            <b>@ngrx/store-devtools</b> : 12.1.0</li>
+            <b>@ngrx/store-devtools</b> : 12.2.0</li>
         <li>
-            <b>@nguniversal/express-engine</b> : 12.0.2</li>
+            <b>@nguniversal/express-engine</b> : 12.1.0</li>
         <li>
             <b>@ngx-translate/core</b> : 13.0.0</li>
         <li>
@@ -86,7 +87,7 @@
         <li>
             <b>classlist.js</b> : 1.1.20150312</li>
         <li>
-            <b>core-js</b> : 3.14.0</li>
+            <b>core-js</b> : 3.15.2</li>
         <li>
             <b>express</b> : 4.17.1</li>
         <li>
@@ -94,9 +95,11 @@
         <li>
             <b>lodash.pick</b> : 4.4.0</li>
         <li>
+            <b>ngx-markdown</b> : 12.0.1</li>
+        <li>
             <b>preboot</b> : 8.0.0</li>
         <li>
-            <b>rxjs</b> : 7.1.0</li>
+            <b>rxjs</b> : 7.2.0</li>
         <li>
             <b>tslib</b> : 2.3.0</li>
         <li>
@@ -131,9 +134,9 @@
 
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="./js/menu-wc.js" defer></script>
+       
+       <script type="module" src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 

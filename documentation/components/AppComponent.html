@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -35,7 +36,9 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>AppComponent</li>
+  <li
+  >
+  AppComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -60,6 +63,7 @@
 <p class="comment">
     <code>src/app/app.component.ts</code>
 </p>
+
 
     <p class="comment">
         <h3>Description</h3>
@@ -138,33 +142,33 @@
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Readonly</span>
-                                <a href="#cd">cd</a>
+                                <a href="#cd" >cd</a>
                             </li>
                             <li>
-                                <a href="#notifications">notifications</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#pushService">pushService</a>
-                            </li>
-                            <li>
-                                <a href="#routerLanguage$">routerLanguage$</a>
+                                <a href="#notifications" >notifications</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#swPush">swPush</a>
+                                <a href="#pushService" >pushService</a>
+                            </li>
+                            <li>
+                                <a href="#routerLanguage$" >routerLanguage$</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#swUpdate">swUpdate</a>
+                                <a href="#swPush" >swPush</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#translate">translate</a>
+                                <a href="#swUpdate" >swUpdate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#translate" >translate</a>
                             </li>
                             <li>
                                     <span class="modifier">Protected</span>
-                                <a href="#mutableSubscriptions">mutableSubscriptions</a>
+                                <a href="#mutableSubscriptions" >mutableSubscriptions</a>
                             </li>
                         </ul>
                     </td>
@@ -179,22 +183,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
                                     <span class="modifier">Protected</span>
-                                <a href="#addSubscription">addSubscription</a>
+                                <a href="#addSubscription" >addSubscription</a>
                             </li>
                             <li>
                                     <span class="modifier">Protected</span>
-                                <a href="#extendedNgOnDestroy">extendedNgOnDestroy</a>
+                                <a href="#extendedNgOnDestroy" >extendedNgOnDestroy</a>
                             </li>
                             <li>
-                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
                             </li>
                             <li>
                                     <span class="modifier">Protected</span>
-                                <a href="#unsubscribeAll">unsubscribeAll</a>
+                                <a href="#unsubscribeAll" >unsubscribeAll</a>
                             </li>
                         </ul>
                     </td>
@@ -214,12 +218,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(platformId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, store: Store<literal type>, cd: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, pushService: <a href="../injectables/PushNotificationService.html">PushNotificationService</a>, swPush: <a href="https://angular.io/api/service-worker/SwPush" target="_blank">SwPush</a>, swUpdate: <a href="https://angular.io/api/service-worker/SwUpdate" target="_blank">SwUpdate</a>, translate: TranslateService)</code>
+<code>constructor(_stateCb: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Function</a>, platformId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, store: Store<literal type>, cd: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, pushService: <a href="../injectables/PushNotificationService.html" target="_self">PushNotificationService</a>, swPush: <a href="https://angular.io/api/service-worker/SwPush" target="_blank">SwPush</a>, swUpdate: <a href="https://angular.io/api/service-worker/SwUpdate" target="_blank">SwUpdate</a>, translate: TranslateService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/app.component.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/app.component.ts:42</a></div>
                             </td>
                         </tr>
 
@@ -239,6 +243,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                                <tr>
+                                                        <td>_stateCb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
                                                 <tr>
                                                         <td>platformId</td>
                                                   
@@ -389,9 +407,7 @@
                 <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
+                        <span ><b>ngOnInit</b></span>
                         <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -405,8 +421,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/app/app.component.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/app.component.ts:75</a></div>
                 </td>
             </tr>
 
@@ -432,10 +448,8 @@ the first time</p>
                 <td class="col-md-4">
                     <a name="addSubscription"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Protected</span>
-                            addSubscription
-                        </b>
+                        <span class="modifier">Protected</span>
+                        <span ><b>addSubscription</b></span>
                         <a href="#addSubscription"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -512,10 +526,8 @@ the first time</p>
                 <td class="col-md-4">
                     <a name="extendedNgOnDestroy"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Protected</span>
-                            extendedNgOnDestroy
-                        </b>
+                        <span class="modifier">Protected</span>
+                        <span ><b>extendedNgOnDestroy</b></span>
                         <a href="#extendedNgOnDestroy"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -561,9 +573,7 @@ the first time</p>
                 <td class="col-md-4">
                     <a name="ngOnDestroy"></a>
                     <span class="name">
-                        <b>
-                            ngOnDestroy
-                        </b>
+                        <span ><b>ngOnDestroy</b></span>
                         <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -608,10 +618,8 @@ the first time</p>
                 <td class="col-md-4">
                     <a name="unsubscribeAll"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Protected</span>
-                            unsubscribeAll
-                        </b>
+                        <span class="modifier">Protected</span>
+                        <span ><b>unsubscribeAll</b></span>
                         <a href="#unsubscribeAll"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -654,292 +662,284 @@ the first time</p>
 </section>
     <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cd"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>cd</b></span>
+                        <a href="#cd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="cd"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                                <span class="modifier">Readonly</span>
-                            cd</b>
-                            <a href="#cd"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/app.component.ts:58</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/app.component.ts:55</a></div>
-                            </td>
-                        </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- Subscription for the Angular ChangeDetectorRef</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notifications"></a>
+                    <span class="name">
+                        <span ><b>notifications</b></span>
+                        <a href="#notifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description">- Subscription for the Angular ChangeDetectorRef</div>
+                        <i>Type : </i>        <code><a href="../interfaces/NotificationInterface.html" target="_self" >NotificationInterface[]</a></code>
+
                     </td>
                 </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="notifications"></a>
-                        <span class="name">
-                            <b>
-                            notifications</b>
-                            <a href="#notifications"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../interfaces/NotificationInterface.html" target="_self" >NotificationInterface[]</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/app.component.ts:42</a></div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[]</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/app.component.ts:40</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>notifications returns messages of swPush</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>notifications returns messages of swPush</p>
 </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pushService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>pushService</b></span>
+                        <a href="#pushService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="pushService"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            pushService</b>
-                            <a href="#pushService"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../injectables/PushNotificationService.html" target="_self" >PushNotificationService</a></code>
+                        <i>Type : </i>        <code><a href="../injectables/PushNotificationService.html" target="_self" >PushNotificationService</a></code>
 
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/app.component.ts:56</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description">- Service for the PushNotificationService</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="routerLanguage$"></a>
-                        <span class="name">
-                            <b>
-                            routerLanguage$</b>
-                            <a href="#routerLanguage$"><span class="icon ion-ios-link"></span></a>
-                        </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>Observable&lt;string&gt;</code>
-
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/app.component.ts:59</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/app.component.ts:36</a></div>
-                            </td>
-                        </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- Service for the PushNotificationService</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routerLanguage$"></a>
+                    <span class="name">
+                        <span ><b>routerLanguage$</b></span>
+                        <a href="#routerLanguage$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>routerLanguage is an Observable of the routerSelector getRouterLanguage</p>
+                        <i>Type : </i>    <code>Observable&lt;string&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/app.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>routerLanguage is an Observable of the routerSelector getRouterLanguage</p>
 </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="swPush"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>swPush</b></span>
+                        <a href="#swPush"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="swPush"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            swPush</b>
-                            <a href="#swPush"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://angular.io/api/service-worker/SwPush" target="_blank" >SwPush</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://angular.io/api/service-worker/SwPush" target="_blank" >SwPush</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/app.component.ts:60</a></div>
                         </td>
                     </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- Subscription for the Angular SwUpdate</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="swUpdate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>swUpdate</b></span>
+                        <a href="#swUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/service-worker/SwUpdate" target="_blank" >SwUpdate</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/app.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- Subscription for the Angular SwUpdate</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="translate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>translate</b></span>
+                        <a href="#translate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TranslateService</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/app.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- Subscription for the Angular TranslateService</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mutableSubscriptions"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>mutableSubscriptions</b></span>
+                        <a href="#mutableSubscriptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;Subscription&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/app.component.ts:57</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description">- Subscription for the Angular SwUpdate</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="swUpdate"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            swUpdate</b>
-                            <a href="#swUpdate"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://angular.io/api/service-worker/SwUpdate" target="_blank" >SwUpdate</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/app.component.ts:58</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description">- Subscription for the Angular SwUpdate</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="translate"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            translate</b>
-                            <a href="#translate"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>TranslateService</code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/app.component.ts:59</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description">- Subscription for the Angular TranslateService</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="mutableSubscriptions"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                            mutableSubscriptions</b>
-                            <a href="#mutableSubscriptions"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>Array&lt;Subscription&gt;</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[]</code>
-                        </td>
-                    </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Inherited from         <code><a href="../components/BaseComponent.html" target="_self" >BaseComponent</a></code>
-</div>
-                                </td>
-                            </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../components/BaseComponent.html#source" target="_self" >BaseComponent:15</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../components/BaseComponent.html" target="_self" >BaseComponent</a></code>
 </div>
                             </td>
                         </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Array of subscriptions handled by this component.</p>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../components/BaseComponent.html#source" target="_self" >BaseComponent:15</a></code>
 </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
 
-            </tbody>
-        </table>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of subscriptions handled by this component.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 </section>
 
 </div>
@@ -951,6 +951,7 @@ the first time</p>
 	Component,
 	Inject,
 	OnInit,
+	Optional,
 	PLATFORM_ID,
 } from &#x27;@angular/core&#x27;;
 import { SwPush, SwUpdate } from &#x27;@angular/service-worker&#x27;;
@@ -966,6 +967,7 @@ import { addNotification } from &#x27;@store/notifications/notifications.actions
 import { NotificationInterface } from &#x27;@store/notifications/notifications.interface&#x27;;
 import * as fromRouter from &#x27;@store/router/router.selectors&#x27;;
 import { BaseComponent } from &#x27;components&#x27;;
+import { STATE_CB } from &#x27;./ssr/tokens&#x27;;
 
 /**
  * App Component which extends the BaseComponent
@@ -998,6 +1000,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * @param  {TranslateService} translate - Subscription for the Angular TranslateService
 	 */
 	constructor(
+		@Optional() @Inject(STATE_CB) private readonly _stateCb: Function,
 		@Inject(PLATFORM_ID) private readonly platformId: string,
 		private readonly store: Store&lt;{}&gt;,
 		public readonly cd: ChangeDetectorRef,
@@ -1058,6 +1061,13 @@ export class AppComponent extends BaseComponent implements OnInit {
 				this.translate.use(language);
 			}),
 		);
+
+		this.store.subscribe((state) &#x3D;&gt; {
+			/* istanbul ignore if */
+			if (this._stateCb) {
+				this._stateCb(state);
+			}
+		});
 	}
 }
 </code></pre>
@@ -1138,9 +1148,9 @@ export class AppComponent extends BaseComponent implements OnInit {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

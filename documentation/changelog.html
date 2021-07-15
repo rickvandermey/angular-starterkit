@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	      <link rel="stylesheet" href="./styles/style.css">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -34,177 +35,177 @@
 <h2 id="500"><a href="https://github.com/rickvandermey/angular-starterkit/tree/5.0.0">5.0.0</a></h2>
 <h3 id="breaking-changes">Breaking Changes</h3>
 <ul>
-<li><strong>Testing:</strong> migrate from Karma/jasmine to Jest, faster experience, inline test runners</li>
-<li><strong>Testing:</strong> moved from marbles and using testScheduler from rxjs</li>
+<li>  <strong>Testing:</strong> migrate from Karma/jasmine to Jest, faster experience, inline test runners</li>
+<li>  <strong>Testing:</strong> moved from marbles and using testScheduler from rxjs</li>
 </ul>
 <h3 id="features">Features</h3>
 <ul>
-<li><strong>Angular:</strong> Updated to Angular 12.x</li>
-<li><strong>SSR:</strong> Created new interceptor for transferStateKey management</li>
-<li><strong>Packages:</strong> Updated all dependencies to the latest version of 2021-06-17</li>
+<li>  <strong>Angular:</strong> Updated to Angular 12.x</li>
+<li>  <strong>SSR:</strong> Created new interceptor for transferStateKey management</li>
+<li>  <strong>Packages:</strong> Updated all dependencies to the latest version of 2021-06-17</li>
 </ul>
 <h2 id="410"><a href="https://github.com/rickvandermey/angular-starterkit/tree/4.1.0">4.1.0</a></h2>
 <h3 id="breaking-changes-1">Breaking Changes</h3>
 <ul>
-<li><strong>ESLint:</strong> migrate from TSlint to ESlint, tslint is deprecated</li>
+<li>  <strong>ESLint:</strong> migrate from TSlint to ESlint, tslint is deprecated</li>
 </ul>
 <h2 id="400"><a href="https://github.com/rickvandermey/angular-starterkit/tree/4.0.0">4.0.0</a></h2>
 <h3 id="features-1">Features</h3>
 <ul>
-<li><strong>Packages:</strong> Updated all dependencies to the latest version of 2021-02-03</li>
-<li><strong>Packages:</strong> Removed deprecated dependency <code>@nguniversal/module-map-ngfactory-loader</code></li>
-<li><strong>Husky:</strong> Upgrade to latest husky with new hooks</li>
-<li><strong>CHROME_BIN:</strong> Provide <em>&#39;chromeVersion&#39;</em> into package json</li>
-<li><strong>Testing:</strong> All reports are now provided inside <em>&#39;reports&#39;</em> folder which will be ignored by <code>.gitignore</code></li>
+<li>  <strong>Packages:</strong> Updated all dependencies to the latest version of 2021-02-03</li>
+<li>  <strong>Packages:</strong> Removed deprecated dependency <code>@nguniversal/module-map-ngfactory-loader</code></li>
+<li>  <strong>Husky:</strong> Upgrade to latest husky with new hooks</li>
+<li>  <strong>CHROME_BIN:</strong> Provide <em>&#39;chromeVersion&#39;</em> into package json</li>
+<li>  <strong>Testing:</strong> All reports are now provided inside <em>&#39;reports&#39;</em> folder which will be ignored by <code>.gitignore</code></li>
 </ul>
 <h3 id="bugfix">Bugfix</h3>
 <ul>
-<li><strong>Travis:</strong> Fix the SonarCloud instance, moving from dist trusty to xenial. Java 11 supported</li>
+<li>  <strong>Travis:</strong> Fix the SonarCloud instance, moving from dist trusty to xenial. Java 11 supported</li>
 </ul>
 <h3 id="breaking-changes-2">Breaking Changes</h3>
 <ul>
-<li><strong>NGX-build-plus:</strong> removed ngx-build-plus because seems obsolete</li>
+<li>  <strong>NGX-build-plus:</strong> removed ngx-build-plus because seems obsolete</li>
 </ul>
 <h2 id="300"><a href="https://github.com/rickvandermey/angular-starterkit/tree/3.0.0">3.0.0</a></h2>
 <h3 id="features-2">Features</h3>
 <ul>
-<li><strong>Angular:</strong> Updated to Angular 10.x</li>
-<li><strong>Packages:</strong> Updated all dependencies to the latest version of 2020-10-01</li>
-<li><strong>mockServer:</strong> Add Vapid keys, to make it possible for push notifications</li>
-<li><strong>Push notifications:</strong> Add store to save all push notifications to</li>
+<li>  <strong>Angular:</strong> Updated to Angular 10.x</li>
+<li>  <strong>Packages:</strong> Updated all dependencies to the latest version of 2020-10-01</li>
+<li>  <strong>mockServer:</strong> Add Vapid keys, to make it possible for push notifications</li>
+<li>  <strong>Push notifications:</strong> Add store to save all push notifications to</li>
 </ul>
 <h2 id="210"><a href="https://github.com/rickvandermey/angular-starterkit/tree/2.1.0">2.1.0</a></h2>
 <h3 id="features-3">Features</h3>
 <ul>
-<li><strong>Packages:</strong> Updated all dependencies to the latest version of 2020-03-26</li>
-<li><strong>mockServer:</strong> Converted mockserver from javascript to Typescript</li>
-<li><strong>mockServer:</strong> Updated mockserver to HTTPS/HTTP2</li>
-<li><strong>mockServer:</strong> Mockserver gets served from Docker image</li>
-<li><strong>mockServer:</strong> Seperated the mockServer with its own package.json</li>
+<li>  <strong>Packages:</strong> Updated all dependencies to the latest version of 2020-03-26</li>
+<li>  <strong>mockServer:</strong> Converted mockserver from javascript to Typescript</li>
+<li>  <strong>mockServer:</strong> Updated mockserver to HTTPS/HTTP2</li>
+<li>  <strong>mockServer:</strong> Mockserver gets served from Docker image</li>
+<li>  <strong>mockServer:</strong> Seperated the mockServer with its own package.json</li>
 </ul>
 <h3 id="bugfix-1">Bugfix</h3>
 <ul>
-<li><strong>Travis:</strong> Fix the SonarCloud instance</li>
-<li><strong>Husky:</strong> Downgrade Husky because git hooks doesn&#39;t seem to work on V4.</li>
+<li>  <strong>Travis:</strong> Fix the SonarCloud instance</li>
+<li>  <strong>Husky:</strong> Downgrade Husky because git hooks doesn&#39;t seem to work on V4.</li>
 </ul>
 <h2 id="201"><a href="https://github.com/rickvandermey/angular-starterkit/tree/2.0.1">2.0.1</a></h2>
 <h3 id="bugfix-2">Bugfix</h3>
 <ul>
-<li><strong>Unit Test:</strong> Stability on unit test with NGRX effects</li>
+<li>  <strong>Unit Test:</strong> Stability on unit test with NGRX effects</li>
 </ul>
 <h2 id="200"><a href="https://github.com/rickvandermey/angular-starterkit/tree/2.0.0">2.0.0</a></h2>
 <h3 id="features-4">Features</h3>
 <ul>
-<li><strong>Angular:</strong> Updated to Angular 9.x</li>
-<li><strong>IVY:</strong> IVY enabled by default</li>
+<li>  <strong>Angular:</strong> Updated to Angular 9.x</li>
+<li>  <strong>IVY:</strong> IVY enabled by default</li>
 </ul>
 <h3 id="breaking-changes-3">Breaking Changes</h3>
 <ul>
-<li><strong>SSR:</strong> New way to use SSR and Prerender, compare the <code>server.ts</code> file with the previous carefully. Also <code>webpack.server.config.js</code> is removed</li>
-<li><strong>Compodoc:</strong> Compodoc has its own tsconfig now</li>
-<li><strong>Lighthouse:</strong> Lighthouse new API needs a API key, and could be added optionally</li>
+<li>  <strong>SSR:</strong> New way to use SSR and Prerender, compare the <code>server.ts</code> file with the previous carefully. Also <code>webpack.server.config.js</code> is removed</li>
+<li>  <strong>Compodoc:</strong> Compodoc has its own tsconfig now</li>
+<li>  <strong>Lighthouse:</strong> Lighthouse new API needs a API key, and could be added optionally</li>
 </ul>
 <h2 id="160"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.6.0">1.6.0</a></h2>
 <h3 id="features-5">Features</h3>
 <ul>
-<li><strong>Preboot:</strong> Implemented Preboot and remove flickering between SSG and Angular App</li>
-<li><strong>Packages:</strong> Updated all dependencies to the latest version of 2019-10-07</li>
+<li>  <strong>Preboot:</strong> Implemented Preboot and remove flickering between SSG and Angular App</li>
+<li>  <strong>Packages:</strong> Updated all dependencies to the latest version of 2019-10-07</li>
 </ul>
 <h2 id="153"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.5.3">1.5.3</a></h2>
 <h3 id="bugfix-3">Bugfix</h3>
 <ul>
-<li><strong>Travis:</strong> Integrates SonarCloud in Travis</li>
+<li>  <strong>Travis:</strong> Integrates SonarCloud in Travis</li>
 </ul>
 <h2 id="152"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.5.2">1.5.2</a></h2>
 <h3 id="bugfix-4">Bugfix</h3>
 <ul>
-<li><strong>SonarCloud:</strong> removed code smells based on stricter Typescript</li>
+<li>  <strong>SonarCloud:</strong> removed code smells based on stricter Typescript</li>
 </ul>
 <h2 id="151"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.5.1">1.5.1</a></h2>
 <h3 id="bugfix-5">Bugfix</h3>
 <ul>
-<li><strong>SonarCloud:</strong> removed code smells</li>
+<li>  <strong>SonarCloud:</strong> removed code smells</li>
 </ul>
 <h2 id="150"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.5.0">1.5.0</a></h2>
 <h3 id="features-6">Features</h3>
 <ul>
-<li><strong>Travis:</strong> Introduced Travis CI</li>
-<li><strong>Codecov:</strong> Introduced Codecov as a badge</li>
-<li><strong>SonarCloud:</strong> Introduced SonarCloud</li>
+<li>  <strong>Travis:</strong> Introduced Travis CI</li>
+<li>  <strong>Codecov:</strong> Introduced Codecov as a badge</li>
+<li>  <strong>SonarCloud:</strong> Introduced SonarCloud</li>
 </ul>
 <h2 id="140"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.4.0">1.4.0</a></h2>
 <h3 id="features-7">Features</h3>
 <ul>
-<li><strong>Packages:</strong> Updated all dependencies to the latest version of 2019-08-18</li>
+<li>  <strong>Packages:</strong> Updated all dependencies to the latest version of 2019-08-18</li>
 </ul>
 <h2 id="130"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.3.0">1.3.0</a></h2>
 <h3 id="features-8">Features</h3>
 <ul>
-<li><strong>SSR / Prerender</strong> Within SSR and Prerender, store actions within OnInit lifecycle will be rendered on the mockServer</li>
-<li><strong>Service</strong> Updated services with HTTP get handling with correct behaviour for SSR lifecycle</li>
-<li><strong>Packages:</strong> Updated all dependencies to the latest version of 2019-08-03</li>
+<li>  <strong>SSR / Prerender</strong> Within SSR and Prerender, store actions within OnInit lifecycle will be rendered on the mockServer</li>
+<li>  <strong>Service</strong> Updated services with HTTP get handling with correct behaviour for SSR lifecycle</li>
+<li>  <strong>Packages:</strong> Updated all dependencies to the latest version of 2019-08-03</li>
 </ul>
 <h3 id="breaking-changes-4">Breaking Changes</h3>
 <ul>
-<li><strong>Prerender</strong> Prerender now works completely different, it uses the SSR config and server to handle each file, see commitHash: <em>&#39;bd876b5cb040b60d34355f0b41cfc183455b3d52&#39;</em></li>
+<li>  <strong>Prerender</strong> Prerender now works completely different, it uses the SSR config and server to handle each file, see commitHash: <em>&#39;bd876b5cb040b60d34355f0b41cfc183455b3d52&#39;</em></li>
 </ul>
 <h2 id="122"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.2.2">1.2.2</a></h2>
 <h3 id="bug-fixes">Bug fixes</h3>
 <ul>
-<li><strong>SSR</strong> fixed an issue with Angular 8 for server side rendering for DOM rendering</li>
+<li>  <strong>SSR</strong> fixed an issue with Angular 8 for server side rendering for DOM rendering</li>
 </ul>
 <h2 id="121"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.2.1">1.2.1</a></h2>
 <h3 id="bug-fixes-1">Bug fixes</h3>
 <ul>
-<li><strong>mockServer</strong> fixed mockServer for serving data like json files and API calls</li>
+<li>  <strong>mockServer</strong> fixed mockServer for serving data like json files and API calls</li>
 </ul>
 <h2 id="120"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.2.0">1.2.0</a></h2>
 <h3 id="features-9">Features</h3>
 <ul>
-<li><strong>Packages:</strong> Updated all dependencies to the latest version of 2019-07-21</li>
-<li><strong>Packages:</strong> Added <em>&#39;package-lock.json&#39;</em> for better understanding of all dependencies</li>
-<li><strong>Development:</strong> Update README.md and new command with fix for webdriver issues for E2E</li>
+<li>  <strong>Packages:</strong> Updated all dependencies to the latest version of 2019-07-21</li>
+<li>  <strong>Packages:</strong> Added <em>&#39;package-lock.json&#39;</em> for better understanding of all dependencies</li>
+<li>  <strong>Development:</strong> Update README.md and new command with fix for webdriver issues for E2E</li>
 </ul>
 <h3 id="bug-fixes-2">Bug fixes</h3>
 <ul>
-<li><strong>Angular</strong> fixed build version for differential loading with <code>ngx-build-plus:browser</code>; es5 vs. es2015</li>
+<li>  <strong>Angular</strong> fixed build version for differential loading with <code>ngx-build-plus:browser</code>; es5 vs. es2015</li>
 </ul>
 <h2 id="113"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.1.3">1.1.3</a></h2>
 <h3 id="bug-fixes-3">Bug fixes</h3>
 <ul>
-<li><strong>Testing:</strong> remove <code>protractor-image-comparison</code> due not working on Windows and is obsolete</li>
-<li><strong>Development:</strong> Update README.md with quickstart for Windows.</li>
+<li>  <strong>Testing:</strong> remove <code>protractor-image-comparison</code> due not working on Windows and is obsolete</li>
+<li>  <strong>Development:</strong> Update README.md with quickstart for Windows.</li>
 </ul>
 <h2 id="112"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.1.2">1.1.2</a></h2>
 <h3 id="bug-fixes-4">Bug fixes</h3>
 <ul>
-<li><strong>Webpack:</strong> fixed extendible webpack for <code>npm run start</code> &amp; <code>npm run build</code></li>
+<li>  <strong>Webpack:</strong> fixed extendible webpack for <code>npm run start</code> &amp; <code>npm run build</code></li>
 </ul>
 <h2 id="111"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.1.1">1.1.1</a></h2>
 <h3 id="bug-fixes-5">Bug fixes</h3>
 <ul>
-<li><strong>E2E:</strong> fixed path steps in <em>&#39;cucumber.conf.js&#39;</em></li>
-<li><strong>E2E:</strong> added <code>@skip</code> tag for example cucumber test</li>
-<li><strong>WPO</strong> fixed stats when IVY is disabled</li>
+<li>  <strong>E2E:</strong> fixed path steps in <em>&#39;cucumber.conf.js&#39;</em></li>
+<li>  <strong>E2E:</strong> added <code>@skip</code> tag for example cucumber test</li>
+<li>  <strong>WPO</strong> fixed stats when IVY is disabled</li>
 </ul>
 <h2 id="110"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.1.0">1.1.0</a></h2>
 <h3 id="features-10">Features</h3>
 <ul>
-<li><strong>CHANGELOG:</strong> a Changelog.md is added</li>
-<li><strong>mockServer:</strong> Introduced option to use a mockServer with <code>npm run server:mock</code></li>
-<li><strong>mockServer:</strong> Added mockServer to E2E test</li>
-<li><strong>mockServer:</strong> Added mock environment</li>
-<li><strong>httpInterceptor:</strong> Added httpInterceptor to watch all pending XHR calls in applicationState inside NGRX store</li>
-<li><strong>Service Worker</strong> When a new version is detected by the service worker, show confirmPrompt</li>
+<li>  <strong>CHANGELOG:</strong> a Changelog.md is added</li>
+<li>  <strong>mockServer:</strong> Introduced option to use a mockServer with <code>npm run server:mock</code></li>
+<li>  <strong>mockServer:</strong> Added mockServer to E2E test</li>
+<li>  <strong>mockServer:</strong> Added mock environment</li>
+<li>  <strong>httpInterceptor:</strong> Added httpInterceptor to watch all pending XHR calls in applicationState inside NGRX store</li>
+<li>  <strong>Service Worker</strong> When a new version is detected by the service worker, show confirmPrompt</li>
 </ul>
 <h3 id="breaking-changes-5">Breaking Changes</h3>
 <ul>
-<li><strong>E2E:</strong> renamed <em>&#39;./features&#39;</em> to <em>&#39;./e2e&#39;</em></li>
-<li><strong>Testing</strong> renamed <em>&#39;./src/app/testing/mock-actions.ts&#39;</em> to <em>&#39;./src/app/testing/mocks.spec.ts&#39;</em></li>
+<li>  <strong>E2E:</strong> renamed <em>&#39;./features&#39;</em> to <em>&#39;./e2e&#39;</em></li>
+<li>  <strong>Testing</strong> renamed <em>&#39;./src/app/testing/mock-actions.ts&#39;</em> to <em>&#39;./src/app/testing/mocks.spec.ts&#39;</em></li>
 </ul>
 <h2 id="100"><a href="https://github.com/rickvandermey/angular-starterkit/tree/1.0.0">1.0.0</a></h2>
 <ul>
-<li>Initial Commit (see <a href="https://github.com/rickvandermey/angular-starterkit/blob/1.0.0/README.md">README.md</a> for all first features)</li>
+<li>  Initial Commit (see <a href="https://github.com/rickvandermey/angular-starterkit/blob/1.0.0/README.md">README.md</a> for all first features)</li>
 </ul>
 
 
@@ -248,9 +249,9 @@
 
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="./js/menu-wc.js" defer></script>
+       
+       <script type="module" src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 

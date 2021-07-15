@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -34,7 +35,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li>AppModule</li>
+    <li >AppModule</li>
 </ol>
 
 <div class="text-center module-graph-container">
@@ -69,13 +70,13 @@
 <title>cluster_AppModule_declarations</title>
 <polygon fill="none" stroke="black" points="703,-78 703,-130 825,-130 825,-78 703,-78"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_AppModule_bootstrap</title>
-<polygon fill="none" stroke="black" points="434,-208 434,-260 558,-260 558,-208 434,-208"/>
-</g>
 <g id="clust4" class="cluster">
 <title>cluster_AppModule_imports</title>
 <polygon fill="none" stroke="black" points="443,-78 443,-130 695,-130 695,-78 443,-78"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_AppModule_bootstrap</title>
+<polygon fill="none" stroke="black" points="434,-208 434,-260 558,-260 558,-208 434,-208"/>
 </g>
 <g id="clust7" class="cluster">
 <title>cluster_AppModule_providers</title>
@@ -164,7 +165,7 @@
 
     </div>
     <i id="fullscreen" class="icon ion-ios-resize module-graph-fullscreen-btn" aria-hidden="true"></i>
-    <div class="btn-group">
+    <div class="btn-group size-buttons">
         <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
         <button id="reset" class="btn btn-default btn-sm">Reset</button>
         <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
@@ -191,6 +192,7 @@
         <p class="comment">
             <code>src/app/app.module.ts</code>
         </p>
+
 
 
         <p class="comment">
@@ -297,7 +299,7 @@ import { AppComponent } from &#x27;./app.component&#x27;;
 import { AppRoutingModule, GoogleAnalyticsEffects } from &#x27;routes&#x27;;
 
 // Modules
-import { ErrorModule } from &#x27;@modules/error.module&#x27;;
+import { ErrorModule } from &#x27;@app/pages/error/error.module&#x27;;
 
 // Interceptor
 import { AppHttpInterceptor } from &#x27;./interceptors/http.interceptor&#x27;;
@@ -342,7 +344,7 @@ export function getMetaReducers(
 		PrebootModule.withConfig({ appRoot: &#x27;app-root&#x27; }),
 		StoreModule.forRoot(
 			{
-				applicationState: fromApplication.Applicationreducer,
+				applicationState: fromApplication.reducer,
 				notificationState: fromNotifications.reducer,
 				routerState: routerReducer,
 			},
@@ -366,7 +368,7 @@ export function getMetaReducers(
 			provide: STORAGE_KEYS,
 			useValue: [
 				&#x27;applicationState&#x27;,
-				&#x27;dummyState&#x27;,
+				&#x27;entitiesState&#x27;,
 				&#x27;notifications&#x27;,
 				&#x27;routerState&#x27;,
 			],
@@ -462,9 +464,9 @@ export class AppModule {}
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

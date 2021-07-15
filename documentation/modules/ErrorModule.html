@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -34,7 +35,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li>ErrorModule</li>
+    <li >ErrorModule</li>
 </ol>
 
 <div class="text-center module-graph-container">
@@ -65,50 +66,50 @@
 <title>cluster_ErrorModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="102,-70 102,-195 394,-195 394,-70 102,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_ErrorModule_declarations</title>
-<polygon fill="none" stroke="black" points="232,-78 232,-130 386,-130 386,-78 232,-78"/>
-</g>
 <g id="clust4" class="cluster">
 <title>cluster_ErrorModule_imports</title>
-<polygon fill="none" stroke="black" points="110,-78 110,-130 224,-130 224,-78 110,-78"/>
+<polygon fill="none" stroke="black" points="272,-78 272,-130 386,-130 386,-78 272,-78"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_ErrorModule_declarations</title>
+<polygon fill="none" stroke="black" points="110,-78 110,-130 264,-130 264,-78 110,-78"/>
 </g>
 <!-- ErrorPageComponent -->
 <g id="node1" class="node">
 <title>ErrorPageComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="378.08,-122 239.92,-122 239.92,-86 378.08,-86 378.08,-122"/>
-<text text-anchor="middle" x="309" y="-99.8" font-family="Times,serif" font-size="14.00">ErrorPageComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="256.08,-122 117.92,-122 117.92,-86 256.08,-86 256.08,-122"/>
+<text text-anchor="middle" x="187" y="-99.8" font-family="Times,serif" font-size="14.00">ErrorPageComponent</text>
 </g>
 <!-- ErrorModule -->
 <g id="node2" class="node">
 <title>ErrorModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="282.58,-187 279.58,-191 258.58,-191 255.58,-187 193.42,-187 193.42,-151 282.58,-151 282.58,-187"/>
-<text text-anchor="middle" x="238" y="-164.8" font-family="Times,serif" font-size="14.00">ErrorModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="302.58,-187 299.58,-191 278.58,-191 275.58,-187 213.42,-187 213.42,-151 302.58,-151 302.58,-187"/>
+<text text-anchor="middle" x="258" y="-164.8" font-family="Times,serif" font-size="14.00">ErrorModule</text>
 </g>
 <!-- ErrorPageComponent&#45;&gt;ErrorModule -->
 <g id="edge1" class="edge">
 <title>ErrorPageComponent&#45;&gt;ErrorModule</title>
-<path fill="none" stroke="black" d="M261.25,-122.11C261.25,-122.11 261.25,-140.99 261.25,-140.99"/>
-<polygon fill="black" stroke="black" points="257.75,-140.99 261.25,-150.99 264.75,-140.99 257.75,-140.99"/>
+<path fill="none" stroke="black" d="M234.75,-122.11C234.75,-122.11 234.75,-140.99 234.75,-140.99"/>
+<polygon fill="black" stroke="black" points="231.25,-140.99 234.75,-150.99 238.25,-140.99 231.25,-140.99"/>
 </g>
 <!-- SharedModule -->
 <g id="node3" class="node">
 <title>SharedModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="216.42,-122 213.42,-126 192.42,-126 189.42,-122 117.58,-122 117.58,-86 216.42,-86 216.42,-122"/>
-<text text-anchor="middle" x="167" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="378.42,-122 375.42,-126 354.42,-126 351.42,-122 279.58,-122 279.58,-86 378.42,-86 378.42,-122"/>
+<text text-anchor="middle" x="329" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
 </g>
 <!-- SharedModule&#45;&gt;ErrorModule -->
 <g id="edge2" class="edge">
 <title>SharedModule&#45;&gt;ErrorModule</title>
-<path fill="none" stroke="black" d="M204.83,-122.11C204.83,-122.11 204.83,-140.99 204.83,-140.99"/>
-<polygon fill="black" stroke="black" points="201.33,-140.99 204.83,-150.99 208.33,-140.99 201.33,-140.99"/>
+<path fill="none" stroke="black" d="M291.17,-122.11C291.17,-122.11 291.17,-140.99 291.17,-140.99"/>
+<polygon fill="black" stroke="black" points="287.67,-140.99 291.17,-150.99 294.67,-140.99 287.67,-140.99"/>
 </g>
 </g>
 </svg>
 
     </div>
     <i id="fullscreen" class="icon ion-ios-resize module-graph-fullscreen-btn" aria-hidden="true"></i>
-    <div class="btn-group">
+    <div class="btn-group size-buttons">
         <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
         <button id="reset" class="btn btn-default btn-sm">Reset</button>
         <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
@@ -133,8 +134,9 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/modules/error.module.ts</code>
+            <code>src/app/pages/error/error.module.ts</code>
         </p>
+
 
 
         <p class="comment">
@@ -187,7 +189,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from &#x27;@angular/core&#x27;;
 
 import { ErrorPageComponent } from &#x27;pages&#x27;;
-import { SharedModule } from &#x27;./shared.module&#x27;;
+import { SharedModule } from &#x27;../../modules/shared.module&#x27;;
 
 /**
  * Marks an class as an NgModule so it could be configured
@@ -241,9 +243,9 @@ export class ErrorModule {}
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
