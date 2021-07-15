@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [5.1.0](https://github.com/rickvandermey/angular-starterkit/tree/5.1.0)
+
+### Breaking Changes
+
+-   **Lighthouse:** Lighthouse updated report path
+
+### Features
+
+-   **NGRX:** removed dummy store and created an Entity store with a setAll function
+-   **Angular:** Updated to Angular 12.1.x
+-   **Packages:** Updated all dependencies to the latest version of 2021-07-15
+
 ## [5.0.0](https://github.com/rickvandermey/angular-starterkit/tree/5.0.0)
 
 ### Breaking Changes
