@@ -5,6 +5,7 @@
 ### Breaking Changes
 
 -   **Lighthouse:** Lighthouse updated report path
+-   **Compodoc:** revert to 1.1.11 if this error pops up: `Error: [BABEL] unknown: Preset /* your preset */ requires a filename to be set when babel is called directly,`
 
 ### Features
 
