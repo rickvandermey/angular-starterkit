@@ -32,7 +32,7 @@ export function app(): any {
 
 	win.fetch = fetch;
 
-	// TODO: Due to type safety improvement this is no longer possible
+	// NOTE: Due to type safety improvement this is no longer possible
 	// @ts-ignore
 	global['window'] = win;
 	Object.defineProperty(win.document.body.style, 'transform', {
@@ -57,6 +57,7 @@ export function app(): any {
 		'html',
 		ngExpressEngine({
 			bootstrap: AppServerModule,
+			providers: [],
 		}),
 	);
 
@@ -97,16 +98,20 @@ export function app(): any {
 			},
 			(err: any, html: any) => {
 				if (isPrerender) {
-					let path = `${DIST_FOLDER}${req.path}/`;
-					let file = path + 'index.html';
+					const path = `${DIST_FOLDER}${req.path}`;
+					const file = `${path}/index.html`;
 					mkdir(path, { recursive: true }, () => {
-						writeFile(file, html, (err) => {
-							if (err) throw err;
+						writeFile(file, html, (writeErr) => {
+							if (writeErr) {
+								throw err;
+							}
 							console.log('The file has been saved!', file);
 						});
 					});
 				}
-				if (err) throw err;
+				if (err) {
+					throw err;
+				}
 				res.send(html);
 			},
 		);

@@ -54,7 +54,7 @@ describe('Service: Manual service', () => {
 				});
 
 			httpTestingController
-				.expectOne(`${environment.notificationServer}/subscription`)
+				.expectOne(`${environment.notificationServer}subscription`)
 				.flush(mockResponse, mockResponse);
 		});
 	});
@@ -73,7 +73,7 @@ describe('Service: Manual service', () => {
 				});
 
 			httpTestingController
-				.expectOne(`${environment.apiUrl}/notifications`)
+				.expectOne(`${environment.apiUrl}notifications`)
 				.flush(mockResponse, mockResponse);
 		});
 	});
@@ -92,7 +92,7 @@ describe('Service: Manual service', () => {
 				});
 
 			httpTestingController
-				.expectOne(`${environment.apiUrl}/notifications`)
+				.expectOne(`${environment.apiUrl}notifications`)
 				.flush(mockResponse, mockResponse);
 		});
 	});

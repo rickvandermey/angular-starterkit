@@ -66,8 +66,8 @@
 						"browserTarget": "RVDM-Angular-Starterkit:build",
 						"port": 4202,
 						"ssl": true,
-						"sslKey": "build/default/server.key",
-						"sslCert": "build/default/server.crt"
+						"sslKey": "build/server.key",
+						"sslCert": "build/server.crt"
 					},
 					"configurations": {
 						"mock": {
