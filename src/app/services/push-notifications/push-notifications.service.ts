@@ -62,9 +62,7 @@ export class PushNotificationService {
 	 * @param { title: string, body: string; type: string } notification - which should be the notification
 	 * @return the response of the HTTP POST
 	 */
-	sendNotification(
-		notification: NotificationInterface,
-	): Observable<{
+	sendNotification(notification: NotificationInterface): Observable<{
 		/**
 		 * headers are the HttpHeaders
 		 */

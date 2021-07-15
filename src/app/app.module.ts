@@ -86,7 +86,7 @@ export function getMetaReducers(
 		PrebootModule.withConfig({ appRoot: 'app-root' }),
 		StoreModule.forRoot(
 			{
-				applicationState: fromApplication.Applicationreducer,
+				applicationState: fromApplication.reducer,
 				notificationState: fromNotifications.reducer,
 				routerState: routerReducer,
 			},
@@ -110,7 +110,7 @@ export function getMetaReducers(
 			provide: STORAGE_KEYS,
 			useValue: [
 				'applicationState',
-				'dummyState',
+				'entitiesState',
 				'notifications',
 				'routerState',
 			],

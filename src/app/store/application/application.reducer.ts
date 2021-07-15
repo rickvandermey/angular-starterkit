@@ -29,9 +29,6 @@ const createApplicationReducer = createReducer(
  * @param {ApplicationActions} action - the action from actionTypes to perform
  * @return {ApplicationState} The new state
  */
-export function Applicationreducer(
-	state: ApplicationState,
-	action: Action,
-): any {
+export function reducer(state: ApplicationState, action: Action): any {
 	return createApplicationReducer(state, action);
 }

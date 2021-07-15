@@ -1,5 +1,5 @@
 /**
- * The enviroment Object
+ * The environment Object
  */
 export const environment = {
 	/**
@@ -14,7 +14,7 @@ export const environment = {
 	/**
 	 * apiUrl will return the API url for selected enviroment
 	 */
-	apiUrl: `https://localhost:4000/api/v3/`,
+	apiUrl: `https://localhost:4000/api/`,
 	/**
 	 * assetsRoot provides the start of the URI for assets
 	 */

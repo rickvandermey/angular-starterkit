@@ -1,0 +1,10 @@
+{
+	"data": [],
+	"_links": {
+		"self": "https://localhost:4000/api/entities"
+	},
+	"meta": {
+		"query": []
+	},
+	"successful": true
+}
