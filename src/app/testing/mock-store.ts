@@ -33,25 +33,20 @@ export const initialState = {
 	applicationState: {
 		isPendingRequest: false,
 	},
-	dummyState: {
-		entity: {
-			address: {
-				city: 'Noordwijk',
-				street: 'Erasmusweg',
-				streetNumber: '19',
-				streetNumberAddition: '',
-				zipcode: '2202 CA',
+	entitiesState: {
+		entities: {
+			'93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda': {
+				country: 'NL',
+				currency: 'EUR',
+				dateFormat: 'DD-MM-YYYY',
+				email: 'no-reply@domein.nl',
+				guid: '93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda',
+				markdown:
+					'# Male est natusque femina et iuvenis Procnes\r\n## Eram huc inpetus\r\nLorem markdownum *et erectus custodes* imago, dantque, locus vocandus candore. Inpius nymphas tu nondum divitior novissima visus pariter peioris; ferrum, de. Haec in eripe cupidine erat; claris Aetne, partu, in haut Idomeneus herbis meorum cum posse. Coniunx lacertis! Ne Oetaeus, et lassant alios circumdata quod convicia Ossa: aesculeae admonita que.\r\n## Dum ponendi sistitur saepe triplicesque\r\n*De est* servet, animalia spoliis servavique dulce. Formidine posset. **Lato prato** enim animam exit coniugis duabus, in lucum [videoque ecce et](http://thymo-simul.net/neritius-tu) numine. Mihi quoque patruique sollicitis: postquam ab qua parientem, molior in [Delphos verba et](http://www.ingeniis-tangam.io/eloquitur.php) imperat.\r\n> Ait flebile. Numine tela lumina, illa, omnes verba! **Aethere posito**, quae\r\n> cucurri ita. Manibus tinguamus lustrantem si erat inposita mater, mutilatae\r\n> fugiunt egredior, formae piscator nisi adludentibus media vix. Odorant iuvat.',
 			},
-			currency: 'EUR',
-			email: 'noreply@domain.com',
-			image:
-				'https://images.unsplash.com/16/unsplash_5263605581e32_1.JPG?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDk3fQ',
-			language: 'nl',
-			name: 'Dummy JSON title',
-			phone: '+31 (0)123 45 67 89',
-			website: 'https://www.rickvandermeij.nl/',
 		},
 		errorMessage: null,
+		ids: ['93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda'],
 		isLoaded: true,
 		isLoading: false,
 	},

@@ -1,12 +1,12 @@
-import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { select, Store } from '@ngrx/store';
+import { EventReplayer } from 'preboot';
 import { Observable } from 'rxjs';
 
-import { STATE_CB } from '@app/ssr/tokens';
-import { Load as LoadDummy } from '@store/dummy/dummy.actions';
-import { AddressShortInterface } from '@store/dummy/dummy.interface';
-import * as fromDummy from '@store/dummy/dummy.selectors';
+import { Load } from '@store/entities/entities.actions';
+import { EntityInterface } from '@store/entities/entities.interface';
+import * as entitiesSelectors from '@store/entities/entities.selectors';
 import { BaseComponent } from 'components';
 
 /**
@@ -21,24 +21,10 @@ import { BaseComponent } from 'components';
  */
 export class HomePageComponent extends BaseComponent implements OnInit {
 	/**
-	 * address$ is an Observable of the AddressShortInterface from the DummyStore
+	 * entities$ is an Observable of the EntityInterface[] from the EntitiesStore
 	 */
-	address$: Observable<AddressShortInterface>;
-	/**
-	 * email$ is an Observable of the email from the DummyStore
-	 */
-
-	email$: Observable<string>;
-	/**
-	 * image$ is an Observable of the image from the DummyStore
-	 */
-
-	image$: Observable<string>;
-	/**
-	 * name$ is an Observable of the name from the DummyStore
-	 */
-
-	name$: Observable<string>;
+	entities$: Observable<EntityInterface[]>;
+	entities: EntityInterface[];
 
 	/**
 	 * constructor - The function which is called when the class is instantiated
@@ -46,16 +32,15 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	 *  @param  {type} private title: Service to set the HTML title
 	 */
 	constructor(
-		@Optional() @Inject(STATE_CB) private readonly _stateCb: Function,
+		private readonly replayer: EventReplayer,
 		private readonly store: Store<{}>,
 		private readonly title: Title,
 	) {
 		super();
 
-		this.address$ = this.store.pipe(select(fromDummy.selectAddress));
-		this.email$ = this.store.pipe(select(fromDummy.selectEmail));
-		this.image$ = this.store.pipe(select(fromDummy.selectImage));
-		this.name$ = this.store.pipe(select(fromDummy.selectName));
+		this.entities$ = this.store.pipe(
+			select(entitiesSelectors.selectAllEntities),
+		);
 	}
 
 	/**
@@ -64,13 +49,13 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 	 */
 	ngOnInit(): void {
 		this.title.setTitle('Homepage / Angular SSR');
-		this.store.dispatch(LoadDummy());
+		this.store.dispatch(Load());
 
-		this.store.subscribe((state) => {
-			/* istanbul ignore if */
-			if (this._stateCb) {
-				this._stateCb(state);
-			}
-		});
+		this.addSubscription(
+			this.entities$.subscribe((entities) => {
+				this.entities = entities;
+				this.replayer.replayAll();
+			}),
+		);
 	}
 }

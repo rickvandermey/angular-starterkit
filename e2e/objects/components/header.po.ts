@@ -9,9 +9,8 @@ export class HeaderPageObject {
 	 * Returns the Error Notification
 	 */
 	static getErrorNotificationElement(): ElementFinder {
-		let elements = ElementHelper.getElementsByTestClass(
-			'error-notification',
-		);
+		let elements =
+			ElementHelper.getElementsByTestClass('error-notification');
 		return elements.first();
 	}
 }

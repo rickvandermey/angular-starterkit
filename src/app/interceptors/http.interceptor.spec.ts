@@ -11,13 +11,13 @@ import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 import { environment } from '@environments/environment';
-import { DummyService } from '@services/dummy/dummy.service';
+import { EntitiesService } from '@app/services/entities/entities.service';
 import { SetRequestStatus } from '@store/application/application.actions';
 import { initialState } from '@testing/mock-store';
 import { AppHttpInterceptor } from './http.interceptor';
 
 describe(`AppHttpInterceptor`, () => {
-	let service: DummyService;
+	let service: EntitiesService;
 	let httpMock: HttpTestingController;
 	let store: MockStore<any>;
 
@@ -26,7 +26,7 @@ describe(`AppHttpInterceptor`, () => {
 			imports: [HttpClientTestingModule, StoreModule.forRoot({})],
 			providers: [
 				provideMockStore({ initialState }),
-				DummyService,
+				EntitiesService,
 				TransferState,
 				{
 					multi: true,
@@ -38,7 +38,7 @@ describe(`AppHttpInterceptor`, () => {
 
 		httpMock = TestBed.inject(HttpTestingController);
 		store = TestBed.inject(MockStore);
-		service = TestBed.inject(DummyService);
+		service = TestBed.inject(EntitiesService);
 
 		jest.spyOn(store, 'dispatch');
 	});
@@ -58,7 +58,7 @@ describe(`AppHttpInterceptor`, () => {
 		};
 
 		service
-			.getDummyData()
+			.getAll()
 			.pipe(
 				finalize(() =>
 					expect(store.dispatch).toHaveBeenCalledWith(action),
@@ -70,7 +70,7 @@ describe(`AppHttpInterceptor`, () => {
 			});
 
 		httpMock
-			.expectOne(`${environment.assetsRoot}/dummy/dummy.json`)
+			.expectOne(`${environment.apiUrl}entities`)
 			.flush(mockResponse, mockResponse);
 	});
 });

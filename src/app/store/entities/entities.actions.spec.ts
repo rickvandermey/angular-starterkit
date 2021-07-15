@@ -1,42 +1,46 @@
 import { initialState as mockStore } from '@testing/mock-store';
-import * as dummyActions from './dummy.actions';
+import * as entitiesActions from './entities.actions';
 
-describe('Actions: Dummy Actions', () => {
+describe('Actions: Entities Actions', () => {
 	it('should create an action Load', () => {
-		const action = dummyActions.Load();
+		const action = entitiesActions.Load();
 
 		expect({ ...action }).toEqual({
-			type: '[DUMMY] LOAD',
+			type: '[ENTITIES] LOAD',
 		});
 	});
 
 	it('should create an action LoadSuccess', () => {
 		const payload = {
-			entity: mockStore.dummyState.entity,
+			entities: [
+				mockStore.entitiesState.entities[
+					'93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda'
+				],
+			],
 		};
-		const action = dummyActions.LoadSuccess(payload);
+		const action = entitiesActions.LoadSuccess(payload);
 
 		expect({ ...action }).toEqual({
-			entity: payload.entity,
-			type: '[DUMMY] LOAD SUCCESS',
+			entities: payload.entities,
+			type: '[ENTITIES] LOAD SUCCESS',
 		});
 	});
 
 	it('should create an action LoadFail', () => {
 		const payload = { errorMessage: 'global.something-went-wrong' };
-		const action = dummyActions.LoadFail(payload);
+		const action = entitiesActions.LoadFail(payload);
 
 		expect({ ...action }).toEqual({
 			errorMessage: payload.errorMessage,
-			type: '[DUMMY] LOAD FAIL',
+			type: '[ENTITIES] LOAD FAIL',
 		});
 	});
 
 	it('should create an action ClearError', () => {
-		const action = dummyActions.ClearError();
+		const action = entitiesActions.ClearError();
 
 		expect({ ...action }).toEqual({
-			type: '[DUMMY] CLEAR ERROR',
+			type: '[ENTITIES] CLEAR ERROR',
 		});
 	});
 });

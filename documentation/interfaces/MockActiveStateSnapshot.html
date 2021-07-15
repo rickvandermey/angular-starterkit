@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -43,7 +44,9 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>MockActiveStateSnapshot</li>
+  <li
+  >
+  MockActiveStateSnapshot</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,6 +69,7 @@
 
 
 
+
         <section>
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
@@ -79,15 +83,24 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#firstChild">firstChild</a>
+                                        <a href="#firstChild" 
+>
+                                            firstChild
+                                        </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#params">params</a>
+                                        <a href="#params" 
+>
+                                            params
+                                        </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#queryParams">queryParams</a>
+                                        <a href="#queryParams" 
+>
+                                            queryParams
+                                        </a>
                                 </li>
                             </ul>
                         </td>
@@ -105,7 +118,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="firstChild"></a>
-                                        <span class="name"><b>firstChild</b><a href="#firstChild"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>firstChild</b>
+                                            <a href="#firstChild">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -140,7 +157,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="params"></a>
-                                        <span class="name"><b>params</b><a href="#params"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>params</b>
+                                            <a href="#params">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -180,7 +201,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="queryParams"></a>
-                                        <span class="name"><b>queryParams</b><a href="#queryParams"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>queryParams</b>
+                                            <a href="#queryParams">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -255,25 +280,20 @@ export const initialState &#x3D; {
 	applicationState: {
 		isPendingRequest: false,
 	},
-	dummyState: {
-		entity: {
-			address: {
-				city: &#x27;Noordwijk&#x27;,
-				street: &#x27;Erasmusweg&#x27;,
-				streetNumber: &#x27;19&#x27;,
-				streetNumberAddition: &#x27;&#x27;,
-				zipcode: &#x27;2202 CA&#x27;,
+	entitiesState: {
+		entities: {
+			&#x27;93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda&#x27;: {
+				country: &#x27;NL&#x27;,
+				currency: &#x27;EUR&#x27;,
+				dateFormat: &#x27;DD-MM-YYYY&#x27;,
+				email: &#x27;no-reply@domein.nl&#x27;,
+				guid: &#x27;93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda&#x27;,
+				markdown:
+					&#x27;# Male est natusque femina et iuvenis Procnes\r\n## Eram huc inpetus\r\nLorem markdownum *et erectus custodes* imago, dantque, locus vocandus candore. Inpius nymphas tu nondum divitior novissima visus pariter peioris; ferrum, de. Haec in eripe cupidine erat; claris Aetne, partu, in haut Idomeneus herbis meorum cum posse. Coniunx lacertis! Ne Oetaeus, et lassant alios circumdata quod convicia Ossa: aesculeae admonita que.\r\n## Dum ponendi sistitur saepe triplicesque\r\n*De est* servet, animalia spoliis servavique dulce. Formidine posset. **Lato prato** enim animam exit coniugis duabus, in lucum [videoque ecce et](http://thymo-simul.net/neritius-tu) numine. Mihi quoque patruique sollicitis: postquam ab qua parientem, molior in [Delphos verba et](http://www.ingeniis-tangam.io/eloquitur.php) imperat.\r\n&gt; Ait flebile. Numine tela lumina, illa, omnes verba! **Aethere posito**, quae\r\n&gt; cucurri ita. Manibus tinguamus lustrantem si erat inposita mater, mutilatae\r\n&gt; fugiunt egredior, formae piscator nisi adludentibus media vix. Odorant iuvat.&#x27;,
 			},
-			currency: &#x27;EUR&#x27;,
-			email: &#x27;noreply@domain.com&#x27;,
-			image:
-				&#x27;https://images.unsplash.com/16/unsplash_5263605581e32_1.JPG?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;1080&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjEyMDk3fQ&#x27;,
-			language: &#x27;nl&#x27;,
-			name: &#x27;Dummy JSON title&#x27;,
-			phone: &#x27;+31 (0)123 45 67 89&#x27;,
-			website: &#x27;https://www.rickvandermeij.nl/&#x27;,
 		},
 		errorMessage: null,
+		ids: [&#x27;93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda&#x27;],
 		isLoaded: true,
 		isLoading: false,
 	},
@@ -334,9 +354,9 @@ export const initialState &#x3D; {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

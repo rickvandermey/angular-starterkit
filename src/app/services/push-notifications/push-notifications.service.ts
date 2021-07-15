@@ -21,7 +21,7 @@ export class PushNotificationService {
 		subscription: PushSubscription,
 	): Observable<Object> {
 		return this.http.post(
-			`${environment.notificationServer}/subscription`,
+			`${environment.notificationServer}subscription`,
 			subscription,
 		);
 	}
@@ -51,7 +51,7 @@ export class PushNotificationService {
 			 * data is the response of the call
 			 */
 			data: NotificationInterface;
-		}>(`${environment.apiUrl}/notifications`, {
+		}>(`${environment.apiUrl}notifications`, {
 			...environment.apiCookies,
 			observe: 'response',
 		});
@@ -62,16 +62,14 @@ export class PushNotificationService {
 	 * @param { title: string, body: string; type: string } notification - which should be the notification
 	 * @return the response of the HTTP POST
 	 */
-	sendNotification(
-		notification: NotificationInterface,
-	): Observable<{
+	sendNotification(notification: NotificationInterface): Observable<{
 		/**
 		 * headers are the HttpHeaders
 		 */
 		headers: HttpHeaders;
 	}> {
 		return this.http.post(
-			`${environment.apiUrl}/notifications`,
+			`${environment.apiUrl}notifications`,
 			{ ...notification },
 			{ ...environment.apiCookies, observe: 'response' },
 		);

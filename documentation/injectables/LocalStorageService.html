@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -38,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>LocalStorageService</li>
+  <li >LocalStorageService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,6 +59,7 @@
         <p class="comment">
             <code>src/app/services/local-storage.service.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -83,7 +85,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#platformId">platformId</a>
+                                <a href="#platformId" >platformId</a>
                             </li>
                         </ul>
                     </td>
@@ -98,10 +100,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getSavedState">getSavedState</a>
+                                <a href="#getSavedState" >getSavedState</a>
                             </li>
                             <li>
-                                <a href="#setSavedState">setSavedState</a>
+                                <a href="#setSavedState" >setSavedState</a>
                             </li>
                         </ul>
                     </td>
@@ -175,9 +177,7 @@
                 <td class="col-md-4">
                     <a name="getSavedState"></a>
                     <span class="name">
-                        <b>
-                            getSavedState
-                        </b>
+                        <span ><b>getSavedState</b></span>
                         <a href="#getSavedState"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -253,9 +253,7 @@
                 <td class="col-md-4">
                     <a name="setSavedState"></a>
                     <span class="name">
-                        <b>
-                            setSavedState
-                        </b>
+                        <span ><b>setSavedState</b></span>
                         <a href="#setSavedState"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -343,46 +341,45 @@
 </section>
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="platformId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>platformId</b></span>
+                        <a href="#platformId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="platformId"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            platformId</b>
-                            <a href="#platformId"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Inject(PLATFORM_ID)<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/local-storage.service.ts:9</a></div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <b>Decorators : </b>
-                            <br />
-                            <code>
-                                @Inject(PLATFORM_ID)<br />
-                            </code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/local-storage.service.ts:9</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -461,9 +458,9 @@ export class LocalStorageService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

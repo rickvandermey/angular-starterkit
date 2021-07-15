@@ -14,7 +14,8 @@ export interface NotificationsState extends EntityState<NotificationInterface> {
 	entities: { [item: string]: NotificationInterface } | null;
 }
 
-export const adapter: EntityAdapter<NotificationInterface> = createEntityAdapter<NotificationInterface>();
+export const adapter: EntityAdapter<NotificationInterface> =
+	createEntityAdapter<NotificationInterface>();
 
 export const initialState: NotificationsState = adapter.getInitialState();
 
@@ -43,9 +44,5 @@ export function reducer(
 	return notificationReducer(state, action);
 }
 
-export const {
-	selectIds,
-	selectEntities,
-	selectAll,
-	selectTotal,
-} = adapter.getSelectors();
+export const { selectIds, selectEntities, selectAll, selectTotal } =
+	adapter.getSelectors();

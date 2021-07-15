@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -38,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>PushNotificationService</li>
+  <li >PushNotificationService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,6 +59,7 @@
         <p class="comment">
             <code>src/app/services/push-notifications/push-notifications.service.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -83,14 +85,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#loadNotifications">loadNotifications</a>
+                                <a href="#loadNotifications" >loadNotifications</a>
                             </li>
                             <li>
-                                <a href="#sendNotification">sendNotification</a>
+                                <a href="#sendNotification" >sendNotification</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#sendSubscriptionToTheServer">sendSubscriptionToTheServer</a>
+                                <a href="#sendSubscriptionToTheServer" >sendSubscriptionToTheServer</a>
                             </li>
                         </ul>
                     </td>
@@ -164,9 +166,7 @@
                 <td class="col-md-4">
                     <a name="loadNotifications"></a>
                     <span class="name">
-                        <b>
-                            loadNotifications
-                        </b>
+                        <span ><b>loadNotifications</b></span>
                         <a href="#loadNotifications"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -211,16 +211,14 @@
                 <td class="col-md-4">
                     <a name="sendNotification"></a>
                     <span class="name">
-                        <b>
-                            sendNotification
-                        </b>
+                        <span ><b>sendNotification</b></span>
                         <a href="#sendNotification"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>sendNotification(notification: <a href="../interfaces/NotificationInterface.html">NotificationInterface</a>)</code>
+<code>sendNotification(notification: <a href="../interfaces/NotificationInterface.html" target="_self">NotificationInterface</a>)</code>
                 </td>
             </tr>
 
@@ -284,10 +282,8 @@
                 <td class="col-md-4">
                     <a name="sendSubscriptionToTheServer"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            sendSubscriptionToTheServer
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>sendSubscriptionToTheServer</b></span>
                         <a href="#sendSubscriptionToTheServer"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -387,7 +383,7 @@ export class PushNotificationService {
 		subscription: PushSubscription,
 	): Observable&lt;Object&gt; {
 		return this.http.post(
-			&#x60;${environment.notificationServer}/subscription&#x60;,
+			&#x60;${environment.notificationServer}subscription&#x60;,
 			subscription,
 		);
 	}
@@ -417,7 +413,7 @@ export class PushNotificationService {
 			 * data is the response of the call
 			 */
 			data: NotificationInterface;
-		}&gt;(&#x60;${environment.apiUrl}/notifications&#x60;, {
+		}&gt;(&#x60;${environment.apiUrl}notifications&#x60;, {
 			...environment.apiCookies,
 			observe: &#x27;response&#x27;,
 		});
@@ -428,16 +424,14 @@ export class PushNotificationService {
 	 * @param { title: string, body: string; type: string } notification - which should be the notification
 	 * @return the response of the HTTP POST
 	 */
-	sendNotification(
-		notification: NotificationInterface,
-	): Observable&lt;{
+	sendNotification(notification: NotificationInterface): Observable&lt;{
 		/**
 		 * headers are the HttpHeaders
 		 */
 		headers: HttpHeaders;
 	}&gt; {
 		return this.http.post(
-			&#x60;${environment.apiUrl}/notifications&#x60;,
+			&#x60;${environment.apiUrl}notifications&#x60;,
 			{ ...notification },
 			{ ...environment.apiCookies, observe: &#x27;response&#x27; },
 		);
@@ -482,9 +476,9 @@ export class PushNotificationService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

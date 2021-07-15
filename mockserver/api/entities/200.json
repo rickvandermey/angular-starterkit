@@ -1,0 +1,34 @@
+{
+	"_links": {
+		"self": "https://localhost:4000/api/entities"
+	},
+	"data": [
+		{
+			"guid": "93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda",
+			"country": "NL",
+			"currency": "EUR",
+			"dateFormat": "DD-MM-YYYY",
+			"email": "no-reply@domein.nl",
+			"markdown": "# Male est natusque femina et iuvenis Procnes\r\n## Eram huc inpetus\r\nLorem markdownum *et erectus custodes* imago, dantque, locus vocandus candore. Inpius nymphas tu nondum divitior novissima visus pariter peioris; ferrum, de. Haec in eripe cupidine erat; claris Aetne, partu, in haut Idomeneus herbis meorum cum posse. Coniunx lacertis! Ne Oetaeus, et lassant alios circumdata quod convicia Ossa: aesculeae admonita que.\r\n## Dum ponendi sistitur saepe triplicesque\r\n*De est* servet, animalia spoliis servavique dulce. Formidine posset. **Lato prato** enim animam exit coniugis duabus, in lucum [videoque ecce et](http://thymo-simul.net/neritius-tu) numine. Mihi quoque patruique sollicitis: postquam ab qua parientem, molior in [Delphos verba et](http://www.ingeniis-tangam.io/eloquitur.php) imperat.\r\n- Ait flebile. Numine tela lumina, illa, omnes verba! **Aethere posito**, quae\r\n- cucurri ita. Manibus tinguamus lustrantem si erat inposita mater, mutilatae\r\n- fugiunt egredior, formae piscator nisi adludentibus media vix. Odorant iuvat."
+		},
+		{
+			"guid": "370c8373-3d2c-42a4-ad0c-9a1edd712336",
+			"country": "US",
+			"currency": "USD",
+			"dateFormat": "YYYY-DD-MM",
+			"email": "no-reply@domain.com",
+			"markdown": "# Male est natusque femina et iuvenis Procnes\r\n## Eram huc inpetus\r\nLorem markdownum *et erectus custodes* imago, dantque, locus vocandus candore. Inpius nymphas tu nondum divitior novissima visus pariter peioris; ferrum, de. Haec in eripe cupidine erat; claris Aetne, partu, in haut Idomeneus herbis meorum cum posse. Coniunx lacertis! Ne Oetaeus, et lassant alios circumdata quod convicia Ossa: aesculeae admonita que.\r\n## Dum ponendi sistitur saepe triplicesque\r\n*De est* servet, animalia spoliis servavique dulce. Formidine posset. **Lato prato** enim animam exit coniugis duabus, in lucum [videoque ecce et](http://thymo-simul.net/neritius-tu) numine. Mihi quoque patruique sollicitis: postquam ab qua parientem, molior in [Delphos verba et](http://www.ingeniis-tangam.io/eloquitur.php) imperat.\r\n- Ait flebile. Numine tela lumina, illa, omnes verba! **Aethere posito**, quae\r\n- cucurri ita. Manibus tinguamus lustrantem si erat inposita mater, mutilatae\r\n- fugiunt egredior, formae piscator nisi adludentibus media vix. Odorant iuvat."
+		},
+		{
+			"guid": "ea60dbc9-0cb3-4dad-850a-b77f5dd5ec99",
+			"country": "UK",
+			"currency": "GBP",
+			"dateFormat": "YYYY-MM-DD",
+			"email": "no-reply@domain.co.uk",
+			"markdown": "# Male est natusque femina et iuvenis Procnes\r\n## Eram huc inpetus\r\nLorem markdownum *et erectus custodes* imago, dantque, locus vocandus candore. Inpius nymphas tu nondum divitior novissima visus pariter peioris; ferrum, de. Haec in eripe cupidine erat; claris Aetne, partu, in haut Idomeneus herbis meorum cum posse. Coniunx lacertis! Ne Oetaeus, et lassant alios circumdata quod convicia Ossa: aesculeae admonita que.\r\n## Dum ponendi sistitur saepe triplicesque\r\n*De est* servet, animalia spoliis servavique dulce. Formidine posset. **Lato prato** enim animam exit coniugis duabus, in lucum [videoque ecce et](http://thymo-simul.net/neritius-tu) numine. Mihi quoque patruique sollicitis: postquam ab qua parientem, molior in [Delphos verba et](http://www.ingeniis-tangam.io/eloquitur.php) imperat.\r\n- Ait flebile. Numine tela lumina, illa, omnes verba! **Aethere posito**, quae\r\n- cucurri ita. Manibus tinguamus lustrantem si erat inposita mater, mutilatae\r\n- fugiunt egredior, formae piscator nisi adludentibus media vix. Odorant iuvat."
+		}
+	],
+	"meta": {
+		"query": {}
+	}
+}

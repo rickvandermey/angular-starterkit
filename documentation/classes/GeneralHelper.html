@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>GeneralHelper</li>
+  <li >GeneralHelper</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +63,7 @@
         <p class="comment">
             <code>src/app/helpers/general.helper.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -88,7 +90,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Static</span>
-                                <a href="#flattensObject">flattensObject</a>
+                                <a href="#flattensObject" >flattensObject</a>
                             </li>
                         </ul>
                     </td>
@@ -104,11 +106,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Static</span>
-                                <a href="#dateSort">dateSort</a>
+                                <a href="#dateSort" >dateSort</a>
                             </li>
                             <li>
                                     <span class="modifier">Static</span>
-                                <a href="#sort">sort</a>
+                                <a href="#sort" >sort</a>
                             </li>
                         </ul>
                     </td>
@@ -125,61 +127,60 @@
 
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="flattensObject"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>flattensObject</b></span>
+                        <a href="#flattensObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="flattensObject"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Static</span>
-                            flattensObject</b>
-                            <a href="#flattensObject"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/helpers/general.helper.ts:10</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/helpers/general.helper.ts:10</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>flattensObject Flatten a multidimensional object</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>flattensObject Flatten a multidimensional object</p>
 </div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>obj</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
                     </td>
                 </tr>
-
-                    <tr>
-                        <td class="col-md-4">
-                          <div class="io-description">
-                                  <b>Parameters :</b>
-                                  <table class="params">
-                                      <thead>
-                                          <tr>
-                                                <td>Name</td>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                                <tr>
-                                                        <td>obj</td>
-                                                </tr>
-                                      </tbody>
-                                  </table>
-                          </div>
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
             <section>
@@ -193,10 +194,8 @@
                 <td class="col-md-4">
                     <a name="dateSort"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Static</span>
-                            dateSort
-                        </b>
+                        <span class="modifier">Static</span>
+                        <span ><b>dateSort</b></span>
                         <a href="#dateSort"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -292,10 +291,8 @@
                 <td class="col-md-4">
                     <a name="sort"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Static</span>
-                            sort
-                        </b>
+                        <span class="modifier">Static</span>
+                        <span ><b>sort</b></span>
                         <a href="#sort"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -477,9 +474,9 @@
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

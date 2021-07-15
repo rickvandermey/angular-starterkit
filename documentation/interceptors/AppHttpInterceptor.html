@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -39,7 +40,7 @@
 
 <ol class="breadcrumb">
   <li>Interceptors</li>
-  <li>AppHttpInterceptor</li>
+  <li >AppHttpInterceptor</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -59,6 +60,7 @@
         <p class="comment">
             <code>src/app/interceptors/http.interceptor.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -83,7 +85,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#intercept">intercept</a>
+                                <a href="#intercept" >intercept</a>
                             </li>
                         </ul>
                     </td>
@@ -157,9 +159,7 @@
                 <td class="col-md-4">
                     <a name="intercept"></a>
                     <span class="name">
-                        <b>
-                            intercept
-                        </b>
+                        <span ><b>intercept</b></span>
                         <a href="#intercept"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -321,9 +321,9 @@ export class AppHttpInterceptor implements HttpInterceptor {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

@@ -3,9 +3,8 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { RouterStateUrl } from './router.interface';
 
-export const selectReducerState = createFeatureSelector<
-	RouterReducerState<RouterStateUrl>
->('routerState');
+export const selectReducerState =
+	createFeatureSelector<RouterReducerState<RouterStateUrl>>('routerState');
 
 export const getRouterInfo = createSelector(
 	selectReducerState,

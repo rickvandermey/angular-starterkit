@@ -105,27 +105,18 @@ Then(/^It should take a screenshot$/, async function (): Promise<any> {
 	return this.attach(await BrowserHelper.takeScreenshot(), 'image/png');
 });
 
-Given(
-	/^User enters the (.*?)flow$/,
-	async (device: string): Promise<any> => {
-		await BrowserHelper.setDeviceSettings(device);
-		return browser.driver.get(defaultUrl);
-	},
-);
+Given(/^User enters the (.*?)flow$/, async (device: string): Promise<any> => {
+	await BrowserHelper.setDeviceSettings(device);
+	return browser.driver.get(defaultUrl);
+});
 
-Given(
-	/^User navigates to "([^"]*?)"$/,
-	async (page: string): Promise<any> => {
-		return browser.get(`${root}${page}`);
-	},
-);
+Given(/^User navigates to "([^"]*?)"$/, async (page: string): Promise<any> => {
+	return browser.get(`${root}${page}`);
+});
 
-Then(
-	/^The URL should be "(.*?)"$/,
-	async (url: string): Promise<any> => {
-		return expect(browser.baseUrl).to.be.equal(url);
-	},
-);
+Then(/^The URL should be "(.*?)"$/, async (url: string): Promise<any> => {
+	return expect(browser.baseUrl).to.be.equal(url);
+});
 
 When(
 	/^The "(.*?)" Scenario for "(.*?)"$/,
@@ -134,12 +125,9 @@ When(
 	},
 );
 
-When(
-	/^The "(.*?)" Preset is active$/,
-	(preset: string): Promise<void> => {
-		return MockHelper.selectPreset(preset);
-	},
-);
+When(/^The "(.*?)" Preset is active$/, (preset: string): Promise<void> => {
+	return MockHelper.selectPreset(preset);
+});
 
 When(
 	/^A "(.*?)" seconds delay for "(.*?)"$/,
@@ -148,33 +136,24 @@ When(
 	},
 );
 
-Then(
-	/^It should navigate to "(.*?)"$/,
-	async (url: string): Promise<void> => {
-		// Disable angular sync in case the user navigates to a non angular application
-		await browser.waitForAngularEnabled(false);
-		return expect(browser.getCurrentUrl())
-			.to.eventually.contain(url)
-			.then(
-				// Re-enable waiting for angular
-				await browser.waitForAngularEnabled(true),
-			);
-	},
-);
+Then(/^It should navigate to "(.*?)"$/, async (url: string): Promise<void> => {
+	// Disable angular sync in case the user navigates to a non angular application
+	await browser.waitForAngularEnabled(false);
+	return expect(browser.getCurrentUrl())
+		.to.eventually.contain(url)
+		.then(
+			// Re-enable waiting for angular
+			await browser.waitForAngularEnabled(true),
+		);
+});
 
-When(
-	/^User navigates back in history$/,
-	async (): Promise<void> => {
-		return browser.navigate().back();
-	},
-);
+When(/^User navigates back in history$/, async (): Promise<void> => {
+	return browser.navigate().back();
+});
 
-When(
-	/^User presses the "(.*)" key$/,
-	async (key: string): Promise<void> => {
-		return browser.actions().sendKeys(Key[key]).perform();
-	},
-);
+When(/^User presses the "(.*)" key$/, async (key: string): Promise<void> => {
+	return browser.actions().sendKeys(Key[key]).perform();
+});
 
 When(
 	/^The User waits for "(.*)" seconds$/,
