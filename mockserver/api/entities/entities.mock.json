@@ -1,0 +1,30 @@
+{
+	"name": "entities",
+	"isArray": "false",
+	"request": {
+		"url": "api/entities",
+		"method": "GET"
+	},
+	"responses": {
+		"200": {
+			"status": 200,
+			"headers": {
+				"content-type": "application/json"
+			},
+			"file": "./200.json",
+			"default": true
+		},
+		"400": {
+			"status": 400,
+			"file": "./400.json"
+		},
+		"500": {
+			"status": 500,
+			"file": "./500.json"
+		},
+		"504": {
+			"status": 504,
+			"file": "./504.html"
+		}
+	}
+}

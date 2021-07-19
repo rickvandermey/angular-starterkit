@@ -10,7 +10,7 @@
       },
       {
         "label": "Release",
-        "value": "5.0.0"
+        "value": "5.1.0"
       },
       {
         "label": "Homepage",
@@ -18,7 +18,7 @@
       },
       {
         "label": "Execution Start Time",
-        "value": "2021-06-17T13:02:51.436Z"
+        "value": "2021-07-19T08:29:59.119Z"
       }
     ]
   },
@@ -30,7 +30,7 @@
   "browser": 1,
   "name": "",
   "version": "version",
-  "time": "2021-06-17T13:02:56.244Z",
+  "time": "2021-07-19T08:30:04.434Z",
   "features": [
     {
       "metadata": {
@@ -48,7 +48,7 @@
       "keyword": "Feature",
       "name": "Hello world Feature",
       "line": 3,
-      "id": "c28c8ce2-7013-4c78-acfd-7d99aff3eba7-hello-world-feature",
+      "id": "75c077bf-fbe5-4b09-8a63-5c725d83d52a-hello-world-feature",
       "tags": [],
       "uri": "e2e/features/home.feature",
       "elements": [
@@ -68,7 +68,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 44000000
+                "duration": 62000000
               }
             },
             {
@@ -81,9 +81,9 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 332000000
+                "duration": 478000000
               },
-              "time": "00:00:00.332"
+              "time": "00:00:00.478"
             },
             {
               "keyword": "After",
@@ -93,29 +93,29 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 5000000
+                "duration": 6000000
               },
               "embeddings": [
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1623934973335,\"type\":\"\"}",
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1626683403815,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1623934975924,\"type\":\"\"}",
+                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/main.js 36657:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1626683404303,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 },
                 {
-                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1623934976166,\"type\":\"\"}",
+                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1626683404349,\"type\":\"\"}",
                   "mime_type": "text/plain"
                 }
               ],
               "attachments": [],
               "text": [
-                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1623934973335,\"type\":\"\"}",
-                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1623934975924,\"type\":\"\"}",
-                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1623934976166,\"type\":\"\"}"
+                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1626683403815,\"type\":\"\"}",
+                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/main.js 36657:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1626683404303,\"type\":\"\"}",
+                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before releasing your website to the public.\",\"timestamp\":1626683404349,\"type\":\"\"}"
               ],
-              "time": "00:00:00.005"
+              "time": "00:00:00.006"
             },
             {
               "keyword": "After",
@@ -125,7 +125,7 @@
               },
               "result": {
                 "status": "passed",
-                "duration": 1000000
+                "duration": 2000000
               }
             }
           ],
@@ -135,8 +135,8 @@
           "skipped": 0,
           "pending": 0,
           "ambiguous": 0,
-          "duration": 337000000,
-          "time": "00:00:00.337"
+          "duration": 484000000,
+          "time": "00:00:00.484"
         }
       ],
       "scenarios": {
@@ -154,8 +154,8 @@
         "ambiguousPercentage": "0.00",
         "total": 1
       },
-      "duration": 337000000,
-      "time": "00:00:00.337",
+      "duration": 484000000,
+      "time": "00:00:00.484",
       "isFailed": false,
       "isAmbiguous": false,
       "isSkipped": false,

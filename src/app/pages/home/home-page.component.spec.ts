@@ -5,11 +5,12 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-
-// import { createTranslateLoader } from '@app/app.module';
-import { HomePageComponent as Component } from './home-page.component';
+import { EventReplayer } from 'preboot';
 
 import { TranslateUniversalService } from '@app/app.server.module';
+import { getInitialState } from '@app/ssr/tokens';
+import * as fromEntities from '@store/entities/entities.reducer';
+import { HomePageComponent as Component } from './home-page.component';
 
 describe('Pages: Home page', () => {
 	let fixture: ComponentFixture<Component>;
@@ -23,6 +24,13 @@ describe('Pages: Home page', () => {
 					CommonModule,
 					HttpClientModule,
 					StoreModule.forRoot({}),
+					StoreModule.forFeature(
+						'entitiesState',
+						fromEntities.reducer,
+						{
+							initialState: getInitialState,
+						},
+					),
 					RouterTestingModule,
 					TranslateModule.forRoot({
 						loader: {
@@ -32,7 +40,7 @@ describe('Pages: Home page', () => {
 						},
 					}),
 				],
-				providers: [],
+				providers: [EventReplayer],
 				schemas: [CUSTOM_ELEMENTS_SCHEMA],
 			}).compileComponents();
 

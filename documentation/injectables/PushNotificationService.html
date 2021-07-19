@@ -387,7 +387,7 @@ export class PushNotificationService {
 		subscription: PushSubscription,
 	): Observable&lt;Object&gt; {
 		return this.http.post(
-			&#x60;${environment.notificationServer}/subscription&#x60;,
+			&#x60;${environment.notificationServer}subscription&#x60;,
 			subscription,
 		);
 	}
@@ -417,7 +417,7 @@ export class PushNotificationService {
 			 * data is the response of the call
 			 */
 			data: NotificationInterface;
-		}&gt;(&#x60;${environment.apiUrl}/notifications&#x60;, {
+		}&gt;(&#x60;${environment.apiUrl}notifications&#x60;, {
 			...environment.apiCookies,
 			observe: &#x27;response&#x27;,
 		});
@@ -428,16 +428,14 @@ export class PushNotificationService {
 	 * @param { title: string, body: string; type: string } notification - which should be the notification
 	 * @return the response of the HTTP POST
 	 */
-	sendNotification(
-		notification: NotificationInterface,
-	): Observable&lt;{
+	sendNotification(notification: NotificationInterface): Observable&lt;{
 		/**
 		 * headers are the HttpHeaders
 		 */
 		headers: HttpHeaders;
 	}&gt; {
 		return this.http.post(
-			&#x60;${environment.apiUrl}/notifications&#x60;,
+			&#x60;${environment.apiUrl}notifications&#x60;,
 			{ ...notification },
 			{ ...environment.apiCookies, observe: &#x27;response&#x27; },
 		);

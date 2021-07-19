@@ -69,13 +69,13 @@
 <title>cluster_AppModule_declarations</title>
 <polygon fill="none" stroke="black" points="703,-78 703,-130 825,-130 825,-78 703,-78"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_AppModule_bootstrap</title>
-<polygon fill="none" stroke="black" points="434,-208 434,-260 558,-260 558,-208 434,-208"/>
-</g>
 <g id="clust4" class="cluster">
 <title>cluster_AppModule_imports</title>
 <polygon fill="none" stroke="black" points="443,-78 443,-130 695,-130 695,-78 443,-78"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_AppModule_bootstrap</title>
+<polygon fill="none" stroke="black" points="434,-208 434,-260 558,-260 558,-208 434,-208"/>
 </g>
 <g id="clust7" class="cluster">
 <title>cluster_AppModule_providers</title>
@@ -297,7 +297,7 @@ import { AppComponent } from &#x27;./app.component&#x27;;
 import { AppRoutingModule, GoogleAnalyticsEffects } from &#x27;routes&#x27;;
 
 // Modules
-import { ErrorModule } from &#x27;@modules/error.module&#x27;;
+import { ErrorModule } from &#x27;@app/pages/error/error.module&#x27;;
 
 // Interceptor
 import { AppHttpInterceptor } from &#x27;./interceptors/http.interceptor&#x27;;
@@ -342,7 +342,7 @@ export function getMetaReducers(
 		PrebootModule.withConfig({ appRoot: &#x27;app-root&#x27; }),
 		StoreModule.forRoot(
 			{
-				applicationState: fromApplication.Applicationreducer,
+				applicationState: fromApplication.reducer,
 				notificationState: fromNotifications.reducer,
 				routerState: routerReducer,
 			},
@@ -366,7 +366,7 @@ export function getMetaReducers(
 			provide: STORAGE_KEYS,
 			useValue: [
 				&#x27;applicationState&#x27;,
-				&#x27;dummyState&#x27;,
+				&#x27;entitiesState&#x27;,
 				&#x27;notifications&#x27;,
 				&#x27;routerState&#x27;,
 			],

@@ -58,13 +58,10 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#Applicationreducer" title="src/app/store/application/application.reducer.ts"><b>Applicationreducer</b>&nbsp;&nbsp;&nbsp;(src/.../application.reducer.ts)</a>
+                            <a href="#cloneState" title="src/app/testing/mock-store.ts"><b>cloneState</b>&nbsp;&nbsp;&nbsp;(src/.../mock-store.ts)</a>
                         </li>
                         <li>
                             <a href="#createTranslateLoader" title="src/app/app.module.ts"><b>createTranslateLoader</b>&nbsp;&nbsp;&nbsp;(src/.../app.module.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#Dummyreducer" title="src/app/store/dummy/dummy.reducer.ts"><b>Dummyreducer</b>&nbsp;&nbsp;&nbsp;(src/.../dummy.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#getInitialState" title="src/app/ssr/tokens.ts"><b>getInitialState</b>&nbsp;&nbsp;&nbsp;(src/.../tokens.ts)</a>
@@ -73,7 +70,16 @@
                             <a href="#getMetaReducers" title="src/app/app.module.ts"><b>getMetaReducers</b>&nbsp;&nbsp;&nbsp;(src/.../app.module.ts)</a>
                         </li>
                         <li>
+                            <a href="#reducer" title="src/app/store/application/application.reducer.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../application.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="src/app/store/entities/entities.reducer.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../entities.reducer.ts)</a>
+                        </li>
+                        <li>
                             <a href="#reducer" title="src/app/store/notifications/notifications.reducer.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../notifications.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectGuid" title="src/app/store/entities/entities.reducer.ts"><b>selectGuid</b>&nbsp;&nbsp;&nbsp;(src/.../entities.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#storageMetaReducer" title="src/app/store/meta/storage.metareducer.ts"><b>storageMetaReducer</b>&nbsp;&nbsp;&nbsp;(src/.../storage.metareducer.ts)</a>
@@ -88,24 +94,24 @@
     </table>
 </section>
 
-    <h3>src/app/store/application/application.reducer.ts</h3>
+    <h3>src/app/testing/mock-store.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="Applicationreducer"></a>
+                    <a name="cloneState"></a>
                     <span class="name">
                         <b>
-                            Applicationreducer
+                            cloneState
                         </b>
-                        <a href="#Applicationreducer"><span class="icon ion-ios-link"></span></a>
+                        <a href="#cloneState"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>Applicationreducer(state, action)</code>
+<code>cloneState(state)</code>
                 </td>
             </tr>
 
@@ -114,7 +120,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>The Application reducer, which contain all state differentiates when an action is dispatched</p>
+                    <div class="io-description"><p>Clones an object so it can be used inside tests</p>
 </div>
 
                     <div class="io-description">
@@ -124,7 +130,6 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -136,27 +141,6 @@
                                     </td>
 
 
-                                    <td>
-                                        <ul>
-<li>the initial state</li>
-</ul>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>action</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <ul>
-<li>the action from actionTypes to perform</li>
-</ul>
-
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -168,8 +152,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>The new state</p>
-
+                        
                     </div>
                 </td>
             </tr>
@@ -325,24 +308,24 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>src/app/store/dummy/dummy.reducer.ts</h3>
+</section>    <h3>src/app/ssr/tokens.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="Dummyreducer"></a>
+                    <a name="getInitialState"></a>
                     <span class="name">
                         <b>
-                            Dummyreducer
+                            getInitialState
                         </b>
-                        <a href="#Dummyreducer"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getInitialState"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>Dummyreducer(state, action)</code>
+<code>getInitialState()</code>
                 </td>
             </tr>
 
@@ -351,7 +334,50 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>The Dummy reducer, which contain all state differentiates when an action is dispatched</p>
+                    <div class="io-description"><p>getInitialState will return the initalState from window if defined</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>[description]</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/store/application/application.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <b>
+                            reducer
+                        </b>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reducer(state, action)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The Application reducer, which contain all state differentiates when an action is dispatched</p>
 </div>
 
                     <div class="io-description">
@@ -412,24 +438,24 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>src/app/ssr/tokens.ts</h3>
+</section>    <h3>src/app/store/entities/entities.reducer.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getInitialState"></a>
+                    <a name="reducer"></a>
                     <span class="name">
                         <b>
-                            getInitialState
+                            reducer
                         </b>
-                        <a href="#getInitialState"><span class="icon ion-ios-link"></span></a>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getInitialState()</code>
+<code>reducer(state, action)</code>
                 </td>
             </tr>
 
@@ -438,18 +464,106 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>getInitialState will return the initalState from window if defined</p>
-</div>
 
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>state</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>action</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/EntitiesState.html" target="_self" >EntitiesState</a></code>
 
                     </div>
                     <div class="io-description">
-                        <p>[description]</p>
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectGuid"></a>
+                    <span class="name">
+                        <b>
+                            selectGuid
+                        </b>
+                        <a href="#selectGuid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectGuid(entity)</code>
+                </td>
+            </tr>
 
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>entity</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>

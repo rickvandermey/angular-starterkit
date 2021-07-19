@@ -35,7 +35,11 @@
 									"replace": "src/environments/environment.ts",
 									"with": "src/environments/environment.mock.ts"
 								}
-							]
+							],
+							"buildOptimizer": false,
+							"namedChunks": true,
+							"optimization": false,
+							"sourceMap": true
 						},
 						"production": {
 							"fileReplacements": [
@@ -45,7 +49,6 @@
 								}
 							],
 							"buildOptimizer": true,
-							"extractCss": true,
 							"extractLicenses": true,
 							"namedChunks": false,
 							"optimization": true,

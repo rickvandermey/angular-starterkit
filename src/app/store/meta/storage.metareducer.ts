@@ -21,9 +21,8 @@ export function storageMetaReducer<S, A extends Action = Action>(
 			// init the application state.
 			if (onInit) {
 				onInit = false;
-				const savedState = storageService.getSavedState(
-					localStorageKey,
-				);
+				const savedState =
+					storageService.getSavedState(localStorageKey);
 				return merge(nextState, savedState);
 			}
 

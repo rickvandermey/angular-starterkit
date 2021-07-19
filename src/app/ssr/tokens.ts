@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import * as dummy from '../store/dummy/dummy.reducer';
+import * as entities from '../store/entities/entities.reducer';
 import * as notifications from '../store/notifications/notifications.reducer';
 
 declare var window: any;
@@ -15,7 +15,7 @@ export function getInitialState(): any {
 		return window.__STATE__;
 	} else {
 		return {
-			dummyState: { ...dummy.initialState },
+			entitiesState: { ...entities.initialState },
 			notifications: { ...notifications.initialState },
 		};
 	}

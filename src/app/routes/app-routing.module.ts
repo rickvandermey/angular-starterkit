@@ -47,7 +47,7 @@ const appRoutes: Routes = [
 				children: [
 					{
 						loadChildren: () =>
-							import('../modules/home.module').then(
+							import('../pages/home/home.module').then(
 								(m) => m.HomeModule,
 							),
 						path: '',
