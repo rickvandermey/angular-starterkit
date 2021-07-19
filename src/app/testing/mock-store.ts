@@ -26,6 +26,14 @@ export interface MockRouterStateSnapshot {
 	url: string;
 }
 
+/**
+ * Clones an object so it can be used inside tests
+ * @param  {unknown} state
+ */
+export function cloneState(state: unknown): any {
+	return JSON.parse(JSON.stringify(state));
+}
+
 /*
  * Initital state used for the mock store provided by ngrx
  */
@@ -39,6 +47,10 @@ export const initialState = {
 				country: 'NL',
 				currency: 'EUR',
 				dateFormat: 'DD-MM-YYYY',
+				deeperObject: {
+					nestedAfterMap: 'content after',
+					nestedBeforeMap: 'content before',
+				},
 				email: 'no-reply@domein.nl',
 				guid: '93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda',
 				markdown:

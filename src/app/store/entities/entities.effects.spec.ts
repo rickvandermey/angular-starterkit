@@ -76,12 +76,55 @@ describe('Effects: Entities effects', () => {
 
 			testScheduler.run(({ hot, expectObservable }) => {
 				const action = entitiesActions.Load();
-				const completion = entitiesActions.LoadFail({
+				const completion = entitiesActions.Fail({
 					errorMessage: 'global.something-went-wrong',
 				});
 
 				actions$ = hot('-a', { a: action });
 				expectObservable(effects.getEntities$).toBe('-c', {
+					c: completion,
+				});
+			});
+		});
+	});
+	describe('mapEntities', () => {
+		it('should dispatch action on map', () => {
+			const mockResponse = {
+				body: {
+					data: mockEntities,
+				},
+				headers: new HttpHeaders(),
+			};
+			jest.spyOn(service, 'getAll').mockImplementation(() =>
+				of(mockResponse),
+			);
+
+			testScheduler.run(({ hot, expectObservable }) => {
+				const action = entitiesActions.Map();
+				const completion = entitiesActions.MapSuccess({
+					entities: mockEntities,
+				});
+
+				actions$ = hot('-a', { a: action });
+				expectObservable(effects.mapEntities$).toBe('-c', {
+					c: completion,
+				});
+			});
+		});
+
+		it('should dispatch action when failed', () => {
+			jest.spyOn(service, 'getAll').mockImplementation(() =>
+				throwError(() => new Error('404')),
+			);
+
+			testScheduler.run(({ hot, expectObservable }) => {
+				const action = entitiesActions.Map();
+				const completion = entitiesActions.Fail({
+					errorMessage: 'global.something-went-wrong',
+				});
+
+				actions$ = hot('-a', { a: action });
+				expectObservable(effects.mapEntities$).toBe('-c', {
 					c: completion,
 				});
 			});

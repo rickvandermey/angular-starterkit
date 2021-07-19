@@ -10,6 +10,7 @@
 ### Features
 
 -   **NGRX:** removed dummy store and created an Entity store with a setAll function
+-   **NGRX:** added example of map functionality
 -   **Angular:** Updated to Angular 12.1.x
 -   **Packages:** Updated all dependencies to the latest version of 2021-07-15
 
