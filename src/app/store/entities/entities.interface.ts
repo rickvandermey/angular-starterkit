@@ -3,6 +3,10 @@ export interface EntityInterface {
 	country: string;
 	currency: string;
 	dateFormat: string;
+	deeperObject: {
+		nestedAfterMap: string;
+		nestedBeforeMap: string;
+	};
 	email: string;
 	markdown: string;
 }

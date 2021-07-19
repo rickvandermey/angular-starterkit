@@ -1,16 +1,5 @@
 [
   {
-    "metadata": {
-      "browser": {
-        "name": "chrome",
-        "version": "92.0.4512.0"
-      },
-      "device": "MBP-Rick Runner: 0 Shard: 1",
-      "platform": {
-        "name": "osx",
-        "version": "20.5.0"
-      }
-    },
     "description": "\tA user should see the Hello World message",
     "keyword": "Feature",
     "name": "Hello world Feature",
@@ -89,6 +78,17 @@
           }
         ]
       }
-    ]
+    ],
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "92.0.4512.0"
+      },
+      "device": "MBP-Rick Runner: 0 Shard: 1",
+      "platform": {
+        "name": "osx",
+        "version": "20.5.0"
+      }
+    }
   }
 ]

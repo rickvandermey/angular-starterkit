@@ -25,8 +25,7 @@ export class EntitiesEffects {
 	 * @return Observable of LoadSuccess or LoadFail
 	 */
 	getEntities$: Observable<
-		| TypedAction<'[ENTITIES] LOAD SUCCESS'>
-		| TypedAction<'[ENTITIES] LOAD FAIL'>
+		TypedAction<'[ENTITIES] LOAD SUCCESS'> | TypedAction<'[ENTITIES] FAIL'>
 	> = createEffect(
 		() =>
 			this.actions$.pipe(
@@ -48,7 +47,46 @@ export class EntitiesEffects {
 						),
 						catchError(() => {
 							return of(
-								entitiesActions.LoadFail({
+								entitiesActions.Fail({
+									errorMessage: 'global.something-went-wrong',
+								}),
+							);
+						}),
+					);
+				}),
+			),
+		{ useEffectsErrorHandler: false },
+	);
+
+	/**
+	 * mapEntities$ Effect will be triggered when action MAP is called from entitiesActions
+	 * NOTE: MapSuccess wont use the EntityMap functionality, due to the lack of testing in effects
+	 * @return Observable of LoadSuccess or LoadFail
+	 */
+	mapEntities$: Observable<
+		TypedAction<'[ENTITIES] MAP SUCCESS'> | TypedAction<'[ENTITIES] FAIL'>
+	> = createEffect(
+		() =>
+			this.actions$.pipe(
+				ofType(entitiesActions.Map),
+				switchMap(() => {
+					return this.entitiesService.getAll().pipe(
+						switchMap(
+							(
+								response: HttpResponse<{
+									data: EntityInterface[];
+								}>,
+							) => {
+								return of(
+									entitiesActions.MapSuccess({
+										entities: response.body.data,
+									}),
+								);
+							},
+						),
+						catchError(() => {
+							return of(
+								entitiesActions.Fail({
 									errorMessage: 'global.something-went-wrong',
 								}),
 							);

@@ -8,8 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
@@ -39,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >EntitiesEffects</li>
+  <li>EntitiesEffects</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -59,7 +58,6 @@
         <p class="comment">
             <code>src/app/store/entities/entities.effects.ts</code>
         </p>
-
 
             <p class="comment">
                 <h3>Description</h3>
@@ -84,7 +82,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getEntities$" >getEntities$</a>
+                                <a href="#getEntities$">getEntities$</a>
+                            </li>
+                            <li>
+                                <a href="#mapEntities$">mapEntities$</a>
                             </li>
                         </ul>
                     </td>
@@ -105,7 +106,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(actions$: Actions, entitiesService: <a href="../injectables/EntitiesService.html" target="_self">EntitiesService</a>)</code>
+<code>constructor(actions$: Actions, entitiesService: <a href="../injectables/EntitiesService.html">EntitiesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -163,29 +164,30 @@
 
             <section>
     
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getEntities$"></a>
-                    <span class="name">
-                        <span ><b>getEntities$</b></span>
-                        <a href="#getEntities$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>Observable&lt;TypedAction | TypedAction&gt;</code>
-
+                        <a name="getEntities$"></a>
+                        <span class="name">
+                            <b>
+                            getEntities$</b>
+                            <a href="#getEntities$"><span class="icon ion-ios-link"></span></a>
+                        </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createEffect(
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;TypedAction | TypedAction&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createEffect(
 		() &#x3D;&gt;
 			this.actions$.pipe(
 				ofType(entitiesActions.Load),
@@ -206,7 +208,7 @@
 						),
 						catchError(() &#x3D;&gt; {
 							return of(
-								entitiesActions.LoadFail({
+								entitiesActions.Fail({
 									errorMessage: &#x27;global.something-went-wrong&#x27;,
 								}),
 							);
@@ -216,23 +218,92 @@
 			),
 		{ useEffectsErrorHandler: false },
 	)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/store/entities/entities.effects.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>getEntities$ Effect will be triggered when action LOAD is called from entitiesActions</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mapEntities$"></a>
+                        <span class="name">
+                            <b>
+                            mapEntities$</b>
+                            <a href="#mapEntities$"><span class="icon ion-ios-link"></span></a>
+                        </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/store/entities/entities.effects.ts:27</a></div>
+                            <i>Type : </i>    <code>Observable&lt;TypedAction | TypedAction&gt;</code>
+
                         </td>
                     </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createEffect(
+		() &#x3D;&gt;
+			this.actions$.pipe(
+				ofType(entitiesActions.Map),
+				switchMap(() &#x3D;&gt; {
+					return this.entitiesService.getAll().pipe(
+						switchMap(
+							(
+								response: HttpResponse&lt;{
+									data: EntityInterface[];
+								}&gt;,
+							) &#x3D;&gt; {
+								return of(
+									entitiesActions.MapSuccess({
+										entities: response.body.data,
+									}),
+								);
+							},
+						),
+						catchError(() &#x3D;&gt; {
+							return of(
+								entitiesActions.Fail({
+									errorMessage: &#x27;global.something-went-wrong&#x27;,
+								}),
+							);
+						}),
+					);
+				}),
+			),
+		{ useEffectsErrorHandler: false },
+	)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/store/entities/entities.effects.ts:66</a></div>
+                            </td>
+                        </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>getEntities$ Effect will be triggered when action LOAD is called from entitiesActions</p>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>mapEntities$ Effect will be triggered when action MAP is called from entitiesActions
+NOTE: MapSuccess wont use the EntityMap functionality, due to the lack of testing in effects</p>
 </div>
-                </td>
-            </tr>
+                    </td>
+                </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 </section>
 
     </div>
@@ -266,8 +337,7 @@ export class EntitiesEffects {
 	 * @return Observable of LoadSuccess or LoadFail
 	 */
 	getEntities$: Observable&lt;
-		| TypedAction&lt;&#x27;[ENTITIES] LOAD SUCCESS&#x27;&gt;
-		| TypedAction&lt;&#x27;[ENTITIES] LOAD FAIL&#x27;&gt;
+		TypedAction&lt;&#x27;[ENTITIES] LOAD SUCCESS&#x27;&gt; | TypedAction&lt;&#x27;[ENTITIES] FAIL&#x27;&gt;
 	&gt; &#x3D; createEffect(
 		() &#x3D;&gt;
 			this.actions$.pipe(
@@ -289,7 +359,46 @@ export class EntitiesEffects {
 						),
 						catchError(() &#x3D;&gt; {
 							return of(
-								entitiesActions.LoadFail({
+								entitiesActions.Fail({
+									errorMessage: &#x27;global.something-went-wrong&#x27;,
+								}),
+							);
+						}),
+					);
+				}),
+			),
+		{ useEffectsErrorHandler: false },
+	);
+
+	/**
+	 * mapEntities$ Effect will be triggered when action MAP is called from entitiesActions
+	 * NOTE: MapSuccess wont use the EntityMap functionality, due to the lack of testing in effects
+	 * @return Observable of LoadSuccess or LoadFail
+	 */
+	mapEntities$: Observable&lt;
+		TypedAction&lt;&#x27;[ENTITIES] MAP SUCCESS&#x27;&gt; | TypedAction&lt;&#x27;[ENTITIES] FAIL&#x27;&gt;
+	&gt; &#x3D; createEffect(
+		() &#x3D;&gt;
+			this.actions$.pipe(
+				ofType(entitiesActions.Map),
+				switchMap(() &#x3D;&gt; {
+					return this.entitiesService.getAll().pipe(
+						switchMap(
+							(
+								response: HttpResponse&lt;{
+									data: EntityInterface[];
+								}&gt;,
+							) &#x3D;&gt; {
+								return of(
+									entitiesActions.MapSuccess({
+										entities: response.body.data,
+									}),
+								);
+							},
+						),
+						catchError(() &#x3D;&gt; {
+							return of(
+								entitiesActions.Fail({
 									errorMessage: &#x27;global.something-went-wrong&#x27;,
 								}),
 							);
@@ -339,9 +448,9 @@ export class EntitiesEffects {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
-       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

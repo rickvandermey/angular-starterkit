@@ -8,8 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
@@ -44,9 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li
-  >
-  EntitiesState</li>
+  <li>EntitiesState</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,7 +63,6 @@
         <p class="comment">
             <code>src/app/store/entities/entities.reducer.ts</code>
         </p>
-
 
 
             <p class="comment">
@@ -89,22 +85,13 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#entities" 
->
-                                            entities
-                                        </a>
+                                        <a href="#entities">entities</a>
                                 </li>
                                 <li>
-                                        <a href="#errorMessage" 
->
-                                            errorMessage
-                                        </a>
+                                        <a href="#errorMessage">errorMessage</a>
                                 </li>
                                 <li>
-                                        <a href="#isLoading" 
->
-                                            isLoading
-                                        </a>
+                                        <a href="#isLoading">isLoading</a>
                                 </li>
                             </ul>
                         </td>
@@ -122,11 +109,7 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="entities"></a>
-                                        <span class="name "><b>entities</b>
-                                            <a href="#entities">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
+                                        <span class="name"><b>entities</b><a href="#entities"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -155,11 +138,7 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="errorMessage"></a>
-                                        <span class="name "><b>errorMessage</b>
-                                            <a href="#errorMessage">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
+                                        <span class="name"><b>errorMessage</b><a href="#errorMessage"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -188,11 +167,7 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="isLoading"></a>
-                                        <span class="name "><b>isLoading</b>
-                                            <a href="#isLoading">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
+                                        <span class="name"><b>isLoading</b><a href="#isLoading"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -252,7 +227,7 @@ export const initialState: EntitiesState &#x3D; adapter.getInitialState({
 
 export const entitiesReducer &#x3D; createReducer(
 	initialState,
-	on(actions.Load, (state) &#x3D;&gt; ({
+	on(actions.Load, actions.Map, (state) &#x3D;&gt; ({
 		...state,
 		error: null,
 		isLoading: true,
@@ -263,7 +238,32 @@ export const entitiesReducer &#x3D; createReducer(
 			selectedEntity: null,
 		});
 	}),
-	on(actions.LoadFail, (state, { errorMessage }) &#x3D;&gt; ({
+	/*
+	 *	NOTE: MapSuccess wont use the EntityMap functionality, due to the lack of testing in effects
+	 */
+	on(actions.MapSuccess, (state, { entities }) &#x3D;&gt; {
+		const mappedEntities &#x3D; [];
+		entities.forEach((entity) &#x3D;&gt; {
+			const currentEntity &#x3D; state.entities[entity.guid];
+			if (currentEntity) {
+				mappedEntities.push({
+					...currentEntity,
+					deeperObject: {
+						...entity.deeperObject,
+						...currentEntity.deeperObject,
+					},
+				});
+			} else {
+				mappedEntities.push(entity);
+			}
+		});
+
+		return adapter.upsertMany(mappedEntities, {
+			...state,
+			isLoading: false,
+		});
+	}),
+	on(actions.Fail, (state, { errorMessage }) &#x3D;&gt; ({
 		...state,
 		errorMessage,
 		isLoading: false,
@@ -317,9 +317,9 @@ export const reducerToken &#x3D; new InjectionToken&lt;
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
-       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

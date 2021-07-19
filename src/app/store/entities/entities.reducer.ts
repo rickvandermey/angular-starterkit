@@ -29,7 +29,7 @@ export const initialState: EntitiesState = adapter.getInitialState({
 
 export const entitiesReducer = createReducer(
 	initialState,
-	on(actions.Load, (state) => ({
+	on(actions.Load, actions.Map, (state) => ({
 		...state,
 		error: null,
 		isLoading: true,
@@ -40,7 +40,32 @@ export const entitiesReducer = createReducer(
 			selectedEntity: null,
 		});
 	}),
-	on(actions.LoadFail, (state, { errorMessage }) => ({
+	/*
+	 *	NOTE: MapSuccess wont use the EntityMap functionality, due to the lack of testing in effects
+	 */
+	on(actions.MapSuccess, (state, { entities }) => {
+		const mappedEntities = [];
+		entities.forEach((entity) => {
+			const currentEntity = state.entities[entity.guid];
+			if (currentEntity) {
+				mappedEntities.push({
+					...currentEntity,
+					deeperObject: {
+						...entity.deeperObject,
+						...currentEntity.deeperObject,
+					},
+				});
+			} else {
+				mappedEntities.push(entity);
+			}
+		});
+
+		return adapter.upsertMany(mappedEntities, {
+			...state,
+			isLoading: false,
+		});
+	}),
+	on(actions.Fail, (state, { errorMessage }) => ({
 		...state,
 		errorMessage,
 		isLoading: false,
