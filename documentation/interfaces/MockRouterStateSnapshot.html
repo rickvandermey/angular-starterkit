@@ -8,8 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
@@ -44,9 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li
-  >
-  MockRouterStateSnapshot</li>
+  <li>MockRouterStateSnapshot</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -69,7 +66,6 @@
 
 
 
-
         <section>
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
@@ -83,16 +79,10 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#root" 
->
-                                            root
-                                        </a>
+                                        <a href="#root">root</a>
                                 </li>
                                 <li>
-                                        <a href="#url" 
->
-                                            url
-                                        </a>
+                                        <a href="#url">url</a>
                                 </li>
                             </ul>
                         </td>
@@ -110,11 +100,7 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="root"></a>
-                                        <span class="name "><b>root</b>
-                                            <a href="#root">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
+                                        <span class="name"><b>root</b><a href="#root"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -149,11 +135,7 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="url"></a>
-                                        <span class="name "><b>url</b>
-                                            <a href="#url">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
+                                        <span class="name"><b>url</b><a href="#url"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -216,6 +198,14 @@ export interface MockRouterStateSnapshot {
 	url: string;
 }
 
+/**
+ * Clones an object so it can be used inside tests
+ * @param  {unknown} state
+ */
+export function cloneState(state: unknown): any {
+	return JSON.parse(JSON.stringify(state));
+}
+
 /*
  * Initital state used for the mock store provided by ngrx
  */
@@ -229,6 +219,10 @@ export const initialState &#x3D; {
 				country: &#x27;NL&#x27;,
 				currency: &#x27;EUR&#x27;,
 				dateFormat: &#x27;DD-MM-YYYY&#x27;,
+				deeperObject: {
+					nestedAfterMap: &#x27;content after&#x27;,
+					nestedBeforeMap: &#x27;content before&#x27;,
+				},
 				email: &#x27;no-reply@domein.nl&#x27;,
 				guid: &#x27;93dd0fd6-fd8c-4c70-a213-cb76d1ef6eda&#x27;,
 				markdown:
@@ -297,9 +291,9 @@ export const initialState &#x3D; {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
-       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
