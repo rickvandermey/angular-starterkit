@@ -28,31 +28,31 @@
 <title>cluster_HomeModule_imports</title>
 <polygon fill="none" stroke="black" points="344,-78 344,-130 615,-130 615,-78 344,-78"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_HomeModule_declarations</title>
-<polygon fill="none" stroke="black" points="178,-78 178,-130 336,-130 336,-78 178,-78"/>
-</g>
 <g id="clust7" class="cluster">
 <title>cluster_HomeModule_providers</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 170,-130 170,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="182,-78 182,-130 336,-130 336,-78 182,-78"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_HomeModule_declarations</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 174,-130 174,-78 16,-78"/>
 </g>
 <!-- HomePageComponent -->
 <g id="node1" class="node">
 <title>HomePageComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="328.26,-122 185.74,-122 185.74,-86 328.26,-86 328.26,-122"/>
-<text text-anchor="middle" x="257" y="-99.8" font-family="Times,serif" font-size="14.00">HomePageComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="166.26,-122 23.74,-122 23.74,-86 166.26,-86 166.26,-122"/>
+<text text-anchor="middle" x="95" y="-99.8" font-family="Times,serif" font-size="14.00">HomePageComponent</text>
 </g>
 <!-- HomeModule -->
 <g id="node2" class="node">
 <title>HomeModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="375.76,-187 372.76,-191 351.76,-191 348.76,-187 282.24,-187 282.24,-151 375.76,-151 375.76,-187"/>
-<text text-anchor="middle" x="329" y="-164.8" font-family="Times,serif" font-size="14.00">HomeModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="376.76,-187 373.76,-191 352.76,-191 349.76,-187 283.24,-187 283.24,-151 376.76,-151 376.76,-187"/>
+<text text-anchor="middle" x="330" y="-164.8" font-family="Times,serif" font-size="14.00">HomeModule</text>
 </g>
 <!-- HomePageComponent&#45;&gt;HomeModule -->
 <g id="edge1" class="edge">
 <title>HomePageComponent&#45;&gt;HomeModule</title>
-<path fill="none" stroke="black" d="M305.25,-122.11C305.25,-122.11 305.25,-140.99 305.25,-140.99"/>
-<polygon fill="black" stroke="black" points="301.75,-140.99 305.25,-150.99 308.75,-140.99 301.75,-140.99"/>
+<path fill="none" stroke="black" d="M95,-122.11C95,-141.34 95,-169 95,-169 95,-169 273.01,-169 273.01,-169"/>
+<polygon fill="black" stroke="black" points="273.01,-172.5 283.01,-169 273.01,-165.5 273.01,-172.5"/>
 </g>
 <!-- HomeRoutingModule -->
 <g id="node3" class="node">
@@ -63,8 +63,8 @@
 <!-- HomeRoutingModule&#45;&gt;HomeModule -->
 <g id="edge2" class="edge">
 <title>HomeRoutingModule&#45;&gt;HomeModule</title>
-<path fill="none" stroke="black" d="M538,-122.11C538,-141.34 538,-169 538,-169 538,-169 385.9,-169 385.9,-169"/>
-<polygon fill="black" stroke="black" points="385.9,-165.5 375.9,-169 385.9,-172.5 385.9,-165.5"/>
+<path fill="none" stroke="black" d="M538,-122.11C538,-141.34 538,-169 538,-169 538,-169 386.94,-169 386.94,-169"/>
+<polygon fill="black" stroke="black" points="386.94,-165.5 376.94,-169 386.94,-172.5 386.94,-165.5"/>
 </g>
 <!-- SharedModule -->
 <g id="node4" class="node">
@@ -75,20 +75,20 @@
 <!-- SharedModule&#45;&gt;HomeModule -->
 <g id="edge3" class="edge">
 <title>SharedModule&#45;&gt;HomeModule</title>
-<path fill="none" stroke="black" d="M363.83,-122.11C363.83,-122.11 363.83,-140.99 363.83,-140.99"/>
-<polygon fill="black" stroke="black" points="360.33,-140.99 363.83,-150.99 367.33,-140.99 360.33,-140.99"/>
+<path fill="none" stroke="black" d="M364.33,-122.11C364.33,-122.11 364.33,-140.99 364.33,-140.99"/>
+<polygon fill="black" stroke="black" points="360.83,-140.99 364.33,-150.99 367.83,-140.99 360.83,-140.99"/>
 </g>
 <!-- EntitiesService -->
 <g id="node5" class="node">
 <title>EntitiesService</title>
-<ellipse fill="#fdb462" stroke="black" cx="93" cy="-104" rx="69.49" ry="18"/>
-<text text-anchor="middle" x="93" y="-99.8" font-family="Times,serif" font-size="14.00">EntitiesService</text>
+<ellipse fill="#fdb462" stroke="black" cx="259" cy="-104" rx="69.49" ry="18"/>
+<text text-anchor="middle" x="259" y="-99.8" font-family="Times,serif" font-size="14.00">EntitiesService</text>
 </g>
 <!-- EntitiesService&#45;&gt;HomeModule -->
 <g id="edge4" class="edge">
 <title>EntitiesService&#45;&gt;HomeModule</title>
-<path fill="none" stroke="black" d="M93,-122.11C93,-141.34 93,-169 93,-169 93,-169 272.09,-169 272.09,-169"/>
-<polygon fill="black" stroke="black" points="272.09,-172.5 282.09,-169 272.09,-165.5 272.09,-172.5"/>
+<path fill="none" stroke="black" d="M305.81,-117.47C305.81,-117.47 305.81,-140.86 305.81,-140.86"/>
+<polygon fill="black" stroke="black" points="302.31,-140.86 305.81,-150.86 309.31,-140.86 302.31,-140.86"/>
 </g>
 </g>
 </svg>

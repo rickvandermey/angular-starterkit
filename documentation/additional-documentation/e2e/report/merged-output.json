@@ -127,7 +127,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 52000000
+              "duration": 58000000
             }
           },
           {
@@ -140,7 +140,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 397000000
+              "duration": 445000000
             }
           },
           {
@@ -151,23 +151,23 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9000000
+              "duration": 16000000
             },
             "embeddings": [
               {
-                "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1631174756017,\"type\":\"\"}",
+                "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1631178485672,\"type\":\"\"}",
                 "mime_type": "text/plain"
               },
               {
-                "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1631174756185,\"type\":\"\"}",
+                "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1631178485839,\"type\":\"\"}",
                 "mime_type": "text/plain"
               },
               {
-                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/main.js 36795:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1631174756445,\"type\":\"\"}",
+                "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/main.js 36795:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1631178486154,\"type\":\"\"}",
                 "mime_type": "text/plain"
               },
               {
-                "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before  releasing your website to the public.\",\"timestamp\":1631174756462,\"type\":\"\"}",
+                "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before  releasing your website to the public.\",\"timestamp\":1631178486173,\"type\":\"\"}",
                 "mime_type": "text/plain"
               }
             ]
@@ -180,7 +180,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 2000000
             }
           }
         ]

@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## [5.1.1](https://github.com/rickvandermey/angular-starterkit/tree/5.1.0)
+
+### Breaking Changes
+
+-   **Lighthouse:** Lighthouse updated report path
+
+### Features
+
+-   **Angular:** Updated to Angular 12.2.x
+-   **Packages:** Updated all dependencies to the latest version of 2021-09-11
+
 ## [5.1.0](https://github.com/rickvandermey/angular-starterkit/tree/5.1.0)
 
 ### Breaking Changes
