@@ -18,7 +18,7 @@
       },
       {
         "label": "Execution Start Time",
-        "value": "2021-07-19T08:29:59.119Z"
+        "value": "2021-09-09T08:05:51.599Z"
       }
     ]
   },
@@ -27,10 +27,10 @@
   "hideMetadata": false,
   "displayReportTime": false,
   "displayDuration": true,
-  "browser": 1,
+  "browser": 2,
   "name": "",
   "version": "version",
-  "time": "2021-07-19T08:30:04.434Z",
+  "time": "2021-09-09T08:05:56.548Z",
   "features": [
     {
       "metadata": {
@@ -48,7 +48,7 @@
       "keyword": "Feature",
       "name": "Hello world Feature",
       "line": 3,
-      "id": "75c077bf-fbe5-4b09-8a63-5c725d83d52a-hello-world-feature",
+      "id": "369a5ab9-2165-4975-b50b-633875f6c68b-hello-world-feature",
       "tags": [],
       "uri": "e2e/features/home.feature",
       "elements": [
@@ -165,16 +165,155 @@
       "browser": 0,
       "passed": null,
       "totalTime": null
+    },
+    {
+      "metadata": {
+        "browser": {
+          "name": "chrome",
+          "version": "93.0.4577.0"
+        },
+        "device": "MBP-Rick Runner: 0 Shard: 1",
+        "platform": {
+          "name": "osx",
+          "version": "20.6.0"
+        }
+      },
+      "description": "\tA user should see the Hello World message",
+      "keyword": "Feature",
+      "name": "Hello world Feature",
+      "line": 3,
+      "id": "4715d712-b929-43b3-80ff-efe3547520fc-hello-world-feature",
+      "tags": [],
+      "uri": "e2e/features/home.feature",
+      "elements": [
+        {
+          "id": "hello-world-feature;hello-world-scenario",
+          "keyword": "Scenario",
+          "line": 7,
+          "name": "Hello world scenario",
+          "tags": [],
+          "type": "scenario",
+          "steps": [
+            {
+              "keyword": "Before",
+              "hidden": true,
+              "match": {
+                "location": "e2e/steps/generic.steps.ts:28"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 52000000
+              }
+            },
+            {
+              "arguments": [],
+              "keyword": "Given ",
+              "line": 8,
+              "name": "User enters the flow",
+              "match": {
+                "location": "e2e/steps/generic.steps.ts:108"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 397000000
+              },
+              "time": "00:00:00.397"
+            },
+            {
+              "keyword": "After",
+              "hidden": true,
+              "match": {
+                "location": "e2e/steps/generic.steps.ts:37"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 9000000
+              },
+              "embeddings": [
+                {
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1631174756017,\"type\":\"\"}",
+                  "mime_type": "text/plain"
+                },
+                {
+                  "data": "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1631174756185,\"type\":\"\"}",
+                  "mime_type": "text/plain"
+                },
+                {
+                  "data": "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/main.js 36795:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1631174756445,\"type\":\"\"}",
+                  "mime_type": "text/plain"
+                },
+                {
+                  "data": "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before  releasing your website to the public.\",\"timestamp\":1631174756462,\"type\":\"\"}",
+                  "mime_type": "text/plain"
+                }
+              ],
+              "attachments": [],
+              "text": [
+                "{\"level\":\"SEVERE\",\"message\":\"http://localhost:3999/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)\",\"timestamp\":1631174756017,\"type\":\"\"}",
+                "{\"level\":\"SEVERE\",\"message\":\"https://www.google-analytics.com/analytics.js - Failed to load resource: net::ERR_CONNECTION_CLOSED\",\"timestamp\":1631174756185,\"type\":\"\"}",
+                "{\"level\":\"INFO\",\"message\":\"https://localhost:4202/main.js 36795:16 \\\"Angular is running in development mode. Call enableProdMode() to enable production mode.\\\"\",\"timestamp\":1631174756445,\"type\":\"\"}",
+                "{\"level\":\"WARNING\",\"message\":\"https://localhost:4202/en - This site does not have a valid SSL certificate! Without SSL, your site's and visitors' data is vulnerable to theft and tampering. Get a valid SSL certificate before  releasing your website to the public.\",\"timestamp\":1631174756462,\"type\":\"\"}"
+              ],
+              "time": "00:00:00.009"
+            },
+            {
+              "keyword": "After",
+              "hidden": true,
+              "match": {
+                "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+              },
+              "result": {
+                "status": "passed",
+                "duration": 1000000
+              }
+            }
+          ],
+          "passed": 2,
+          "failed": 0,
+          "notDefined": 0,
+          "skipped": 0,
+          "pending": 0,
+          "ambiguous": 0,
+          "duration": 406000000,
+          "time": "00:00:00.406"
+        }
+      ],
+      "scenarios": {
+        "passed": 1,
+        "failed": 0,
+        "notDefined": 0,
+        "skipped": 0,
+        "pending": 0,
+        "ambiguous": 0,
+        "passedPercentage": "100.00",
+        "failedPercentage": "0.00",
+        "notdefinedPercentage": "0.00",
+        "skippedPercentage": "0.00",
+        "pendingPercentage": "0.00",
+        "ambiguousPercentage": "0.00",
+        "total": 1
+      },
+      "duration": 406000000,
+      "time": "00:00:00.406",
+      "isFailed": false,
+      "isAmbiguous": false,
+      "isSkipped": false,
+      "isNotdefined": false,
+      "isPending": false,
+      "app": 0,
+      "browser": 0,
+      "passed": null,
+      "totalTime": null
     }
   ],
   "featureCount": {
     "ambiguous": 0,
     "failed": 0,
-    "passed": 1,
+    "passed": 2,
     "notDefined": 0,
     "pending": 0,
     "skipped": 0,
-    "total": 1,
+    "total": 2,
     "ambiguousPercentage": "0.00",
     "failedPercentage": "0.00",
     "notdefinedPercentage": "0.00",
@@ -189,8 +328,8 @@
     "notDefined": 0,
     "pending": 0,
     "skipped": 0,
-    "passed": 1,
-    "total": 1,
+    "passed": 2,
+    "total": 2,
     "ambiguousPercentage": "0.00",
     "failedPercentage": "0.00",
     "notdefinedPercentage": "0.00",

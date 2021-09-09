@@ -89,7 +89,7 @@
 							"src/robots.txt"
 						],
 						"configPath": "jest.config.js",
-						"polyfills": "src/polyfills.ts",
+						"polyfills": ["src/polyfills.ts"],
 						"styles": ["src/scss/index.scss"],
 						"tsConfig": "src/tsconfig.spec.json"
 					}
