@@ -145,6 +145,12 @@
 		"webpack-bundle-analyzer": "4.4.2"
 	},
 	"cypress-cucumber-preprocessor": {
-		"nonGlobalStepDefinitions": true
+		"nonGlobalStepDefinitions": true,
+		"cucumberJson": {
+			"generate": true,
+			"outputFolder": "reports/cypress",
+			"filePrefix": "",
+			"fileSuffix": ".cucumber"
+		}
 	}
 }
