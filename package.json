@@ -15,6 +15,7 @@
 		"certificate:generate:mac": "cd ci && bash generateCertificateOSX.sh",
 		"clean": "rimraf node_modules reports dist coverage documentation",
 		"clean:install": "npm run clean && npm i",
+		"cypress:open": "cypress open",
 		"doc": "compodoc --coverageTestThresholdFail=false",
 		"doc:full": "npm run test:ci && npm run test:e2e && npm run wpo:stats && npm run wpo:lighthouse && npm run doc:reports && npm run doc -- --includes compodoc-additional-doc",
 		"doc:reports": "npx mkdirp documentation/additional-documentation && npx ncp reports documentation/additional-documentation",
@@ -91,6 +92,7 @@
 		"@babel/preset-env": "7.15.4",
 		"@babel/preset-typescript": "7.15.0",
 		"@compodoc/compodoc": "1.1.11",
+		"@cypress/webpack-preprocessor": "5.9.1",
 		"@ng-apimock/protractor-plugin": "2.0.0",
 		"@types/chai": "4.2.21",
 		"@types/compression": "1.7.2",
@@ -110,6 +112,8 @@
 		"compression": "1.7.4",
 		"cpx": "1.5.0",
 		"cucumber": "6.0.5",
+		"cypress": "8.3.1",
+		"cypress-cucumber-preprocessor": "^4.2.0",
 		"dayjs": "1.10.6",
 		"eslint": "7.32.0",
 		"http-server": "13.0.1",
@@ -136,9 +140,13 @@
 		"stylelint-webpack-plugin": "3.0.1",
 		"timeshift-js": "1.1.1",
 		"ts-jest": "27.0.5",
+		"ts-loader": "9.2.5",
 		"ts-node": "10.2.1",
 		"typescript": "4.3.5",
 		"webpack": "5.52.0",
 		"webpack-bundle-analyzer": "4.4.2"
+	},
+	"cypress-cucumber-preprocessor": {
+		"nonGlobalStepDefinitions": true
 	}
 }
