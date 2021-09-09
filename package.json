@@ -42,7 +42,7 @@
 		"wpo:stats": "webpack-bundle-analyzer dist/browser/stats.json --mode=static --report=\"reports/wpo/bundle-report.html\" --no-open && npx cpx dist/browser/stats.json reports/wpo"
 	},
 	"config": {
-		"chromeVersion": "91.0.4472.101"
+		"chromeVersion": "92.0.4515.107"
 	},
 	"dependencies": {
 		"@angular/animations": "12.2.5",
