@@ -4,19 +4,12 @@ Feature: Hello world Feature
 
 	A user should see the Hello World message
 
-	Scenario: Hello world scenario
-		Given User enters the flow
-		Then I see "Hello world" in the title
-
-	@skip
-	Scenario Outline: Server error: <description> for the Session call
-		Given The "<scenario>" Scenario for "translations"
-		When User enters the flow
-		Then It should show an Error notification
-		And Error Notification should contain "<message>"
-		And It should show the 404 Page
+	Scenario Outline: Basic multilanguage test
+		Given User visits "<url>" url
+		Then The browser title should include "Homepage / Angular SSR"
+		And The title should include "<title>"
+		And The description should include "<description>"
 		Examples:
-			| scenario            | description     | message                                                    |
-			| 400                 | Bad Request     | Unfortunately something went wrong. Please try again later |
-			| 500                 | Server Error    | Unfortunately something went wrong. Please try again later |
-			| 504                 | Gateway Timeout | Unfortunately something went wrong. Please try again later |
+			| url  | title 		  | description 												    |
+			| /nl  | Hallo world  | Angular 12 Applicatie met Redux Store (ngrx) en Lazy Loading.   |
+			| /en  | Hello world  | Angular 12 Application with Redux Store (ngrx) and Lazy Loading.|
