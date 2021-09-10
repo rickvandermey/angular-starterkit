@@ -82,8 +82,12 @@
 					"builder": "@cypress/schematic:cypress",
 					"options": {
 						"browser": "chrome",
+						"ciBuildId": "travis",
 						"devServerTarget": "RVDM-Angular-Starterkit:serve:mock",
-						"headless": false
+						"headless": false,
+						"key": "bd1e43fa-10e1-435b-a433-72953794f57d",
+						"parallel": true,
+						"record": true
 					},
 					"configurations": {
 						"production": {
