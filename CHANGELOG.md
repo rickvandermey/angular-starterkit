@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [6.0.1](https://github.com/rickvandermey/angular-starterkit/tree/6.0.1)
+
+### Bugfix
+
+-   **Cypress:** update Cypress Dashboard after CI
+
 ## [6.0.0](https://github.com/rickvandermey/angular-starterkit/tree/6.0.0)
 
 ### Breaking Changes
