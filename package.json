@@ -42,9 +42,6 @@
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
 		"wpo:stats": "webpack-bundle-analyzer dist/browser/stats.json --mode=static --report=\"reports/wpo/bundle-report.html\" --no-open && npx cpx dist/browser/stats.json reports/wpo"
 	},
-	"config": {
-		"chromeVersion": "92.0.4515.107"
-	},
 	"dependencies": {
 		"@angular/animations": "12.2.5",
 		"@angular/common": "12.2.5",
@@ -93,7 +90,6 @@
 		"@babel/preset-typescript": "7.15.0",
 		"@compodoc/compodoc": "1.1.11",
 		"@cypress/schematic": "^1.5.0",
-		"@ng-apimock/protractor-plugin": "2.0.0",
 		"@types/chai": "4.2.21",
 		"@types/compression": "1.7.2",
 		"@types/cucumber": "6.0.1",
@@ -102,7 +98,6 @@
 		"@types/lodash.merge": "4.6.6",
 		"@types/lodash.pick": "4.4.6",
 		"@types/node": "16.9.0",
-		"@types/puppeteer": "5.4.4",
 		"@types/request": "2.48.7",
 		"@typescript-eslint/eslint-plugin": "4.31.0",
 		"@typescript-eslint/parser": "4.31.0",
@@ -128,7 +123,6 @@
 		"opn": "6.0.0",
 		"prettier": "2.3.2",
 		"pretty-quick": "3.1.1",
-		"puppeteer": "10.2.0",
 		"rimraf": "3.0.2",
 		"sass": "1.39.0",
 		"spdy": "4.0.2",

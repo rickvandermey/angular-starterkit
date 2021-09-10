@@ -17,7 +17,6 @@ cache:
         - $HOME/.npm
         - $HOME/.cache
 before_install:
-    - export CHROME_BIN=chromium-browser
     - export DISPLAY=:99.0
 install:
     - npm install codecov -g
@@ -27,7 +26,6 @@ install:
 script:
     - npm run lint
     - npm run test:ci
-    - node node_modules/protractor/bin/webdriver-manager update
     - npm run test:e2e
     - npm run prerender:build
     - sonar-scanner

@@ -16,7 +16,7 @@ report.generate({
 	metadata: {
 		browser: {
 			name: 'chrome',
-			version: packageFile.config.chromeVersion,
+			version: '93',
 		},
 		platform: {
 			name: 'ubuntu',
