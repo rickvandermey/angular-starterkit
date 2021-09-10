@@ -4,6 +4,9 @@ node_js:
 sudo: required
 dist: xenial
 addons:
+    apt:
+        packages:
+            - libgconf-2-4
     chrome: stable
     sonarcloud:
         organization: 'rickvandermey'
@@ -11,6 +14,7 @@ addons:
 cache:
     directories:
         - $HOME/.npm
+        - $HOME/.cache
 before_install:
     - export CHROME_BIN=chromium-browser
     - export DISPLAY=:99.0
