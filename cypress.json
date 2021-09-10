@@ -1,3 +1,5 @@
 {
-	"testFiles": "**/*.{feature, features}"
+	"projectId": "RVDM-Angular-Starterkit",
+	"testFiles": "**/*.{feature, features}",
+	"videosFolder": "reports/cypress/videos"
 }

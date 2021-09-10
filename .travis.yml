@@ -21,7 +21,7 @@ script:
     - npm run lint
     - npm run test:ci
     - node node_modules/protractor/bin/webdriver-manager update
-    - npm run test:e2e --headless
+    - npm run test:e2e
     - npm run prerender:build
     - sonar-scanner
 after_success:

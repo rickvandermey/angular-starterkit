@@ -78,6 +78,19 @@
 						}
 					}
 				},
+				"e2e": {
+					"builder": "@cypress/schematic:cypress",
+					"options": {
+						"browser": "chrome",
+						"devServerTarget": "RVDM-Angular-Starterkit:serve:mock",
+						"headless": false
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "RVDM-Angular-Starterkit:serve:production"
+						}
+					}
+				},
 				"test": {
 					"builder": "@angular-builders/jest:run",
 					"options": {
@@ -92,13 +105,6 @@
 						"polyfills": ["src/polyfills.ts"],
 						"styles": ["src/scss/index.scss"],
 						"tsConfig": "src/tsconfig.spec.json"
-					}
-				},
-				"e2e": {
-					"builder": "@angular-devkit/build-angular:protractor",
-					"options": {
-						"devServerTarget": "RVDM-Angular-Starterkit:serve:mock",
-						"protractorConfig": "src/cucumber.conf.js"
 					}
 				},
 				"lint": {
