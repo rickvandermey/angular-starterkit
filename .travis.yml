@@ -4,6 +4,10 @@ node_js:
 sudo: required
 dist: xenial
 addons:
+    apt:
+        packages:
+            - libgconf-2-4
+            - xvfb
     chrome: stable
     sonarcloud:
         organization: 'rickvandermey'
@@ -11,17 +15,18 @@ addons:
 cache:
     directories:
         - $HOME/.npm
+        - $HOME/.cache
 before_install:
-    - export CHROME_BIN=chromium-browser
     - export DISPLAY=:99.0
 install:
     - npm install codecov -g
     - npm ci
+    - export DISPLAY=':99.0'
+    - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 script:
     - npm run lint
     - npm run test:ci
-    - node node_modules/protractor/bin/webdriver-manager update
-    - npm run test:e2e --headless
+    - npm run test:e2e
     - npm run prerender:build
     - sonar-scanner
 after_success:

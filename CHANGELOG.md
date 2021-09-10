@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## [6.0.0](https://github.com/rickvandermey/angular-starterkit/tree/6.0.0)
+
+### Breaking Changes
+
+-   **Lighthouse:** Lighthouse updated report path
+-   **Protractor:** Remove all protractor related stuff
+-   **Cypress:** Migrating from protractor to cypress. [related issue](https://github.com/angular/protractor/issues/5502)
+-   **Documentation:** Remove docs from git, run `npm run doc:full` to get full documentation output
+
+### Features
+
+-   **Cypress:** Using Typescript
+-   **Cypress:** Using Cucumber
+-   **Travis:** Updating CI for new E2E
+-   **Angular:** Updated to Angular 12.2.x
+-   **Packages:** Updated all dependencies to the latest version of 2021-09-11
+
 ## [5.1.0](https://github.com/rickvandermey/angular-starterkit/tree/5.1.0)
 
 ### Breaking Changes

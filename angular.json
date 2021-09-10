@@ -78,6 +78,23 @@
 						}
 					}
 				},
+				"e2e": {
+					"builder": "@cypress/schematic:cypress",
+					"options": {
+						"browser": "chrome",
+						"ciBuildId": "travis",
+						"devServerTarget": "RVDM-Angular-Starterkit:serve:mock",
+						"headless": false,
+						"key": "bd1e43fa-10e1-435b-a433-72953794f57d",
+						"parallel": true,
+						"record": true
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "RVDM-Angular-Starterkit:serve:production"
+						}
+					}
+				},
 				"test": {
 					"builder": "@angular-builders/jest:run",
 					"options": {
@@ -89,16 +106,9 @@
 							"src/robots.txt"
 						],
 						"configPath": "jest.config.js",
-						"polyfills": "src/polyfills.ts",
+						"polyfills": ["src/polyfills.ts"],
 						"styles": ["src/scss/index.scss"],
 						"tsConfig": "src/tsconfig.spec.json"
-					}
-				},
-				"e2e": {
-					"builder": "@angular-devkit/build-angular:protractor",
-					"options": {
-						"devServerTarget": "RVDM-Angular-Starterkit:serve:mock",
-						"protractorConfig": "src/cucumber.conf.js"
 					}
 				},
 				"lint": {

@@ -21,7 +21,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   😍 PWA (Progressive Web App)
 -   😍 Service Worker detects new build versions
 -   🤓 Unit Test (Jest)
--   🤓 E2E Test / Reports (Protractor / Cucumber)
+-   🕹️ E2E Test / Reports (Cypress / Cucumber)
 -   🗃 Documentation Generation (Compodoc)
 -   🚀 WPO: Google Lighthouse reporter (save to Compodoc additional docs)
 -   🚀 WPO: Stats for ES5 build and ES2015
@@ -80,7 +80,7 @@ This project comes with built-in SSR functionality. The effect of SSR will be va
 -   `npm run test` - Unit test Watcher (only runs tests for changed files)
 -   `npm run test-all` - Unit test Watcher (runs all tests)
 -   `npm run test:ci` - Unit test single Run
--   `npm run test:e2e` - End to End test with Protractor and reports with Cucumber
+-   `npm run test:e2e` - End to End test with Cypress and reports with Cucumber
 
 ### Running unit tests with Jest 🤓
 
@@ -92,15 +92,11 @@ Run `test:ci` to execute a single run for the Unit test. Best usecases are for p
 
 Both scripts will provide a Code Coverage file, which can be found in _'./reports/coverage'_
 
-### Running E2E tests with Protractor and Cucumber 🤓
+### Running E2E tests with Cypress and Cucumber 🤓
 
-Run `npm run test:e2e` to execute the E2E protractor tests. Tests can be found within _./e2e_ all written in Cucumber style.
+Run `npm run test:e2e` to execute the E2E Cypress tests. Tests can be found within \_./cypress all written in Cucumber style.
 
-This test will provide an report which will be shown at the end of all tests. It can also be found in _./reports/e2e/report_. When tests fails, there will be a screenshot attached to the scenario where the test has failed.
-
-#### Known issue(s) 💊
-
-When `npm run test:e2e` fails to compile as of webdriver issues, run `npm run test:e2e:fix-webdriver` to fix this compile error and try again.
+This test will provide an report which will be shown at the end of all tests. It can also be found in _./reports/cypress_. When tests fails, there will be a screenshot attached to the scenario where the test has failed.
 
 ## Documentation 🗃
 
