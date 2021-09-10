@@ -5,6 +5,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MarkdownModule } from 'ngx-markdown';
 import { EventReplayer } from 'preboot';
 
 import { TranslateUniversalService } from '@app/app.server.module';
@@ -23,6 +24,7 @@ describe('Pages: Home page', () => {
 				imports: [
 					CommonModule,
 					HttpClientModule,
+					MarkdownModule.forRoot(),
 					StoreModule.forRoot({}),
 					StoreModule.forFeature(
 						'entitiesState',

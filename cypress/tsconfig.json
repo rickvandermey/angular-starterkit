@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"module": "es6",
+		"outDir": "./dist/",
+		"target": "es6",
+		"types": ["cypress"]
+	}
+}

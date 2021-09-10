@@ -1,5 +1,5 @@
 const fs = require('fs');
-const lightHouseReportGenerator = require('lighthouse/report/report-generator');
+const lightHouseReportGenerator = require('lighthouse/report/generator/report-generator');
 const request = require('request');
 
 let baseUrl;
