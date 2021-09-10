@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/rickvandermey/angular-starterkit.svg?branch=master)](https://travis-ci.com/rickvandermey/angular-starterkit)
 [![codecov](https://codecov.io/gh/rickvandermey/angular-starterkit/branch/master/graph/badge.svg)](https://codecov.io/gh/rickvandermey/angular-starterkit)
+[![RVDM-Angular-Starterkit](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/i6rrnt&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/i6rrnt/runs)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=RVDM-Angular-Starterkit&metric=alert_status)](https://sonarcloud.io/dashboard?id=RVDM-Angular-Starterkit)
 [![dependencies Status](https://david-dm.org/rickvandermey/angular-starterkit.svg)](https://david-dm.org/rickvandermey/angular-starterkit)
 [![devDependencies Status](https://david-dm.org/rickvandermey/angular-starterkit/dev-status.svg)](https://david-dm.org/rickvandermey/angular-starterkit?type=dev)
