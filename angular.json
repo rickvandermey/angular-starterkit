@@ -93,22 +93,6 @@
 						}
 					}
 				},
-				"test": {
-					"builder": "@angular-builders/jest:run",
-					"options": {
-						"assets": [
-							"src/.htaccess",
-							"src/assets",
-							"src/favicon.ico",
-							"src/manifest.json",
-							"src/robots.txt"
-						],
-						"configPath": "jest.config.js",
-						"polyfills": ["src/polyfills.ts"],
-						"styles": ["src/scss/index.scss"],
-						"tsConfig": "src/tsconfig.spec.json"
-					}
-				},
 				"lint": {
 					"builder": "@angular-eslint/builder:lint",
 					"options": {

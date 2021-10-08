@@ -35,10 +35,10 @@
 		"ssr:build": "npm run build:client-and-server-bundles:ssr",
 		"ssr:serve": "node dist/server/main.js",
 		"stylelint": "stylelint \"src/{scss,app}/**/*.scss\" --config .stylelintrc --fix",
-		"test": "ng test --watch",
-		"test-all": "ng test --watchAll",
+		"test": "npx jest --watch",
+		"test-all": "npx jest --watchAll",
 		"test:e2e": "npm run server:mock -- -d && ng e2e && docker-compose down && node cypress/report.js",
-		"test:ci": "ng test",
+		"test:ci": "npx jest",
 		"wpo:lighthouse": "node ./ci/fetchLighthouse.js",
 		"wpo:stats": "webpack-bundle-analyzer dist/browser/stats.json --mode=static --report=\"reports/wpo/bundle-report.html\" --no-open && npx cpx dist/browser/stats.json reports/wpo"
 	},
@@ -73,7 +73,6 @@
 		"zone.js": "~0.11.4"
 	},
 	"devDependencies": {
-		"@angular-builders/jest": "12.1.2",
 		"@angular-devkit/build-angular": "12.2.9",
 		"@angular-devkit/schematics": "12.2.9",
 		"@angular-eslint/builder": "12.5.0",
