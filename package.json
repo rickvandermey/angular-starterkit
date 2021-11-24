@@ -20,6 +20,9 @@
 		"certificate:copy": "cp -a ./ssl/default/. ./ssl/.",
 		"cypress:open": "cypress open",
 		"build": "ng build $APP --prod --configuration=$CONF --ngsw-config-path=./ngsw-config.json",
+		"e2e": "nx e2e $APP --webdriver-update=false",
+		"e2e:no-serve": "npm run e2e -- --devServerTarget=''",
+		"e2e:only-tag": "TAG=@only npm run e2e:no-serve --retry=0",
 		"dep-graph": "nx dep-graph",
 		"format": "nx format:write",
 		"format:check": "nx format:check --base=$npm_config_base",
@@ -138,14 +141,5 @@
 		"typescript": "4.3.5",
 		"webpack": "5.58.0",
 		"webpack-bundle-analyzer": "4.4.2"
-	},
-	"cypress-cucumber-preprocessor": {
-		"nonGlobalStepDefinitions": true,
-		"cucumberJson": {
-			"generate": true,
-			"outputFolder": "reports/cypress",
-			"filePrefix": "",
-			"fileSuffix": ".cucumber"
-		}
 	}
 }

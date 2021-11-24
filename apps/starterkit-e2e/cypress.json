@@ -1,4 +1,5 @@
 {
+	"projectId": "i6rrnt",
 	"baseUrl": "https://localhost:4202",
 	"fileServerFolder": ".",
 	"fixturesFolder": "./src/fixtures",

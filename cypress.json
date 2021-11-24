@@ -1,6 +1,0 @@
-{
-	"projectId": "i6rrnt",
-	"screenshotsFolder": "test-reports/cypress/screenshots",
-	"testFiles": "**/*.{feature, features}",
-	"videosFolder": "test-reports/cypress/videos"
-}
