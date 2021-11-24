@@ -24,10 +24,10 @@ install:
     - export DISPLAY=':99.0'
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 script:
-    - npm run lint
-    - npm run test:ci
-    - npm run test:e2e
-    - npm run prerender:build
+    - npm run affected:lint
+    - npm npm run affected:test-ci
+    # - npm run affected:e2e
+    - npm run affected:build-ci
     - sonar-scanner
 after_success:
     - codecov

@@ -6,6 +6,7 @@
 /out-tsc
 /build
 /reports
+/test-reports
 
 # dependencies
 /node_modules
@@ -46,4 +47,5 @@ ci/server.crt
 ci/server.csr
 ci/server.key
 reports
+test-reports
 documentation

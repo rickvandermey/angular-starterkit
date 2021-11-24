@@ -5,7 +5,7 @@
 **/*.test.ts
 
 # Project
-src/main.server.ts
+apps/starterkit/src/main.server.ts
 
 # Generics
 node_modules/**
