@@ -1,0 +1,42 @@
+{
+	"extends": "@nrwl/workspace/presets/npm.json",
+	"npmScope": "RVDM-Angular-Starterkit",
+	"tasksRunnerOptions": {
+		"default": {
+			"runner": "@nrwl/nx-cloud",
+			"options": {
+				"cacheableOperations": [
+					"build",
+					"test",
+					"lint",
+					"package",
+					"prepare"
+				],
+				"accessToken": "MjNkZWRhNjAtYWQwYy00NjMzLWIxNmQtYWE2MTIwMDIwMzM1fHJlYWQtd3JpdGU="
+			}
+		}
+	},
+	"targetDependencies": {
+		"build": [
+			{
+				"target": "build",
+				"projects": "dependencies"
+			}
+		],
+		"prepare": [
+			{
+				"target": "prepare",
+				"projects": "dependencies"
+			}
+		],
+		"package": [
+			{
+				"target": "package",
+				"projects": "dependencies"
+			}
+		]
+	},
+	"affected": {
+		"defaultBase": "origin/master"
+	}
+}

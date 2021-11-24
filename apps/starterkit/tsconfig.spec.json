@@ -1,0 +1,19 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../../dist/out-tsc",
+		"types": ["jest", "node"]
+	},
+	"files": [
+		"src/test-setup.ts",
+		"src/polyfills.ts",
+		"src/app/app.module.ts",
+		"src/app/app.server.module.ts"
+	],
+	"include": [
+		"**/*.spec.ts",
+		"**/*.d.ts",
+		"src/app/globals.ts",
+		"src/app/routes/static.paths.ts"
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"angularCompilerOptions": {
+		"strictInjectionParameters": true,
+		"strictTemplates": true
+	},
+	"compileOnSave": false,
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"declaration": false,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"lib": ["es2018", "dom"],
+		"module": "es2020",
+		"moduleResolution": "node",
+		"noEmitOnError": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"paths": {},
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"sourceMap": true,
+		"target": "es2015",
+		"typeRoots": ["node_modules/@types"]
+	},
+	"exclude": ["node_modules", "tmp"]
+}

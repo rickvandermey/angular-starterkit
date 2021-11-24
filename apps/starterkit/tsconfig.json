@@ -1,0 +1,47 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"files": [],
+	"include": [],
+	"references": [
+		{
+			"path": "./tsconfig.app.json"
+		},
+		{
+			"path": "./tsconfig.spec.json"
+		},
+		{
+			"path": "./tsconfig.server.json"
+		},
+		{
+			"path": "./tsconfig.editor.json"
+		}
+	],
+	"compilerOptions": {
+		"paths": {
+			"core-js/es7/reflect": [
+				"node_modules/core-js/proposals/reflect-metadata"
+			],
+			"core-js/es6/*": ["node_modules/core-js/es/*"],
+			"@starterkit/app/*": ["apps/starterkit/src/app/*"],
+			"@starterkit/assets/*": ["apps/starterkit/src/assets/*"],
+			"@starterkit/components/*": [
+				"apps/starterkit/src/app/components/*"
+			],
+			"@starterkit/environments/*": [
+				"apps/starterkit/src/environments/*"
+			],
+			"@starterkit/helpers/*": ["apps/starterkit/src/app/helpers/*"],
+			"@starterkit/interfaces/*": [
+				"apps/starterkit/src/app/interfaces/*"
+			],
+			"@starterkit/modules/*": ["apps/starterkit/src/app/modules/*"],
+			"@starterkit/pages/*": ["apps/starterkit/src/app/pages/*"],
+			"@starterkit/pipes/*": ["apps/starterkit/src/app/pipes/*"],
+			"@starterkit/routes/*": ["apps/starterkit/src/app/routes/*"],
+			"@starterkit/services/*": ["apps/starterkit/src/app/services/*"],
+			"@starterkit/ssr/*": ["apps/starterkit/src/app/ssr/*"],
+			"@starterkit/testing/*": ["apps/starterkit/src/app/testing/*"],
+			"@starterkit/store/*": ["apps/starterkit/src/app/store/*"]
+		}
+	}
+}

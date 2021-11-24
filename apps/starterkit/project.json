@@ -1,0 +1,195 @@
+{
+	"projectType": "application",
+	"root": "apps/starterkit",
+	"sourceRoot": "apps/starterkit/src",
+	"prefix": "app",
+	"targets": {
+		"build": {
+			"builder": "@angular-devkit/build-angular:browser",
+			"options": {
+				"allowedCommonJsDependencies": [
+					"@store/meta/storage.metareducer"
+				],
+				"assets": [
+					"apps/starterkit/src/.htaccess",
+					"apps/starterkit/src/assets",
+					"apps/starterkit/src/favicon.ico",
+					"apps/starterkit/src/manifest.json",
+					"apps/starterkit/src/robots.txt"
+				],
+				"index": "apps/starterkit/src/index.html",
+				"main": "apps/starterkit/src/main.ts",
+				"ngswConfigPath": "ngsw-config.json",
+				"outputPath": "dist/apps/starterkit",
+				"polyfills": "apps/starterkit/src/polyfills.ts",
+				"styles": ["apps/starterkit/src/scss/index.scss"],
+				"scripts": [],
+				"statsJson": true,
+				"tsConfig": "apps/starterkit/tsconfig.app.json"
+			},
+			"configurations": {
+				"mock": {
+					"fileReplacements": [
+						{
+							"replace": "apps/starterkit/src/environments/environment.ts",
+							"with": "apps/starterkit/src/environments/environment.mock.ts"
+						}
+					],
+					"buildOptimizer": false,
+					"namedChunks": true,
+					"optimization": false,
+					"sourceMap": true
+				},
+				"production": {
+					"fileReplacements": [
+						{
+							"replace": "apps/starterkit/src/environments/environment.ts",
+							"with": "apps/starterkit/src/environments/environment.prod.ts"
+						}
+					],
+					"buildOptimizer": true,
+					"extractLicenses": true,
+					"namedChunks": false,
+					"optimization": true,
+					"outputHashing": "all",
+					"serviceWorker": true,
+					"sourceMap": false,
+					"vendorChunk": false
+				}
+			}
+		},
+		"build-ci": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "nx run starterkit:build-ssr"
+			}
+		},
+		"build-prerender": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "nx run starterkit:build-ssr && node dist/apps/starterkit-server/main.js prerender $ENVIRONMENT"
+			}
+		},
+		"build-ssr": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "nx build starterkit --configuration=$CONF --ngsw-config-path=./ngsw-config.json && nx run starterkit:server --configuration=$CONF --bundle-dependencies true"
+			}
+		},
+		"bundle-analyze": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "npx webpack-bundle-analyzer dist/apps/starterkit/stats.json --mode=static --report=\"test-reports/apps/starterkit/wpo.html\" --no-open && cp dist/apps/starterkit/stats.json test-reports/apps/starterkit"
+			}
+		},
+		"lint": {
+			"builder": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": [
+					"apps/starterkit/src/**/*.ts",
+					"apps/starterkit/src/**/*.html"
+				]
+			},
+			"outputs": ["{options.outputFile}"]
+		},
+		"lint-ci": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"format": "checkstyle",
+				"lintFilePatterns": [
+					"apps/starterkit/src/**/*.ts",
+					"apps/starterkit/src/**/*.html"
+				],
+				"outputFile": "./test-reports/apps/starterkit/eslint/checkstyle-result.xml"
+			},
+			"outputs": ["{options.outputFile}"]
+		},
+		"serve": {
+			"builder": "@angular-devkit/build-angular:dev-server",
+			"options": {
+				"browserTarget": "starterkit:build",
+				"port": 4202,
+				"ssl": true,
+				"sslKey": "ssl/server.key",
+				"sslCert": "ssl/server.crt"
+			},
+			"configurations": {
+				"mock": {
+					"browserTarget": "starterkit:build:mock"
+				},
+				"production": {
+					"browserTarget": "starterkit:build:production"
+				}
+			}
+		},
+		"serve-prerender": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "cd dist/apps/starterkit && http-server -S -C  ../../../ssl/server.crt -K ../../../ssl/server.key -g -P \"404\" -c 0"
+			}
+		},
+		"serve-ssr": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "node dist/apps/starterkit-server/main.js"
+			}
+		},
+		"stylelint": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "npx stylelint \"apps/starterkit/**/*.scss\" --config .stylelintrc --fix"
+			}
+		},
+		"stylelint-ci": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"commands": [
+					"mkdir -p ./test-reports/apps/starterkit/stylelint/",
+					"npx stylelint \"apps/starterkit/**/*.scss\" --config .stylelintrc --custom-formatter ./node_modules/stylelint-checkstyle-formatter --output-file=./test-reports/apps/starterkit/stylelint/checkstyle-result.xml"
+				]
+			}
+		},
+		"server": {
+			"builder": "@angular-devkit/build-angular:server",
+			"options": {
+				"outputPath": "dist/apps/starterkit-server",
+				"main": "tools/server/server.ts",
+				"tsConfig": "apps/starterkit/tsconfig.server.json",
+				"sourceMap": true,
+				"optimization": false
+			},
+			"configurations": {
+				"mock": {
+					"fileReplacements": [
+						{
+							"replace": "apps/starterkit/src/environments/environment.ts",
+							"with": "apps/starterkit/src/environments/environment.mock.ts"
+						}
+					],
+					"optimization": true,
+					"sourceMap": false
+				},
+				"production": {
+					"fileReplacements": [
+						{
+							"replace": "apps/starterkit/src/environments/environment.ts",
+							"with": "apps/starterkit/src/environments/environment.prod.ts"
+						}
+					],
+					"optimization": true,
+					"sourceMap": false
+				}
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"options": {
+				"jestConfig": "apps/starterkit/jest.config.js",
+				"passWithNoTests": true
+			},
+			"outputs": ["test-reports/apps/starterkit/coverage"]
+		}
+	},
+	"tags": ["scope:starterkit"],
+	"implicitDependencies": []
+}

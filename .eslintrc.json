@@ -1,32 +1,32 @@
 {
 	"root": true,
-	"ignorePatterns": ["projects/**/*"],
+	"ignorePatterns": ["**/*"],
+	"plugins": ["@nrwl/nx", "@angular-eslint"],
 	"overrides": [
 		{
-			"files": ["*.ts"],
-			"parserOptions": {
-				"project": ["tsconfig.json"],
-				"createDefaultProgram": true
-			},
-			"extends": [
-				"plugin:@angular-eslint/recommended",
-				"plugin:@angular-eslint/template/process-inline-templates"
-			],
+			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
 			"rules": {
+				"@nrwl/nx/enforce-module-boundaries": [
+					"error",
+					{
+						"allow": [],
+						"depConstraints": [
+							{
+								"sourceTag": "scope:starterkit",
+								"onlyDependOnLibsWithTags": [
+									"scope:starterkit",
+									"scope:shared"
+								]
+							}
+						]
+					}
+				],
 				"@angular-eslint/component-selector": [
 					"error",
 					{
+						"type": ["element", "attribute"],
 						"prefix": "app",
-						"style": "kebab-case",
-						"type": "element"
-					}
-				],
-				"@angular-eslint/directive-selector": [
-					"error",
-					{
-						"prefix": "app",
-						"style": "camelCase",
-						"type": "attribute"
+						"style": "kebab-case"
 					}
 				],
 				"brace-style": ["error", "1tbs"],
@@ -56,8 +56,14 @@
 			}
 		},
 		{
-			"files": ["*.html"],
-			"extends": ["plugin:@angular-eslint/template/recommended"],
+			"files": ["*.ts", "*.tsx"],
+			"extends": ["plugin:@nrwl/nx/typescript"],
+			"parserOptions": { "project": "./tsconfig.*?.json" },
+			"rules": {}
+		},
+		{
+			"files": ["*.js", "*.jsx"],
+			"extends": ["plugin:@nrwl/nx/javascript"],
 			"rules": {}
 		}
 	]
