@@ -1,5 +1,5 @@
+/* istanbul ignore file */
 import { Observable, Subject } from 'rxjs';
-
 /**
  * MockSwUpdate mocks the SwUpdate
  */
