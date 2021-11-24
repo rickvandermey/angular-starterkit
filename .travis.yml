@@ -25,6 +25,8 @@ install:
     - export DISPLAY=':99.0'
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 script:
+    - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+    - git fetch --depth=200 origin
     - npm run affected:lint
     - npm run affected:test-ci
     - npm run certificate:copy

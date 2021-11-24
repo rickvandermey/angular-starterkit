@@ -39,32 +39,9 @@ const getRemoteFeature = (currentBranch) => {
 	// If a remote is found use it
 	if (matches && matches.length > 0) {
 		return matches[matches.length - 1];
-	} else {
-		// If not default to iteration
-		return getIteration();
 	}
-};
 
-/**
- * Checks the remote iterations and finds the first iteration branch
- *
- * @return {string}
- */
-const getIteration = () => {
-	const branches = execSync('git branch --list --remotes').toString();
-	const regex = /(origin\/iteration\/.*)/gm;
-
-	const matches = branches.match(regex);
-	if (matches && matches.length > 1) {
-		console.warn('More than one iteration found: ', matches);
-	}
-	// Return the last (newest) iteration match due to them being sorted alphabetically
-	if (matches && matches.length > 0) {
-		return matches[matches.length - 1];
-	} else {
-		// If not default to origin/master
-		return defaultBase;
-	}
+	return defaultBase;
 };
 
 /**
