@@ -26,6 +26,7 @@ install:
 script:
     - npm run affected:lint
     - npm npm run affected:test-ci
+    - npm run certificate:copy
     - npm run affected:e2e
     - npm run affected:build-ci
     - sonar-scanner
