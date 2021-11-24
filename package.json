@@ -16,7 +16,7 @@
 		"affected:lint-ci": "nx workspace-lint && nx affected --target=stylelint-ci --base=$npm_config_base && nx affected --target=lint-ci --base=$npm_config_base",
 		"affected:test": "nx affected:test --watch=false --browsers Chromium --base=$npm_config_base",
 		"affected:test-ci": "nx affected:test --code-coverage --watch=false --browsers ChromiumNoSandbox --base=$npm_config_base",
-		"certificate:generate:mac": "cd ci && bash generateCertificateOSX.sh",
+		"certificate:generate:mac": "cd ci && bash tools/ssl-generator/generateCertificateOSX.sh",
 		"certificate:copy": "cp -a ./ssl/default/. ./ssl/.",
 		"cypress:open": "cypress open",
 		"build": "ng build $APP --prod --configuration=$CONF --ngsw-config-path=./ngsw-config.json",
