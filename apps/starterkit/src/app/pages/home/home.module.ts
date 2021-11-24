@@ -5,8 +5,8 @@ import { StoreModule } from '@ngrx/store';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { SharedModule } from '@starterkit/modules/shared.module';
-import { HomePageComponent } from '@starterkit/pages/index';
-import { HomeRoutingModule } from '@starterkit/routes/index';
+import { HomePageComponent } from '@starterkit/pages/home/home-page.component';
+import { HomeRoutingModule } from '@starterkit/routes/home/home-routing';
 import { EntitiesService } from '@starterkit/services/entities/entities.service';
 import { getInitialState } from '@starterkit/ssr/tokens';
 import { EntitiesEffects } from '@starterkit/store/entities/entities.effects';

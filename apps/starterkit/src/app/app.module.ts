@@ -41,10 +41,8 @@ import { environment } from '@starterkit/environments/environment';
 import { AppComponent } from './app.component';
 
 // Routes
-import {
-	AppRoutingModule,
-	GoogleAnalyticsEffects,
-} from '@starterkit/routes/index';
+import { AppRoutingModule } from '@starterkit/routes/app-routing.module';
+import { GoogleAnalyticsEffects } from '@starterkit/routes/effects/google-analytics.effects';
 
 // Modules
 import { ErrorModule } from '@starterkit/pages/error/error.module';

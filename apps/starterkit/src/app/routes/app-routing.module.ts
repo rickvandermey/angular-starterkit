@@ -5,7 +5,7 @@ import {
 	StoreRouterConnectingModule,
 } from '@ngrx/router-store';
 
-import { ErrorPageComponent } from '@starterkit/pages/index';
+import { ErrorPageComponent } from '@starterkit/pages/error/error-page.component';
 import { LanguageGuard } from '@starterkit/routes/guards/language-guard.service';
 import { RouterStateUrl } from '@starterkit/store/router/router.interface';
 
