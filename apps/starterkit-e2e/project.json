@@ -1,0 +1,44 @@
+{
+	"root": "apps/starterkit-e2e",
+	"sourceRoot": "apps/starterkit-e2e/src",
+	"projectType": "application",
+	"targets": {
+		"e2e": {
+			"executor": "@nrwl/cypress:cypress",
+			"options": {
+				"cypressConfig": "apps/starterkit-e2e/cypress.json",
+				"tsConfig": "apps/starterkit-e2e/tsconfig.json",
+				"devServerTarget": "starterkit:serve:mock"
+			},
+			"configurations": {
+				"production": {
+					"devServerTarget": "starterkit:serve:mock",
+					"parallel": true
+				},
+				"watch-dev": {
+					"watch": true,
+					"exit": false,
+					"skipServe": true
+				}
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["apps/starterkit-e2e/**/*.{js,ts}"]
+			}
+		},
+		"lint-ci": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"format": "checkstyle",
+				"lintFilePatterns": ["apps/starterkit-e2e/**/*.ts"],
+				"outputFile": "./test-reports/apps/starterkit-e2e/eslint/checkstyle-result.xml"
+			},
+			"outputs": ["{options.outputFile}"]
+		}
+	},
+	"tags": [],
+	"implicitDependencies": ["starterkit", "mockserver"]
+}

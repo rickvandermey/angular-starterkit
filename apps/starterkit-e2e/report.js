@@ -3,12 +3,12 @@ const packageFile = require('../package.json');
 
 report.generate({
 	customData: {
-		title: 'Run info',
 		data: [
 			{ label: 'Project', value: packageFile.name },
 			{ label: 'Release', value: packageFile.version },
 			{ label: 'Execution Start Time', value: new Date().toISOString() },
 		],
+		title: 'Run info',
 	},
 	displayDuration: true,
 	durationInMS: false,
@@ -24,8 +24,8 @@ report.generate({
 		},
 	},
 	openReportInBrowser: true,
-	pageTitle: packageFile.name,
 	pageFooter: '',
+	pageTitle: packageFile.name,
 	reportName: packageFile.name,
 	reportPath: './reports/cypress',
 });

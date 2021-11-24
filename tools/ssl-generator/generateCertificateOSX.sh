@@ -29,7 +29,7 @@ SERVERCSR='server.csr' # Server certificate request
 SERVERCRT='server.crt' # Server certificate
 
 #Output folder
-OUTPUTFOLDER='../build'
+OUTPUTFOLDER='../ssl'
 
 echo -e "${INPUTCOLOR}Generating root key, enter root certificate password:${NOCOLOR}"
     openssl genrsa -des3 -out ${ROOTCAKEY} 2048

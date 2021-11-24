@@ -1,0 +1,37 @@
+{
+	"root": "apps/mockserver",
+	"sourceRoot": "apps/mockserver",
+	"projectType": "application",
+	"prefix": "mock",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "docker-compose up --build"
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": ["apps/mockserver/**/*.ts"]
+			},
+			"outputs": ["{options.outputFile}"]
+		},
+		"lint-ci": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"format": "checkstyle",
+				"lintFilePatterns": ["apps/mockserver/**/*.ts"],
+				"outputFile": "./test-reports/apps/mockserver/eslint/checkstyle-result.xml"
+			},
+			"outputs": ["{options.outputFile}"]
+		},
+		"serve": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "docker-compose up"
+			}
+		}
+	},
+	"tags": ["scope:mockserver"]
+}

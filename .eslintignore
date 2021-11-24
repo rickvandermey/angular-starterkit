@@ -9,5 +9,6 @@ apps/starterkit/src/main.server.ts
 
 # Generics
 node_modules/**
+**/node_modules/**
 dist/**
 ssl/**

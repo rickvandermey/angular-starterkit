@@ -3,14 +3,18 @@ import * as express from 'express';
 import * as fs from 'fs';
 import * as spdy from 'spdy';
 import * as webpush from 'web-push';
+
 import * as helper from './helper';
 
 // Add additional logging to the mockServer so we can debug if certain calls ever happened
 // NOTE: Enable to allow additional logging
 // import * as morgan from 'morgan';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const apimock = require('@ng-apimock/core');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const iocContainer = require('@ng-apimock/core/dist/ioc-container');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const devInterface = require('@ng-apimock/dev-interface');
 
 // Mock VAPID keys for push notifications
@@ -18,8 +22,7 @@ const PUBLIC_VAPID =
 	'BEgAWMdgbjHjFJp6i7hCKrbkXzSnRixZKRHLiruZb7hhopEdgvWeUftsjleOVUZEvjhCWHyoeoGsaO3-uH61qYk';
 const PRIVATE_VAPID = 'VZAsr1xw5KBAMp3qdpUlBAMfJIeII5cBRvts2VkSqYk';
 
-// NOTE: not ideal but will be refactored when we deal with HTTP2 and typescript refactor
-let credentials: {
+interface SSLCredentials {
 	/**
 	 * cert is the certificate string
 	 */
@@ -28,25 +31,34 @@ let credentials: {
 	 * key is the key of the certificate
 	 */
 	key: string;
-};
-
-if (
-	fs.existsSync('../build/server.key') &&
-	fs.existsSync('../build/server.crt')
-) {
-	// Loads the correct key and certificate to host the mock server over https
-	credentials = {
-		cert: fs.readFileSync('../build/server.crt', 'utf8'),
-		key: fs.readFileSync('../build/server.key', 'utf8'),
-	};
-} else {
-	// Falls back to the default key and certificate
-	credentials = {
-		cert: fs.readFileSync('../build/default/server.crt', 'utf8'),
-		key: fs.readFileSync('../build/default/server.key', 'utf8'),
-	};
 }
 
+/**
+ * Retrieves the ssl credentials and falls back to default if not found
+ */
+const getCredentials = (): SSLCredentials => {
+	let sslCredentials: SSLCredentials;
+
+	if (
+		fs.existsSync('../ssl/server.key') &&
+		fs.existsSync('../ssl/server.crt')
+	) {
+		// Loads the correct key and certificate to host the mock server over https
+		sslCredentials = {
+			cert: fs.readFileSync('../ssl/server.crt', 'utf8'),
+			key: fs.readFileSync('../ssl/server.key', 'utf8'),
+		};
+	} else {
+		// Falls back to the default key and certificate
+		sslCredentials = {
+			cert: fs.readFileSync('../ssl/default/server.crt', 'utf8'),
+			key: fs.readFileSync('../ssl/default/server.key', 'utf8'),
+		};
+	}
+	return sslCredentials;
+};
+
+const credentials = getCredentials();
 const app = express();
 
 // Creates a separate HTTPS capable server
@@ -151,7 +163,9 @@ app.use(
 						/**
 						 * _variables are the sessions optional variables
 						 */
-						_variables: {};
+						_variables: {
+							// do nothing
+						};
 					}): void => {
 						if (session._identifier === mockCookie) {
 							scenario = session._mocks[mock.name].scenario;
@@ -192,6 +206,7 @@ app.use(
 				// If a mock has specified a dynamic handler it should be executed here
 				if (mock.handler) {
 					const paths = `./${mock.path}/${mock.handler}`;
+					// eslint-disable-next-line @typescript-eslint/no-var-requires
 					return require(paths).handle(
 						scenario,
 						mockRequest,
