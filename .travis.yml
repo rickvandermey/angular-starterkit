@@ -16,6 +16,7 @@ cache:
     directories:
         - $HOME/.npm
         - $HOME/.cache
+        - $HOME/ssl
 before_install:
     - export DISPLAY=:99.0
 install:
@@ -25,7 +26,7 @@ install:
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 script:
     - npm run affected:lint
-    - npm npm run affected:test-ci
+    - npm run affected:test-ci
     - npm run certificate:copy
     - npm run affected:e2e
     - npm run affected:build-ci
