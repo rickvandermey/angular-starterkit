@@ -1,9 +1,10 @@
+import { Action } from '@ngrx/store';
 import * as applicationsActions from './application.actions';
 import { initialState, reducer } from './application.reducer';
 
 describe('Reducers: Application reducer', () => {
 	it('should return default state', () => {
-		const action = {} as any;
+		const action = {} as Action;
 		const state = reducer(initialState, action);
 
 		expect(state).toBe(initialState);

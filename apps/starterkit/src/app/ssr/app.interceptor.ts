@@ -20,13 +20,13 @@ export class AppHttpInterceptor implements HttpInterceptor {
 	/**
 	 * Intercepts HttpRequest or HttpResponse and set the transferState
 	 * to save the status in the store
-	 * @param  {HttpRequest<any>} request
+	 * @param  {HttpRequest<string>} request
 	 * @param  {HttpHandler} next
 	 */
 	intercept(
-		req: HttpRequest<any>,
+		req: HttpRequest<string>,
 		next: HttpHandler,
-	): Observable<HttpEvent<any>> {
+	): Observable<HttpEvent<string>> {
 		if (req.method !== 'GET') {
 			return next.handle(req);
 		}

@@ -30,12 +30,14 @@ export class GoogleAnalyticsEffects {
 				filter((event) => event instanceof NavigationEnd),
 				tap((event: NavigationEnd) => {
 					if (isPlatformBrowser(this.platformId)) {
-						(window as any).ga(
+						/* eslint-disable @typescript-eslint/no-explicit-any */
+						const extendedWindow = window as any;
+						extendedWindow.ga(
 							'set',
 							'page',
 							event.urlAfterRedirects,
 						);
-						(window as any).ga('send', 'pageview');
+						extendedWindow.ga('send', 'pageview');
 					}
 				}),
 			),

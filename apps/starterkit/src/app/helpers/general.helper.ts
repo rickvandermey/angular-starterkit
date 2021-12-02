@@ -7,7 +7,8 @@ export class GeneralHelper {
 	 * @param { any } obj
 	 * @return { any } flattened object
 	 */
-	static flattensObject = (obj: any): any => {
+	/* eslint-disable @typescript-eslint/no-explicit-any */
+	static flattensObject = (obj: unknown): any => {
 		const flattened = {};
 
 		Object.keys(obj).forEach((key) => {
@@ -27,11 +28,11 @@ export class GeneralHelper {
 
 	/**
 	 * sort will sort the given object by the given field param
-	 * @param { any[] } data - all object data in an array
+	 * @param { unknown[] } data - all object data in an array
 	 * @param { string } field - the field which will be used to sort
-	 * @return { any[] }
+	 * @return { unknown[] }
 	 */
-	static sort(data: any[], field: string): any[] {
+	static sort(data: unknown[], field: string): unknown[] {
 		return data.sort((a, b) =>
 			a[field] > b[field] ? 1 : b[field] > a[field] ? -1 : 0,
 		);
@@ -39,11 +40,12 @@ export class GeneralHelper {
 
 	/**
 	 * dateSort will sort the given object by the given field param
-	 * @param { any[] } data - all object data in an array
+	 * @param { unknown[] } data - all object data in an array
 	 * @param { string } field - the field which will be used to sort
-	 * @return { any[] }
+	 * @return { unknown[] }
 	 */
-	static dateSort(data: any[], field: string): any[] {
+	/* eslint-disable @typescript-eslint/no-explicit-any */
+	static dateSort(data: unknown[], field: string): any[] {
 		return data.sort((a, b) => {
 			return new Date(b[field]).getTime() - new Date(a[field]).getTime();
 		});

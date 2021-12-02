@@ -19,7 +19,7 @@ import { AppHttpInterceptor } from './http.interceptor';
 describe(`AppHttpInterceptor`, () => {
 	let service: EntitiesService;
 	let httpMock: HttpTestingController;
-	let store: MockStore<any>;
+	let store: MockStore<unknown>;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({

@@ -12,18 +12,18 @@ import * as fs from 'fs';
  */
 export const handle = (
 	_scenarioName: string,
-	_mockRequest: any,
+	_mockRequest: unknown,
 	mockResponse: {
 		/**
 		 * data is the data response of the mock
 		 */
-		data: any;
+		data: unknown;
 		/**
 		 * status response of the mock
 		 */
 		status: number;
 	},
-	_mockVariables: any,
+	_mockVariables: unknown,
 	nodeRequest: express.Request,
 ): void => {
 	// Load the file into the data property so the rest can continue to work without any issues

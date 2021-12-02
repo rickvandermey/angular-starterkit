@@ -21,13 +21,13 @@ export class AppHttpInterceptor implements HttpInterceptor {
 	/**
 	 * Intercepts HttpRequest or HttpResponse and dispatches an actions
 	 * to save the status in the store
-	 * @param  {HttpRequest<any>} request
+	 * @param  {HttpRequest<string>} request
 	 * @param  {HttpHandler} next
 	 */
 	intercept(
-		request: HttpRequest<any>,
+		request: HttpRequest<string>,
 		next: HttpHandler,
-	): Observable<HttpEvent<any>> {
+	): Observable<HttpEvent<string>> {
 		this.store.dispatch(SetRequestStatus({ isPendingRequest: true }));
 		return next
 			.handle(request)

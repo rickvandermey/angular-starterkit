@@ -30,7 +30,7 @@ export interface MockRouterStateSnapshot {
  * Clones an object so it can be used inside tests
  * @param  {unknown} state
  */
-export function cloneState(state: unknown): any {
+export function cloneState(state: unknown) {
 	return JSON.parse(JSON.stringify(state));
 }
 

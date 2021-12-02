@@ -10,7 +10,7 @@ export class LocalStorageServiceMock {
 	/**
 	 * storage default store
 	 */
-	storage: any = {};
+	storage: unknown = {};
 
 	constructor(@Inject(PLATFORM_ID) public platformId: string) {}
 
@@ -19,7 +19,7 @@ export class LocalStorageServiceMock {
 	 * @param  state           current State
 	 * @param  localStorageKey key of the store
 	 */
-	setSavedState(state: any, localStorageKey: string): void {
+	setSavedState(state: unknown, localStorageKey: string): void {
 		if (isPlatformBrowser(this.platformId)) {
 			this.storage[localStorageKey] = state;
 		}
@@ -30,7 +30,7 @@ export class LocalStorageServiceMock {
 	 * @param  localStorageKey key of the store
 	 * @return JSON for given store Key
 	 */
-	getSavedState(localStorageKey: string): any {
+	getSavedState(localStorageKey: string): unknown {
 		if (isPlatformBrowser(this.platformId)) {
 			return this.storage[localStorageKey];
 		}
@@ -41,12 +41,12 @@ describe('storage meta reducer', () => {
 	const localStorageKey = '__state__';
 
 	let localStorageServiceMock: LocalStorageServiceMock;
-	let setStateSpy: any;
+	let setStateSpy: unknown;
 
-	let state: any;
+	let state: unknown;
 	let fakeReducer: (
-		s: any,
-		a: any,
+		s: unknown,
+		a: { type: string; state },
 	) => {
 		// do nothing
 	};
@@ -58,7 +58,7 @@ describe('storage meta reducer', () => {
 			feature: { foo: 'bar' },
 			nestedFeature: { foo: { bar: 'baz' } },
 		};
-		fakeReducer = function (s: any = state, a: any): any {
+		fakeReducer = function (s = state, a: { type: string; state }) {
 			switch (a.type) {
 				case 'SET': {
 					return { ...a.state };

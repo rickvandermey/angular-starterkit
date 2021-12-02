@@ -20,17 +20,19 @@ export class TranslateUniversalLoader implements TranslateLoader {
 	 * @param  lang the language code
 	 * @return      Observable
 	 */
-	public getTranslation(lang: string): Observable<any> {
-		return Observable.create((observer: any) => {
-			observer.next(
-				JSON.parse(
-					fs.readFileSync(
-						`${this.prefix}/${lang}${this.suffix}`,
-						'utf8',
+	public getTranslation(lang: string): Observable<string> {
+		return Observable.create(
+			(observer: { next: (s: string) => void; complete: () => void }) => {
+				observer.next(
+					JSON.parse(
+						fs.readFileSync(
+							`${this.prefix}/${lang}${this.suffix}`,
+							'utf8',
+						),
 					),
-				),
-			);
-			observer.complete();
-		});
+				);
+				observer.complete();
+			},
+		);
 	}
 }

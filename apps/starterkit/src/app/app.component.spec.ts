@@ -1,3 +1,4 @@
+import { BaseComponent } from '@starterkit/components/index';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -33,15 +34,15 @@ class FakeLoader implements TranslateLoader {
 	 * Mock getTranslation function
 	 * @param  {string} _lang
 	 */
-	getTranslation(_lang: string): Observable<any> {
+	getTranslation(_lang: string): Observable<{ [key: string]: string }> {
 		return of({ label: 'translation' });
 	}
 }
 
 describe('Components: App Component', () => {
-	let app: any;
+	let app: BaseComponent;
 	let fixture: ComponentFixture<Component>;
-	let store: MockStore<any>;
+	let store: MockStore<unknown>;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
@@ -82,7 +83,7 @@ describe('Components: App Component', () => {
 			schemas: [CUSTOM_ELEMENTS_SCHEMA],
 		}).compileComponents();
 
-		store = TestBed.inject(Store) as MockStore<any>;
+		store = TestBed.inject(Store) as MockStore<unknown>;
 		fixture = TestBed.createComponent(Component);
 		app = fixture.debugElement.componentInstance;
 
