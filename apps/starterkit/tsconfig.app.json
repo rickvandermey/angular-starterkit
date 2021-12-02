@@ -8,5 +8,5 @@
 		"enableIvy": true
 	},
 	"files": ["src/main.ts", "src/polyfills.ts"],
-	"exclude": ["test.ts", "**/*.spec.ts"]
+	"exclude": ["test.ts", "**/*.spec.ts", "**/*.test.ts"]
 }
