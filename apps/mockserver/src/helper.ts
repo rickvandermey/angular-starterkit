@@ -1,9 +1,9 @@
 /**
  * Clones an object/array
  *
- * @param object any
+ * @param object unknown
  */
-export const cloneDeep = (object: any): any => {
+export const cloneDeep = (object: unknown): unknown => {
 	return JSON.parse(JSON.stringify(object));
 };
 
@@ -16,11 +16,11 @@ export const swapValues = (value: {
 	/**
 	 * _data will be the data to duplicate
 	 */
-	_data: any;
+	_data: unknown;
 	/**
 	 * data will be the data to duplicate
 	 */
-	data: any;
+	data: unknown;
 }): void => {
 	if (!value._data) {
 		value._data = cloneDeep(value.data);

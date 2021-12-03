@@ -19,10 +19,10 @@ export class UniversalInterceptor implements HttpInterceptor {
 	/**
 	 * Intercepts HttpRequest or HttpResponse and set the transferState
 	 * to save the status in the store
-	 * @param  {HttpRequest<any>} request
+	 * @param  {HttpRequest<string>} request
 	 * @param  {HttpHandler} next
 	 */
-	intercept(req: HttpRequest<any>, next: HttpHandler) {
+	intercept(req: HttpRequest<string>, next: HttpHandler) {
 		return next.handle(req).pipe(
 			tap((event) => {
 				if (event instanceof HttpResponse) {

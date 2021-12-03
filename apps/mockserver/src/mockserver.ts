@@ -122,102 +122,112 @@ app.use(
 			);
 
 		// Loop over the mocks of the handler and find the availability call
-		handler.state._mocks.forEach((mock: any): any => {
-			const strippedUrl = req.url.split('?')[0];
-			const regex = new RegExp(`^/${mock.request.url}[/]?$`);
-			let regexMatches = strippedUrl.match(regex);
-			if (regexMatches) {
-				regexMatches = Array.from(regexMatches);
-			}
+		handler.state._mocks.forEach(
+			(mock: {
+				request: { url: string; method: string };
+				name: string;
+				responses: unknown;
+				path: string;
+				file: string;
+				handler: string;
+			}): unknown => {
+				const strippedUrl = req.url.split('?')[0];
+				const regex = new RegExp(`^/${mock.request.url}[/]?$`);
+				let regexMatches = strippedUrl.match(regex);
+				if (regexMatches) {
+					regexMatches = Array.from(regexMatches);
+				}
 
-			const isSameStaticRequest =
-				strippedUrl.startsWith(`/${mock.request.url}`) &&
-				strippedUrl.endsWith('.json');
-			const isSameApiRequest = !!strippedUrl.match(regex);
-			const isSameMethod = req.method === mock.request.method;
+				const isSameStaticRequest =
+					strippedUrl.startsWith(`/${mock.request.url}`) &&
+					strippedUrl.endsWith('.json');
+				const isSameApiRequest = !!strippedUrl.match(regex);
+				const isSameMethod = req.method === mock.request.method;
 
-			// Only start custom behavior if the mock is found for the requested url and method
-			if ((isSameStaticRequest || isSameApiRequest) && isSameMethod) {
-				// Find the appropriate scenario
-				let scenario = handler.state._global._mocks[mock.name].scenario;
-				let variables = handler.state._global._variables;
+				// Only start custom behavior if the mock is found for the requested url and method
+				if ((isSameStaticRequest || isSameApiRequest) && isSameMethod) {
+					// Find the appropriate scenario
+					let scenario =
+						handler.state._global._mocks[mock.name].scenario;
+					let variables = handler.state._global._variables;
 
-				// If there's a session (e2e for instance), match identifier
-				handler.state._sessions.forEach(
-					(session: {
-						/**
-						 * _identifier is the sessions identifier
-						 */
-						_identifier: string;
-						/**
-						 * _mocks are the sessions object with all scenarios
-						 */
-						_mocks: {
-							[key: string]: {
-								/**
-								 * scenario is the mocks scenario
-								 */
-								scenario: string;
+					// If there's a session (e2e for instance), match identifier
+					handler.state._sessions.forEach(
+						(session: {
+							/**
+							 * _identifier is the sessions identifier
+							 */
+							_identifier: string;
+							/**
+							 * _mocks are the sessions object with all scenarios
+							 */
+							_mocks: {
+								[key: string]: {
+									/**
+									 * scenario is the mocks scenario
+									 */
+									scenario: string;
+								};
 							};
-						};
-						/**
-						 * _variables are the sessions optional variables
-						 */
-						_variables: {
-							// do nothing
-						};
-					}): void => {
-						if (session._identifier === mockCookie) {
-							scenario = session._mocks[mock.name].scenario;
-							variables = session._variables;
-						}
-					},
-				);
-
-				const response = mock.responses[scenario];
-				const mockRequest = mock.request;
-
-				// Only start handling mocks when it's a ok (not great) response
-				if (!scenario.startsWith('200')) {
-					return;
-				}
-
-				// Load file into the data property so we can use the same way of handling
-				// Exclude images and other binary files
-				if (response.file && mock.name !== 'images') {
-					// Load the file into the data property so the rest can continue to work without any issues
-					response.data = JSON.parse(
-						fs
-							.readFileSync(`./${mock.path}/${response.file}`)
-							.toString(),
+							/**
+							 * _variables are the sessions optional variables
+							 */
+							_variables: {
+								// do nothing
+							};
+						}): void => {
+							if (session._identifier === mockCookie) {
+								scenario = session._mocks[mock.name].scenario;
+								variables = session._variables;
+							}
+						},
 					);
-					// Unset the file property as it is no longer needed
-					delete response.file;
-				}
 
-				// Skip if there is no useful data, e.g. empty file
-				if (!response.data) {
-					return;
-				}
+					const response = mock.responses[scenario];
+					const mockRequest = mock.request;
 
-				// Keeps a copy of the original request so it can be dynamically changed based on the request value
-				helper.swapValues(response);
+					// Only start handling mocks when it's a ok (not great) response
+					if (!scenario.startsWith('200')) {
+						return;
+					}
 
-				// If a mock has specified a dynamic handler it should be executed here
-				if (mock.handler) {
-					const paths = `./${mock.path}/${mock.handler}`;
-					// eslint-disable-next-line @typescript-eslint/no-var-requires
-					return require(paths).handle(
-						scenario,
-						mockRequest,
-						response,
-						variables,
-						req,
-						regexMatches,
-					);
+					// Load file into the data property so we can use the same way of handling
+					// Exclude images and other binary files
+					if (response.file && mock.name !== 'images') {
+						// Load the file into the data property so the rest can continue to work without any issues
+						response.data = JSON.parse(
+							fs
+								.readFileSync(`./${mock.path}/${response.file}`)
+								.toString(),
+						);
+						// Unset the file property as it is no longer needed
+						delete response.file;
+					}
+
+					// Skip if there is no useful data, e.g. empty file
+					if (!response.data) {
+						return;
+					}
+
+					// Keeps a copy of the original request so it can be dynamically changed based on the request value
+					helper.swapValues(response);
+
+					// If a mock has specified a dynamic handler it should be executed here
+					if (mock.handler) {
+						const paths = `./${mock.path}/${mock.handler}`;
+						// eslint-disable-next-line @typescript-eslint/no-var-requires
+						return require(paths).handle(
+							scenario,
+							mockRequest,
+							response,
+							variables,
+							req,
+							regexMatches,
+						);
+					}
 				}
-			}
-		});
+			},
+		);
 
 		next();
 	},

@@ -13,7 +13,7 @@ export class LocalStorageService {
 	 * @param  state           current State
 	 * @param  localStorageKey key of the store
 	 */
-	setSavedState(state: any, localStorageKey: string): void {
+	setSavedState(state: unknown, localStorageKey: string): void {
 		if (isPlatformBrowser(this.platformId)) {
 			sessionStorage.setItem(localStorageKey, JSON.stringify(state));
 		}
@@ -24,7 +24,7 @@ export class LocalStorageService {
 	 * @param  localStorageKey key of the store
 	 * @return JSON for given store Key
 	 */
-	getSavedState(localStorageKey: string): any {
+	getSavedState(localStorageKey: string): unknown {
 		if (isPlatformBrowser(this.platformId)) {
 			return JSON.parse(sessionStorage.getItem(localStorageKey));
 		}

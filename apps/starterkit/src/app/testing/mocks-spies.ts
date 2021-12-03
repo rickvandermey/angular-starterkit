@@ -7,7 +7,7 @@ export class MockSwUpdate {
 	/**
 	 * $availableSubj mocked Subject of SwUpdate
 	 */
-	$availableSubj: Subject<any> = new Subject<{
+	$availableSubj: Subject<{ available: { hash: string } }> = new Subject<{
 		/**
 		 * available Object with a hash as string
 		 */
@@ -21,7 +21,7 @@ export class MockSwUpdate {
 	/**
 	 * $activatedSubj mocked Subject of SwUpdate
 	 */
-	$activatedSubj: Subject<any> = new Subject<{
+	$activatedSubj: Subject<{ current: { hash: string } }> = new Subject<{
 		/**
 		 * current Object with a hash as string
 		 */
@@ -36,21 +36,27 @@ export class MockSwUpdate {
 	/**
 	 * available mocked Observable of SwUpdate
 	 */
-	available: Observable<any> = this.$availableSubj.asObservable();
+	available: Observable<{ available: { hash: string } }> =
+		this.$availableSubj.asObservable();
 	/**
 	 * activated mocked Observable of SwUpdate
 	 */
-	activated: Observable<any> = this.$activatedSubj.asObservable();
+	activated: Observable<{ current: { hash: string } }> =
+		this.$activatedSubj.asObservable();
 
 	/**
 	 * activateUpdate mocked function of SwUpdate
 	 */
-	activateUpdate: any = jest.fn().mockImplementation(() => Promise.resolve());
+	activateUpdate: jest.Mock = jest
+		.fn()
+		.mockImplementation(() => Promise.resolve());
 
 	/**
 	 * checkForUpdate mocked function of SwUpdate
 	 */
-	checkForUpdate: any = jest.fn().mockImplementation(() => Promise.resolve());
+	checkForUpdate: jest.Mock = jest
+		.fn()
+		.mockImplementation(() => Promise.resolve());
 
 	constructor() {
 		// do nothing

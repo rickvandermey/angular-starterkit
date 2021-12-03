@@ -1,7 +1,8 @@
+import { BaseComponent } from '@starterkit/components/index';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { Store, StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
@@ -33,73 +34,68 @@ class FakeLoader implements TranslateLoader {
 	 * Mock getTranslation function
 	 * @param  {string} _lang
 	 */
-	getTranslation(_lang: string): Observable<any> {
+	getTranslation(_lang: string): Observable<{ [key: string]: string }> {
 		return of({ label: 'translation' });
 	}
 }
 
 describe('Components: App Component', () => {
-	let app: any;
+	let app: BaseComponent;
 	let fixture: ComponentFixture<Component>;
-	let store: MockStore<any>;
+	let store: MockStore<unknown>;
 
-	beforeEach(
-		waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [Component],
-				imports: [
-					CommonModule,
-					HttpClientModule,
-					StoreModule.forRoot({}),
-					ServiceWorkerModule.register('', { enabled: false }),
-					TranslateModule.forRoot({
-						loader: {
-							provide: TranslateLoader,
-							useClass: FakeLoader,
-						},
-					}),
-				],
-				providers: [
-					PushNotificationService,
-					TranslateService,
-					provideMockStore({ initialState }),
-					{
-						provide: Store,
-						useClass: MockStore,
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			declarations: [Component],
+			imports: [
+				CommonModule,
+				HttpClientModule,
+				StoreModule.forRoot({}),
+				ServiceWorkerModule.register('', { enabled: false }),
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useClass: FakeLoader,
 					},
-					{ provide: STORAGE_KEYS, useValue: ['dummy'] },
-					{ provide: LOCAL_STORAGE_KEY, useValue: '__app_storage__' },
-					{
-						deps: [
-							STORAGE_KEYS,
-							LOCAL_STORAGE_KEY,
-							LocalStorageService,
-						],
-						provide: USER_PROVIDED_META_REDUCERS,
-						useFactory: getMetaReducers,
-					},
-					{ provide: SwUpdate, useValue: MockSwUpdate },
-				],
-				schemas: [CUSTOM_ELEMENTS_SCHEMA],
-			}).compileComponents();
+				}),
+			],
+			providers: [
+				PushNotificationService,
+				TranslateService,
+				provideMockStore({ initialState }),
+				{
+					provide: Store,
+					useClass: MockStore,
+				},
+				{ provide: STORAGE_KEYS, useValue: ['dummy'] },
+				{ provide: LOCAL_STORAGE_KEY, useValue: '__app_storage__' },
+				{
+					deps: [
+						STORAGE_KEYS,
+						LOCAL_STORAGE_KEY,
+						LocalStorageService,
+					],
+					provide: USER_PROVIDED_META_REDUCERS,
+					useFactory: getMetaReducers,
+				},
+				{ provide: SwUpdate, useValue: MockSwUpdate },
+			],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA],
+		}).compileComponents();
 
-			store = TestBed.inject(Store) as MockStore<any>;
-			fixture = TestBed.createComponent(Component);
-			app = fixture.debugElement.componentInstance;
+		store = TestBed.inject(Store) as MockStore<unknown>;
+		fixture = TestBed.createComponent(Component);
+		app = fixture.debugElement.componentInstance;
 
-			jest.spyOn(store, 'dispatch');
-			fixture.detectChanges();
-		}),
-	);
+		jest.spyOn(store, 'dispatch');
+		fixture.detectChanges();
+	});
 
 	afterEach(() => {
 		fixture.destroy();
 	});
 
-	it(
-		`should have an Router Language subscription in mutableSubscriptions`,
-		waitForAsync(() => {
-			expect(app.mutableSubscriptions.length).toEqual(1);
-		}),
-	);
+	it(`should have an Router Language subscription in mutableSubscriptions`, () => {
+		expect(app.mutableSubscriptions.length).toEqual(1);
+	});
 });

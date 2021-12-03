@@ -1,3 +1,4 @@
+import { Action } from '@ngrx/store';
 import {
 	cloneState,
 	initialState as mockStore,
@@ -8,7 +9,7 @@ import { initialState, reducer } from './entities.reducer';
 
 describe('Reducers: Entities reducer', () => {
 	it('should return default state', () => {
-		const action = {} as any;
+		const action = {} as Action;
 		const state = reducer(initialState, action);
 		expect(state).toBe(initialState);
 	});

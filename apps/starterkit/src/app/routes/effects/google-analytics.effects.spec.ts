@@ -5,9 +5,12 @@ import { TestScheduler } from 'rxjs/testing';
 import { GoogleAnalyticsEffects } from './google-analytics.effects';
 
 describe('GoogleAnalyticsEffects', () => {
+	/* eslint-disable @typescript-eslint/no-explicit-any */
 	let mutablerouter: any;
 	let testScheduler: TestScheduler;
-	const ga = (window as any).ga;
+	/* eslint-disable @typescript-eslint/no-explicit-any */
+	const extendedWindow = window as any;
+	const ga = extendedWindow.ga;
 
 	beforeEach(() => {
 		testScheduler = new TestScheduler((actual, expected) => {
@@ -25,11 +28,11 @@ describe('GoogleAnalyticsEffects', () => {
 			},
 		};
 
-		(window as any).ga = jest.fn();
+		extendedWindow.ga = jest.fn();
 	});
 
 	afterAll(() => {
-		(window as any).ga = ga;
+		extendedWindow.ga = ga;
 	});
 
 	it('should not dispatch action', () => {
@@ -53,13 +56,13 @@ describe('GoogleAnalyticsEffects', () => {
 			const effect = new GoogleAnalyticsEffects('browser', mutablerouter);
 
 			effect.pageView$.subscribe(() => {
-				expect((window as any).ga).toHaveBeenCalled();
-				expect((window as any).ga).toHaveBeenCalledWith(
+				expect(extendedWindow.ga).toHaveBeenCalled();
+				expect(extendedWindow.ga).toHaveBeenCalledWith(
 					'set',
 					'page',
 					routerEvent.urlAfterRedirects,
 				);
-				expect((window as any).ga).toHaveBeenCalledWith(
+				expect(extendedWindow.ga).toHaveBeenCalledWith(
 					'send',
 					'pageview',
 				);
@@ -74,7 +77,7 @@ describe('GoogleAnalyticsEffects', () => {
 			const effect = new GoogleAnalyticsEffects('', mutablerouter);
 
 			effect.pageView$.subscribe(() => {
-				expect((window as any).ga).not.toHaveBeenCalled();
+				expect(extendedWindow.ga).not.toHaveBeenCalled();
 			});
 		});
 	});

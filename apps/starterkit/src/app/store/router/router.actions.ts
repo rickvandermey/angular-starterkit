@@ -11,7 +11,7 @@ export const go = createAction(
 			/**
 			 * path of the URL where to navigate
 			 */
-			path: any[];
+			path: string[];
 			/**
 			 * optional queries of the URL where to navigate
 			 */

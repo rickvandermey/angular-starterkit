@@ -27,7 +27,7 @@ export class RouterEffects {
 		/**
 		 * path of the URL where to navigate
 		 */
-		path: any[];
+		path: string[];
 		/**
 		 * optional queries of the URL where to navigate
 		 */
@@ -40,7 +40,7 @@ export class RouterEffects {
 		() =>
 			this.actions$.pipe(
 				ofType(routerActions.go),
-				map((action: any) => action.payload),
+				map((action) => action.payload),
 				tap(({ path, query: queryParams, extras }) => {
 					this.router.navigate(path, { queryParams, ...extras });
 				}),

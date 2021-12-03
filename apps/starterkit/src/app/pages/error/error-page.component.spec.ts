@@ -29,7 +29,7 @@ const errorRoutes: Routes = [
 
 describe('Pages: Error page', () => {
 	let fixture: ComponentFixture<Component>;
-	let app: any;
+	let app: Component;
 	let router: Router;
 	let location: Location;
 

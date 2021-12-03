@@ -12,7 +12,7 @@ export abstract class BaseComponent implements OnDestroy {
 	/**
 	 * Array of subscriptions handled by this component.
 	 */
-	protected mutableSubscriptions: Array<Subscription> = [];
+	mutableSubscriptions: Array<Subscription> = [];
 
 	/**
 	 * Add a subscription.

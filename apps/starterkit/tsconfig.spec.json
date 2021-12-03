@@ -12,6 +12,7 @@
 	],
 	"include": [
 		"**/*.spec.ts",
+		"**/*.test.ts",
 		"**/*.d.ts",
 		"src/app/globals.ts",
 		"src/app/routes/static.paths.ts"

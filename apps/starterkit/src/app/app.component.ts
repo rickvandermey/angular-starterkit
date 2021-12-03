@@ -52,6 +52,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 	 * @param  {TranslateService} translate - Subscription for the Angular TranslateService
 	 */
 	constructor(
+		/* eslint-disable @typescript-eslint/no-explicit-any */
 		@Optional() @Inject(STATE_CB) private readonly _stateCb: any,
 		@Inject(PLATFORM_ID) private readonly platformId: string,
 		private readonly store: Store,
@@ -75,7 +76,7 @@ export class AppComponent extends BaseComponent implements OnInit {
 	ngOnInit(): void {
 		/* istanbul ignore next */
 		if (this.swUpdate.isEnabled) {
-			this.swUpdate.available.subscribe(() => {
+			this.swUpdate.versionUpdates.subscribe(() => {
 				if (confirm('new Version is available')) {
 					window.location.reload();
 				}

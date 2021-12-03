@@ -15,7 +15,7 @@ import { HomePageComponent as Component } from './home-page.component';
 
 describe('Pages: Home page', () => {
 	let fixture: ComponentFixture<Component>;
-	let app: any;
+	let app: Component;
 
 	beforeEach(
 		waitForAsync(() => {
