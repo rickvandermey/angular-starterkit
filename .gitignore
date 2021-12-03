@@ -6,6 +6,7 @@
 /out-tsc
 /build
 /reports
+/test-reports
 
 # dependencies
 /node_modules
@@ -28,6 +29,7 @@
 !.vscode/extensions.json
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -39,11 +41,16 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-ci/rootCA.key
-ci/rootCA.pem
-ci/rootCA.srl
-ci/server.crt
-ci/server.csr
-ci/server.key
+
+# SSL
+/ssl/*.crt
+/ssl/*.key
+/tools/ssl-generator/**.key
+/tools/ssl-generator/**.pem
+/tools/ssl-generator/**.srl
+/tools/ssl-generator/**.crt
+/tools/ssl-generator/**.csr
+
 reports
+test-reports
 documentation

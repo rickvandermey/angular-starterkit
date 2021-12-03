@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## [7.0.0](https://github.com/rickvandermey/angular-starterkit/tree/7.0.0)
+
+## Breaking Changes
+
+-   **Lighthouse:** Remove lighthouse due to inconsistently
+-   **@NWRL/nx:** Functionality for monorepo: see [nx.dev](https://nx.dev)
+-   **@NWRL/nx:** Moved mockserver en e2e to _'apps'_ map
+-   **@NWRL/nx:** Moved all other scripts to _'tools'_ map
+
+### Bugfix
+
+-   **Stylelint:** Upgraded to v14, to match vscode extension
+-   **Packages:** Removed all unnecessary dependencies
+
+### Features
+
+-   **@NRWL/nx-cloud:** Using affected and cloud cache to get the fastest commands available
+-   **Angular:** Updated to Angular 13
+-   **Packages:** Updated all dependencies to the latest version of 2021-12-03
+
 ## [6.0.1](https://github.com/rickvandermey/angular-starterkit/tree/6.0.1)
 
 ### Bugfix

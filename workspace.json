@@ -1,0 +1,8 @@
+{
+	"version": 2,
+	"projects": {
+		"mockserver": "apps/mockserver",
+		"starterkit": "apps/starterkit",
+		"starterkit-e2e": "apps/starterkit-e2e"
+	}
+}
