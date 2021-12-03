@@ -30,8 +30,9 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 
 ##### Quickstart:
 
--   MAC: `npm run certificate:generate:mac && npm run start:clean`
--   Windows: remove ssl from `serve` inside _'angular.json'_ and `npm run start:clean`
+-   Install modules: `npm ci`
+-   MAC: `npm run certificate:generate:mac && nx run <project>:serve [options]`
+-   Windows: remove ssl from `serve` inside _'project.json'_ and `nx run <project>:serve [options]`
 
 ## Perfect score application 🤩
 
@@ -39,9 +40,10 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 
 ## Development server
 
-NRWL nx.dev monorepo, ![see all commands](https://nx.dev/l/a/cli/serve)
-`nx serve <project> [options]`
-`nx run <project>:serve [options]`
+NRWL nx.dev monorepo, [see all commands](https://nx.dev/l/a/cli/serve)
+
+-   `nx serve <project> [options]`
+-   `nx run <project>:serve [options]`
 
 Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called `build`. Run `npm run certificate:generate:mac` to create the required certificates and place them in the required folder.
 
@@ -53,7 +55,7 @@ When using nvm, the default node should be > 14. `nvm alias stable default`
 
 ## Build
 
-NRWL nx.dev monorepo, ![see all commands](https://nx.dev/l/a/cli/build)
+NRWL nx.dev monorepo, [see all commands](https://nx.dev/l/a/cli/build)
 
 -   `nx build <project> [options]` - normal production build
 -   `nx run <project>:build [options]` - production build with files already gzipped
@@ -108,9 +110,3 @@ As of version 2.1.0 the mockServer is running through Docker and runs with HTTPS
 
 Do a POST call to `https://localhost:4000/notification` to create a mocked push notification.
 Best can be tested after `nx run <project>:build [options]` and then serve the correct folder as `http-server`. The application will then be available at `https://localhost:8081`
-
-###### example sites:
-
--   IVY build - https://angular.rickvandermeij.nl
--   Prerendering - https://angular-prerender.rickvandermeij.nl
--   Server Side Rendering - `npm run start:ssr`
