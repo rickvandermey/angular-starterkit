@@ -18,7 +18,7 @@
 
 -   **@NRWL/nx-cloud:** Using affected and cloud cache to get the fastest commands available
 -   **Angular:** Updated to Angular 13
--   **Packages:** Updated all dependencies to the latest version of 2021-09-11
+-   **Packages:** Updated all dependencies to the latest version of 2021-12-03
 
 ## [6.0.1](https://github.com/rickvandermey/angular-starterkit/tree/6.0.1)
 
