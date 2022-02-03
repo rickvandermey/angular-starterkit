@@ -1,19 +1,9 @@
 {
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
-		"sourceMap": false,
-		"outDir": "../../dist/out-tsc",
-		"allowJs": true,
-		"types": ["cypress", "node"],
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true
+		"module": "commonjs",
+		"target": "es5",
+		"types": ["cucumber", "node"]
 	},
-	"include": ["src/**/*.ts", "src/**/*.js"],
-	"angularCompilerOptions": {
-		"strictInjectionParameters": true,
-		"strictInputAccessModifiers": true,
-		"strictTemplates": true
-	}
+	"include": ["./**/*.ts"]
 }

@@ -4,21 +4,13 @@
 	"projectType": "application",
 	"targets": {
 		"e2e": {
-			"executor": "@nrwl/cypress:cypress",
+			"executor": "@nrwl/workspace:run-commands",
 			"options": {
-				"cypressConfig": "apps/starterkit-e2e/cypress.json",
-				"tsConfig": "apps/starterkit-e2e/tsconfig.json",
-				"devServerTarget": "starterkit:serve:mock"
+				"command": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test 'nx serve starterkit --configuration=mock' 'https://localhost:4202/' 'APP=apps/starterkit-e2e npx cucumber-js --config cucumber.base.js'"
 			},
 			"configurations": {
-				"production": {
-					"devServerTarget": "starterkit:serve:mock",
-					"parallel": true
-				},
-				"watch-dev": {
-					"watch": true,
-					"exit": false,
-					"skipServe": true
+				"no-serve": {
+					"command": "APP=apps/starterkit-e2e npx cucumber-js --config cucumber.base.js"
 				}
 			}
 		},
@@ -39,6 +31,6 @@
 			"outputs": ["{options.outputFile}"]
 		}
 	},
-	"tags": [],
-	"implicitDependencies": ["starterkit", "mockserver"]
+	"tags": ["scope:starterkit"],
+	"implicitDependencies": ["starterkit", "mockserver", "test-helpers"]
 }

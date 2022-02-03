@@ -16,7 +16,12 @@
 		"noEmitOnError": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"paths": {},
+		"paths": {
+			"@mockserver/*": ["apps/mockserver/src/*"],
+			"@starterkit-e2e/*": ["apps/starterkit-e2e/src/*"],
+			"@starterkit/*": ["apps/starterkit/src/*"],
+			"@test-helpers/*": ["libs/test-helpers/src/*"]
+		},
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
 		"sourceMap": true,

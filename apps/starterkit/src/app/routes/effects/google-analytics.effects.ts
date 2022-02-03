@@ -29,9 +29,12 @@ export class GoogleAnalyticsEffects {
 			this.router.events.pipe(
 				filter((event) => event instanceof NavigationEnd),
 				tap((event: NavigationEnd) => {
-					if (isPlatformBrowser(this.platformId)) {
-						/* eslint-disable @typescript-eslint/no-explicit-any */
-						const extendedWindow = window as any;
+					/* eslint-disable @typescript-eslint/no-explicit-any */
+					const extendedWindow = window as any;
+					if (
+						isPlatformBrowser(this.platformId) &&
+						extendedWindow.ga
+					) {
 						extendedWindow.ga(
 							'set',
 							'page',

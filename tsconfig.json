@@ -1,0 +1,10 @@
+{
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"module": "commonjs",
+		"target": "es6",
+		"types": ["cucumber", "node"]
+	},
+	"include": ["./**/*.ts", "**/*.stories.*"]
+}

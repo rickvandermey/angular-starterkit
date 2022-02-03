@@ -3,6 +3,8 @@ node_js:
     - '14'
 sudo: required
 dist: xenial
+services:
+    - docker
 addons:
     apt:
         packages:
@@ -19,9 +21,11 @@ cache:
         - $HOME/ssl
 before_install:
     - export DISPLAY=:99.0
+    - docker run mcr.microsoft.com/playwright:v1.18.0-focal
 install:
     - npm install codecov -g
     - npm ci
+    - npx playwright install
     - export DISPLAY=':99.0'
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 script:
