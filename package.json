@@ -11,7 +11,7 @@
 		"affected:build": "nx affected:build --base=$npm_config_base",
 		"affected:build-ci": "nx affected --target=build-ci --base=$npm_config_base",
 		"affected:dep-graph": "nx affected:dep-graph --base=$npm_config_base",
-		"affected:e2e": "start-server-and-test 'nx serve mockserver' 'http://localhost:3999/mocking' 'nx affected:e2e --base=$npm_config_base",
+		"affected:e2e": "start-server-and-test 'nx serve mockserver' 'http://localhost:3999/mocking' 'nx affected:e2e --base=$npm_config_base'",
 		"affected:lint": "nx workspace-lint && nx affected --target=stylelint --base=$npm_config_base && nx affected:lint --base=$npm_config_base",
 		"affected:lint-ci": "nx workspace-lint && nx affected --target=stylelint-ci --base=$npm_config_base && nx affected --target=lint-ci --base=$npm_config_base",
 		"affected:test": "nx affected:test --watch=false --browsers Chromium --base=$npm_config_base",
