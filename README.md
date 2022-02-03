@@ -12,6 +12,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 ## Features
 
 -   ⭐️ Angular 13
+-   🎁 Monorepo with NX.dev
 -   😍 IVY by default
 -   ⭐️ NGRX store (implemented according ngrx.io)
 -   😴 Lazy Loading
@@ -22,7 +23,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   😍 PWA (Progressive Web App)
 -   😍 Service Worker detects new build versions
 -   🤓 Unit Test (Jest)
--   🕹️ E2E Test / Reports (Cypress / Cucumber)
+-   🕹️ E2E Test / Reports (Playwright / Cucumber)
 -   🚀 WPO: Stats for ES5 build and ES2015
 -   🎯 Git hooks (husky)
 -   🤩 Ability to Mock data (mockServer) (Docker)

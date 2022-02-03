@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## [8.0.0](https://github.com/rickvandermey/angular-starterkit/tree/8.0.0)
+
+## Breaking Changes
+
+-   **@NWRL/cypress:** Removed cypress and all dependencies
+-   **@playwright:** Introduced Playwright as new E2E Runner
+
+### Features
+
+-   **Packages:** Updated all dependencies to the latest version of 2022-02-03
+
 ## [7.0.0](https://github.com/rickvandermey/angular-starterkit/tree/7.0.0)
 
 ## Breaking Changes

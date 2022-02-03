@@ -6,7 +6,7 @@ Feature: Hello world Feature
 
 	Scenario Outline: Basic multilanguage test
 		Given User navigates to "<url>" on "08-11-1980"
-		And The title on the homepage should include "<title>"
+		Then The title on the homepage should include "<title>"
 		And The description on the homepage should include "<description>"
 		Examples:
 			| url  | title 		  | description 												    |
