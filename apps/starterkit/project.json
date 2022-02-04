@@ -5,7 +5,7 @@
 	"prefix": "app",
 	"targets": {
 		"build": {
-			"builder": "@angular-devkit/build-angular:browser",
+			"executor": "@angular-devkit/build-angular:browser",
 			"options": {
 				"allowedCommonJsDependencies": [
 					"@starterkit/store/meta/storage.metareducer"
@@ -83,7 +83,7 @@
 			}
 		},
 		"lint": {
-			"builder": "@nrwl/linter:eslint",
+			"executor": "@nrwl/linter:eslint",
 			"options": {
 				"lintFilePatterns": [
 					"apps/starterkit/src/**/*.ts",
@@ -105,7 +105,7 @@
 			"outputs": ["{options.outputFile}"]
 		},
 		"serve": {
-			"builder": "@angular-devkit/build-angular:dev-server",
+			"executor": "@angular-devkit/build-angular:dev-server",
 			"options": {
 				"browserTarget": "starterkit:build",
 				"port": 4202,
@@ -150,7 +150,7 @@
 			}
 		},
 		"server": {
-			"builder": "@angular-devkit/build-angular:server",
+			"executor": "@angular-devkit/build-angular:server",
 			"options": {
 				"outputPath": "dist/apps/starterkit-server",
 				"main": "tools/server/server.ts",

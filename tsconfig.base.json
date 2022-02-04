@@ -17,6 +17,7 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"paths": {
+			"@components/button": ["libs/components/button/src/index.ts"],
 			"@mockserver/*": ["apps/mockserver/src/*"],
 			"@starterkit-e2e/*": ["apps/starterkit-e2e/src/*"],
 			"@starterkit/*": ["apps/starterkit/src/*"],
