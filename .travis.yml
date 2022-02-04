@@ -35,7 +35,7 @@ script:
     - npm run affected:test-ci
     - npm run certificate:copy
     - npm run affected:e2e
-    - npx start-server-and-test 'nx run components-button:build-storybook && http-server dist/storybook/components-button -s -p 4400' 4400 'npx playwright test --config=playwright-ci.config.ts'
+    - npx start-server-and-test 'nx run components-button:build-storybook && npx http-server dist/storybook/components-button -s -p 4400' 4400 'npx playwright test --config=playwright-ci.config.ts'
     - npm run affected:build-ci
     - sonar-scanner
 after_success:
