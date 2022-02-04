@@ -1,8 +1,10 @@
 {
 	"version": 2,
 	"projects": {
+		"components-button": "libs/components/button",
 		"mockserver": "apps/mockserver",
 		"starterkit": "apps/starterkit",
-		"starterkit-e2e": "apps/starterkit-e2e"
+		"starterkit-e2e": "apps/starterkit-e2e",
+		"test-helpers": "libs/test-helpers"
 	}
 }

@@ -1,0 +1,26 @@
+{
+	"projectType": "library",
+	"root": "libs/test-helpers",
+	"sourceRoot": "libs/test-helpers/src",
+	"targets": {
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": ["libs/test-helpers/src/**/*.ts"]
+			}
+		},
+		"lint:ci": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"format": "checkstyle",
+				"lintFilePatterns": [
+					"libs/test-helpers/src/**/*.ts",
+					"libs/test-helpers/src/**/*.html"
+				],
+				"outputFile": "./test-reports/libs/test-helpers/eslint/checkstyle-result.xml"
+			},
+			"outputs": ["{options.outputFile}"]
+		}
+	},
+	"tags": ["type:ui"]
+}

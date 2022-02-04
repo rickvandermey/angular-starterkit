@@ -12,6 +12,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 ## Features
 
 -   ⭐️ Angular 13
+-   🎁 Monorepo with NX.dev
 -   😍 IVY by default
 -   ⭐️ NGRX store (implemented according ngrx.io)
 -   😴 Lazy Loading
@@ -22,8 +23,9 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   😍 PWA (Progressive Web App)
 -   😍 Service Worker detects new build versions
 -   🤓 Unit Test (Jest)
--   🕹️ E2E Test / Reports (Cypress / Cucumber)
--   🚀 WPO: Stats for ES5 build and ES2015
+-   🕹️ E2E Test / Reports (Playwright / Cucumber)
+-   🚀 Visual Testing (Storybook / Playwright)
+-   📖 Storybook
 -   🎯 Git hooks (husky)
 -   🤩 Ability to Mock data (mockServer) (Docker)
 -   🎰 WebPush integration (mockServer and PWA)
@@ -82,7 +84,7 @@ This project comes with built-in SSR functionality. The effect of SSR will be va
 
 -   `nx run <project>:lint [options]` - Linting application
 -   `nx run <project>:test [options]` - Unit test Watcher (only runs tests for changed files)
--   `nx run <project>:e2e [options]` - End to End test with Cypress and reports with Cucumber
+-   `nx run <project>:e2e [options]` - End to End test with Playwright and reports with Cucumber
 
 ### Running unit tests with Jest 🤓
 
@@ -91,15 +93,20 @@ Run `npm run affected:test` to execute a all unit tests for affected libs and ap
 
 Both scripts will provide a Code Coverage file, which can be found in _'./test-reports/<apps|libs>/\<project>/coverage'_
 
-### Running E2E tests with Cypress and Cucumber 🤓
+### Running E2E tests with Playwright and Cucumber 🤓
 
-Run `nx run <project>:e2e [options]` to execute the E2E Cypress tests. Tests can be found within \_./cypress all written in Cucumber style.
+Run `nx run <project>:e2e [options]` to execute the E2E Playwright tests.
 
-This test will provide an report which will be shown at the end of all tests. It can also be found in _./test-reports/<apps|libs>/\<project>/cypress_. When tests fails, there will be a screenshot attached to the scenario where the test has failed.
+This test will provide an report which will be shown at the end of all tests. It can also be found in _./test-reports/<apps|libs>/\<project-e2e>_. When tests fails, there will be a screenshot attached to the scenario where the test has failed.
 
-### Website Performance Optimization 🚀
+### Storybook 📖
 
--   `npm run wpo:stats` to get a clear view of all dependencies and their dependencies for your project.
+For each component you create, you can add a storybook build and serve to your project, and call these events for building and serving
+
+### Visual Regression
+
+Within each lib / component you can create a _'visual-regression'_ folder which contains a spec file, which you need to connect to your storybook component.
+From there, you can add various test and scenario's from storybook and create a snapshot.
 
 ## Mock data (MockServer) 🤩
 
