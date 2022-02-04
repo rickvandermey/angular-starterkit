@@ -43,6 +43,7 @@
 	"cli": {
 		"defaultCollection": "@nrwl/angular"
 	},
+	"defaultProject": "starterkit",
 	"generators": {
 		"@nrwl/angular": {
 			"application": {

@@ -17,7 +17,8 @@
 								"sourceTag": "scope:starterkit",
 								"onlyDependOnLibsWithTags": [
 									"scope:starterkit",
-									"type:util"
+									"type:util",
+									"type:ui"
 								]
 							}
 						]

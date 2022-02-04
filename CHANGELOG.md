@@ -9,6 +9,8 @@
 
 ### Features
 
+-   **Storybook:** Introduced storybook as our playground editor for components
+-   **Visual Testing:** Using playwright and storybook to create snapshots of our storybook components
 -   **Packages:** Updated all dependencies to the latest version of 2022-02-03
 
 ## [7.0.0](https://github.com/rickvandermey/angular-starterkit/tree/7.0.0)
