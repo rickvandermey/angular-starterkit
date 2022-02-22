@@ -1,0 +1,11 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"target": "es5",
+		"types": ["jest", "node"]
+	},
+	"files": ["src/test-setup.ts"],
+	"include": ["../**/*.spec.ts"]
+}

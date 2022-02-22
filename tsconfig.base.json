@@ -21,6 +21,7 @@
 			"@mockserver/*": ["apps/mockserver/src/*"],
 			"@starterkit-e2e/*": ["apps/starterkit-e2e/src/*"],
 			"@starterkit/*": ["apps/starterkit/src/*"],
+			"@storybook-bundle": ["libs/storybook-bundle/src/index.ts"],
 			"@test-helpers/*": ["libs/test-helpers/src/*"]
 		},
 		"skipLibCheck": true,

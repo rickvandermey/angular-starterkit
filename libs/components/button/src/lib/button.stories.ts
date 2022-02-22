@@ -45,7 +45,7 @@ const buttonStory: Story = (args, { globals: { locale } }) => {
 	languageService.use(locale);
 	return {
 		props: args,
-		template: `<ui-button>test</ui-button>`,
+		template: `<ui-button>Click this button</ui-button>`,
 	};
 };
 
