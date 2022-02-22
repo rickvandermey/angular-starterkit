@@ -1,0 +1,105 @@
+{
+	"projectType": "library",
+	"root": "<%= path %>",
+	"sourceRoot": "<%= path %>/src",
+	"prefix": "ui",
+	"targets": {
+		"build-storybook": {
+			"executor": "@nrwl/storybook:build",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"projectBuildConfig": "<%= libName %>:build-storybook",
+				"uiFramework": "@storybook/angular",
+				"styles": ["libs/core/src/lib/scss/index.scss"],
+				"outputPath": "dist/storybook/<%= libName %>",
+				"config": {
+					"configFolder": "<%= path %>/.storybook"
+				},
+				"assets": [
+					{
+						"glob": "**/*",
+						"input": "libs/assets/",
+						"output": "/assets/"
+					}
+				]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": [
+					"<%= path %>/src/**/*.ts",
+					"<%= path %>/src/**/*.html"
+				]
+			}
+		},
+		"lint:ci": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"format": "checkstyle",
+				"lintFilePatterns": [
+					"<%= path %>/src/**/*.ts",
+					"<%= path %>/src/**/*.html"
+				],
+				"outputFile": "./test-reports/<%= path %>/eslint/checkstyle-result.xml"
+			},
+			"outputs": ["{options.outputFile}"]
+		},
+		"serve": {
+			"executor": "@nrwl/storybook:storybook",
+			"options": {
+				"projectBuildConfig": "<%= libName %>:build-storybook",
+				"uiFramework": "@storybook/angular",
+				"port": 4400,
+				"config": {
+					"configFolder": "<%= path %>/.storybook"
+				}
+			}
+		},
+		"stylelint": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "npx stylelint \"<%= path %>/src/**/*.scss\" --config .stylelintrc.json --fix"
+			}
+		},
+		"stylelint:ci": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"commands": [
+					"mkdir -p ./test-reports/<%= path %>/stylelint/",
+					"npx stylelint \"l<%= path %>/src/**/*.scss\" --config .stylelintrc.json --output-file=./test-reports/<%= path %>/stylelint/checkstyle-result.xml"
+				]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/<%= path %>"],
+			"options": {
+				"jestConfig": "<%= path %>/jest.config.js",
+				"passWithNoTests": true
+			}
+		},
+		"test-vr": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "start-server-and-test 'nx run storybook-bundle:build && http-server dist/storybook/storybook-bundle -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.17.0-focal npx playwright test <%= path %>/src/lib/visual-regression/*.vr-spec.ts --config=playwright.config.ts'"
+			}
+		},
+		"test-vr-update": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "start-server-and-test 'nx run storybook-bundle:build && http-server dist/storybook/storybook-bundle -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.17.0-focal npx playwright test <%= path %>/src/lib/visual-regression/*.vr-spec.ts --config=playwright.config.ts --update-snapshots'"
+			}
+		},
+		"test-vr-ci": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"commands": [
+					"npx playwright test <%= path %>/src/lib/visual-regression/*.vr-spec.ts --config=playwright-ci.config.ts --workers 2"
+				]
+			}
+		}
+	},
+	"tags": ["type:ui"],
+	"implicitDependencies": ["core"]
+}
