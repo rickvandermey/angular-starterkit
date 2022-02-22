@@ -20,6 +20,13 @@
 									"type:util",
 									"type:ui"
 								]
+							},
+							{
+								"sourceTag": "type:ui",
+								"onlyDependOnLibsWithTags": [
+									"type:ui",
+									"type:util"
+								]
 							}
 						]
 					}
