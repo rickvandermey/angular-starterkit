@@ -1,13 +1,18 @@
-import { addParameters } from '@storybook/angular';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 
-// Configure addons for all stories
-addParameters({
+export const parameters = {
 	docs: {
 		container: DocsContainer,
 		page: DocsPage,
 	},
-});
+	options: {
+		storySort: {
+			locales: '',
+			method: 'alphabetical',
+			order: [],
+		},
+	},
+};
 
 export const globalTypes = {
 	locale: {

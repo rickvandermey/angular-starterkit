@@ -5,6 +5,7 @@
 		"mockserver": "apps/mockserver",
 		"starterkit": "apps/starterkit",
 		"starterkit-e2e": "apps/starterkit-e2e",
+		"storybook-bundle": "libs/storybook-bundle",
 		"test-helpers": "libs/test-helpers"
 	}
 }

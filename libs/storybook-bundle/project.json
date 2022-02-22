@@ -1,0 +1,75 @@
+{
+	"projectType": "library",
+	"root": "libs/storybook-bundle",
+	"sourceRoot": "libs/storybook-bundle/src",
+	"prefix": "story",
+	"targets": {
+		"build-storybook": {
+			"executor": "@nrwl/storybook:build",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"projectBuildConfig": "storybook-bundle:build",
+				"uiFramework": "@storybook/angular",
+				"styles": [],
+				"assets": [
+					{
+						"glob": "**/*",
+						"input": "libs/assets/",
+						"output": "/assets/"
+					}
+				],
+				"parallel": false,
+				"outputPath": "dist/storybook/storybook-bundle",
+				"config": {
+					"configFolder": "libs/storybook-bundle/.storybook"
+				}
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": [
+					"libs/storybook-bundle/src/**/*.ts",
+					"libs/storybook-bundle/src/**/*.html"
+				]
+			}
+		},
+		"lint:ci": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"format": "checkstyle",
+				"lintFilePatterns": [
+					"libs/storybook-bundle/src/**/*.ts",
+					"libs/storybook-bundle/src/**/*.html"
+				],
+				"outputFile": "./test-reports/libs/storybook-bundle/eslint/checkstyle-result.xml"
+			},
+			"outputs": ["{options.outputFile}"]
+		},
+		"serve": {
+			"executor": "@nrwl/storybook:storybook",
+			"options": {
+				"projectBuildConfig": "storybook-bundle:build",
+				"uiFramework": "@storybook/angular",
+				"port": 4400,
+				"config": {
+					"configFolder": "libs/storybook-bundle/.storybook"
+				}
+			}
+		},
+		"test-vr": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "start-server-and-test 'nx run storybook-bundle:build-storybook  && http-server dist/storybook/storybook-bundle -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.19.1-focal npx playwright test libs/storybook-bundle/src/lib/**/*.vr-spec.ts --config=playwright.config.ts'"
+			}
+		},
+		"test-vr-update": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "start-server-and-test 'nx run storybook-bundle:build-storybook  && http-server dist/storybook/storybook-bundle -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.19.1-focal npx playwright test libs/storybook-bundle/src/lib/**/*.vr-spec.ts --config=playwright.config.ts --update-snapshots'"
+			}
+		}
+	},
+	"tags": ["scope:storybook", "type:ui"],
+	"implicitDependencies": []
+}

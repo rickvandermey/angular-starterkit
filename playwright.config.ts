@@ -28,5 +28,7 @@ const baseConfig: PlaywrightTestConfig = {
 	outputDir: 'test-reports/visual-regression',
 	workers: 3,
 	testMatch: /.*vr-spec.ts/,
+	testIgnore:
+		'tools/generators/lib-generator/test-vr/visual-regression/__componentFileName__.vr-spec.ts',
 };
 export default baseConfig;

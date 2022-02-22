@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [8.1.0](https://github.com/rickvandermey/angular-starterkit/tree/8.1.0)
+
+### Features
+
+-   **Storybook:** Introduced storybook bundle as a lib which collects all stories and bundles them in a single build
+-   **Storybook:** Using locales with NGX translate to create translations inside storybook
+-   **@NRWL generator:** Introduces a generator for libs which provides all meta data when creating a new lib (lib-generator)
+-   **Packages:** Updated all dependencies to the latest version of 2022-02-22
+
 ## [8.0.0](https://github.com/rickvandermey/angular-starterkit/tree/8.0.0)
 
 ## Breaking Changes

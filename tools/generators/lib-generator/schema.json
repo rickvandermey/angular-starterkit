@@ -1,0 +1,62 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"cli": "nx",
+	"$id": "lib-generator",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string",
+			"description": "Library name includes path, so for example components/ui-input",
+			"$default": {
+				"$source": "argv",
+				"index": 0
+			}
+		},
+
+		"storybook": {
+			"type": "boolean",
+			"description": "Use storybook",
+			"$default": {
+				"$source": "argv",
+				"index": 0
+			}
+		},
+
+		"figma": {
+			"type": "string",
+			"description": "Figma URL",
+			"$default": {
+				"$source": "argv",
+				"index": 0
+			}
+		},
+
+		"storyTitle": {
+			"type": "string",
+			"description": "Story title (will be displayed in menu)",
+			"$default": {
+				"$source": "argv",
+				"index": 0
+			}
+		},
+
+		"generateComponent": {
+			"type": "boolean",
+			"description": "Generate a new angular component",
+			"$default": {
+				"$source": "argv",
+				"index": 0
+			}
+		},
+
+		"componentName": {
+			"type": "string",
+			"description": "Which name should the generated component have",
+			"$default": {
+				"$source": "argv",
+				"index": 0
+			}
+		}
+	},
+	"required": ["name"]
+}

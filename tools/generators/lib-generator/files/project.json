@@ -1,0 +1,54 @@
+{
+	"projectType": "library",
+	"root": "<%= path %>",
+	"sourceRoot": "<%= path %>/src",
+	"prefix": "ui",
+	"targets": {
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": [
+					"<%= path %>/src/**/*.ts",
+					"<%= path %>/src/**/*.html"
+				]
+			}
+		},
+		"lint:ci": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"format": "checkstyle",
+				"lintFilePatterns": [
+					"<%= path %>/src/**/*.ts",
+					"<%= path %>/src/**/*.html"
+				],
+				"outputFile": "./test-reports/<%= path %>/eslint/checkstyle-result.xml"
+			},
+			"outputs": ["{options.outputFile}"]
+		},
+		"stylelint": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "npx stylelint \"<%= path %>/src/**/*.scss\" --config .stylelintrc.json --fix"
+			}
+		},
+		"stylelint:ci": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"commands": [
+					"mkdir -p ./test-reports/<%= path %>/stylelint/",
+					"npx stylelint \"l<%= path %>/src/**/*.scss\" --config .stylelintrc.json --output-file=./test-reports/<%= path %>/stylelint/checkstyle-result.xml"
+				]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/<%= path %>"],
+			"options": {
+				"jestConfig": "<%= path %>/jest.config.js",
+				"passWithNoTests": true
+			}
+		}
+	},
+	"tags": ["type:ui"],
+	"implicitDependencies": ["core"]
+}
