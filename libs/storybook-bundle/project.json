@@ -10,7 +10,7 @@
 			"options": {
 				"projectBuildConfig": "storybook-bundle:build",
 				"uiFramework": "@storybook/angular",
-				"styles": [],
+				"styles": ["libs/storybook-bundle/src/lib/scss/index.scss"],
 				"assets": [
 					{
 						"glob": "**/*",

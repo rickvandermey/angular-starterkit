@@ -15,6 +15,7 @@
 				"config": {
 					"configFolder": "libs/components/button/.storybook"
 				},
+				"styles": ["libs/storybook-bundle/src/lib/scss/index.scss"],
 				"assets": [
 					{
 						"glob": "**/*",

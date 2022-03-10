@@ -6,7 +6,6 @@ import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core';
 @Component({
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	selector: `ui-button`,
-	styleUrls: ['./button.scss'],
 	templateUrl: './button.html',
 })
 export class ButtonComponent {
