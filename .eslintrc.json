@@ -1,7 +1,7 @@
 {
 	"root": true,
 	"ignorePatterns": ["**/*"],
-	"plugins": ["@nrwl/nx", "@angular-eslint"],
+	"plugins": ["@nrwl/nx", "@angular-eslint", "tailwindcss"],
 	"overrides": [
 		{
 			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],

@@ -30,17 +30,20 @@ module.exports = {
 		}
 
 		config.module.rules.push({
-			include: path.resolve(__dirname, '../'),
 			test: /\.css$/,
 			use: [
 				{
 					loader: 'postcss-loader',
 					options: {
 						ident: 'postcss',
-						plugins: [require('autoprefixer')],
+						plugins: [
+							require('tailwindcss'),
+							require('autoprefixer'),
+						],
 					},
 				},
 			],
+			include: path.resolve(__dirname, '../'),
 		});
 
 		// add your own webpack tweaks if needed
