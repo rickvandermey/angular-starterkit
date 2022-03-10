@@ -6,8 +6,9 @@
 
 -   **Storybook:** Introduced storybook bundle as a lib which collects all stories and bundles them in a single build
 -   **Storybook:** Using locales with NGX translate to create translations inside storybook
+-   **Tailwind:** Introduced tailwind with all of its features for apps and components (including JIT)
 -   **@NRWL generator:** Introduces a generator for libs which provides all meta data when creating a new lib (lib-generator)
--   **Packages:** Updated all dependencies to the latest version of 2022-02-22
+-   **Packages:** Updated all dependencies to the latest version of 2022-03-10
 
 ## [8.0.0](https://github.com/rickvandermey/angular-starterkit/tree/8.0.0)
 

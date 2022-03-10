@@ -49,7 +49,7 @@
 		"serve": {
 			"executor": "@nrwl/storybook:storybook",
 			"options": {
-				"projectBuildConfig": "storybook-bundle:build",
+				"projectBuildConfig": "storybook-bundle:build-storybook",
 				"uiFramework": "@storybook/angular",
 				"port": 4400,
 				"config": {

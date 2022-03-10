@@ -26,6 +26,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   🕹️ E2E Test / Reports (Playwright / Cucumber)
 -   🚀 Visual Testing (Storybook / Playwright)
 -   📖 Storybook
+-   🖌️ Tailwind
 -   🎯 Git hooks (husky)
 -   🤩 Ability to Mock data (mockServer) (Docker)
 -   🎰 WebPush integration (mockServer and PWA)
