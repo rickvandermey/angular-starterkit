@@ -6,6 +6,10 @@ import {
 	Story,
 } from '@storybook/angular';
 
+import {
+	languageService,
+	TranslateStorybookHelperModule,
+} from '@test-helpers/lib/storybook/translate-storybook-helper.module';
 import { ButtonModule } from './button.module';
 
 /* eslint-enable max-len */
@@ -13,7 +17,11 @@ export default {
 	argTypes: {},
 	decorators: [
 		moduleMetadata({
-			imports: [CommonModule, ButtonModule],
+			imports: [
+				CommonModule,
+				ButtonModule,
+				TranslateStorybookHelperModule,
+			],
 		}),
 		componentWrapperDecorator((story) => `<div>${story}</div>`),
 	],
@@ -33,7 +41,8 @@ export default {
 /**
  * This is the button Story
  */
-const buttonStory: Story = ({ ...args }) => {
+const buttonStory: Story = (args, { globals: { locale } }) => {
+	languageService.use(locale);
 	return {
 		props: args,
 		template: `<ui-button>Click this button</ui-button>`,

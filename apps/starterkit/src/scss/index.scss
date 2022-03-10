@@ -1,4 +1,4 @@
-body {
-	background-color: snow;
-	color: darkslategray;
-}
+/* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

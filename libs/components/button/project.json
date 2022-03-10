@@ -15,6 +15,7 @@
 				"config": {
 					"configFolder": "libs/components/button/.storybook"
 				},
+				"styles": ["libs/storybook-bundle/src/lib/scss/index.scss"],
 				"assets": [
 					{
 						"glob": "**/*",
@@ -33,7 +34,6 @@
 				]
 			}
 		},
-
 		"serve": {
 			"executor": "@nrwl/storybook:storybook",
 			"options": {
@@ -46,7 +46,6 @@
 				}
 			}
 		},
-
 		"test": {
 			"executor": "@nrwl/jest:jest",
 			"outputs": ["coverage/libs/components/button"],
@@ -58,15 +57,15 @@
 		"test-vr": {
 			"executor": "@nrwl/workspace:run-commands",
 			"options": {
-				"command": "start-server-and-test 'nx run components-button:build-storybook  && http-server dist/storybook/components-button -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.18.0-focal npx playwright test libs/components/button/src/lib/visual-regression/*.vr-spec.ts --config=playwright.config.ts'"
+				"command": "start-server-and-test 'nx run components-button:build-storybook  && http-server dist/storybook/components-button -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.19.2-focal npx playwright test libs/components/button/src/lib/visual-regression/*.vr-spec.ts --config=playwright.config.ts'"
 			}
 		},
 		"test-vr-update": {
 			"executor": "@nrwl/workspace:run-commands",
 			"options": {
-				"command": "start-server-and-test 'nx run components-button:build-storybook  && http-server dist/storybook/components-button -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.18.0-focal npx playwright test libs/components/button/src/lib/visual-regression/*.vr-spec.ts --config=playwright.config.ts --update-snapshots'"
+				"command": "start-server-and-test 'nx run components-button:build-storybook  && http-server dist/storybook/components-button -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.19.2-focal npx playwright test libs/components/button/src/lib/visual-regression/*.vr-spec.ts --config=playwright.config.ts --update-snapshots'"
 			}
 		}
 	},
-	"tags": []
+	"tags": ["type:ui"]
 }

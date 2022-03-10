@@ -12,3 +12,7 @@ node_modules/**
 **/node_modules/**
 dist/**
 ssl/**
+
+# Generators
+tools/generators/lib-generator/stories/__componentFileName__.stories.ts
+tools/generators/lib-generator/test-vr/visual-regression/__componentFileName__.vr-spec.ts
