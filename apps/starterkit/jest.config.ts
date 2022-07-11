@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
 	collectCoverage: true,
 	coverageDirectory: '../../test-reports/apps/starterkit/coverage',
 	coverageReporters: ['html', 'lcov', 'json', 'text-summary'],

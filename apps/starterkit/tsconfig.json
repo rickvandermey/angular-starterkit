@@ -42,6 +42,7 @@
 			"@starterkit/ssr/*": ["apps/starterkit/src/app/ssr/*"],
 			"@starterkit/testing/*": ["apps/starterkit/src/app/testing/*"],
 			"@starterkit/store/*": ["apps/starterkit/src/app/store/*"]
-		}
+		},
+		"target": "es2020"
 	}
 }

@@ -5,6 +5,7 @@ module.exports = {
 
 	addons: [...rootMain.addons],
 	core: { ...rootMain.core, builder: 'webpack5' },
+	staticDirs: [{ from: '../../../assets', to: '/assets' }],
 	stories: [
 		...rootMain.stories,
 		'../src/lib/**/*.stories.mdx',

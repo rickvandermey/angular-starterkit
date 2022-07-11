@@ -74,7 +74,7 @@ const appRoutes: Routes = [
 	imports: [
 		RouterModule.forRoot(appRoutes, {
 			enableTracing: false,
-			initialNavigation: 'enabled',
+			initialNavigation: 'enabledBlocking',
 			onSameUrlNavigation: 'reload',
 		}),
 		StoreRouterConnectingModule.forRoot({

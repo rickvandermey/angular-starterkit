@@ -1,28 +1,18 @@
 {
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
 	"projectType": "library",
-	"root": "libs/components/button",
 	"sourceRoot": "libs/components/button/src",
 	"prefix": "ui",
 	"targets": {
 		"build-storybook": {
-			"executor": "@nrwl/storybook:build",
+			"executor": "@storybook/angular:build-storybook",
 			"outputs": ["{options.outputPath}"],
 			"options": {
-				"projectBuildConfig": "components-button:build-storybook",
-				"uiFramework": "@storybook/angular",
-				"staticDir": ["libs/assets"],
-				"outputPath": "dist/storybook/components-button",
-				"config": {
-					"configFolder": "libs/components/button/.storybook"
-				},
-				"styles": ["libs/storybook-bundle/src/lib/scss/index.scss"],
-				"assets": [
-					{
-						"glob": "**/*",
-						"input": "libs/assets/",
-						"output": "/assets/"
-					}
-				]
+				"styles": [],
+				"outputDir": "dist/storybook/formly",
+				"configDir": "libs/formly/.storybook",
+				"browserTarget": "formly:build-storybook",
+				"compodoc": false
 			}
 		},
 		"lint": {
@@ -35,22 +25,19 @@
 			}
 		},
 		"serve": {
-			"executor": "@nrwl/storybook:storybook",
+			"executor": "@storybook/angular:start-storybook",
 			"options": {
-				"projectBuildConfig": "components-button:build-storybook",
-				"uiFramework": "@storybook/angular",
-				"staticDir": ["libs/assets"],
 				"port": 4400,
-				"config": {
-					"configFolder": "libs/components/button/.storybook"
-				}
+				"configDir": "libs/formly/.storybook",
+				"browserTarget": "formly:build-storybook",
+				"compodoc": false
 			}
 		},
 		"test": {
 			"executor": "@nrwl/jest:jest",
 			"outputs": ["coverage/libs/components/button"],
 			"options": {
-				"jestConfig": "libs/components/button/jest.config.js",
+				"jestConfig": "libs/components/button/jest.config.ts",
 				"passWithNoTests": true
 			}
 		},

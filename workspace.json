@@ -7,5 +7,6 @@
 		"starterkit-e2e": "apps/starterkit-e2e",
 		"storybook-bundle": "libs/storybook-bundle",
 		"test-helpers": "libs/test-helpers"
-	}
+	},
+	"$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

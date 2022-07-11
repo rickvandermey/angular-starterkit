@@ -15,6 +15,7 @@
 		"**/*.test.ts",
 		"**/*.d.ts",
 		"src/app/globals.ts",
-		"src/app/routes/static.paths.ts"
+		"src/app/routes/static.paths.ts",
+		"jest.config.ts"
 	]
 }

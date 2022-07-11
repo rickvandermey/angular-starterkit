@@ -16,6 +16,7 @@ module.exports = {
 		},
 	],
 	core: { ...rootMain.core, builder: 'webpack5' },
+	staticDirs: [{ from: '../../assets', to: '/assets' }],
 	stories: [
 		...rootMain.stories,
 		'../../../apps/**/*.stories.mdx',
@@ -30,6 +31,7 @@ module.exports = {
 		}
 
 		config.module.rules.push({
+			include: path.resolve(__dirname, '../'),
 			test: /\.css$/,
 			use: [
 				{
@@ -43,7 +45,6 @@ module.exports = {
 					},
 				},
 			],
-			include: path.resolve(__dirname, '../'),
 		});
 
 		// add your own webpack tweaks if needed

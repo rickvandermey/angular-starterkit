@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## [9.0.0](https://github.com/rickvandermey/angular-starterkit/tree/9.0.0)
+
+### Breaking Change
+
+-   **Node.js**: nvm use 16 instead of 14
+-   **Angular:** Updated to Angular 14
+-   **Storybook:** Updated to Storybook 6.5
+-   **Storybook:** After updating storybook from 6.4.x to 6.5.x make sure your assets folder gets initiated from the `main.js` per application.
+-   example to add to your main.js `staticDirs: [{ from: '../../assets', to: '/assets' }]`
+-   remove:
+    ```
+    "assets": [
+        {
+            "glob": "**/*",
+            "input": "libs/assets/",
+            "output": "/assets/"
+        }
+    ]
+    ```
+
+### Features
+
+-   **Packages:** Updated all dependencies to the latest version of 2022-03-10
+
 ## [8.1.0](https://github.com/rickvandermey/angular-starterkit/tree/8.1.0)
 
 ### Features
