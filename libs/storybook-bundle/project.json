@@ -1,28 +1,24 @@
 {
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"projectType": "library",
-	"root": "libs/storybook-bundle",
 	"sourceRoot": "libs/storybook-bundle/src",
 	"prefix": "story",
 	"targets": {
-		"build-storybook": {
-			"executor": "@nrwl/storybook:build",
+		"build": {
+			"executor": "@storybook/angular:build-storybook",
 			"outputs": ["{options.outputPath}"],
 			"options": {
-				"projectBuildConfig": "storybook-bundle:build",
-				"uiFramework": "@storybook/angular",
-				"styles": ["libs/storybook-bundle/src/lib/scss/index.scss"],
-				"assets": [
-					{
-						"glob": "**/*",
-						"input": "libs/assets/",
-						"output": "/assets/"
-					}
-				],
-				"parallel": false,
-				"outputPath": "dist/storybook/storybook-bundle",
-				"config": {
-					"configFolder": "libs/storybook-bundle/.storybook"
-				}
+				"styles": [],
+				"outputDir": "dist/storybook/storybook-bundle",
+				"configDir": "libs/storybook-bundle/.storybook",
+				"browserTarget": "storybook-bundle:build",
+				"compodoc": false
+			}
+		},
+		"build-storybook": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "nx run storybook-bundle:build"
 			}
 		},
 		"lint": {
@@ -47,14 +43,12 @@
 			"outputs": ["{options.outputFile}"]
 		},
 		"serve": {
-			"executor": "@nrwl/storybook:storybook",
+			"executor": "@storybook/angular:start-storybook",
 			"options": {
-				"projectBuildConfig": "storybook-bundle:build-storybook",
-				"uiFramework": "@storybook/angular",
 				"port": 4400,
-				"config": {
-					"configFolder": "libs/storybook-bundle/.storybook"
-				}
+				"configDir": "libs/storybook-bundle/.storybook",
+				"browserTarget": "storybook-bundle:build",
+				"compodoc": false
 			}
 		},
 		"test-vr": {

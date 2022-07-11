@@ -1,5 +1,7 @@
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 
+import * as globalPreview from '../../../.storybook/preview';
+
 export const parameters = {
 	docs: {
 		container: DocsContainer,
@@ -14,19 +16,4 @@ export const parameters = {
 	},
 };
 
-export const globalTypes = {
-	locale: {
-		defaultValue: 'en',
-		description: 'Internationalization locale',
-		name: 'Locale',
-		toolbar: {
-			icon: 'globe',
-			items: [
-				{ right: '🇳🇱', title: 'Nederlands', value: 'nl' },
-				{ right: '🇺🇸', title: 'English', value: 'en' },
-				{ right: '🇫🇷', title: 'Français', value: 'fr' },
-				{ right: '🇩🇪', title: 'Deutsch', value: 'de' },
-			],
-		},
-	},
-};
+export const globalTypes = globalPreview.globalTypes;

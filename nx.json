@@ -16,31 +16,8 @@
 			}
 		}
 	},
-	"targetDependencies": {
-		"build": [
-			{
-				"target": "build",
-				"projects": "dependencies"
-			}
-		],
-		"prepare": [
-			{
-				"target": "prepare",
-				"projects": "dependencies"
-			}
-		],
-		"package": [
-			{
-				"target": "package",
-				"projects": "dependencies"
-			}
-		]
-	},
 	"affected": {
 		"defaultBase": "origin/master"
-	},
-	"cli": {
-		"defaultCollection": "@nrwl/angular"
 	},
 	"defaultProject": "starterkit",
 	"generators": {
@@ -56,6 +33,18 @@
 		},
 		"@nrwl/angular:component": {
 			"style": "scss"
+		}
+	},
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"targetDefaults": {
+		"build": {
+			"dependsOn": ["^build"]
+		},
+		"prepare": {
+			"dependsOn": ["^prepare"]
+		},
+		"package": {
+			"dependsOn": ["^package"]
 		}
 	}
 }

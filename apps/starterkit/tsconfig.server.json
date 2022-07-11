@@ -8,5 +8,6 @@
 	"angularCompilerOptions": {
 		"entryModule": "src/app/app.server.module#AppServerModule"
 	},
-	"files": ["src/main.server.ts", "../../tools/server/server.ts"]
+	"files": ["src/main.server.ts", "../../tools/server/server.ts"],
+	"exclude": ["jest.config.ts"]
 }
