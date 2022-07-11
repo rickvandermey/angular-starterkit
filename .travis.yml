@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-    - '14'
+    - '16'
 sudo: required
 dist: xenial
 services:
@@ -21,7 +21,7 @@ cache:
         - $HOME/ssl
 before_install:
     - export DISPLAY=:99.0
-    - docker run mcr.microsoft.com/playwright:v1.19.2-focal
+    - docker run mcr.microsoft.com/playwright:v1.20.1-focal
 install:
     - npm install codecov -g
     - npm ci

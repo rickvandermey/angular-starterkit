@@ -1,5 +1,5 @@
 {
-	"root": "apps/mockserver",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"sourceRoot": "apps/mockserver",
 	"projectType": "application",
 	"prefix": "mock",
