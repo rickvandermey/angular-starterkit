@@ -123,7 +123,7 @@
 		"jest-preset-angular": "11.1.2",
 		"lockfile-lint": "^4.7.6",
 		"ncp": "2.0.0",
-		"node-fetch": "2.6.6",
+		"node-fetch": "2.6.7",
 		"nx": "14.4.2",
 		"onchange": "7.1.0",
 		"opn": "6.0.0",
