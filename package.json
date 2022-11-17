@@ -57,7 +57,7 @@
 		"@nguniversal/express-engine": "14.0.3",
 		"@ngx-translate/core": "14.0.0",
 		"@ngx-translate/http-loader": "7.0.0",
-		"@nrwl/angular": "14.4.2",
+		"@nrwl/angular": "14.8.6",
 		"@storybook/core-server": "6.5.9",
 		"core-js": "3.23.4",
 		"lodash.merge": "4.6.2",
@@ -69,7 +69,7 @@
 		"zone.js": "0.11.5"
 	},
 	"devDependencies": {
-		"@angular-devkit/build-angular": "14.0.5",
+		"@angular-devkit/build-angular": "15.0.0",
 		"@angular-devkit/schematics": "14.0.5",
 		"@angular-eslint/eslint-plugin": "14.0.2",
 		"@angular-eslint/eslint-plugin-template": "14.0.2",
