@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 
+import { EntityInterface } from '@starterkit/app/store/entities/entities.interface';
 import { environment } from '@starterkit/environments/environment';
-import { EntityInterface } from '@starterkit/store/entities/entities.interface';
 
 /**
  * EntitiesService provides a service to use CRUD actions

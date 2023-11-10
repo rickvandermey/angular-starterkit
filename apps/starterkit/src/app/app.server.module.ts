@@ -1,15 +1,13 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import {
-	ServerModule,
-	ServerTransferStateModule,
-} from '@angular/platform-server';
+import { ServerModule } from '@angular/platform-server';
+
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-import { AppComponent } from './app.component';
-import { AppModule } from './app.module';
 import { UniversalInterceptor } from './ssr/http.interceptor';
 import { TranslateUniversalLoader } from './ssr/translate.loader';
+import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 /**
  * Custom TranslateUniversalService Loader to load the given language
@@ -30,7 +28,6 @@ export function TranslateUniversalService(): TranslateUniversalLoader {
 	imports: [
 		AppModule,
 		ServerModule,
-		ServerTransferStateModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,

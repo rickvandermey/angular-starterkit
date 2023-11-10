@@ -1,12 +1,12 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
-		"outDir": "../out-tsc/app",
+		"module": "esnext",
+		"outDir": "../../dist/out-tsc",
+		"useDefineForClassFields": false,
 		"types": ["node"]
 	},
-	"angularCompilerOptions": {
-		"enableIvy": true
-	},
 	"files": ["src/main.ts", "src/polyfills.ts"],
-	"exclude": ["test.ts", "**/*.spec.ts", "**/*.test.ts", "jest.config.ts"]
+	"include": ["src/**/*.d.ts"],
+	"exclude": ["jest.config.ts", "**/*.test.ts", "**/*.spec.ts"]
 }

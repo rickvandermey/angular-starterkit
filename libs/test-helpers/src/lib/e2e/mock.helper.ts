@@ -1,13 +1,9 @@
-import { BaseClient, Configuration } from '@ng-apimock/base-client';
+import { BaseClient } from '@ng-apimock/base-client';
 
-import { ConversionHelper } from './conversion.helper';
 import { BrowserHelper } from './browser.helper';
+import { ConversionHelper } from './conversion.helper';
 
 export class MockClient extends BaseClient {
-	constructor(configuration: Configuration) {
-		super(configuration);
-	}
-
 	async openUrl(url: string): Promise<void> {
 		await BrowserHelper.navigate(url);
 	}
@@ -49,7 +45,7 @@ export class MockHelper {
 	 * @returns {Promise<void>}
 	 */
 	static async setServerTime(date: Date): Promise<void> {
-		return this.setVariable(
+		return MockHelper.setVariable(
 			'today',
 			ConversionHelper.convertDateToString(date, 'YYYY-MM-DD'),
 		);
@@ -60,7 +56,7 @@ export class MockHelper {
 	 * @returns {Promise<void>}
 	 */
 	static async resetServerTime(): Promise<void> {
-		return this.setServerTime(new Date());
+		return MockHelper.setServerTime(new Date());
 	}
 
 	/**

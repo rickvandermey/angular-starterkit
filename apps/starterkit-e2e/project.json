@@ -1,25 +1,27 @@
 {
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
-	"sourceRoot": "apps/starterkit-e2e/src",
+	"implicitDependencies": ["starterkit"],
 	"projectType": "application",
+	"sourceRoot": "apps/starterkit-e2e/src",
+	"tags": ["scope:starterkit-e2e"],
 	"targets": {
 		"e2e": {
-			"executor": "@nrwl/workspace:run-commands",
-			"options": {
-				"command": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test 'nx serve starterkit --configuration=mock' 'https://localhost:4202/' 'APP=apps/starterkit-e2e npx cucumber-js --config cucumber.base.js'"
-			},
 			"configurations": {
 				"no-serve": {
 					"command": "APP=apps/starterkit-e2e npx cucumber-js --config cucumber.base.js"
 				}
+			},
+			"executor": "nx:run-commands",
+			"options": {
+				"command": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test 'nx serve starterkit --configuration=mock' 'https://localhost:4202/' 'APP=apps/starterkit-e2e npx cucumber-js --config cucumber.base.js'"
 			}
 		},
 		"lint": {
 			"executor": "@nrwl/linter:eslint",
-			"outputs": ["{options.outputFile}"],
 			"options": {
 				"lintFilePatterns": ["apps/starterkit-e2e/**/*.{js,ts}"]
-			}
+			},
+			"outputs": ["{options.outputFile}"]
 		},
 		"lint-ci": {
 			"executor": "@nrwl/linter:eslint",
@@ -30,7 +32,5 @@
 			},
 			"outputs": ["{options.outputFile}"]
 		}
-	},
-	"tags": ["scope:starterkit"],
-	"implicitDependencies": ["starterkit", "mockserver", "test-helpers"]
+	}
 }

@@ -2,20 +2,10 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"outDir": "../../dist/out-tsc",
-		"types": ["jest", "node"]
+		"module": "commonjs",
+		"types": ["jest", "node"],
+		"esModuleInterop": true
 	},
-	"files": [
-		"src/test-setup.ts",
-		"src/polyfills.ts",
-		"src/app/app.module.ts",
-		"src/app/app.server.module.ts"
-	],
-	"include": [
-		"**/*.spec.ts",
-		"**/*.test.ts",
-		"**/*.d.ts",
-		"src/app/globals.ts",
-		"src/app/routes/static.paths.ts",
-		"jest.config.ts"
-	]
+	"files": ["src/test-setup.ts"],
+	"include": ["jest.config.ts", "**/*.test.ts", "**/*.spec.ts", "**/*.d.ts"]
 }

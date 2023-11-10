@@ -34,6 +34,7 @@ export class LocalStorageServiceMock {
 		if (isPlatformBrowser(this.platformId)) {
 			return this.storage[localStorageKey];
 		}
+		return {};
 	}
 }
 

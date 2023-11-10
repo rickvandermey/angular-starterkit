@@ -9,5 +9,6 @@ const ciConfig: PlaywrightTestConfig = {
 	},
 	outputDir: 'test-reports/libs/storybook-bundle/',
 	workers: 2,
+	retries: 2,
 };
 export default ciConfig;

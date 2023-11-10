@@ -1,1 +1,1 @@
-export { BaseComponent } from '@starterkit/components/base/base.component';
+export { BaseComponent } from '@starterkit/app/components/base/base.component';

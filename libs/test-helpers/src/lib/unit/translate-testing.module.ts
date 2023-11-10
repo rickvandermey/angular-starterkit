@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
 import {
 	TranslateModule,
 	TranslateService,
 	TranslateStore,
 } from '@ngx-translate/core';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
 	declarations: [],

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { InjectionToken, NgModule } from '@angular/core';
+
 import {
 	TranslateLoader,
 	TranslateModule,

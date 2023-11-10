@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { LanguageGuard } from '@starterkit/routes/guards/language-guard.service';
+import { LanguageGuard } from '@starterkit/app/routes/guards/language-guard.service';
 
 describe('Routes: LanguageGuard', () => {
 	let languageGuard: LanguageGuard;

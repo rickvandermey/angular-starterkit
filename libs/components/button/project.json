@@ -1,19 +1,20 @@
 {
 	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"prefix": "ui",
 	"projectType": "library",
 	"sourceRoot": "libs/components/button/src",
-	"prefix": "ui",
+	"tags": ["type:ui"],
 	"targets": {
 		"build-storybook": {
 			"executor": "@storybook/angular:build-storybook",
-			"outputs": ["{options.outputPath}"],
 			"options": {
-				"styles": [],
-				"outputDir": "dist/storybook/formly",
-				"configDir": "libs/formly/.storybook",
-				"browserTarget": "formly:build-storybook",
-				"compodoc": false
-			}
+				"browserTarget": "button:build-storybook",
+				"compodoc": false,
+				"configDir": "libs/components/button/.storybook",
+				"outputDir": "dist/storybook/button",
+				"styles": []
+			},
+			"outputs": ["{options.outputPath}"]
 		},
 		"lint": {
 			"executor": "@nrwl/linter:eslint",
@@ -27,32 +28,36 @@
 		"serve": {
 			"executor": "@storybook/angular:start-storybook",
 			"options": {
-				"port": 4400,
-				"configDir": "libs/formly/.storybook",
-				"browserTarget": "formly:build-storybook",
-				"compodoc": false
+				"browserTarget": "button:build-storybook",
+				"compodoc": false,
+				"configDir": "libs/components/button/.storybook",
+				"port": 4400
 			}
 		},
 		"test": {
 			"executor": "@nrwl/jest:jest",
-			"outputs": ["coverage/libs/components/button"],
 			"options": {
 				"jestConfig": "libs/components/button/jest.config.ts",
 				"passWithNoTests": true
-			}
+			},
+			"outputs": ["coverage/libs/components/button"]
 		},
 		"test-vr": {
-			"executor": "@nrwl/workspace:run-commands",
+			"executor": "nx:run-commands",
 			"options": {
-				"command": "start-server-and-test 'nx run components-button:build-storybook  && http-server dist/storybook/components-button -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.20.1-focal npx playwright test libs/components/button/src/lib/visual-regression/*.vr-spec.ts --config=playwright.config.ts'"
+				"command": "FILESPATH=libs/components/button/src/lib/**/*.vr-spec.ts npm run test-vr"
 			}
 		},
 		"test-vr-update": {
-			"executor": "@nrwl/workspace:run-commands",
+			"configurations": {
+				"only": {
+					"command": "npx playwright test libs/components/button/src/lib/{args.test}  --config=playwright.config.ts --update-snapshots"
+				}
+			},
+			"executor": "nx:run-commands",
 			"options": {
-				"command": "start-server-and-test 'nx run components-button:build-storybook  && http-server dist/storybook/components-button -s -p 4400' 4400 'docker run --rm --name playwright-vr -it -p 4400:4400 -v $(pwd):/work/ -w /work/ mcr.microsoft.com/playwright:v1.20.1-focal npx playwright test libs/components/button/src/lib/visual-regression/*.vr-spec.ts --config=playwright.config.ts --update-snapshots'"
+				"command": "FILESPATH=libs/components/button/src/lib/**/*.vr-spec.ts npm run test-vr-update"
 			}
 		}
-	},
-	"tags": ["type:ui"]
+	}
 }

@@ -1,19 +1,27 @@
-import { DocsContainer, DocsPage } from '@storybook/addon-docs';
+import { withThemeByClassName } from '@storybook/addon-themes';
 
 import * as globalPreview from '../../../.storybook/preview';
 
-export const parameters = {
-	docs: {
-		container: DocsContainer,
-		page: DocsPage,
-	},
-	options: {
-		storySort: {
-			locales: '',
-			method: 'alphabetical',
-			order: [],
+const preview = {
+	parameters: {
+		options: {
+			storySort: {
+				locales: '',
+				method: 'alphabetical',
+				order: [],
+			},
 		},
 	},
 };
 
+export const decorators = [
+	withThemeByClassName({
+		defaultTheme: 'default',
+		themes: {
+			default: '',
+		},
+	}),
+];
+
 export const globalTypes = globalPreview.globalTypes;
+export default preview;

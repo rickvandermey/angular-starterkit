@@ -11,6 +11,14 @@
 		}
 	],
 	"compilerOptions": {
-		"target": "es2020"
+		"strict": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"target": "ES2022"
+	},
+	"angularCompilerOptions": {
+		"strictInjectionParameters": true,
+		"strictInputAccessModifiers": true,
+		"strictTemplates": true
 	}
 }

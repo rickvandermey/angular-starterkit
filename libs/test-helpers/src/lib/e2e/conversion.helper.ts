@@ -47,8 +47,11 @@ export class ConversionHelper {
 		inputFormat: string,
 		outputFormat: string,
 	): string {
-		const temp = this.convertStringToDate(dateString, inputFormat);
-		return this.convertDateToString(temp, outputFormat);
+		const temp = ConversionHelper.convertStringToDate(
+			dateString,
+			inputFormat,
+		);
+		return ConversionHelper.convertDateToString(temp, outputFormat);
 	}
 
 	/**
@@ -62,6 +65,7 @@ export class ConversionHelper {
 		const dateArray = dateString.split('-');
 		switch (format) {
 			case 'MMMM D':
+			case 'YYYY-MM-DD':
 				return dayjs(dateString, format).add(12, 'hour').toDate();
 			case 'DD-MM-YYYY':
 				return new Date(
@@ -70,8 +74,6 @@ export class ConversionHelper {
 					Number(dateArray[0]),
 					12,
 				);
-			case 'YYYY-MM-DD':
-				return dayjs(dateString, format).add(12, 'hour').toDate();
 			default:
 				console.error(`Invalid format supplied: ${format}`);
 				return null;

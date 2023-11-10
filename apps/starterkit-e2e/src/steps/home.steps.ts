@@ -1,5 +1,6 @@
-import { expect } from '@playwright/test';
 import { Then } from '@cucumber/cucumber';
+import { expect } from '@playwright/test';
+
 import { HomePage } from '../objects/home.po';
 
 const homePage = new HomePage();

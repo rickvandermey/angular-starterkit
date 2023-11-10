@@ -1,9 +1,9 @@
-import { BaseComponent } from '@starterkit/components/index';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
+
 import { Store, StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import {
@@ -13,14 +13,16 @@ import {
 } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 
-import { LocalStorageService } from '@starterkit/services/local-storage.service';
-import { PushNotificationService } from '@starterkit/services/push-notifications/push-notifications.service';
+import { BaseComponent } from '@starterkit/app/components/index';
+import { LocalStorageService } from '@starterkit/app/services/local-storage.service';
+import { PushNotificationService } from '@starterkit/app/services/push-notifications/push-notifications.service';
 import {
 	LOCAL_STORAGE_KEY,
 	STORAGE_KEYS,
-} from '@starterkit/store/meta/app.tokens';
-import { initialState } from '@starterkit/testing/mock-store';
+} from '@starterkit/app/store/meta/app.tokens';
+import { initialState } from '@starterkit/app/testing/mock-store';
 import { MockSwUpdate } from '@starterkit/app/testing/mocks-spies';
+
 import { AppComponent as Component } from './app.component';
 import { getMetaReducers } from './app.module';
 

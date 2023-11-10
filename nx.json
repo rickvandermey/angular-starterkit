@@ -1,50 +1,98 @@
 {
-	"npmScope": "starterkit-angular",
-	"tasksRunnerOptions": {
-		"default": {
-			"runner": "@nrwl/nx-cloud",
-			"options": {
-				"cacheableOperations": [
-					"build",
-					"test",
-					"lint",
-					"package",
-					"prepare"
-				],
-				"accessToken": "MjNkZWRhNjAtYWQwYy00NjMzLWIxNmQtYWE2MTIwMDIwMzM1fHJlYWQtd3JpdGU=",
-				"parallel": 1
-			}
-		}
-	},
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
 	"affected": {
 		"defaultBase": "origin/master"
 	},
 	"defaultProject": "starterkit",
 	"generators": {
-		"@nrwl/angular:application": {
-			"style": "scss",
+		"@nx/angular:application": {
+			"e2eTestRunner": "none",
 			"linter": "eslint",
+			"strict": false,
+			"style": "scss",
 			"unitTestRunner": "jest"
 		},
-		"@nrwl/angular:library": {
-			"linter": "eslint",
-			"unitTestRunner": "jest",
-			"strict": false
-		},
-		"@nrwl/angular:component": {
+		"@nx/angular:component": {
 			"style": "scss"
+		},
+		"@nx/angular:library": {
+			"linter": "eslint",
+			"strict": false,
+			"unitTestRunner": "jest"
 		}
 	},
-	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"namedInputs": {
+		"default": ["{projectRoot}/**/*", "sharedGlobals"],
+		"production": [
+			"default",
+			"!{projectRoot}/**/?(*.){}(spec|test).[jt]s?(x)?(.snap)",
+			"!{projectRoot}/tsconfig.spec.json",
+			"!{projectRoot}/jest.config.[jt]s",
+			"!{projectRoot}/.eslintrc.json",
+			"!{projectRoot}/.storybook/**/*",
+			"!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+			"!{projectRoot}/src/test-setup.[jt]s",
+			"!{projectRoot}/tsconfig.storybook.json"
+		],
+		"sharedGlobals": [
+			"{workspaceRoot}/jest.base.config.ts",
+			"{workspaceRoot}/jest.preset.js",
+			"{workspaceRoot}/nx.json",
+			"{workspaceRoot}/package.json",
+			"{workspaceRoot}/playwright-ci.config.ts",
+			"{workspaceRoot}/playwright.config.ts",
+			"{workspaceRoot}/sonar-project.properties",
+			"{workspaceRoot}/tailwind.config.js",
+			"{workspaceRoot}/tsconfig.base.json",
+			"{workspaceRoot}/libs/assets/i18n/de.json",
+			"{workspaceRoot}/libs/assets/i18n/en.json",
+			"{workspaceRoot}/libs/assets/i18n/fr.json",
+			"{workspaceRoot}/libs/assets/i18n/nl.json"
+		]
+	},
 	"targetDefaults": {
 		"build": {
-			"dependsOn": ["^build"]
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"]
 		},
-		"prepare": {
-			"dependsOn": ["^prepare"]
+		"build-storybook": {
+			"inputs": [
+				"default",
+				"^production",
+				"{workspaceRoot}/.storybook/**/*",
+				"{projectRoot}/.storybook/**/*",
+				"{projectRoot}/tsconfig.storybook.json"
+			]
 		},
-		"package": {
-			"dependsOn": ["^package"]
+		"lint": {
+			"inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+		},
+		"lint:ci": {
+			"inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+		},
+		"test": {
+			"inputs": [
+				"default",
+				"^production",
+				"{workspaceRoot}/jest.preset.js"
+			]
+		}
+	},
+	"tasksRunnerOptions": {
+		"default": {
+			"options": {
+				"accessToken": "MjNkZWRhNjAtYWQwYy00NjMzLWIxNmQtYWE2MTIwMDIwMzM1fHJlYWQtd3JpdGU=",
+				"cacheableOperations": [
+					"build",
+					"lint",
+					"lint-style",
+					"test",
+					"e2e",
+					"test-vr-ci"
+				],
+				"parallel": 1
+			},
+			"runner": "nx-cloud"
 		}
 	}
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
 	HttpEvent,
 	HttpHandler,
@@ -5,8 +6,8 @@ import {
 	HttpRequest,
 	HttpResponse,
 } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { makeStateKey, TransferState } from '@angular/platform-browser';
+import { Injectable, makeStateKey, TransferState } from '@angular/core';
+
 import { Observable, of } from 'rxjs';
 
 /* istanbul ignore next */
@@ -17,22 +18,15 @@ export class AppHttpInterceptor implements HttpInterceptor {
 	constructor(private readonly transferState: TransferState) {}
 
 	/* istanbul ignore next */
-	/**
-	 * Intercepts HttpRequest or HttpResponse and set the transferState
-	 * to save the status in the store
-	 * @param  {HttpRequest<string>} request
-	 * @param  {HttpHandler} next
-	 */
 	intercept(
-		req: HttpRequest<string>,
+		req: HttpRequest<any>,
 		next: HttpHandler,
-	): Observable<HttpEvent<string>> {
+	): Observable<HttpEvent<any>> {
 		if (req.method !== 'GET') {
 			return next.handle(req);
 		}
-
 		const storedResponse: string = this.transferState.get(
-			makeStateKey(req.url),
+			makeStateKey<string>(req.url),
 			null,
 		);
 

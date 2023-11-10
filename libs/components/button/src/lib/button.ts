@@ -1,15 +1,14 @@
-import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 /**
  * Button component
  */
 @Component({
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	imports: [CommonModule],
 	selector: `ui-button`,
+	standalone: true,
 	templateUrl: './button.html',
 })
-export class ButtonComponent {
-	constructor(readonly elementRef: ElementRef) {
-		// do nothing
-	}
-}
+export class ButtonComponent {}

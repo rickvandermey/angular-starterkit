@@ -130,13 +130,9 @@ app.use(
 				path: string;
 				file: string;
 				handler: string;
-			}): unknown => {
+			}) => {
 				const strippedUrl = req.url.split('?')[0];
 				const regex = new RegExp(`^/${mock.request.url}[/]?$`);
-				let regexMatches = strippedUrl.match(regex);
-				if (regexMatches) {
-					regexMatches = Array.from(regexMatches);
-				}
 
 				const isSameStaticRequest =
 					strippedUrl.startsWith(`/${mock.request.url}`) &&
@@ -222,7 +218,6 @@ app.use(
 							response,
 							variables,
 							req,
-							regexMatches,
 						);
 					}
 				}

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+
 import { select, Store } from '@ngrx/store';
-import { EventReplayer } from 'preboot';
 import { Observable } from 'rxjs';
 
-import { BaseComponent } from '@starterkit/components/index';
-import { Load } from '@starterkit/store/entities/entities.actions';
-import { EntityInterface } from '@starterkit/store/entities/entities.interface';
-import * as entitiesSelectors from '@starterkit/store/entities/entities.selectors';
+import { BaseComponent } from '@starterkit/app/components/index';
+import { Load } from '@starterkit/app/store/entities/entities.actions';
+import { EntityInterface } from '@starterkit/app/store/entities/entities.interface';
+import * as entitiesSelectors from '@starterkit/app/store/entities/entities.selectors';
 
 /**
  * Home page Component which extends the BaseComponent
@@ -20,19 +20,10 @@ import * as entitiesSelectors from '@starterkit/store/entities/entities.selector
  * Class representing the home page component, which extends BaseComponent.
  */
 export class HomePageComponent extends BaseComponent implements OnInit {
-	/**
-	 * entities$ is an Observable of the EntityInterface[] from the EntitiesStore
-	 */
 	entities$: Observable<EntityInterface[]>;
 	entities: EntityInterface[];
 
-	/**
-	 * constructor - The function which is called when the class is instantiated
-	 *
-	 *  @param  {type} private title: Service to set the HTML title
-	 */
 	constructor(
-		private readonly replayer: EventReplayer,
 		private readonly store: Store,
 		private readonly title: Title,
 	) {
@@ -54,7 +45,6 @@ export class HomePageComponent extends BaseComponent implements OnInit {
 		this.addSubscription(
 			this.entities$.subscribe((entities) => {
 				this.entities = entities;
-				this.replayer.replayAll();
 			}),
 		);
 	}

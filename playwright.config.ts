@@ -5,6 +5,7 @@ const baseConfig: PlaywrightTestConfig = {
 		ignoreHTTPSErrors: true,
 		baseURL: 'http://host.docker.internal:4400',
 		headless: true,
+		testIdAttribute: 'data-test-id',
 	},
 	projects: [
 		{ name: 'desktop-chrome', use: { ...devices['Desktop Chrome'] } },
@@ -28,7 +29,5 @@ const baseConfig: PlaywrightTestConfig = {
 	outputDir: 'test-reports/visual-regression',
 	workers: 3,
 	testMatch: /.*vr-spec.ts/,
-	testIgnore:
-		'tools/generators/lib-generator/test-vr/visual-regression/__componentFileName__.vr-spec.ts',
 };
 export default baseConfig;

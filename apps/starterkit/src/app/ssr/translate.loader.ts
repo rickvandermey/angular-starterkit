@@ -1,27 +1,16 @@
 import { TranslateLoader } from '@ngx-translate/core';
+import * as fs from 'fs';
 import { Observable } from 'rxjs';
 
-import * as fs from 'fs';
-
 /* istanbul ignore next */
-/**
- * class for SSR translations which implements the TranslateLoader from ngx-translate
- * @param prefix [description]
- * @param suffix [description]
- */
 export class TranslateUniversalLoader implements TranslateLoader {
 	constructor(
 		private readonly prefix: string = 'i18n',
 		private readonly suffix: string = '.json',
 	) {}
 
-	/**
-	 * getTranslation which will provide the given language
-	 * @param  lang the language code
-	 * @return      Observable
-	 */
-	public getTranslation(lang: string): Observable<string> {
-		return Observable.create(
+	public getTranslation(lang: string): Observable<unknown> {
+		return new Observable(
 			(observer: { next: (s: string) => void; complete: () => void }) => {
 				observer.next(
 					JSON.parse(
