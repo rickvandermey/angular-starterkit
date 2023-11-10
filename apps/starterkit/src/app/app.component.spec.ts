@@ -13,7 +13,6 @@ import {
 } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 
-import { BaseComponent } from '@starterkit/app/components/index';
 import { LocalStorageService } from '@starterkit/app/services/local-storage.service';
 import { PushNotificationService } from '@starterkit/app/services/push-notifications/push-notifications.service';
 import {
@@ -42,7 +41,7 @@ class FakeLoader implements TranslateLoader {
 }
 
 describe('Components: App Component', () => {
-	let app: BaseComponent;
+	let app: Component;
 	let fixture: ComponentFixture<Component>;
 	let store: MockStore<unknown>;
 
@@ -97,7 +96,7 @@ describe('Components: App Component', () => {
 		fixture.destroy();
 	});
 
-	it(`should have an Router Language subscription in mutableSubscriptions`, () => {
-		expect(app.mutableSubscriptions.length).toEqual(1);
+	it(`should have routerLanguage Observable`, () => {
+		expect(app.routerLanguage$).toBeDefined();
 	});
 });

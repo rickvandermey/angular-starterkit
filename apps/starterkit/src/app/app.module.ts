@@ -4,7 +4,10 @@ import {
 	HttpClientModule,
 } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {
+	BrowserModule,
+	provideClientHydration,
+} from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 // NGRX store
@@ -98,6 +101,7 @@ export function getMetaReducers(
 		}),
 	],
 	providers: [
+		provideClientHydration(),
 		PushNotificationService,
 		{
 			provide: STORAGE_KEYS,

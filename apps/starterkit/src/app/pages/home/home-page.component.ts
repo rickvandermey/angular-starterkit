@@ -8,16 +8,9 @@ import { Load } from '@starterkit/app/store/entities/entities.actions';
 import { EntityInterface } from '@starterkit/app/store/entities/entities.interface';
 import * as entitiesSelectors from '@starterkit/app/store/entities/entities.selectors';
 
-/**
- * Home page Component which extends the BaseComponent
- */
 @Component({
 	templateUrl: 'home-page.component.html',
 })
-
-/**
- * Class representing the home page component, which extends BaseComponent.
- */
 export class HomePageComponent implements OnInit {
 	entities$: Observable<EntityInterface[]>;
 	entities: EntityInterface[];
