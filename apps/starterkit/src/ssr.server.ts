@@ -19,7 +19,7 @@ export function app(): express.Express {
 
 	// deepcode ignore UseHelmetForExpress
 	const server = express();
-	const distFolder = join(process.cwd(), 'dist/apps/giftcard/browser');
+	const distFolder = join(process.cwd(), 'dist/apps/starterkit/browser');
 	const indexHtml = existsSync(join(distFolder, 'index.original.html'))
 		? 'index.original.html'
 		: 'index';

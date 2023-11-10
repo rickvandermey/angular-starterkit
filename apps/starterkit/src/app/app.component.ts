@@ -78,9 +78,20 @@ export class AppComponent extends BaseComponent implements OnInit {
 	ngOnInit(): void {
 		/* istanbul ignore next */
 		if (this.swUpdate.isEnabled) {
-			this.swUpdate.versionUpdates.subscribe(() => {
-				if (confirm('new Version is available')) {
-					window.location.reload();
+			this.swUpdate.versionUpdates.subscribe((evt) => {
+				switch (evt.type) {
+					case 'VERSION_READY':
+						this.swUpdate
+							.activateUpdate()
+							.then(() => {
+								document.location.reload();
+							})
+							.catch(
+								/* istanbul ignore next */ (error) => {
+									console.error(error);
+								},
+							);
+						break;
 				}
 			});
 		}

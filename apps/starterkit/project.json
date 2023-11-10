@@ -37,6 +37,7 @@
 					"vendorChunk": false
 				}
 			},
+			"defaultConfiguration": "production",
 			"executor": "@angular-devkit/build-angular:browser",
 			"options": {
 				"allowedCommonJsDependencies": [
@@ -52,13 +53,15 @@
 				"index": "apps/starterkit/src/index.html",
 				"main": "apps/starterkit/src/main.ts",
 				"ngswConfigPath": "ngsw-config.json",
-				"outputPath": "dist/apps/starterkit",
+				"outputPath": "dist/apps/starterkit/browser",
 				"polyfills": "apps/starterkit/src/polyfills.ts",
 				"scripts": [],
+				"serviceWorker": true,
 				"statsJson": false,
 				"styles": ["apps/starterkit/src/scss/index.scss"],
 				"tsConfig": "apps/starterkit/tsconfig.app.json"
-			}
+			},
+			"outputs": ["{options.outputPath}"]
 		},
 		"build-ci": {
 			"executor": "nx:run-commands",

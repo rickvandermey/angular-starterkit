@@ -10,7 +10,7 @@
 	<hr />
 	<div>
 		<h2>NGRX Entity Adapter</h2>
-		<ng-container *ngFor="let entity of entities">
+		<ng-container *ngFor="let entity of entities$ | async">
 			<dl>
 				<dt>Guid:</dt>
 				<dd>{{ entity.guid }}</dd>

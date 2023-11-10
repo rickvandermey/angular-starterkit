@@ -15,7 +15,7 @@ import { AppModule } from './app.module';
  */
 export function TranslateUniversalService(): TranslateUniversalLoader {
 	return new TranslateUniversalLoader(
-		'dist/apps/starterkit/assets/i18n',
+		'dist/apps/starterkit/browser/assets/i18n',
 		'.json',
 	);
 }

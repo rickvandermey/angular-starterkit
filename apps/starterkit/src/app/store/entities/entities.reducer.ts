@@ -86,4 +86,4 @@ export const { selectIds, selectEntities, selectAll, selectTotal } =
 
 export const reducerToken = new InjectionToken<
 	ActionReducerMap<EntityInterface>
->('dealsState');
+>('entitiesState');

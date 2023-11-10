@@ -17,5 +17,5 @@
 		"typeRoots": ["node_modules/@types"],
 		"types": ["node"]
 	},
-	"include": ["mockserver.ts", "**/handler.ts"]
+	"include": ["src/mockserver.ts", "**/handler.ts"]
 }
