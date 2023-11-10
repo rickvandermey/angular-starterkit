@@ -4,10 +4,12 @@ import {
 	HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+
 import { of } from 'rxjs';
 
+import { initialState } from '@starterkit/app/testing/mock-store';
 import { environment } from '@starterkit/environments/environment';
-import { initialState } from '@starterkit/testing/mock-store';
+
 import { PushNotificationService } from './push-notifications.service';
 
 describe('Service: Manual service', () => {

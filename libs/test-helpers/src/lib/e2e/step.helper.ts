@@ -18,11 +18,12 @@ export class StepHelper {
 	static async handleInverseDisplay(
 		promise: Locator,
 		inverse: string,
-	): Promise<boolean> {
-		if (this.handleInverse(inverse)) {
-			return expect(await promise.isVisible()).toBeFalsy();
+	): Promise<void> {
+		if (StepHelper.handleInverse(inverse)) {
+			expect(await promise.isVisible()).toBeFalsy();
 		} else {
-			return expect(await promise.isVisible()).toBeTruthy();
+			await promise.waitFor({ state: 'visible' });
+			expect(await promise.isVisible()).toBeTruthy();
 		}
 	}
 
@@ -30,38 +31,38 @@ export class StepHelper {
 		haystack: string,
 		needle: string,
 		inverse: string,
-	): string {
-		if (this.handleInverse(inverse)) {
-			return expect(haystack).not.toContain(needle);
+	): void {
+		if (StepHelper.handleInverse(inverse)) {
+			expect(haystack).not.toContain(needle);
 		} else {
-			return expect(haystack).toContain(needle);
-		}
-	}
-
-	static handleInverseEqual(
-		haystack: string,
-		needle: string,
-		inverse: string,
-	): string {
-		if (this.handleInverse(inverse)) {
-			return expect(haystack).not.toEqual(needle);
-		} else {
-			return expect(haystack).toEqual(needle);
+			expect(haystack).toContain(needle);
 		}
 	}
 
 	static async handleInverseDisabled(
 		haystack: Locator,
 		inverse: string,
-	): Promise<boolean> {
-		if (this.handleInverse(inverse)) {
-			return expect(await haystack.isDisabled()).toBeFalsy();
+	): Promise<void> {
+		if (StepHelper.handleInverse(inverse)) {
+			expect(await haystack.isDisabled()).toBeFalsy();
 		} else {
-			return expect(await haystack.isDisabled()).toBeTruthy();
+			expect(await haystack.isDisabled()).toBeTruthy();
+		}
+	}
+
+	static async handleInverseEquals(
+		haystack: string,
+		needle: string,
+		inverse: string,
+	): Promise<void> {
+		if (StepHelper.handleInverse(inverse)) {
+			expect(haystack).not.toEqual(needle);
+		} else {
+			expect(haystack).toEqual(needle);
 		}
 	}
 
 	static handleContainsText(element: Locator, content: string) {
-		return expect(element).toHaveText(content);
+		expect(element).toHaveText(content);
 	}
 }

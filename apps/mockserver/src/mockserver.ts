@@ -40,19 +40,19 @@ const getCredentials = (): SSLCredentials => {
 	let sslCredentials: SSLCredentials;
 
 	if (
-		fs.existsSync('../ssl/server.key') &&
-		fs.existsSync('../ssl/server.crt')
+		fs.existsSync('./ssl/server.key') &&
+		fs.existsSync('./ssl/server.crt')
 	) {
 		// Loads the correct key and certificate to host the mock server over https
 		sslCredentials = {
-			cert: fs.readFileSync('../ssl/server.crt', 'utf8'),
-			key: fs.readFileSync('../ssl/server.key', 'utf8'),
+			cert: fs.readFileSync('./ssl/server.crt', 'utf8'),
+			key: fs.readFileSync('./ssl/server.key', 'utf8'),
 		};
 	} else {
 		// Falls back to the default key and certificate
 		sslCredentials = {
-			cert: fs.readFileSync('../ssl/default/server.crt', 'utf8'),
-			key: fs.readFileSync('../ssl/default/server.key', 'utf8'),
+			cert: fs.readFileSync('./ssl/default/server.crt', 'utf8'),
+			key: fs.readFileSync('./ssl/default/server.key', 'utf8'),
 		};
 	}
 	return sslCredentials;
@@ -130,13 +130,9 @@ app.use(
 				path: string;
 				file: string;
 				handler: string;
-			}): unknown => {
+			}) => {
 				const strippedUrl = req.url.split('?')[0];
 				const regex = new RegExp(`^/${mock.request.url}[/]?$`);
-				let regexMatches = strippedUrl.match(regex);
-				if (regexMatches) {
-					regexMatches = Array.from(regexMatches);
-				}
 
 				const isSameStaticRequest =
 					strippedUrl.startsWith(`/${mock.request.url}`) &&
@@ -222,7 +218,6 @@ app.use(
 							response,
 							variables,
 							req,
-							regexMatches,
 						);
 					}
 				}

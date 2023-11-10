@@ -1,8 +1,9 @@
 import { Action } from '@ngrx/store';
+
 import {
 	cloneState,
 	initialState as mockStore,
-} from '@starterkit/testing/mock-store';
+} from '@starterkit/app/testing/mock-store';
 
 import * as entitiesActions from './entities.actions';
 import { initialState, reducer } from './entities.reducer';

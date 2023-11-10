@@ -21,10 +21,6 @@ export class MockSwUpdate {
 
 	activateUpdate = jest.fn();
 	checkForUpdate = jest.fn();
-
-	constructor() {
-		// do nothing
-	}
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

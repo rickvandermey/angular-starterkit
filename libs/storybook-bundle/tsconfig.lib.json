@@ -6,6 +6,11 @@
 		"inlineSources": true,
 		"types": []
 	},
-	"exclude": ["src/test-setup.ts", "**/*.spec.ts", "**/*.test.ts"],
+	"exclude": [
+		"src/test-setup.ts",
+		"**/*.spec.ts",
+		"**/*.test.ts",
+		"**/*.vr-spec.ts"
+	],
 	"include": ["**/*.ts"]
 }

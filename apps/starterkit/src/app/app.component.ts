@@ -7,23 +7,22 @@ import {
 	Optional,
 	PLATFORM_ID,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SwPush, SwUpdate } from '@angular/service-worker';
+
 import { select, Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
+import { GeneralHelper } from '@starterkit/app/helpers/general.helper';
+import { PushNotificationService } from '@starterkit/app/services/push-notifications/push-notifications.service';
+import { addNotification } from '@starterkit/app/store/notifications/notifications.actions';
+import { NotificationInterface } from '@starterkit/app/store/notifications/notifications.interface';
+import * as fromRouter from '@starterkit/app/store/router/router.selectors';
 import { environment } from '@starterkit/environments/environment';
-import { GeneralHelper } from '@starterkit/helpers/general.helper';
-import { PushNotificationService } from '@starterkit/services/push-notifications/push-notifications.service';
-import { addNotification } from '@starterkit/store/notifications/notifications.actions';
-import { NotificationInterface } from '@starterkit/store/notifications/notifications.interface';
-import * as fromRouter from '@starterkit/store/router/router.selectors';
-import { BaseComponent } from '@starterkit/components/index';
+
 import { STATE_CB } from './ssr/tokens';
 
-/**
- * App Component which extends the BaseComponent
- */
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
@@ -31,7 +30,7 @@ import { STATE_CB } from './ssr/tokens';
 /**
  * App Component which contains the initial route handling
  */
-export class AppComponent extends BaseComponent implements OnInit {
+export class AppComponent implements OnInit {
 	/**
 	 * routerLanguage is an Observable of the routerSelector getRouterLanguage
 	 */
@@ -62,8 +61,8 @@ export class AppComponent extends BaseComponent implements OnInit {
 		public swUpdate: SwUpdate,
 		public translate: TranslateService,
 	) {
-		super();
 		this.routerLanguage$ = this.store.pipe(
+			takeUntilDestroyed(),
 			select(fromRouter.getRouterLanguage),
 		);
 	}
@@ -76,9 +75,20 @@ export class AppComponent extends BaseComponent implements OnInit {
 	ngOnInit(): void {
 		/* istanbul ignore next */
 		if (this.swUpdate.isEnabled) {
-			this.swUpdate.versionUpdates.subscribe(() => {
-				if (confirm('new Version is available')) {
-					window.location.reload();
+			this.swUpdate.versionUpdates.subscribe((evt) => {
+				switch (evt.type) {
+					case 'VERSION_READY':
+						this.swUpdate
+							.activateUpdate()
+							.then(() => {
+								document.location.reload();
+							})
+							.catch(
+								/* istanbul ignore next */ (error) => {
+									console.error(error);
+								},
+							);
+						break;
 				}
 			});
 		}
@@ -109,17 +119,8 @@ export class AppComponent extends BaseComponent implements OnInit {
 				.catch();
 		}
 
-		this.addSubscription(
-			this.routerLanguage$.subscribe((language: string) => {
-				this.translate.use(language);
-			}),
-		);
-
-		this.store.subscribe((state) => {
-			/* istanbul ignore if */
-			if (this._stateCb) {
-				this._stateCb(state);
-			}
+		this.routerLanguage$.subscribe((language: string) => {
+			this.translate.use(language);
 		});
 	}
 }

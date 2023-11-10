@@ -1,6 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { TranslateModule } from '@ngx-translate/core';
 
 /**

@@ -1,5 +1,5 @@
-import { Context } from 'vm';
 import { Browser, chromium, firefox, Page, webkit } from '@playwright/test';
+import { Context } from 'vm';
 
 export class BrowserHelper {
 	/**
@@ -24,7 +24,7 @@ export class BrowserHelper {
 			},
 			slowMo: 0,
 		};
-		switch (process.env.BROWSER) {
+		switch (process.env['BROWSER']) {
 			case 'firefox':
 				this.browser = await firefox.launch(browserOptions);
 				break;
@@ -41,16 +41,16 @@ export class BrowserHelper {
 			acceptDownloads: true,
 			ignoreHTTPSErrors: true,
 			locale: 'nl-NL',
-			recordVideo: process.env.PWVIDEO
+			recordVideo: process.env['PWVIDEO']
 				? { dir: 'screenshots' }
 				: undefined,
 			timezoneId: 'Europe/Amsterdam',
 		});
-		this.page = await this.context.newPage();
+		this.page = await this.context['newPage']();
 	}
 
 	static async startTrace() {
-		return this.context.tracing.start({
+		return this.context['tracing'].start({
 			screenshots: true,
 			snapshots: true,
 		});
@@ -62,7 +62,7 @@ export class BrowserHelper {
 			/\//g,
 			'-',
 		)}-trace.zip`;
-		return this.context.tracing.stop({
+		return this.context['tracing'].stop({
 			path,
 		});
 	}
@@ -79,10 +79,6 @@ export class BrowserHelper {
 		return this.browser;
 	}
 
-	/**
-	 * Takes a screenshot
-	 * @returns {Promise<any>}
-	 */
 	static async takeScreenshot(): Promise<Buffer> {
 		return this.page.screenshot({ fullPage: true });
 	}
@@ -94,7 +90,15 @@ export class BrowserHelper {
 	 */
 	static async setBrowserTime(date: Date): Promise<void> {
 		return this.page.addInitScript(
-			`TimeShift.setTime(new Date("${date}"));`,
+			`Date = TimeShift.Date; // Override the Date object as usual
+				var originalDate = new TimeShift.OriginalDate().getTime();    // Get the actual date before setting
+				var mockTimestamp = ${date.getTime()};
+
+				// Pass a callback to setTime that adds the change in time since the date was mocked to the the mocked time.
+				TimeShift.setTime(() => {
+					var dateNow = new TimeShift.OriginalDate().getTime();
+					return mockTimestamp + dateNow - originalDate;
+				});`,
 		);
 	}
 
@@ -103,7 +107,7 @@ export class BrowserHelper {
 	 * @returns {Promise<void>}
 	 */
 	static async resetBrowserTime(): Promise<void> {
-		return this.setBrowserTime(new Date());
+		return BrowserHelper.setBrowserTime(new Date());
 	}
 
 	/**
@@ -126,19 +130,48 @@ export class BrowserHelper {
 		value: string,
 		url: string,
 	): Promise<void> {
-		await this.context.addCookies([{ name, url, value }]);
+		await this.context['addCookies']([{ name, url, value }]);
 	}
 
 	static async waitForAngular(page) {
 		await page.evaluate(`async () => {
-			if (window.getAllAngularTestabilities) {
-				await Promise.all(
-					window.getAllAngularTestabilities().map(whenStable),
-				);
-				async function whenStable(testability) {
-					return new Promise((res) => testability.whenStable(res));
+				if (window.getAllAngularTestabilities) {
+					await Promise.all(
+						window.getAllAngularTestabilities().map(whenStable),
+					);
+					async function whenStable(testability) {
+						return new Promise((res) =>
+							testability.whenStable(res),
+						);
+					}
 				}
+			}`);
+	}
+
+	/**
+	 * Sets the required device config (emulate a mobile viewport for instance)
+	 * @param device
+	 */
+	static async setDeviceSettings(device: string): Promise<void> {
+		const viewport = (device: string) => {
+			if (device) {
+				device = device.trim();
 			}
-		}`);
+
+			switch (device) {
+				case 'mobile': {
+					return { height: 568, isMobile: true, width: 320 };
+				}
+				case 'tablet': {
+					return { height: 1024, isMobile: false, width: 768 };
+				}
+				default:
+					return { height: 800, isMobile: false, width: 1200 };
+			}
+		};
+		this.page.setViewportSize({
+			height: viewport(device).height,
+			width: viewport(device).width,
+		});
 	}
 }

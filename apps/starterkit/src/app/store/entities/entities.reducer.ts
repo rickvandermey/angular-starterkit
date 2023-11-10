@@ -1,4 +1,5 @@
 import { InjectionToken } from '@angular/core';
+
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, ActionReducerMap, createReducer, on } from '@ngrx/store';
 
@@ -85,4 +86,4 @@ export const { selectIds, selectEntities, selectAll, selectTotal } =
 
 export const reducerToken = new InjectionToken<
 	ActionReducerMap<EntityInterface>
->('dealsState');
+>('entitiesState');

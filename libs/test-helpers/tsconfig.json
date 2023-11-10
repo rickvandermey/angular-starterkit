@@ -10,6 +10,6 @@
 	"compilerOptions": {
 		"noImplicitOverride": true,
 		"noPropertyAccessFromIndexSignature": true,
-		"target": "es2020"
+		"target": "ES2022"
 	}
 }

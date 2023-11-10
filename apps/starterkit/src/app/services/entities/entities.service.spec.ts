@@ -5,9 +5,10 @@ import {
 import { TestBed } from '@angular/core/testing';
 import { TransferState } from '@angular/platform-browser';
 
+import { EntityInterface } from '@starterkit/app/store/entities/entities.interface';
+import { initialState as mockStore } from '@starterkit/app/testing/mock-store';
 import { environment } from '@starterkit/environments/environment';
-import { EntityInterface } from '@starterkit/store/entities/entities.interface';
-import { initialState as mockStore } from '@starterkit/testing/mock-store';
+
 import { EntitiesService } from './entities.service';
 
 describe('Service: Entities service', () => {

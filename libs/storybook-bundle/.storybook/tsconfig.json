@@ -10,5 +10,10 @@
 		"../**/*.spec.ts",
 		"../../../tools/generators/**/**/*.stories.ts"
 	],
-	"include": ["../src/**/*", "*.js", "../../../**/*.stories.*"]
+	"include": [
+		"../src/**/*",
+		"*.js",
+		"../../../**/*.stories.*",
+		"../../../.storybook/manager.js"
+	]
 }

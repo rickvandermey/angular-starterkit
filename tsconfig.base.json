@@ -1,34 +1,32 @@
 {
-	"angularCompilerOptions": {
-		"strictInjectionParameters": true,
-		"strictTemplates": true
-	},
 	"compileOnSave": false,
 	"compilerOptions": {
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": ".",
 		"declaration": false,
-		"emitDecoratorMetadata": true,
+		"emitDecoratorMetadata": false,
 		"experimentalDecorators": true,
-		"lib": ["es2018", "dom"],
-		"module": "es2020",
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
+		"lib": ["ES2022", "dom"],
+		"module": "ES2022",
 		"moduleResolution": "node",
-		"noEmitOnError": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
 		"paths": {
-			"@components/button": ["libs/components/button/src/index.ts"],
+			"@components/*": ["libs/components/*"],
 			"@mockserver/*": ["apps/mockserver/src/*"],
 			"@starterkit-e2e/*": ["apps/starterkit-e2e/src/*"],
 			"@starterkit/*": ["apps/starterkit/src/*"],
-			"@storybook-bundle": ["libs/storybook-bundle/src/index.ts"],
+			"@storybook-bundle/*": ["libs/storybook-bundle/src/*"],
 			"@test-helpers/*": ["libs/test-helpers/src/*"]
 		},
-		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"rootDir": ".",
 		"skipDefaultLibCheck": true,
+		"skipLibCheck": true,
 		"sourceMap": true,
-		"target": "es2015",
-		"typeRoots": ["node_modules/@types"]
+		"target": "ES2022"
 	},
 	"exclude": ["node_modules", "tmp"]
 }

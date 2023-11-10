@@ -1,18 +1,19 @@
+import { HttpHeaders } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { TransferState } from '@angular/platform-browser';
+
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
 import { Observable, of, throwError } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 
-import { EntitiesService } from '@starterkit/services/entities/entities.service';
-import { initialState as mockStore } from '@starterkit/testing/mock-store';
+import { EntitiesService } from '@starterkit/app/services/entities/entities.service';
+import { initialState as mockStore } from '@starterkit/app/testing/mock-store';
 
 import * as entitiesActions from './entities.actions';
 import { EntitiesEffects } from './entities.effects';
 import { EntityInterface } from './entities.interface';
-import { HttpHeaders } from '@angular/common/http';
 
 describe('Effects: Entities effects', () => {
 	let actions$: Observable<Action>;

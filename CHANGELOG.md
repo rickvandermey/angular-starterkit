@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## [10.0.0](https://github.com/rickvandermey/angular-starterkit/tree/10.0.0)
+
+### Breaking Change
+
+-   **Node.js**: nvm use 18
+-   **Angular:** Updated to Angular 16
+-   **Storybook:** Updated to Storybook 7.5
+-   **Prettier:** Updated to Prettier 3
+
+### Features
+
+-   **Packages:** Updated all dependencies to the latest version of 2023-11-10
+
 ## [9.0.0](https://github.com/rickvandermey/angular-starterkit/tree/9.0.0)
 
 ### Breaking Change

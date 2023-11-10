@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const retryAmount = process.env.npm_config_retry || 1;
+const retryAmount = process.env.npm_config_retry || 2;
 const runnerIdentifier = process.env.npm_config_runner || 0;
 const totalRunners = process.env.npm_config_total || 1;
 const totalShards = process.env.npm_config_shards * totalRunners || 1;
@@ -21,8 +21,7 @@ const common = [
 	`--format usage:${reportPath}/cucumber-usage.txt`,
 	'--format progress', // progress-bar, progress, summary
 	`--require ${application}/src/steps/*.ts`,
-	// Otherwise you'll get a request to publish your results
-	'--publish-quiet',
+	`--require ${application}/src/steps/**/*.ts`,
 	// Fail on the first failed test (should be false in CI)
 	`--parallel ${totalShards}`,
 ];
@@ -49,6 +48,8 @@ module.exports = {
 function getAllFiles(dirPath, arrayOfFiles = []) {
 	const fullPath = `${__dirname}/${dirPath}`;
 	const files = fs.readdirSync(fullPath);
+
+	if (!files) return [];
 
 	files.forEach((file) => {
 		const tempPath = `${fullPath}/${file}`;
@@ -161,9 +162,7 @@ function assignFeaturesToShards(applicationIdentifier, numberOfShards) {
 	// Since protractor can't deal with empty test collection we insert a no op feature file
 	result.forEach(function (shard) {
 		if (shard.files.length === 0) {
-			shard.files.push(
-				`${__dirname}/libs/test-helpers/src/lib/e2e/feature/no.feature`,
-			);
+			shard.files.push(`${__dirname}/libs/shared/e2e/feature/no.feature`);
 		}
 	});
 

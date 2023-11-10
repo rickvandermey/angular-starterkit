@@ -1,4 +1,5 @@
-import { initialState } from '@starterkit/testing/mock-store';
+import { initialState } from '@starterkit/app/testing/mock-store';
+
 import * as fromNotifications from './notifications.selectors';
 
 const { notifications } = initialState;

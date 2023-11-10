@@ -1,13 +1,14 @@
 import { Injectable, NgModule } from '@angular/core';
 import { RouterModule, RouterStateSnapshot, Routes } from '@angular/router';
+
 import {
 	RouterStateSerializer,
 	StoreRouterConnectingModule,
 } from '@ngrx/router-store';
 
-import { ErrorPageComponent } from '@starterkit/pages/error/error-page.component';
-import { LanguageGuard } from '@starterkit/routes/guards/language-guard.service';
-import { RouterStateUrl } from '@starterkit/store/router/router.interface';
+import { ErrorPageComponent } from '@starterkit/app/pages/error/error-page.component';
+import { LanguageGuard } from '@starterkit/app/routes/guards/language-guard.service';
+import { RouterStateUrl } from '@starterkit/app/store/router/router.interface';
 
 /**
  * Class to implements the RouterStateSerializer with a custom serializer

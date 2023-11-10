@@ -1,4 +1,5 @@
-import { initialState as mockStore } from '@starterkit/testing/mock-store';
+import { initialState as mockStore } from '@starterkit/app/testing/mock-store';
+
 import * as entitiesActions from './entities.actions';
 
 describe('Actions: Entities Actions', () => {

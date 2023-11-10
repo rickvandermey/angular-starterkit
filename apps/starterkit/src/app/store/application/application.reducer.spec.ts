@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+
 import * as applicationsActions from './application.actions';
 import { initialState, reducer } from './application.reducer';
 

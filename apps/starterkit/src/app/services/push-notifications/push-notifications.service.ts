@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 
+import { NotificationInterface } from '@starterkit/app/store/notifications/notifications.interface';
 import { environment } from '@starterkit/environments/environment';
-import { NotificationInterface } from '@starterkit/store/notifications/notifications.interface';
 
 /**
  * PushNotificationService provides a service to get push notifications

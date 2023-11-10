@@ -1,20 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+
 import { TranslateService } from '@ngx-translate/core';
 
-import { BaseComponent } from '@starterkit/components/index';
-
-/**
- * 404 Error page Component which extends the BaseComponent
- */
 @Component({
 	templateUrl: 'error-page.component.html',
 })
-
-/**
- * Class representing the error page component, which extends BaseComponent.
- */
-export class ErrorPageComponent extends BaseComponent implements OnInit {
+export class ErrorPageComponent implements OnInit {
 	/**
 	 * constructor - The function which is called when the class is instantiated
 	 *
@@ -24,7 +16,6 @@ export class ErrorPageComponent extends BaseComponent implements OnInit {
 		private readonly title: Title,
 		public translate: TranslateService,
 	) {
-		super();
 		this.translate.use('en');
 	}
 

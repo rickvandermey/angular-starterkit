@@ -1,4 +1,5 @@
-import { initialState } from '@starterkit/testing/mock-store';
+import { initialState } from '@starterkit/app/testing/mock-store';
+
 import * as NotificationsActions from './notifications.actions';
 
 describe('Actions: Notifications Actions', () => {

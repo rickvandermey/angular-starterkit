@@ -1,11 +1,12 @@
-import { TailwindConfig } from 'tailwindcss/tailwind-config';
-import tailwindConfig from '../../../../../tailwind.config.js';
 import resolveConfig from 'tailwindcss/resolveConfig';
+import { Config } from 'tailwindcss/types/config.js';
 
-type ExtendedTailwindConfig<T> = TailwindConfig & { theme: T };
+import tailwindConfig from '../../../../../tailwind.config.js';
+
+type ExtendedTailwindConfig<T> = Config & { theme: T };
 
 const isCustomTheme = <T>(
-	config: TailwindConfig,
+	config: Config,
 	customTheme: T,
 ): config is ExtendedTailwindConfig<T> => {
 	return Object.keys(customTheme).every((key) => key in config.theme);
@@ -14,7 +15,7 @@ const isCustomTheme = <T>(
 export const resolveCustomThemeConfig = <T>(
 	customTheme: T,
 ): ExtendedTailwindConfig<T> => {
-	const fullConfig: TailwindConfig = resolveConfig(tailwindConfig);
+	const fullConfig: Config = resolveConfig(tailwindConfig) as Config;
 
 	if (!isCustomTheme<T>(fullConfig, customTheme)) {
 		throw new Error('Invalid custom theme config');

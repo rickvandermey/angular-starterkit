@@ -1,24 +1,19 @@
 {
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
-	"sourceRoot": "apps/mockserver",
+	"name": "mockserver",
 	"projectType": "application",
-	"prefix": "mock",
+	"sourceRoot": "apps/mockserver/src",
+	"tags": [],
 	"targets": {
-		"build": {
-			"executor": "@nrwl/workspace:run-commands",
-			"options": {
-				"command": "docker-compose up --build"
-			}
-		},
 		"lint": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"lintFilePatterns": ["apps/mockserver/**/*.ts"]
 			},
 			"outputs": ["{options.outputFile}"]
 		},
-		"lint-ci": {
-			"executor": "@nrwl/linter:eslint",
+		"lint:ci": {
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"format": "checkstyle",
 				"lintFilePatterns": ["apps/mockserver/**/*.ts"],
@@ -27,11 +22,16 @@
 			"outputs": ["{options.outputFile}"]
 		},
 		"serve": {
-			"executor": "@nrwl/workspace:run-commands",
+			"executor": "nx:run-commands",
 			"options": {
-				"command": "docker-compose up"
+				"command": "npx ts-node --project ./apps/mockserver/tsconfig.json ./apps/mockserver/src/mockserver.ts"
+			}
+		},
+		"watch": {
+			"executor": "nx:run-commands",
+			"options": {
+				"command": "npx ts-node --project ./apps/mockserver/tsconfig.json ./apps/mockserver/src/mockserver.ts --watch"
 			}
 		}
-	},
-	"tags": ["scope:mockserver"]
+	}
 }

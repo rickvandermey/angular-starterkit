@@ -9,12 +9,15 @@
 		{
 			"path": "./.storybook/tsconfig.json"
 		},
-		{ "path": "./tsconfig.spec.json" }
+		{
+			"path": "./tsconfig.spec.json"
+		}
 	],
 	"compilerOptions": {
 		"allowJs": true,
 		"noImplicitOverride": true,
-		"noPropertyAccessFromIndexSignature": true
+		"noPropertyAccessFromIndexSignature": true,
+		"target": "ES2022"
 	},
 	"angularCompilerOptions": {
 		"strictInjectionParameters": true,

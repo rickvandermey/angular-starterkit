@@ -11,15 +11,13 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 
 ## Features
 
--   ⭐️ Angular 13
+-   ⭐️ Angular 16
 -   🎁 Monorepo with NX.dev
--   😍 IVY by default
 -   ⭐️ NGRX store (implemented according ngrx.io)
 -   😴 Lazy Loading
 -   ⭐️ HttpInterceptor
 -   ⭐️ NGX-Translate (assets/i18n/{locale}.json)
 -   🚀 SSR (Server Side Rendering)
--   🚀 Prerendering (for SEO and static HTML generation)
 -   😍 PWA (Progressive Web App)
 -   😍 Service Worker detects new build versions
 -   🤓 Unit Test (Jest)
@@ -62,24 +60,15 @@ NRWL nx.dev monorepo, [see all commands](https://nx.dev/l/a/cli/build)
 
 -   `nx build <project> [options]` - normal production build
 -   `nx run <project>:build [options]` - production build with files already gzipped
--   `nx run <project>:build-prerender [options]` - with prerendering all routes
--   `nx run <project>:build-ssr [options]`- production build with Server Side Rendering
-
-### Ivy Build 😍
-
-Ivy is set to true by default and works with SSR / Prerendering
+-   `nx run <project>:ssr-build [options]` - production build with Server Side Rendering
+-   `nx run <project>:docker-build [options]`- production build with Server Side Rendering in a Docker
 
 ### Server Side Rendering (SSR) 😍
 
 This project comes with built-in SSR functionality. The effect of SSR will be valuable on larger projects or slower internet connections, run Google Audit with slow network to see the difference.
 
--   For Serving - `nx run <project>:serve-ssr [options]`
--   For Building - `nx run <project>:build-ssr [options]`
-
-### Prerendering Angular 😍😍😍
-
--   For Serving - `nx run <project>:serve-prerender [options]`
--   For Building - `nx run <project>:build-prerender [options]`
+-   For Serving - `nx run <project>:ssr-serve [options]`
+-   For Building - `nx run <project>:ssr-build [options]`
 
 ## Testing
 

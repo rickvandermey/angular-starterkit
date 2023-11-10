@@ -4,8 +4,8 @@ import {
 	HttpRequest,
 	HttpResponse,
 } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { makeStateKey, TransferState } from '@angular/platform-browser';
+import { Injectable, makeStateKey, TransferState } from '@angular/core';
+
 import { tap } from 'rxjs/operators';
 
 /* istanbul ignore next */
@@ -15,18 +15,17 @@ import { tap } from 'rxjs/operators';
 @Injectable()
 export class UniversalInterceptor implements HttpInterceptor {
 	constructor(private readonly transferState: TransferState) {}
+
 	/* istanbul ignore next */
-	/**
-	 * Intercepts HttpRequest or HttpResponse and set the transferState
-	 * to save the status in the store
-	 * @param  {HttpRequest<string>} request
-	 * @param  {HttpHandler} next
-	 */
-	intercept(req: HttpRequest<string>, next: HttpHandler) {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	intercept(req: HttpRequest<any>, next: HttpHandler) {
 		return next.handle(req).pipe(
 			tap((event) => {
 				if (event instanceof HttpResponse) {
-					this.transferState.set(makeStateKey(req.url), event.body);
+					this.transferState.set(
+						makeStateKey<string>(req.url),
+						event.body,
+					);
 				}
 			}),
 		);

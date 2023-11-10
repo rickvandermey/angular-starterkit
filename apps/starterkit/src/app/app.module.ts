@@ -1,56 +1,50 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
 	HTTP_INTERCEPTORS,
 	HttpClient,
 	HttpClientModule,
 } from '@angular/common/http';
-import { APP_INITIALIZER, NgModule, PLATFORM_ID } from '@angular/core';
+import { NgModule } from '@angular/core';
 import {
 	BrowserModule,
-	BrowserTransferStateModule,
-	ɵgetDOM,
+	provideClientHydration,
 } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { routerReducer } from '@ngrx/router-store';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { PrebootModule } from 'preboot';
 
 // NGRX store
 import { EffectsModule } from '@ngrx/effects';
+import { routerReducer } from '@ngrx/router-store';
 import {
 	MetaReducer,
 	StoreModule,
 	USER_PROVIDED_META_REDUCERS,
 } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { LocalStorageService } from '@starterkit/services/local-storage.service';
-import { PushNotificationService } from '@starterkit/services/push-notifications/push-notifications.service';
-import * as fromApplication from '@starterkit/store/application/application.reducer';
+// Modules
+import { ErrorModule } from '@starterkit/app/pages/error/error.module';
+// Routes
+import { AppRoutingModule } from '@starterkit/app/routes/app-routing.module';
+import { GoogleAnalyticsEffects } from '@starterkit/app/routes/effects/google-analytics.effects';
+import { LocalStorageService } from '@starterkit/app/services/local-storage.service';
+import { PushNotificationService } from '@starterkit/app/services/push-notifications/push-notifications.service';
+import * as fromApplication from '@starterkit/app/store/application/application.reducer';
 import {
 	LOCAL_STORAGE_KEY,
 	STORAGE_KEYS,
-} from '@starterkit/store/meta/app.tokens';
-import { storageMetaReducer } from '@starterkit/store/meta/storage.metareducer';
-import * as fromNotifications from '@starterkit/store/notifications/notifications.reducer';
-import { RouterEffects } from '@starterkit/store/router/router.effects';
-
+} from '@starterkit/app/store/meta/app.tokens';
+import { storageMetaReducer } from '@starterkit/app/store/meta/storage.metareducer';
+import * as fromNotifications from '@starterkit/app/store/notifications/notifications.reducer';
+import { RouterEffects } from '@starterkit/app/store/router/router.effects';
 // Core
 import { environment } from '@starterkit/environments/environment';
-import { AppComponent } from './app.component';
-
-// Routes
-import { AppRoutingModule } from '@starterkit/routes/app-routing.module';
-import { GoogleAnalyticsEffects } from '@starterkit/routes/effects/google-analytics.effects';
-
-// Modules
-import { ErrorModule } from '@starterkit/pages/error/error.module';
 
 // Interceptor
 import { AppHttpInterceptor } from './interceptors/http.interceptor';
 import { AppHttpInterceptor as CoreAppHttpInterceptor } from './ssr/app.interceptor';
 import { getInitialState } from './ssr/tokens';
+import { AppComponent } from './app.component';
 
 /* istanbul ignore next */
 /**
@@ -82,12 +76,10 @@ export function getMetaReducers(
 	declarations: [AppComponent],
 	imports: [
 		AppRoutingModule,
-		BrowserModule.withServerTransition({ appId: 'serverApp' }),
-		BrowserTransferStateModule,
+		BrowserModule,
 		EffectsModule.forRoot([GoogleAnalyticsEffects, RouterEffects]),
 		ErrorModule,
 		HttpClientModule,
-		PrebootModule.withConfig({ appRoot: 'app-root' }),
 		StoreModule.forRoot(
 			{
 				applicationState: fromApplication.reducer,
@@ -109,6 +101,7 @@ export function getMetaReducers(
 		}),
 	],
 	providers: [
+		provideClientHydration(),
 		PushNotificationService,
 		{
 			provide: STORAGE_KEYS,
@@ -134,40 +127,6 @@ export function getMetaReducers(
 			multi: true,
 			provide: HTTP_INTERCEPTORS,
 			useClass: CoreAppHttpInterceptor,
-		},
-
-		{
-			deps: [DOCUMENT, PLATFORM_ID],
-			multi: true,
-			provide: APP_INITIALIZER,
-			useFactory: /* istanbul ignore next */ (
-				document: HTMLDocument,
-				platformId: unknown,
-			) => {
-				return () => {
-					if (isPlatformBrowser(platformId)) {
-						const dom = ɵgetDOM().getDefaultDocument();
-						const styles: Element[] = Array.prototype.slice.apply(
-							dom.querySelectorAll(`style[ng-transition]`),
-						);
-						styles.forEach((el) => {
-							// Remove ng-transition attribute to prevent Angular appInitializerFactory
-							// to remove server styles before preboot complete
-							el.removeAttribute('ng-transition');
-						});
-						document.addEventListener('PrebootComplete', () => {
-							// After preboot complete, remove the server scripts
-							setTimeout(() =>
-								styles.forEach((el) => {
-									if (el?.parentNode === dom) {
-										dom?.removeChild(el);
-									}
-								}),
-							);
-						});
-					}
-				};
-			},
 		},
 	],
 })

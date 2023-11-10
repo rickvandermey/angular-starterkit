@@ -1,6 +1,7 @@
 import { Params, RouterStateSnapshot } from '@angular/router';
 
-import { RouterStateUrl } from '@starterkit/store/router/router.interface';
+import { RouterStateUrl } from '@starterkit/app/store/router/router.interface';
+
 import { CustomSerializer } from './app-routing.module';
 
 interface MockActiveStateSnapshot {

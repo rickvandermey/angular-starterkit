@@ -1,5 +1,3 @@
-import { finalize } from 'rxjs/operators';
-
 import { HTTP_INTERCEPTORS, HttpHeaders } from '@angular/common/http';
 import {
 	HttpClientTestingModule,
@@ -7,13 +5,16 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { TransferState } from '@angular/platform-browser';
+
 import { StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { finalize } from 'rxjs/operators';
 
+import { EntitiesService } from '@starterkit/app/services/entities/entities.service';
+import { SetRequestStatus } from '@starterkit/app/store/application/application.actions';
+import { initialState } from '@starterkit/app/testing/mock-store';
 import { environment } from '@starterkit/environments/environment';
-import { EntitiesService } from '@starterkit/services/entities/entities.service';
-import { SetRequestStatus } from '@starterkit/store/application/application.actions';
-import { initialState } from '@starterkit/testing/mock-store';
+
 import { AppHttpInterceptor } from './http.interceptor';
 
 describe(`AppHttpInterceptor`, () => {

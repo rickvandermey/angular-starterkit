@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-import { ErrorPageComponent } from '@starterkit/pages/error/error-page.component';
-import { SharedModule } from '@starterkit/modules/shared.module';
+import { SharedModule } from '@starterkit/app/modules/shared.module';
+import { ErrorPageComponent } from '@starterkit/app/pages/error/error-page.component';
 
 /**
  * Marks an class as an NgModule so it could be configured
