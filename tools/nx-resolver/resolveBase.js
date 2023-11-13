@@ -59,7 +59,7 @@ const getCurrentBranch = () => execSync('git branch --show-current').toString();
  */
 const setBase = (base) => {
 	console.log(`Setting base to: ${base}`);
-	console.log(execSync(`npm config set base ${base}`).toString());
+	console.log(`export NX_BASE=${base}`);
 };
 
 main();

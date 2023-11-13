@@ -1,6 +1,7 @@
 {
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"implicitDependencies": [],
+	"name": "starterkit",
 	"prefix": "app",
 	"projectType": "application",
 	"sourceRoot": "apps/starterkit/src",
@@ -106,15 +107,15 @@
 		"serve": {
 			"configurations": {
 				"mock": {
-					"browserTarget": "starterkit:build:mock"
+					"buildTarget": "starterkit:build:mock"
 				},
 				"production": {
-					"browserTarget": "starterkit:build:production"
+					"buildTarget": "starterkit:build:production"
 				}
 			},
 			"executor": "@angular-devkit/build-angular:dev-server",
 			"options": {
-				"browserTarget": "starterkit:build",
+				"buildTarget": "starterkit:build",
 				"port": 4202,
 				"ssl": true,
 				"sslCert": "ssl/server.crt",
@@ -175,7 +176,7 @@
 				}
 			},
 			"defaultConfiguration": "mock",
-			"executor": "@nguniversal/builders:ssr-dev-server",
+			"executor": "@angular-devkit/build-angular:ssr-dev-server",
 			"options": {
 				"port": 4202,
 				"ssl": true,
@@ -201,8 +202,7 @@
 		"test": {
 			"executor": "@nx/jest:jest",
 			"options": {
-				"jestConfig": "apps/starterkit/jest.config.ts",
-				"passWithNoTests": true
+				"jestConfig": "apps/starterkit/jest.config.ts"
 			},
 			"outputs": ["{workspaceRoot}/test-reports/apps/starterkit/coverage"]
 		}

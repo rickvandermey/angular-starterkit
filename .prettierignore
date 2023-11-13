@@ -5,3 +5,4 @@ documentation
 reports
 test-reports
 package-lock.json
+/.nx/cache

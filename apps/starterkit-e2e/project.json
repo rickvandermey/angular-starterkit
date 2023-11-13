@@ -1,6 +1,7 @@
 {
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"implicitDependencies": ["starterkit"],
+	"name": "starterkit-e2e",
 	"projectType": "application",
 	"sourceRoot": "apps/starterkit-e2e/src",
 	"tags": ["scope:starterkit-e2e"],
