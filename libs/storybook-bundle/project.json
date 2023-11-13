@@ -24,7 +24,7 @@
 			}
 		},
 		"lint": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"lintFilePatterns": [
 					"libs/storybook-bundle/src/**/*.ts",
@@ -33,7 +33,7 @@
 			}
 		},
 		"lint:ci": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"format": "checkstyle",
 				"lintFilePatterns": [

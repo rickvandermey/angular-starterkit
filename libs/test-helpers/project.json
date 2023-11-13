@@ -4,13 +4,13 @@
 	"sourceRoot": "libs/test-helpers/src",
 	"targets": {
 		"lint": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"lintFilePatterns": ["libs/test-helpers/src/**/*.ts"]
 			}
 		},
 		"lint:ci": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"format": "checkstyle",
 				"lintFilePatterns": [

@@ -83,7 +83,7 @@
 			}
 		},
 		"lint": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"lintFilePatterns": [
 					"apps/starterkit/src/**/*.ts",
@@ -93,7 +93,7 @@
 			"outputs": ["{options.outputFile}"]
 		},
 		"lint-ci": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"format": "checkstyle",
 				"lintFilePatterns": [

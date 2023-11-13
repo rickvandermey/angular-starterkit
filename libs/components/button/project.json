@@ -17,7 +17,7 @@
 			"outputs": ["{options.outputPath}"]
 		},
 		"lint": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"options": {
 				"lintFilePatterns": [
 					"libs/components/button/src/**/*.ts",
