@@ -50,8 +50,28 @@
 			"{workspaceRoot}/libs/assets/i18n/nl.json"
 		]
 	},
+	"nxCloudAccessToken": "MjNkZWRhNjAtYWQwYy00NjMzLWIxNmQtYWE2MTIwMDIwMzM1fHJlYWQtd3JpdGU=",
+	"parallel": 1,
 	"targetDefaults": {
+		"@nx/jest:jest": {
+			"cache": true,
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			},
+			"inputs": [
+				"default",
+				"^production",
+				"{workspaceRoot}/jest.preset.js"
+			],
+			"options": {
+				"passWithNoTests": true
+			}
+		},
 		"build": {
+			"cache": true,
 			"dependsOn": ["^build"],
 			"inputs": ["production", "^production"]
 		},
@@ -64,35 +84,23 @@
 				"{projectRoot}/tsconfig.storybook.json"
 			]
 		},
+		"e2e": {
+			"cache": true
+		},
 		"lint": {
+			"cache": true,
 			"inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
 		},
 		"lint:ci": {
 			"inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
 		},
 		"test": {
+			"cache": true,
 			"inputs": [
 				"default",
 				"^production",
 				"{workspaceRoot}/jest.preset.js"
 			]
-		}
-	},
-	"tasksRunnerOptions": {
-		"default": {
-			"options": {
-				"accessToken": "MjNkZWRhNjAtYWQwYy00NjMzLWIxNmQtYWE2MTIwMDIwMzM1fHJlYWQtd3JpdGU=",
-				"cacheableOperations": [
-					"build",
-					"lint",
-					"lint-style",
-					"test",
-					"e2e",
-					"test-vr-ci"
-				],
-				"parallel": 1
-			},
-			"runner": "nx-cloud"
 		}
 	}
 }

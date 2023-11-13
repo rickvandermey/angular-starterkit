@@ -1,4 +1,6 @@
-export function getConfig(type: string, name: string) {
+import type { Config } from 'jest';
+
+export function getConfig(type: string, name: string): Config {
 	const root = type.split('/').length === 2 ? '../../../' : '../../';
 	return {
 		collectCoverage: true,

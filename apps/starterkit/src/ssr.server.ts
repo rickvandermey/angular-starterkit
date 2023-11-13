@@ -1,13 +1,10 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { enableProdMode } from '@angular/core';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
-import { ngExpressEngine } from '@nguniversal/express-engine';
-import compression from 'compression';
+import { APP_BASE_HREF } from '@angular/common';
+import { CommonEngine } from '@angular/ssr';
+
 import * as express from 'express';
-import * as expressHealthCheck from 'express-healthcheck';
-import { existsSync } from 'fs';
-import morgan from 'morgan';
-import { join } from 'path';
 
 import { AppServerModule } from './main.server';
 
@@ -15,27 +12,20 @@ import 'zone.js/node';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
-	enableProdMode();
-
-	// deepcode ignore UseHelmetForExpress
 	const server = express();
 	const distFolder = join(process.cwd(), 'dist/apps/starterkit/browser');
 	const indexHtml = existsSync(join(distFolder, 'index.original.html'))
-		? 'index.original.html'
-		: 'index';
+		? join(distFolder, 'index.original.html')
+		: join(distFolder, 'index.html');
 
-	// Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
-	server.engine(
-		'html',
-		ngExpressEngine({
-			bootstrap: AppServerModule,
-		}),
-	);
+	const commonEngine = new CommonEngine();
 
-	server.use(compression());
 	server.set('view engine', 'html');
 	server.set('views', distFolder);
 
+	// Example Express Rest API endpoints
+	// server.get('/api/**', (req, res) => { });
+	// Serve static files from /browser
 	server.get(
 		'*.*',
 		express.static(distFolder, {
@@ -43,40 +33,30 @@ export function app(): express.Express {
 		}),
 	);
 
-	server.use('/healthcheck', expressHealthCheck);
+	// All regular routes use the Angular engine
+	server.get('*', (req, res, next) => {
+		const { protocol, originalUrl, baseUrl, headers } = req;
 
-	// All regular routes use the Universal engine
-	server.get('*', (req, res) => {
-		const path = req.originalUrl.endsWith('/')
-			? req.originalUrl
-			: `${req.originalUrl}/`;
-		const baseUrl = `https://${req.get('host')}`;
-		const fullUrl = `${baseUrl}${path}`;
-		res.render(indexHtml, {
-			providers: [
-				{ provide: APP_BASE_HREF, useValue: req.baseUrl },
-				{ provide: 'serverUrl', useValue: fullUrl },
-				{ provide: 'baseUrl', useValue: baseUrl },
-			],
-			req,
-		});
+		commonEngine
+			.render({
+				bootstrap: AppServerModule,
+				documentFilePath: indexHtml,
+				providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+				publicPath: distFolder,
+				url: `${protocol}://${headers.host}${originalUrl}`,
+			})
+			.then((html) => res.send(html))
+			.catch((err) => next(err));
 	});
 
 	return server;
 }
 
 function run(): void {
-	const port = process.env['PORT'] || 8080;
-	const cacheMaxAge = process.env['CACHE_MAX_AGE'] || 14400;
+	const port = process.env['PORT'] || 4000;
 
 	// Start up the Node server
 	const server = app();
-	server.use(morgan('dev'));
-	// Disable powered by middleware to reduce attack surface
-	server.disable('x-powered-by');
-	// Add cache headers to everything
-	server.set('Cache-control', `public, max-age=${cacheMaxAge}`);
-
 	server.listen(port, () => {
 		console.log(
 			`Node Express server listening on http://localhost:${port}`,

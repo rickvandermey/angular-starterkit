@@ -1,19 +1,19 @@
 {
-	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"name": "mockserver",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"projectType": "application",
 	"sourceRoot": "apps/mockserver/src",
 	"tags": [],
 	"targets": {
 		"lint": {
-			"executor": "@nx/linter:eslint",
+			"executor": "@nx/eslint:lint",
 			"options": {
 				"lintFilePatterns": ["apps/mockserver/**/*.ts"]
 			},
 			"outputs": ["{options.outputFile}"]
 		},
 		"lint:ci": {
-			"executor": "@nx/linter:eslint",
+			"executor": "@nx/eslint:lint",
 			"options": {
 				"format": "checkstyle",
 				"lintFilePatterns": ["apps/mockserver/**/*.ts"],

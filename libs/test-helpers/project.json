@@ -1,16 +1,17 @@
 {
+	"name": "test-helpers",
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"projectType": "library",
 	"sourceRoot": "libs/test-helpers/src",
 	"targets": {
 		"lint": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/eslint:lint",
 			"options": {
 				"lintFilePatterns": ["libs/test-helpers/src/**/*.ts"]
 			}
 		},
 		"lint:ci": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/eslint:lint",
 			"options": {
 				"format": "checkstyle",
 				"lintFilePatterns": [
