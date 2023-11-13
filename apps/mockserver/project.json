@@ -1,6 +1,6 @@
 {
-	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"name": "mockserver",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"projectType": "application",
 	"sourceRoot": "apps/mockserver/src",
 	"tags": [],

@@ -1,7 +1,7 @@
 {
+	"name": "starterkit",
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"implicitDependencies": [],
-	"name": "starterkit",
 	"prefix": "app",
 	"projectType": "application",
 	"sourceRoot": "apps/starterkit/src",

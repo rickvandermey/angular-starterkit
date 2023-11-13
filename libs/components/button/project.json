@@ -1,4 +1,5 @@
 {
+	"name": "button",
 	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
 	"prefix": "ui",
 	"projectType": "library",
@@ -40,7 +41,7 @@
 				"jestConfig": "libs/components/button/jest.config.ts",
 				"passWithNoTests": true
 			},
-			"outputs": ["coverage/libs/components/button"]
+			"outputs": ["{workspaceRoot}/coverage/libs/components/button"]
 		},
 		"test-vr": {
 			"executor": "nx:run-commands",
