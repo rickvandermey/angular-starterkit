@@ -9,17 +9,16 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 
 ## Features
 
--   ⭐️ Angular 16
+-   ⭐️ Angular 17
 -   🎁 Monorepo with NX.dev
 -   ⭐️ NGRX store (implemented according ngrx.io)
--   😴 Lazy Loading
--   ⭐️ HttpInterceptor
 -   ⭐️ NGX-Translate (assets/i18n/{locale}.json)
 -   🚀 SSR (Server Side Rendering)
 -   😍 PWA (Progressive Web App)
 -   😍 Service Worker detects new build versions
 -   🤓 Unit Test (Jest)
 -   🕹️ E2E Test / Reports (Playwright / Cucumber)
+-   🕹️ A11Y Test (Axe Core in E2E)
 -   🚀 Visual Testing (Storybook / Playwright)
 -   📖 Storybook
 -   🖌️ Tailwind
@@ -27,7 +26,7 @@ Powerful Starterkit combining all latest advanced Angular features. Strict types
 -   🤩 Ability to Mock data (mockServer) (Docker)
 -   🎰 WebPush integration (mockServer and PWA)
 
-##### Quickstart:
+### Quickstart:
 
 -   Install modules: `npm ci`
 -   MAC: `npm run certificate:generate:mac && nx run <project>:serve [options]`
@@ -45,12 +44,6 @@ NRWL nx.dev monorepo, [see all commands](https://nx.dev/l/a/cli/serve)
 -   `nx run <project>:serve [options]`
 
 Because we are running localhost on SSL (https), you will need to generate a certificate and key, and place them in a folder called `build`. Run `npm run certificate:generate:mac` to create the required certificates and place them in the required folder.
-
-### Git hooks 🎯
-
-Git hooks are active, which means you only can commit when there are no linting errors, and all unit-tests succeeds. Other commmands can be implemented with `husky`.
-
-When using nvm, the default node should be > 14. `nvm alias stable default`
 
 ## Build
 
@@ -74,14 +67,14 @@ This project comes with built-in SSR functionality. The effect of SSR will be va
 -   `nx run <project>:test [options]` - Unit test Watcher (only runs tests for changed files)
 -   `nx run <project>:e2e [options]` - End to End test with Playwright and reports with Cucumber
 
-### Running unit tests with Jest 🤓
+### Unit tests with Jest 🤓
 
 Run `nx run <project>:test [options` to execute the unit tests via [Jest](https://jestjs.io/).
 Run `npm run affected:test` to execute a all unit tests for affected libs and apps.
 
 Both scripts will provide a Code Coverage file, which can be found in _'./test-reports/<apps|libs>/\<project>/coverage'_
 
-### Running E2E tests with Playwright and Cucumber 🤓
+### E2E tests with Playwright and Cucumber and Axe Core (A11y) 🤓
 
 Run `nx run <project>:e2e [options]` to execute the E2E Playwright tests.
 
@@ -105,3 +98,9 @@ As of version 2.1.0 the mockServer is running through Docker and runs with HTTPS
 
 Do a POST call to `https://localhost:4000/notification` to create a mocked push notification.
 Best can be tested after `nx run <project>:build [options]` and then serve the correct folder as `http-server`. The application will then be available at `https://localhost:8081`
+
+## Git hooks 🎯
+
+Git hooks are active, which means you only can commit when there are no linting errors, and all unit-tests succeeds. Other commmands can be implemented with `husky`.
+
+When using nvm, the default node should be > 18. `nvm alias stable default`

@@ -2,6 +2,8 @@ import {
 	HTTP_INTERCEPTORS,
 	HttpClient,
 	HttpClientModule,
+	provideHttpClient,
+	withFetch,
 } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {
@@ -101,6 +103,7 @@ export function getMetaReducers(
 		}),
 	],
 	providers: [
+		provideHttpClient(withFetch()),
 		provideClientHydration(),
 		PushNotificationService,
 		{

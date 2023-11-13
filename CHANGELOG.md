@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [11.0.0](https://github.com/rickvandermey/angular-starterkit/tree/11.0.0)
+
+### Breaking Change
+
+-   **NX:** Updated to NX 17
+-   **Node.js**: nvm use 20
+-   **Angular:** Updated to Angular 17
+-   **Docker:** Updated to Node 20.9.0
+
 ## [10.0.0](https://github.com/rickvandermey/angular-starterkit/tree/10.0.0)
 
 ### Breaking Change
