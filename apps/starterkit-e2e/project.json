@@ -18,14 +18,14 @@
 			}
 		},
 		"lint": {
-			"executor": "@nx/linter:eslint",
+			"executor": "@nx/eslint:lint",
 			"options": {
 				"lintFilePatterns": ["apps/starterkit-e2e/**/*.{js,ts}"]
 			},
 			"outputs": ["{options.outputFile}"]
 		},
 		"lint-ci": {
-			"executor": "@nx/linter:eslint",
+			"executor": "@nx/eslint:lint",
 			"options": {
 				"format": "checkstyle",
 				"lintFilePatterns": ["apps/starterkit-e2e/**/*.ts"],
