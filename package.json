@@ -57,7 +57,7 @@
 		"@ngx-translate/core": "15.0.0",
 		"@ngx-translate/http-loader": "8.0.0",
 		"@nx/angular": "17.1.1",
-		"@storybook/core-server": "7.5.3",
+		"@storybook/core-server": "7.6.21",
 		"ngx-markdown": "17.1.0",
 		"radash": "11.0.0",
 		"rxjs": "7.8.1",
